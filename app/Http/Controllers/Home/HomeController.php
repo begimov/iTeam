@@ -4,17 +4,21 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\ModelNameRepository;
 
 class HomeController extends Controller
 {
+
+    protected $modelnames;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ModelNameRepository $modelnames)
     {
-        //
+        $this->modelnames = $modelnames;
     }
 
     /**
