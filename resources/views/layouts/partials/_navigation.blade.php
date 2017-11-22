@@ -5,7 +5,13 @@
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto">
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('login') }}">СТАТЬИ</a>
+    </li>
+  </ul>
+  
+  <ul class="navbar-nav ml-auto">
   @if (Auth::guest())
     <li class="nav-item">
       <a class="nav-link" href="{{ route('login') }}">@lang('auth.login_btn')</a>
@@ -14,7 +20,7 @@
       <a class="nav-link" href="{{ route('register') }}">@lang('auth.register_btn')</a>
     </li>
     @else
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown dropdown-menu-right">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{ Auth::user()->name }}
         </a>
