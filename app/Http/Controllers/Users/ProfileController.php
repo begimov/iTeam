@@ -9,6 +9,6 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        echo 'sdfsdf';
+        return view('users.index');
     }
 }
