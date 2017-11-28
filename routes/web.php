@@ -13,4 +13,9 @@
 
 Route::get('/', 'Home\HomeController@index')->name('home');
 
+// User dashboard & profile
+Route::group(['prefix' => 'user', 'namespace' => 'Users'], function () {
+    Route::get('/', 'ProfileController@index');
+});
+
 Auth::routes();
