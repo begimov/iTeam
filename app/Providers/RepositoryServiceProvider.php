@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Contracts\ModelNameRepository;
-use App\Repositories\Eloquent\EloquentModelNameRepository;
+use App\Repositories\Contracts\OrderRepository;
+use App\Repositories\Eloquent\EloquentOrderRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(ModelNameRepository::class, EloquentModelNameRepository::class);
+        $this->app->bind(OrderRepository::class, EloquentOrderRepository::class);
     }
 
     /**
