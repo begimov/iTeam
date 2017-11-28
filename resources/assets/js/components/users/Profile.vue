@@ -11,10 +11,4 @@
     </div>
 </template>
 
-<script>
-    export default {
-        mounted() {
-            //
-        }
-    }
-</script>
+<script src="./profile.js"></script>
