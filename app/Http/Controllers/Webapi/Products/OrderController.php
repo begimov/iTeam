@@ -10,8 +10,17 @@ use App\Models\Products\Order;
 
 use App\Transformers\Products\OrderTransformer;
 
+use App\Repositories\Contracts\Products\OrderRepository;
+
 class OrderController extends Controller
 {
+    protected $orders;
+
+    public function __construct(OrderRepository $orders)
+    {
+        $this->orders = $orders;
+    }
+
     /**
      * Display a listing of the resource.
      *

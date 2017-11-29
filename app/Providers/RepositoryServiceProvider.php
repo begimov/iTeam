@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Contracts\OrderRepository;
-use App\Repositories\Eloquent\EloquentOrderRepository;
+use App\Repositories\Contracts\Products\OrderRepository;
+use App\Repositories\Eloquent\Products\EloquentOrderRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
