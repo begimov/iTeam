@@ -28,7 +28,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(5);
+        $orders = $this->orders->paginate(5);
 
         $ordersCollection = $orders->getCollection();
 
