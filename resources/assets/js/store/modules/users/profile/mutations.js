@@ -3,6 +3,6 @@ export default {
       state.isLoading = value
   },
   setOrders (state, payload) {
-      state.orders = payload
+      state.orders = payload.data
   },
 }
