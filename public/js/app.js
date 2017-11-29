@@ -12016,6 +12016,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: function isLoading(state) {
     return state.isLoading;
+  },
+  orders: function orders(state) {
+    return state.orders;
   }
 };
 
@@ -47111,7 +47114,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(5);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/profile', ['isLoading'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/profile', ['isLoading', 'orders'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders'])),
     mounted: function mounted() {
         this.getOrders();

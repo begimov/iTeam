@@ -4,6 +4,7 @@ export default {
     computed: {
         ...mapGetters('users/profile', [
             'isLoading',
+            'orders',
         ])
     },
     methods: {
