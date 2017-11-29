@@ -47133,7 +47133,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
-  }), _vm._v("\n            //\n        ")])])])
+  }), _vm._v(" "), _vm._l((_vm.orders), function(order) {
+    return _c('p', {
+      key: order.id
+    }, [_vm._v(_vm._s(order.id) + " " + _vm._s(order.created_at_human))])
+  })], 2)])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
