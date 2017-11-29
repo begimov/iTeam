@@ -12014,9 +12014,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  // blocks (state) {
-  //   return state.blocks
-  // },
+  isLoading: function isLoading(state) {
+    return state.isLoading;
+  }
 };
 
 /***/ }),
@@ -12040,10 +12040,10 @@ exports.default = {
   getOrders: function getOrders(_ref) {
     var commit = _ref.commit;
 
-    // commit('setIsLoading', true)
+    commit('setIsLoading', true);
     _api2.default.profile.getOrders().then(function (res) {
       commit('setOrders', res.data);
-      // commit('setIsLoading', false)
+      commit('setIsLoading', false);
     });
   }
 };

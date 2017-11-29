@@ -1,5 +1,5 @@
 export default {
-  // blocks (state) {
-  //   return state.blocks
-  // },
+  isLoading(state) {
+    return state.isLoading
+  },
 }
