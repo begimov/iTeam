@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 
+use App\Transformers\Products\OrderTransformer;
+
 class OrderController extends Controller
 {
     /**
