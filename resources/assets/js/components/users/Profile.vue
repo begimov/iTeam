@@ -1,10 +1,8 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                //
-            </div>
-            <div class="col-6">
+            <div class="col-12">
+            <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
                 //
             </div>
         </div>
