@@ -17,5 +17,6 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
     public function getAuthUserOrders()
     {
         $this->entity = auth()->user()->orders();
+        return $this;
     }
 }

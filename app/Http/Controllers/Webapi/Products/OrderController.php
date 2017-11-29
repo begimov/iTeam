@@ -28,7 +28,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = $this->orders->paginate(5);
+        $orders = $this->orders->getAuthUserOrders()->paginate(1);
 
         $ordersCollection = $orders->getCollection();
 
