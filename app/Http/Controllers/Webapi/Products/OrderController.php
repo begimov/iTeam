@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webapi\Products;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 
 class OrderController extends Controller
 {
@@ -14,7 +15,16 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = App\Models\Products\Order::all();
+
+        $ordersCollection = $orders->getCollection();
+
+        return fractal()
+            ->collection($ordersCollection)
+            // ->parseIncludes(['user', 'user.userProfile', 'paymentType', 'product'])
+            ->transformWith(new OrderTransformer)
+            ->paginateWith(new IlluminatePaginatorAdapter($orders))
+            ->toArray();
     }
 
     /**
