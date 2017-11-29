@@ -47098,9 +47098,15 @@ module.exports = function normalizeComponent (
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(24);
+
 exports.default = {
+    methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders'])),
     mounted: function mounted() {
-        console.log("sdfsdfs");
+        this.getOrders();
     }
 };
 
