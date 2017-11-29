@@ -11118,12 +11118,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  getPages: function getPages(page, params) {
-    // return new Promise((resolve, reject) => {
-    //   axios.get(`/webapi/pages?page=${page}`, {params}).then(res => {
-    //     resolve(res)
-    //   })
-    // })
+  getOrders: function getOrders(page, params) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/orders").then(function (res) {
+        resolve(res);
+      });
+    });
   }
 };
 
