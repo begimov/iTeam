@@ -11095,9 +11095,16 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  // addBlockToLayout ({ commit }, data) {
-  //   commit('addBlockToLayout', data)
-  // },
+  getOrders: function getOrders(_ref) {
+    var commit = _ref.commit;
+
+    // commit('setIsLoading', true)
+    _api2.default.profile.getOrders().then(function (res) {
+      console.log(res);
+      // commit('setProducts', res.data)
+      // commit('setIsLoading', false)
+    });
+  }
 };
 
 /***/ }),

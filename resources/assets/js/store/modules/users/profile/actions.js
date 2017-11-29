@@ -1,7 +1,12 @@
 import api from '../../../api'
 
 export default {
-  // addBlockToLayout ({ commit }, data) {
-  //   commit('addBlockToLayout', data)
-  // },
+  getOrders({ commit }) {
+    // commit('setIsLoading', true)
+    api.profile.getOrders().then(res => {
+      console.log(res)
+      // commit('setProducts', res.data)
+      // commit('setIsLoading', false)
+    })
+  },
 }
