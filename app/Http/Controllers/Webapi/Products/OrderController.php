@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 
+use App\Models\Products\Order;
+
 use App\Transformers\Products\OrderTransformer;
 
 class OrderController extends Controller
@@ -17,7 +19,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = App\Models\Products\Order::all();
+        $orders = Order::paginate(5);
 
         $ordersCollection = $orders->getCollection();
 
