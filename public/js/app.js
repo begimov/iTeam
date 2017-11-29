@@ -11053,12 +11053,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  // isLoading: false,
-  // blocks: [],
-  // layout: {
-  //   blocks: [],
-  //   components: []
-  // },
+  isLoading: false,
+  orders: []
 };
 
 /***/ }),
@@ -11100,8 +11096,7 @@ exports.default = {
 
     // commit('setIsLoading', true)
     _api2.default.profile.getOrders().then(function (res) {
-      console.log(res);
-      // commit('setProducts', res.data)
+      commit('setOrders', res.data);
       // commit('setIsLoading', false)
     });
   }
@@ -11137,12 +11132,15 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = {
-  //   setIsLoading (state, value) {
-  //       state.isLoading = value
-  //   },
+    setIsLoading: function setIsLoading(state, value) {
+        state.isLoading = value;
+    },
+    setOrders: function setOrders(state, payload) {
+        state.orders = payload;
+    }
 };
 
 /***/ }),

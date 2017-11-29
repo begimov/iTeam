@@ -1,8 +1,4 @@
 export default {
-  // isLoading: false,
-  // blocks: [],
-  // layout: {
-  //   blocks: [],
-  //   components: []
-  // },
+  isLoading: false,
+  orders: [],
 }
