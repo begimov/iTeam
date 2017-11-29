@@ -11122,6 +11122,8 @@ exports.default = {
     return new Promise(function (resolve, reject) {
       axios.get("/webapi/orders").then(function (res) {
         resolve(res);
+      }).catch(function (err) {
+        console.log(err);
       });
     });
   }

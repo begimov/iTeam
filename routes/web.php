@@ -18,4 +18,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
     Route::get('/', 'ProfileController@index');
 });
 
+// WebAPI
+Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
+    // Route for Profile.vue component
+    Route::resource('orders', 'Products\OrderController');
+});
+
 Auth::routes();
