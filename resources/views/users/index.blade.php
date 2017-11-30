@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-  <user-profile></user-profile>
+  <user-dashboard></user-dashboard>
 @endsection

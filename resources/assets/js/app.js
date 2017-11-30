@@ -17,7 +17,7 @@ import store from './store'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('user-profile', require('./components/users/Profile.vue'));
+Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
 
 const app = new Vue({
     el: '#app',

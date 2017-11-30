@@ -11867,7 +11867,7 @@ window.Vue = __webpack_require__(4);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('user-profile', __webpack_require__(51));
+Vue.component('user-dashboard', __webpack_require__(60));
 
 var app = new Vue({
   el: '#app',
@@ -46962,46 +46962,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(52)(
-  /* script */
-  __webpack_require__(53),
-  /* template */
-  __webpack_require__(54),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/users/Profile.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Profile.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0e8b51f8", Component.options)
-  } else {
-    hotAPI.reload("data-v-0e8b51f8", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 51 */,
 /* 52 */
 /***/ (function(module, exports) {
 
@@ -47099,7 +47060,59 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 53 */
+/* 53 */,
+/* 54 */,
+/* 55 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(52)(
+  /* script */
+  __webpack_require__(61),
+  /* template */
+  __webpack_require__(62),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/users/Dashboard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Dashboard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-07cd85af", Component.options)
+  } else {
+    hotAPI.reload("data-v-07cd85af", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47122,39 +47135,52 @@ exports.default = {
 };
 
 /***/ }),
-/* 54 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
   }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('div', {
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
-  }), _vm._v(" "), _vm._l((_vm.orders), function(order) {
-    return _c('p', {
-      key: order.id
-    }, [_vm._v(_vm._s(order.id) + " | " + _vm._s(order.created_at_human))])
-  })], 2)])])
-},staticRenderFns: []}
+  }), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, _vm._l((_vm.orders), function(order) {
+    return _c('div', {
+      key: order.id,
+      staticClass: "col-sm-6 col-md-6 col-lg-4"
+    }, [_vm._m(0, true)])
+  }))])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card"
+  }, [_c('img', {
+    staticClass: "card-img-top",
+    attrs: {
+      "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "card-body"
+  }, [_c('h4', {
+    staticClass: "card-title"
+  }, [_vm._v("Card title that wraps to a new line")]), _vm._v(" "), _c('p', {
+    staticClass: "card-text"
+  }, [_vm._v("This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("Go somewhere")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0e8b51f8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-07cd85af", module.exports)
   }
 }
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
