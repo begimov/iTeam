@@ -47150,29 +47150,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.orders), function(order) {
     return _c('div', {
       key: order.id,
-      staticClass: "col-sm-6 col-md-6 col-lg-4"
+      staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3"
     }, [_vm._m(0, true)])
   }))])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card"
-  }, [_c('img', {
+  }, [_c('div', {
+    staticClass: "card-header bg-success text-white"
+  }, [_vm._v("\n                    Оплачен\n                ")]), _vm._v(" "), _c('img', {
     staticClass: "card-img-top",
     attrs: {
       "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "card-body"
-  }, [_c('h4', {
-    staticClass: "card-title"
-  }, [_vm._v("Card title that wraps to a new line")]), _vm._v(" "), _c('p', {
+  }, [_c('p', {
     staticClass: "card-text"
-  }, [_vm._v("This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Go somewhere")])])])
+  }, [_vm._v("Материалы")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
