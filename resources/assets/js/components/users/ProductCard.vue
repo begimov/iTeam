@@ -2,7 +2,7 @@
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
         <div class="card border-success">
             <div class="card-header bg-success text-white">
-                Оплачен
+                Оплачен ({{order.id}})
             </div>
             <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png">
             <div class="card-body">

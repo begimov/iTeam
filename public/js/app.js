@@ -47216,6 +47216,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    props: ['order'],
     computed: {
         //
     },
@@ -47232,20 +47233,20 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3"
   }, [_c('div', {
     staticClass: "card border-success"
   }, [_c('div', {
     staticClass: "card-header bg-success text-white"
-  }, [_vm._v("\n            Оплачен\n        ")]), _vm._v(" "), _c('img', {
+  }, [_vm._v("\n            Оплачен (" + _vm._s(_vm.order.id) + ")\n        ")]), _vm._v(" "), _c('img', {
     staticClass: "card-img-top",
     attrs: {
       "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
     }
-  }), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(0)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "card-body"
   }, [_c('p', {
     staticClass: "card-text"
@@ -47254,7 +47255,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Материалы")])])])])
+  }, [_vm._v("Материалы")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
