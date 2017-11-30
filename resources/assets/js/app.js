@@ -18,6 +18,7 @@ import store from './store'
  */
 
 Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
+Vue.component('product-card', require('./components/users/ProductCard.vue'));
 
 const app = new Vue({
     el: '#app',
