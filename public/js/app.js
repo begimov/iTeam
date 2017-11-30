@@ -47148,32 +47148,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.orders), function(order) {
-    return _c('div', {
+    return _c('product-card', {
       key: order.id,
-      staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3"
-    }, [_vm._m(0, true)])
+      attrs: {
+        "order": order
+      }
+    })
   }))])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "card"
-  }, [_c('div', {
-    staticClass: "card-header bg-success text-white"
-  }, [_vm._v("\n                    Оплачен\n                ")]), _vm._v(" "), _c('img', {
-    staticClass: "card-img-top",
-    attrs: {
-      "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "card-body"
-  }, [_c('p', {
-    staticClass: "card-text"
-  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("Материалы")])])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
