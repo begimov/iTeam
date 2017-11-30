@@ -47131,7 +47131,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-12"
+    staticClass: "col"
   }, [_c('div', {
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
