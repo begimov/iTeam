@@ -1,5 +1,3 @@
-import dashboard from './dashboard'
-import product from './product'
 import state from './state'
 import getters from './getters'
 import actions from './actions'
@@ -11,8 +9,4 @@ export default {
   getters,
   actions,
   mutations,
-  modules: {
-    dashboard,
-    product
-  }
 }

@@ -12021,6 +12021,10 @@ var _dashboard = __webpack_require__(66);
 
 var _dashboard2 = _interopRequireDefault(_dashboard);
 
+var _product = __webpack_require__(71);
+
+var _product2 = _interopRequireDefault(_product);
+
 var _state = __webpack_require__(22);
 
 var _state2 = _interopRequireDefault(_state);
@@ -12046,7 +12050,8 @@ exports.default = {
   actions: _actions2.default,
   mutations: _mutations2.default,
   modules: {
-    dashboard: _dashboard2.default
+    dashboard: _dashboard2.default,
+    product: _product2.default
   }
 };
 
@@ -47387,6 +47392,117 @@ exports.default = {
     setDisplayedOrderId: function setDisplayedOrderId(state, id) {
         state.displayedOrderId = id;
     }
+};
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(72);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(73);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(74);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(75);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isLoading: false,
+  product: null
+};
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isLoading: function isLoading(state) {
+    return state.isLoading;
+  }
+};
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(3);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  // getOrders({ commit }) {
+  //   commit('setIsLoading', true)
+  //   api.profile.getOrders().then(res => {
+  //     commit('setOrders', res.data)
+  //     commit('setIsLoading', false)
+  //   })
+  // },
+};
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  setIsLoading: function setIsLoading(state, value) {
+    state.isLoading = value;
+  }
 };
 
 /***/ })
