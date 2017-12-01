@@ -2,13 +2,13 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
     computed: {
-        ...mapGetters('users/profile', [
+        ...mapGetters('users/dashboard', [
             'isLoading',
             'orders',
         ])
     },
     methods: {
-        ...mapActions('users/profile', [
+        ...mapActions('users/dashboard', [
             'getOrders',
         ]),
         openProduct(id) {

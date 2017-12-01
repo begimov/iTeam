@@ -9,7 +9,7 @@
                 v-on:openProduct="openProduct"></order-card>
         </div>
         <div class="row">
-            <users-product></users-product>
+            <product></product>
         </div>
     </div>
 </template>

@@ -11966,7 +11966,7 @@ window.Vue = __webpack_require__(4);
 
 Vue.component('user-dashboard', __webpack_require__(52));
 Vue.component('order-card', __webpack_require__(55));
-Vue.component('users-product', __webpack_require__(63));
+Vue.component('product', __webpack_require__(63));
 
 var app = new Vue({
   el: '#app',
@@ -12017,9 +12017,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _profile = __webpack_require__(16);
+var _dashboard = __webpack_require__(66);
 
-var _profile2 = _interopRequireDefault(_profile);
+var _dashboard2 = _interopRequireDefault(_dashboard);
 
 var _state = __webpack_require__(22);
 
@@ -12046,111 +12046,15 @@ exports.default = {
   actions: _actions2.default,
   mutations: _mutations2.default,
   modules: {
-    profile: _profile2.default
+    dashboard: _dashboard2.default
   }
 };
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _state = __webpack_require__(17);
-
-var _state2 = _interopRequireDefault(_state);
-
-var _getters = __webpack_require__(18);
-
-var _getters2 = _interopRequireDefault(_getters);
-
-var _actions = __webpack_require__(19);
-
-var _actions2 = _interopRequireDefault(_actions);
-
-var _mutations = __webpack_require__(21);
-
-var _mutations2 = _interopRequireDefault(_mutations);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  namespaced: true,
-  state: _state2.default,
-  getters: _getters2.default,
-  actions: _actions2.default,
-  mutations: _mutations2.default
-};
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  isLoading: false,
-  orders: []
-};
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  isLoading: function isLoading(state) {
-    return state.isLoading;
-  },
-  orders: function orders(state) {
-    return state.orders;
-  }
-};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _api = __webpack_require__(3);
-
-var _api2 = _interopRequireDefault(_api);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  getOrders: function getOrders(_ref) {
-    var commit = _ref.commit;
-
-    commit('setIsLoading', true);
-    _api2.default.profile.getOrders().then(function (res) {
-      commit('setOrders', res.data);
-      commit('setIsLoading', false);
-    });
-  }
-};
-
-/***/ }),
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12173,25 +12077,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    setIsLoading: function setIsLoading(state, value) {
-        state.isLoading = value;
-    },
-    setOrders: function setOrders(state, payload) {
-        state.orders = payload.data;
-    }
-};
-
-/***/ }),
+/* 21 */,
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47116,8 +47002,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(5);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/profile', ['isLoading', 'orders'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders']), {
         openProduct: function openProduct(id) {
             console.log(id);
         }
@@ -47152,7 +47038,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [_c('users-product')], 1)])
+  }, [_c('product')], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -47365,6 +47251,125 @@ exports.default = {
     },
     methods: {
         //
+    }
+};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(67);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(68);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(69);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(70);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isLoading: false,
+  orders: []
+};
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isLoading: function isLoading(state) {
+    return state.isLoading;
+  },
+  orders: function orders(state) {
+    return state.orders;
+  }
+};
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(3);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  getOrders: function getOrders(_ref) {
+    var commit = _ref.commit;
+
+    commit('setIsLoading', true);
+    _api2.default.profile.getOrders().then(function (res) {
+      commit('setOrders', res.data);
+      commit('setIsLoading', false);
+    });
+  }
+};
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    setIsLoading: function setIsLoading(state, value) {
+        state.isLoading = value;
+    },
+    setOrders: function setOrders(state, payload) {
+        state.orders = payload.data;
     }
 };
 

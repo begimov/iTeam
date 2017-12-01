@@ -1,4 +1,4 @@
-import profile from './profile'
+import dashboard from './dashboard'
 import state from './state'
 import getters from './getters'
 import actions from './actions'
@@ -11,6 +11,6 @@ export default {
   actions,
   mutations,
   modules: {
-    profile
+    dashboard
   }
 }
