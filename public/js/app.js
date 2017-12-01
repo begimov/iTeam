@@ -47002,12 +47002,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(5);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedProduct'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders']), {
-        openProduct: function openProduct(id) {
-            console.log(id);
-        }
-    }),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct'])),
     mounted: function mounted() {
         this.getOrders();
     }
@@ -47024,7 +47020,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
-  }), _vm._v(" "), (_vm.displayedProduct) ? _c('div', {
+  }), _vm._v(" "), (_vm.displayedOrderId) ? _c('div', {
     staticClass: "row"
   }, [_c('product')], 1) : _c('div', {
     staticClass: "row"
@@ -47304,7 +47300,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: false,
   orders: [],
-  displayedProduct: null
+  displayedOrderId: null
 };
 
 /***/ }),
@@ -47324,8 +47320,8 @@ exports.default = {
   orders: function orders(state) {
     return state.orders;
   },
-  displayedProduct: function displayedProduct(state) {
-    return state.displayedProduct;
+  displayedOrderId: function displayedOrderId(state) {
+    return state.displayedOrderId;
   }
 };
 
@@ -47355,6 +47351,12 @@ exports.default = {
       commit('setOrders', res.data);
       commit('setIsLoading', false);
     });
+  },
+  openProduct: function openProduct(_ref2, orderId) {
+    var commit = _ref2.commit,
+        state = _ref2.state;
+
+    commit('setDisplayedOrderId', orderId);
   }
 };
 
@@ -47374,6 +47376,9 @@ exports.default = {
     },
     setOrders: function setOrders(state, payload) {
         state.orders = payload.data;
+    },
+    setDisplayedOrderId: function setDisplayedOrderId(state, id) {
+        state.displayedOrderId = id;
     }
 };
 

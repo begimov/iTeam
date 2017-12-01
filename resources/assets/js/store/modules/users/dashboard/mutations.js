@@ -5,4 +5,7 @@ export default {
   setOrders (state, payload) {
       state.orders = payload.data
   },
+  setDisplayedOrderId (state, id) {
+      state.displayedOrderId = id
+  },
 }

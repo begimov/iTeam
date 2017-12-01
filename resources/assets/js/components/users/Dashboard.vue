@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
-        <div class="row" v-if="displayedProduct">
+        <div class="row" v-if="displayedOrderId">
             <product></product>
         </div>
         <div class="row" v-else>

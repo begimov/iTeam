@@ -8,4 +8,7 @@ export default {
       commit('setIsLoading', false)
     })
   },
+  openProduct({ commit, state }, orderId) {
+    commit('setDisplayedOrderId', orderId)
+  },
 }

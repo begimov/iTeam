@@ -5,16 +5,14 @@ export default {
         ...mapGetters('users/dashboard', [
             'isLoading',
             'orders',
-            'displayedProduct',
+            'displayedOrderId',
         ])
     },
     methods: {
         ...mapActions('users/dashboard', [
             'getOrders',
-        ]),
-        openProduct(id) {
-            console.log(id);
-        }
+            'openProduct',
+        ])
     },
     mounted() {
         this.getOrders();
