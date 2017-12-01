@@ -6,7 +6,7 @@ use App\Models\Products\Order;
 
 class OrderTransformer extends \League\Fractal\TransformerAbstract
 {
-    protected $availableIncludes = ['product'];
+    protected $availableIncludes = ['product', 'product.materials'];
 
     public function transform(Order $order)
     {
