@@ -47205,12 +47205,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     props: ['order'],
     computed: {
-        //
+        isPaid: function isPaid() {
+            return this.order.payment_state_id === 2;
+        }
     },
     methods: {
-        //
-    },
-    mounted: function mounted() {
         //
     }
 };
@@ -47223,27 +47222,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3"
   }, [_c('div', {
-    staticClass: "card border-success"
+    staticClass: "card",
+    class: {
+      'border-success': _vm.isPaid, 'border-danger': !_vm.isPaid
+    }
   }, [_c('div', {
-    staticClass: "card-header bg-success text-white"
+    staticClass: "card-header text-white",
+    class: [_vm.isPaid ? 'bg-success' : 'bg-danger']
   }, [_vm._v("\n            Оплачен (" + _vm._s(_vm.order.id) + ")\n        ")]), _vm._v(" "), _c('img', {
     staticClass: "card-img-top",
     attrs: {
       "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
     }
-  }), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }), _vm._v(" "), _c('div', {
     staticClass: "card-body"
   }, [_c('p', {
     staticClass: "card-text"
-  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), (_vm.isPaid) ? _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Материалы")])])
-}]}
+  }, [_vm._v("Материалы")]) : [_c('a', {
+    staticClass: "btn btn-dark",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("Оплатить")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-link",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("Удалить")])]], 2)])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
