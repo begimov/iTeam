@@ -67,7 +67,7 @@ class OrderController extends Controller
         $order = $this->orders->findById($id);
         return fractal()
             ->item($order)
-            ->parseIncludes(['product'])
+            ->parseIncludes(['product', 'product.materials'])
             ->transformWith(new OrderTransformer)
             ->toArray();
     }

@@ -19,6 +19,6 @@ class ProductTransformer extends \League\Fractal\TransformerAbstract
 
     public function includeMaterials(Product $product)
     {
-        return $this->item($product->materials, new MaterialTransformer);
+        return $this->collection($product->materials, new MaterialTransformer);
     }
 }
