@@ -47210,7 +47210,9 @@ exports.default = {
         }
     },
     methods: {
-        //
+        showMaterials: function showMaterials() {
+            console.log('SHOWED');
+        }
     }
 };
 
@@ -47242,6 +47244,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.showMaterials($event)
+      }
     }
   }, [_vm._v("Материалы")]) : [_c('a', {
     staticClass: "btn btn-dark",

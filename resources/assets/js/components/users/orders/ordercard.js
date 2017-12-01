@@ -6,6 +6,8 @@ export default {
         }
     },
     methods: {
-        //
+        showMaterials() {
+            console.log('SHOWED');
+        }
     }
 };

@@ -7,7 +7,7 @@
             <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png">
             <div class="card-body">
                 <p class="card-text">Название мастер-проекта или мастер-класса</p>
-                <a href="#" class="btn btn-primary" v-if="isPaid">Материалы</a>
+                <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="showMaterials">Материалы</a>
                 <template v-else>
                     <a href="#" class="btn btn-dark">Оплатить</a>
                     <a href="#" class="btn btn-link">Удалить</a>
