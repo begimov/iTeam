@@ -6,6 +6,8 @@ use App\Models\Products\Order;
 
 class OrderTransformer extends \League\Fractal\TransformerAbstract
 {
+    protected $availableIncludes = ['product'];
+
     public function transform(Order $order)
     {
         return [
@@ -16,5 +18,10 @@ class OrderTransformer extends \League\Fractal\TransformerAbstract
             'created_at_human' => $order->created_at->format('d/m/y, H:i'),
             'updated_at_human' => $order->updated_at->format('d/m/y, H:i'),
         ];
+    }
+
+    public function includeProduct(Order $order)
+    {
+        return $this->item($order->product, new ProductTransformer);
     }
 }
