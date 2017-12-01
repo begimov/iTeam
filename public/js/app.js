@@ -511,14 +511,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _profile = __webpack_require__(20);
+var _dashboard = __webpack_require__(76);
 
-var _profile2 = _interopRequireDefault(_profile);
+var _dashboard2 = _interopRequireDefault(_dashboard);
+
+var _product = __webpack_require__(77);
+
+var _product2 = _interopRequireDefault(_product);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  profile: _profile2.default
+  dashboard: _dashboard2.default,
+  product: _product2.default
 };
 
 /***/ }),
@@ -12060,28 +12065,7 @@ exports.default = {
 /* 17 */,
 /* 18 */,
 /* 19 */,
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  getOrders: function getOrders(page, params) {
-    return new Promise(function (resolve, reject) {
-      axios.get("/webapi/orders").then(function (res) {
-        resolve(res);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    });
-  }
-};
-
-/***/ }),
+/* 20 */,
 /* 21 */,
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -47249,16 +47233,19 @@ if (false) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(5);
+
 exports.default = {
     props: ['orderId'],
-    computed: {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', [
         //
-    },
-    methods: {
-        //
-    },
+    ])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder'])),
     mounted: function mounted() {
-        console.log(this.orderId);
+        this.getOrder(this.orderId);
     }
 };
 
@@ -47359,7 +47346,7 @@ exports.default = {
     var commit = _ref.commit;
 
     commit('setIsLoading', true);
-    _api2.default.profile.getOrders().then(function (res) {
+    _api2.default.dashboard.getOrders().then(function (res) {
       commit('setOrders', res.data);
       commit('setIsLoading', false);
     });
@@ -47443,7 +47430,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   isLoading: false,
-  product: null
+  order: null
 };
 
 /***/ }),
@@ -47480,13 +47467,16 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  // getOrders({ commit }) {
-  //   commit('setIsLoading', true)
-  //   api.profile.getOrders().then(res => {
-  //     commit('setOrders', res.data)
-  //     commit('setIsLoading', false)
-  //   })
-  // },
+  getOrder: function getOrder(_ref, id) {
+    var commit = _ref.commit;
+
+    // commit('setIsLoading', true)
+    _api2.default.product.getOrder().then(function (res) {
+      console.log(res);
+      // commit('setOrder', res.data)
+      // commit('setIsLoading', false)
+    });
+  }
 };
 
 /***/ }),
@@ -47502,6 +47492,50 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   setIsLoading: function setIsLoading(state, value) {
     state.isLoading = value;
+  }
+};
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getOrders: function getOrders(page, params) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/orders").then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getOrder: function getOrder(id) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/orders/" + id).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
   }
 };
 
