@@ -1,9 +1,12 @@
 export default {
-    props: [],
+    props: ['orderId'],
     computed: {
         //
     },
     methods: {
         //
+    },
+    mounted() {
+        console.log(this.orderId)
     }
 };

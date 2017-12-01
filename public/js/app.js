@@ -47022,7 +47022,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), (_vm.displayedOrderId) ? _c('div', {
     staticClass: "row"
-  }, [_c('product')], 1) : _c('div', {
+  }, [_c('product', {
+    attrs: {
+      "orderId": _vm.displayedOrderId
+    }
+  })], 1) : _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.orders), function(order) {
     return _c('order-card', {
@@ -47241,12 +47245,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    props: [],
+    props: ['orderId'],
     computed: {
         //
     },
     methods: {
         //
+    },
+    mounted: function mounted() {
+        console.log(this.orderId);
     }
 };
 
