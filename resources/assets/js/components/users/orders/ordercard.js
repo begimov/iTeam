@@ -7,7 +7,7 @@ export default {
     },
     methods: {
         showMaterials() {
-            console.log('SHOWED');
+            this.$emit('showMaterials', this.order.id)
         }
     }
 };

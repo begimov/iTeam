@@ -10,7 +10,10 @@ export default {
     methods: {
         ...mapActions('users/profile', [
             'getOrders',
-        ])
+        ]),
+        showMaterials(id) {
+            console.log(id);
+        }
     },
     mounted() {
         this.getOrders();

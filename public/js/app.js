@@ -47116,7 +47116,11 @@ var _vuex = __webpack_require__(5);
 
 exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/profile', ['isLoading', 'orders'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders']), {
+        showMaterials: function showMaterials(id) {
+            console.log(id);
+        }
+    }),
     mounted: function mounted() {
         this.getOrders();
     }
@@ -47140,6 +47144,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       key: order.id,
       attrs: {
         "order": order
+      },
+      on: {
+        "showMaterials": _vm.showMaterials
       }
     })
   }))])
@@ -47211,7 +47218,7 @@ exports.default = {
     },
     methods: {
         showMaterials: function showMaterials() {
-            console.log('SHOWED');
+            this.$emit('showMaterials', this.order.id);
         }
     }
 };
