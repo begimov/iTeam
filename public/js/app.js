@@ -47471,7 +47471,7 @@ exports.default = {
     var commit = _ref.commit;
 
     // commit('setIsLoading', true)
-    _api2.default.product.getOrder().then(function (res) {
+    _api2.default.product.getOrder(id).then(function (res) {
       console.log(res);
       // commit('setOrder', res.data)
       // commit('setIsLoading', false)
