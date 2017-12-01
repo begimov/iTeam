@@ -15,4 +15,9 @@ class Order extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
