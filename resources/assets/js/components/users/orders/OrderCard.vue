@@ -26,4 +26,4 @@
     </div>         -->
 </template>
 
-<script src="./productcard.js"></script>
+<script src="./ordercard.js"></script>

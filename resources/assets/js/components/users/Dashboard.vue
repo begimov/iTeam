@@ -2,7 +2,7 @@
     <div class="container">
         <div v-bind:class="{ 'isActive': isLoading, 'loader': true, 'loader-def': true }"></div>
         <div class="row">
-            <product-card v-for="order in orders" :key="order.id" :order="order"></product-card>
+            <order-card v-for="order in orders" :key="order.id" :order="order"></order-card>
         </div>
     </div>
 </template>
