@@ -11,7 +11,7 @@ export default {
         ...mapActions('users/profile', [
             'getOrders',
         ]),
-        showMaterials(id) {
+        openProduct(id) {
             console.log(id);
         }
     },

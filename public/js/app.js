@@ -11966,6 +11966,7 @@ window.Vue = __webpack_require__(4);
 
 Vue.component('user-dashboard', __webpack_require__(52));
 Vue.component('order-card', __webpack_require__(55));
+Vue.component('users-product', __webpack_require__(63));
 
 var app = new Vue({
   el: '#app',
@@ -47117,7 +47118,7 @@ var _vuex = __webpack_require__(5);
 exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/profile', ['isLoading', 'orders'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/profile', ['getOrders']), {
-        showMaterials: function showMaterials(id) {
+        openProduct: function openProduct(id) {
             console.log(id);
         }
     }),
@@ -47146,10 +47147,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "order": order
       },
       on: {
-        "showMaterials": _vm.showMaterials
+        "openProduct": _vm.openProduct
       }
     })
-  }))])
+  })), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('users-product')], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -47217,8 +47220,8 @@ exports.default = {
         }
     },
     methods: {
-        showMaterials: function showMaterials() {
-            this.$emit('showMaterials', this.order.id);
+        openProduct: function openProduct() {
+            this.$emit('openProduct', this.order.id);
         }
     }
 };
@@ -47283,6 +47286,87 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(11)(
+  /* script */
+  __webpack_require__(65),
+  /* template */
+  __webpack_require__(64),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/users/products/Product.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Product.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-87c1008e", Component.options)
+  } else {
+    hotAPI.reload("data-v-87c1008e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3"
+  }, [_vm._v("\n    //\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-87c1008e", module.exports)
+  }
+}
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: [],
+    computed: {
+        //
+    },
+    methods: {
+        //
+    }
+};
 
 /***/ })
 /******/ ]);

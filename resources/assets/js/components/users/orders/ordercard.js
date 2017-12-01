@@ -6,8 +6,8 @@ export default {
         }
     },
     methods: {
-        showMaterials() {
-            this.$emit('showMaterials', this.order.id)
+        openProduct() {
+            this.$emit('openProduct', this.order.id)
         }
     }
 };
