@@ -6,7 +6,7 @@ use App\Models\Products\Product;
 
 class ProductTransformer extends \League\Fractal\TransformerAbstract
 {
-    protected $availableIncludes = ['material'];
+    protected $availableIncludes = ['materials'];
 
     public function transform(Product $product)
     {
@@ -17,7 +17,7 @@ class ProductTransformer extends \League\Fractal\TransformerAbstract
         ];
     }
 
-    public function includeMaterial(Product $product)
+    public function includeMaterials(Product $product)
     {
         return $this->collection($product->materials, new MaterialTransformer);
     }

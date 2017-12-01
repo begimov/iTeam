@@ -10,6 +10,7 @@ use App\Models\Products\Order;
 use App\Transformers\Products\OrderTransformer;
 
 use App\Repositories\Contracts\Products\OrderRepository;
+use App\Repositories\Eloquent\Criteria\With;
 
 class OrderController extends Controller
 {
@@ -64,10 +65,15 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = $this->orders->findById($id);
+        $relations = ['product', 'product.materials'];
+        
+        $order = $this->orders->withCriteria([
+            new With($relations)
+        ])->findById($id);
+
         return fractal()
             ->item($order)
-            ->parseIncludes(['product', 'product.material'])
+            ->parseIncludes($relations)
             ->transformWith(new OrderTransformer)
             ->toArray();
     }
