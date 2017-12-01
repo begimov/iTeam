@@ -5,6 +5,7 @@ export default {
         ...mapGetters('users/dashboard', [
             'isLoading',
             'orders',
+            'displayedProduct',
         ])
     },
     methods: {

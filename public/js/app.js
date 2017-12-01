@@ -47002,7 +47002,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(5);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedProduct'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders']), {
         openProduct: function openProduct(id) {
             console.log(id);
@@ -47024,7 +47024,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
     }
-  }), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), (_vm.displayedProduct) ? _c('div', {
+    staticClass: "row"
+  }, [_c('product')], 1) : _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.orders), function(order) {
     return _c('order-card', {
@@ -47036,9 +47038,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "openProduct": _vm.openProduct
       }
     })
-  })), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('product')], 1)])
+  }))])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -47144,7 +47144,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": function($event) {
         $event.preventDefault();
-        _vm.showMaterials($event)
+        _vm.openProduct($event)
       }
     }
   }, [_vm._v("Материалы")]) : [_c('a', {
@@ -47303,7 +47303,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   isLoading: false,
-  orders: []
+  orders: [],
+  displayedProduct: null
 };
 
 /***/ }),
@@ -47322,6 +47323,9 @@ exports.default = {
   },
   orders: function orders(state) {
     return state.orders;
+  },
+  displayedProduct: function displayedProduct(state) {
+    return state.displayedProduct;
   }
 };
 
