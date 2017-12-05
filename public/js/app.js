@@ -12301,6 +12301,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: function isLoading(state) {
     return state.isLoading;
+  },
+  order: function order(state) {
+    return state.order;
   }
 };
 
