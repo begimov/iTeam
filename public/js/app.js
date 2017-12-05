@@ -47529,7 +47529,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('h2', [_vm._v(_vm._s(material.name))]), _vm._v(" "), _vm._l((material.files.data), function(file) {
       return _c('span', {
         key: file.id
-      }, [_vm._v("\n            " + _vm._s(file.name) + " - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
+      }, [_c('a', {
+        attrs: {
+          "href": 'files/materials/id_' + material.id + '/' + file.name,
+          "download": ""
+        }
+      }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
     })], 2)
   })], 2) : _vm._e()
 },staticRenderFns: []}
