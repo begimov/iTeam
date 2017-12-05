@@ -6,7 +6,7 @@ use App\Models\Products\Product;
 
 class ProductTransformer extends \League\Fractal\TransformerAbstract
 {
-    protected $availableIncludes = ['materials'];
+    protected $availableIncludes = ['materials', 'files'];
 
     public function transform(Product $product)
     {
