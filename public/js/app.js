@@ -47411,7 +47411,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "card-header text-white",
     class: [_vm.isPaid ? 'bg-success' : 'bg-danger']
-  }, [_vm._v("\n            Оплачен (" + _vm._s(_vm.order.id) + ")\n        ")]), _vm._v(" "), _c('img', {
+  }, [_vm._v("\n            " + _vm._s(_vm.isPaid ? 'Оплачен' : 'Не оплачен') + " (" + _vm._s(_vm.order.id) + ")\n        ")]), _vm._v(" "), _c('img', {
     staticClass: "card-img-top",
     attrs: {
       "src": "https://iteam.ru/landing/template/img/mp_ychet.png"

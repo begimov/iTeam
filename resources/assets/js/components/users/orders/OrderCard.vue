@@ -2,7 +2,7 @@
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
         <div class="card" :class="{'border-success': isPaid, 'border-danger': !isPaid}">
             <div class="card-header text-white" :class="[isPaid ? 'bg-success' : 'bg-danger']">
-                Оплачен ({{order.id}})
+                {{ isPaid ? 'Оплачен' : 'Не оплачен' }} ({{order.id}})
             </div>
             <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png">
             <div class="card-body">
