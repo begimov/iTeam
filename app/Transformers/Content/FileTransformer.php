@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Transformers\Products;
+namespace App\Transformers\Content;
 
 use App\Models\Content\File;
 

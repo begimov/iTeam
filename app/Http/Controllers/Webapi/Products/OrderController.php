@@ -65,7 +65,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $relations = ['product', 'product.materials'];
+        $relations = ['product', 'product.materials', 'product.materials.files'];
         
         $order = $this->orders->withCriteria([
             new With($relations)
