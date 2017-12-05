@@ -16,6 +16,7 @@ export default {
     methods: {
         ...mapActions('users/product', [
             'getOrder',
+            'closeProduct',
         ])
     },
     mounted() {

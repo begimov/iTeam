@@ -12330,9 +12330,15 @@ exports.default = {
 
     // commit('setIsLoading', true)
     _api2.default.product.getOrder(id).then(function (res) {
-      commit('setOrder', res.data);
+      commit('setOrder', res.data.data);
       // commit('setIsLoading', false)
     });
+  },
+  closeProduct: function closeProduct(_ref2) {
+    var commit = _ref2.commit;
+
+    commit('users/dashboard/setDisplayedOrderId', null, { root: true });
+    commit('setOrder', null);
   }
 };
 
@@ -12351,7 +12357,7 @@ exports.default = {
         state.isLoading = value;
     },
     setOrder: function setOrder(state, payload) {
-        state.order = payload.data;
+        state.order = payload;
     }
 };
 
@@ -47510,7 +47516,7 @@ exports.default = {
             return this.product.materials.data;
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder', 'closeProduct'])),
     mounted: function mounted() {
         this.getOrder(this.orderId);
     }
@@ -47523,7 +47529,18 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return (_vm.order) ? _c('div', {
     staticClass: "col-md-12"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
+  }, [_c('a', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.closeProduct($event)
+      }
+    }
+  }, [_vm._v("Вернуться к заказам")]), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
     return _c('div', {
       key: material.id
     }, [_c('h2', [_vm._v(_vm._s(material.name))]), _vm._v(" "), _vm._l((material.files.data), function(file) {
