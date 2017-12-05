@@ -47502,7 +47502,14 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['orderId'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/product', ['order'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/product', ['order']), {
+        product: function product() {
+            return this.order.product.data;
+        },
+        materials: function materials() {
+            return this.product.materials.data;
+        }
+    }),
     methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder'])),
     mounted: function mounted() {
         this.getOrder(this.orderId);
@@ -47514,9 +47521,17 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return (_vm.order) ? _c('div', {
     staticClass: "col-md-12"
-  }, [_vm._v("\n    //\n")])
+  }, [_c('h1', [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
+    return _c('div', {
+      key: material.id
+    }, [_c('h2', [_vm._v(_vm._s(material.name))]), _vm._v(" "), _vm._l((material.files.data), function(file) {
+      return _c('span', {
+        key: file.id
+      }, [_vm._v("\n            " + _vm._s(file.name) + " - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
+    })], 2)
+  })], 2) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

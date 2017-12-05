@@ -5,7 +5,13 @@ export default {
     computed: {
         ...mapGetters('users/product', [
             'order'
-        ])
+        ]),
+        product() {
+            return this.order.product.data;
+        },
+        materials() {
+            return this.product.materials.data;
+        },
     },
     methods: {
         ...mapActions('users/product', [
