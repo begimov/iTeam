@@ -12326,12 +12326,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   getOrder: function getOrder(_ref, id) {
-    var commit = _ref.commit;
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
 
-    // commit('setIsLoading', true)
+    dispatch('setRootIsLoading', true);
     _api2.default.product.getOrder(id).then(function (res) {
       commit('setOrder', res.data.data);
-      // commit('setIsLoading', false)
+      dispatch('setRootIsLoading', false);
     });
   },
   closeProduct: function closeProduct(_ref2) {
@@ -12339,6 +12340,11 @@ exports.default = {
 
     commit('users/dashboard/setDisplayedOrderId', null, { root: true });
     commit('setOrder', null);
+  },
+  setRootIsLoading: function setRootIsLoading(_ref3, value) {
+    var commit = _ref3.commit;
+
+    commit('users/dashboard/setIsLoading', value, { root: true });
   }
 };
 
