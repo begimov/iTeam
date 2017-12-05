@@ -3,8 +3,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     props: ['orderId'],
     computed: {
-        ...mapGetters('users/dashboard', [
-            //
+        ...mapGetters('users/product', [
+            'order'
         ])
     },
     methods: {

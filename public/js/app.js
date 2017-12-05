@@ -47502,9 +47502,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['orderId'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', [
-        //
-    ])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/product', ['order'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder'])),
     mounted: function mounted() {
         this.getOrder(this.orderId);
