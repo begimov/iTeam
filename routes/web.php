@@ -13,4 +13,15 @@
 
 Route::get('/', 'Home\HomeController@index')->name('home');
 
+// User dashboard & profile
+Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'], function () {
+    Route::get('/', 'DashboardController@index')->name('user.dashboard.index');
+});
+
+// WebAPI
+Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
+    // Route for Profile.vue component
+    Route::resource('orders', 'Products\OrderController');
+});
+
 Auth::routes();
