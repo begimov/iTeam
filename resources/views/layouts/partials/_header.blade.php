@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-6">
       <svg id="svg1" width="48" height="48" fill="#c00" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
         <g id="svg1g0">
           <circle id="svg1c0" r="20" cy="70" cx="70"/>
@@ -19,16 +19,16 @@
         </g>
       </svg><a href="/">iTeam</a>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-6">
       @lang('partials.header.slogan')
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-6">
       <form class="form-inline">
         <input class="form-control" type="search" aria-label="Search">
       </form>
     </div>
-    <div class="col-md-3">
-      //
+    <div class="col-md-3 col-sm-6">
+      <a href="tel:+74991102684">+7 (499) 110 26 84</a>
     </div>
   </div>
 </div>
