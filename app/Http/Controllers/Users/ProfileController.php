@@ -9,6 +9,7 @@ class ProfileController extends Controller
 {
     public function edit()
     {
-        return view('users.profile.settings');
+        $user = auth()->user();
+        return view('users.profile.settings', compact('user'));
     }
 }
