@@ -16,6 +16,7 @@ Route::get('/', 'Home\HomeController@index')->name('home');
 // User dashboard & profile
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'], function () {
     Route::get('/', 'DashboardController@index')->name('user.dashboard.index');
+    Route::get('profile/settings', 'ProfileController@edit')->name('user.profile.settings');
 });
 
 // WebAPI
