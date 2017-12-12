@@ -23,7 +23,9 @@
       @lang('partials.header.slogan')
     </div>
     <div class="col-md-3">
-      //
+      <form class="form-inline">
+        <input class="form-control" type="search" aria-label="Search">
+      </form>
     </div>
     <div class="col-md-3">
       //
