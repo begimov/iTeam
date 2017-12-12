@@ -20,7 +20,7 @@
       </svg><a href="/">iTeam</a>
     </div>
     <div class="col-md-3">
-      {{__('partials.header.slogan')}}
+      @lang('partials.header.slogan')
     </div>
     <div class="col-md-3">
       //
