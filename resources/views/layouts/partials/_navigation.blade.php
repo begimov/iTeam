@@ -16,8 +16,8 @@
           <a class="dropdown-item" href="#">Мастер-проекты</a>
         </div>
       </li>
-      <a class="nav-link" href="#">Компания</a>
-      <a class="nav-link" href="#">Контакты</a>
+      <a class="nav-link" href="{{ route('company.about') }}">Компания</a>
+      <a class="nav-link" href="{{ route('company.contact') }}">Контакты</a>
     </li>
   </ul>
   
