@@ -4,7 +4,9 @@ export default {
         //
     },
     methods: {
-        //
+        close() {
+            console.log('closed')
+        }
     },
     mounted() {
         console.log(this.order)

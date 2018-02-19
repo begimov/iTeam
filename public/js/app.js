@@ -47750,7 +47750,9 @@ exports.default = {
         //
     },
     methods: {
-        //
+        close: function close() {
+            console.log('closed');
+        }
     },
     mounted: function mounted() {
         console.log(this.order);
@@ -47762,30 +47764,26 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "modal"
   }, [_c('div', {
-    staticClass: "modal-dialog",
-    attrs: {
-      "role": "document"
-    }
+    staticClass: "modal-dialog"
   }, [_c('div', {
     staticClass: "modal-content"
   }, [_c('div', {
     staticClass: "modal-header"
   }, [_c('h5', {
-    staticClass: "modal-title",
-    attrs: {
-      "id": "exampleModalLabel"
-    }
+    staticClass: "modal-title"
   }, [_vm._v("Modal title")]), _vm._v(" "), _c('button', {
     staticClass: "close",
     attrs: {
-      "type": "button",
-      "data-dismiss": "modal",
-      "aria-label": "Close"
+      "type": "button"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.close($event)
+      }
     }
   }, [_c('span', {
     attrs: {
@@ -47793,20 +47791,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("×")])])]), _vm._v(" "), _c('div', {
     staticClass: "modal-body"
-  }, [_vm._v("\n            ...\n        ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            ...\n        ")]), _vm._v(" "), _vm._m(0)])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      "type": "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Close")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "button"
     }
-  }, [_vm._v("Save changes")])])])])])
+  }, [_vm._v("Save changes")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
