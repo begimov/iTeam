@@ -28,10 +28,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = $this->orders->getAuthUserOrders()->get();
+        $relations = ['product'];
+
+        $orders = $this->orders->withCriteria([
+            new With($relations)
+        ])->getAuthUserOrders()->get();
 
         return fractal()
             ->collection($orders)
+            ->parseIncludes($relations)
             ->transformWith(new OrderTransformer)
             ->toArray();
     }
