@@ -47756,8 +47756,24 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
+    data: function data() {
+        return {
+            payment: {
+                WMI_MERCHANT_ID: "132360589069",
+                WMI_PAYMENT_AMOUNT: this.order.price,
+                WMI_CURRENCY_ID: "643",
+                WMI_PAYMENT_NO: this.order.id,
+                WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
+                WMI_AUTO_LOCATION: "1",
+                WMI_SUCCESS_URL: '',
+                WMI_FAIL_URL: '',
+                WMI_SIGNATURE: "0"
+            }
+        };
+    },
+
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'pay'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
         //
     }
@@ -47823,18 +47839,197 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(paymentType.name))])])
   }))])])])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
-  }, [_c('button', {
-    staticClass: "btn btn-primary",
+  }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
     attrs: {
-      "type": "button"
+      "method": "post",
+      "action": "https://wl.walletone.com/checkout/checkout/Index"
+    }
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_MERCHANT_ID),
+      expression: "payment.WMI_MERCHANT_ID"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_MERCHANT_ID"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_MERCHANT_ID)
     },
     on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.pay($event)
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_MERCHANT_ID = $event.target.value
       }
     }
-  }, [_vm._v("ОПЛАТИТЬ")])])])])])
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_PAYMENT_AMOUNT),
+      expression: "payment.WMI_PAYMENT_AMOUNT"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_PAYMENT_AMOUNT"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_PAYMENT_AMOUNT)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_PAYMENT_AMOUNT = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_CURRENCY_ID),
+      expression: "payment.WMI_CURRENCY_ID"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_CURRENCY_ID"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_CURRENCY_ID)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_CURRENCY_ID = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_PAYMENT_NO),
+      expression: "payment.WMI_PAYMENT_NO"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_PAYMENT_NO"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_PAYMENT_NO)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_PAYMENT_NO = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_DESCRIPTION),
+      expression: "payment.WMI_DESCRIPTION"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_DESCRIPTION"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_DESCRIPTION)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_DESCRIPTION = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_AUTO_LOCATION),
+      expression: "payment.WMI_AUTO_LOCATION"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_AUTO_LOCATION"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_AUTO_LOCATION)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_AUTO_LOCATION = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_SUCCESS_URL),
+      expression: "payment.WMI_SUCCESS_URL"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_SUCCESS_URL"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_SUCCESS_URL)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_SUCCESS_URL = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_FAIL_URL),
+      expression: "payment.WMI_FAIL_URL"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_FAIL_URL"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_FAIL_URL)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_FAIL_URL = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.payment.WMI_SIGNATURE),
+      expression: "payment.WMI_SIGNATURE"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_SIGNATURE"
+    },
+    domProps: {
+      "value": (_vm.payment.WMI_SIGNATURE)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.payment.WMI_SIGNATURE = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -48236,12 +48431,6 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('setSelectedPaymentType', id);
-  },
-  pay: function pay(_ref3) {
-    //
-
-    var commit = _ref3.commit,
-        state = _ref3.state;
   }
 };
 
