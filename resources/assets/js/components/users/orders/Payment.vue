@@ -25,15 +25,15 @@
             </div>
             <div class="modal-footer">
                 <form method="post" action="https://wl.walletone.com/checkout/checkout/Index" v-if="selectedPaymentTypeId === 2">
-                    <input type="hidden" name="WMI_MERCHANT_ID" v-model="payment.WMI_MERCHANT_ID"/>
-                    <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="payment.WMI_PAYMENT_AMOUNT"/>
-                    <input type="hidden" name="WMI_CURRENCY_ID" v-model="payment.WMI_CURRENCY_ID"/>
-                    <input type="hidden" name="WMI_PAYMENT_NO" v-model="payment.WMI_PAYMENT_NO"/>
-                    <input type="hidden" name="WMI_DESCRIPTION" v-model="payment.WMI_DESCRIPTION"/>
-                    <input type="hidden" name="WMI_AUTO_LOCATION" v-model="payment.WMI_AUTO_LOCATION"/>
-                    <input type="hidden" name="WMI_SUCCESS_URL" v-model="payment.WMI_SUCCESS_URL"/>
-                    <input type="hidden" name="WMI_FAIL_URL" v-model="payment.WMI_FAIL_URL"/>
-                    <input type="hidden" name="WMI_SIGNATURE" v-model="payment.WMI_SIGNATURE"/>
+                    <input type="hidden" name="WMI_MERCHANT_ID" v-model="walletOneOptions.WMI_MERCHANT_ID"/>
+                    <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="walletOneOptions.WMI_PAYMENT_AMOUNT"/>
+                    <input type="hidden" name="WMI_CURRENCY_ID" v-model="walletOneOptions.WMI_CURRENCY_ID"/>
+                    <input type="hidden" name="WMI_PAYMENT_NO" v-model="walletOneOptions.WMI_PAYMENT_NO"/>
+                    <input type="hidden" name="WMI_DESCRIPTION" v-model="walletOneOptions.WMI_DESCRIPTION"/>
+                    <input type="hidden" name="WMI_AUTO_LOCATION" v-model="walletOneOptions.WMI_AUTO_LOCATION"/>
+                    <input type="hidden" name="WMI_SUCCESS_URL" v-model="walletOneOptions.WMI_SUCCESS_URL"/>
+                    <input type="hidden" name="WMI_FAIL_URL" v-model="walletOneOptions.WMI_FAIL_URL"/>
+                    <input type="hidden" name="WMI_SIGNATURE" v-model="walletOneOptions.WMI_SIGNATURE"/>
                     <button type="submit" class="btn btn-primary">ОПЛАТИТЬ</button>
                 </form>
             </div>

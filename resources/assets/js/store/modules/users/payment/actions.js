@@ -7,4 +7,7 @@ export default {
   selectPaymentType({ commit }, id) {
     commit('setSelectedPaymentType', id)
   },
+  updateWalletOneOptions({ commit }, data) {
+    commit('updateWalletOneOptions', data)
+  },
 }

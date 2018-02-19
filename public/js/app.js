@@ -47758,24 +47758,19 @@ exports.default = {
     props: ['order'],
     data: function data() {
         return {
-            payment: {
-                WMI_MERCHANT_ID: "132360589069",
-                WMI_PAYMENT_AMOUNT: this.order.price,
-                WMI_CURRENCY_ID: "643",
-                WMI_PAYMENT_NO: this.order.id,
-                WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
-                WMI_AUTO_LOCATION: "1",
-                WMI_SUCCESS_URL: '',
-                WMI_FAIL_URL: '',
-                WMI_SIGNATURE: "0"
-            }
+            //
         };
     },
 
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes', 'walletOneOptions'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions'])),
     mounted: function mounted() {
-        //
+        this.updateWalletOneOptions({
+            WMI_PAYMENT_AMOUNT: this.order.price,
+            WMI_PAYMENT_NO: this.order.id,
+            WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
+            WMI_SIGNATURE: "0"
+        });
     }
 };
 
@@ -47848,180 +47843,180 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_MERCHANT_ID),
-      expression: "payment.WMI_MERCHANT_ID"
+      value: (_vm.walletOneOptions.WMI_MERCHANT_ID),
+      expression: "walletOneOptions.WMI_MERCHANT_ID"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_MERCHANT_ID"
     },
     domProps: {
-      "value": (_vm.payment.WMI_MERCHANT_ID)
+      "value": (_vm.walletOneOptions.WMI_MERCHANT_ID)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_MERCHANT_ID = $event.target.value
+        _vm.walletOneOptions.WMI_MERCHANT_ID = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_PAYMENT_AMOUNT),
-      expression: "payment.WMI_PAYMENT_AMOUNT"
+      value: (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT),
+      expression: "walletOneOptions.WMI_PAYMENT_AMOUNT"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_PAYMENT_AMOUNT"
     },
     domProps: {
-      "value": (_vm.payment.WMI_PAYMENT_AMOUNT)
+      "value": (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_PAYMENT_AMOUNT = $event.target.value
+        _vm.walletOneOptions.WMI_PAYMENT_AMOUNT = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_CURRENCY_ID),
-      expression: "payment.WMI_CURRENCY_ID"
+      value: (_vm.walletOneOptions.WMI_CURRENCY_ID),
+      expression: "walletOneOptions.WMI_CURRENCY_ID"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_CURRENCY_ID"
     },
     domProps: {
-      "value": (_vm.payment.WMI_CURRENCY_ID)
+      "value": (_vm.walletOneOptions.WMI_CURRENCY_ID)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_CURRENCY_ID = $event.target.value
+        _vm.walletOneOptions.WMI_CURRENCY_ID = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_PAYMENT_NO),
-      expression: "payment.WMI_PAYMENT_NO"
+      value: (_vm.walletOneOptions.WMI_PAYMENT_NO),
+      expression: "walletOneOptions.WMI_PAYMENT_NO"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_PAYMENT_NO"
     },
     domProps: {
-      "value": (_vm.payment.WMI_PAYMENT_NO)
+      "value": (_vm.walletOneOptions.WMI_PAYMENT_NO)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_PAYMENT_NO = $event.target.value
+        _vm.walletOneOptions.WMI_PAYMENT_NO = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_DESCRIPTION),
-      expression: "payment.WMI_DESCRIPTION"
+      value: (_vm.walletOneOptions.WMI_DESCRIPTION),
+      expression: "walletOneOptions.WMI_DESCRIPTION"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_DESCRIPTION"
     },
     domProps: {
-      "value": (_vm.payment.WMI_DESCRIPTION)
+      "value": (_vm.walletOneOptions.WMI_DESCRIPTION)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_DESCRIPTION = $event.target.value
+        _vm.walletOneOptions.WMI_DESCRIPTION = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_AUTO_LOCATION),
-      expression: "payment.WMI_AUTO_LOCATION"
+      value: (_vm.walletOneOptions.WMI_AUTO_LOCATION),
+      expression: "walletOneOptions.WMI_AUTO_LOCATION"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_AUTO_LOCATION"
     },
     domProps: {
-      "value": (_vm.payment.WMI_AUTO_LOCATION)
+      "value": (_vm.walletOneOptions.WMI_AUTO_LOCATION)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_AUTO_LOCATION = $event.target.value
+        _vm.walletOneOptions.WMI_AUTO_LOCATION = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_SUCCESS_URL),
-      expression: "payment.WMI_SUCCESS_URL"
+      value: (_vm.walletOneOptions.WMI_SUCCESS_URL),
+      expression: "walletOneOptions.WMI_SUCCESS_URL"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_SUCCESS_URL"
     },
     domProps: {
-      "value": (_vm.payment.WMI_SUCCESS_URL)
+      "value": (_vm.walletOneOptions.WMI_SUCCESS_URL)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_SUCCESS_URL = $event.target.value
+        _vm.walletOneOptions.WMI_SUCCESS_URL = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_FAIL_URL),
-      expression: "payment.WMI_FAIL_URL"
+      value: (_vm.walletOneOptions.WMI_FAIL_URL),
+      expression: "walletOneOptions.WMI_FAIL_URL"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_FAIL_URL"
     },
     domProps: {
-      "value": (_vm.payment.WMI_FAIL_URL)
+      "value": (_vm.walletOneOptions.WMI_FAIL_URL)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_FAIL_URL = $event.target.value
+        _vm.walletOneOptions.WMI_FAIL_URL = $event.target.value
       }
     }
   }), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.payment.WMI_SIGNATURE),
-      expression: "payment.WMI_SIGNATURE"
+      value: (_vm.walletOneOptions.WMI_SIGNATURE),
+      expression: "walletOneOptions.WMI_SIGNATURE"
     }],
     attrs: {
       "type": "hidden",
       "name": "WMI_SIGNATURE"
     },
     domProps: {
-      "value": (_vm.payment.WMI_SIGNATURE)
+      "value": (_vm.walletOneOptions.WMI_SIGNATURE)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.payment.WMI_SIGNATURE = $event.target.value
+        _vm.walletOneOptions.WMI_SIGNATURE = $event.target.value
       }
     }
   }), _vm._v(" "), _c('button', {
@@ -48382,7 +48377,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Яндекс.Касса', desc: '' }, { id: 2, name: 'Единая касса', decs: '' }]
+    paymentTypes: [{ id: 1, name: 'Яндекс.Касса', desc: '' }, { id: 2, name: 'Единая касса', decs: '' }],
+    walletOneOptions: {
+        WMI_MERCHANT_ID: "132360589069",
+        WMI_PAYMENT_AMOUNT: '',
+        WMI_CURRENCY_ID: "643",
+        WMI_PAYMENT_NO: '',
+        WMI_DESCRIPTION: '',
+        WMI_AUTO_LOCATION: "1",
+        WMI_SUCCESS_URL: '',
+        WMI_FAIL_URL: '',
+        WMI_SIGNATURE: "0"
+    }
 };
 
 /***/ }),
@@ -48401,6 +48407,9 @@ exports.default = {
     },
     paymentTypes: function paymentTypes(state) {
         return state.paymentTypes;
+    },
+    walletOneOptions: function walletOneOptions(state) {
+        return state.walletOneOptions;
     }
 };
 
@@ -48431,6 +48440,11 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('setSelectedPaymentType', id);
+  },
+  updateWalletOneOptions: function updateWalletOneOptions(_ref3, data) {
+    var commit = _ref3.commit;
+
+    commit('updateWalletOneOptions', data);
   }
 };
 
@@ -48444,9 +48458,15 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 exports.default = {
     setSelectedPaymentType: function setSelectedPaymentType(state, id) {
         state.selectedPaymentTypeId = id;
+    },
+    updateWalletOneOptions: function updateWalletOneOptions(state, data) {
+        state.walletOneOptions = _extends({}, state.walletOneOptions, data);
     }
 };
 
