@@ -47754,6 +47754,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _vuex = __webpack_require__(3);
 
+var _config = __webpack_require__(85);
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
     props: ['order'],
     data: function data() {
@@ -47769,6 +47775,8 @@ exports.default = {
             WMI_PAYMENT_AMOUNT: this.order.price,
             WMI_PAYMENT_NO: this.order.id,
             WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
+            WMI_SUCCESS_URL: _config2.default.payments.WMI_SUCCESS_URL,
+            WMI_FAIL_URL: _config2.default.payments.WMI_FAIL_URL,
             WMI_SIGNATURE: "0"
         });
     }
@@ -48468,6 +48476,43 @@ exports.default = {
     updateWalletOneOptions: function updateWalletOneOptions(state, data) {
         state.walletOneOptions = _extends({}, state.walletOneOptions, data);
     }
+};
+
+/***/ }),
+/* 84 */,
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _payments = __webpack_require__(86);
+
+var _payments2 = _interopRequireDefault(_payments);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    payments: _payments2.default
+};
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    WMI_SUCCESS_URL: "https://iteam.ru/user",
+    WMI_FAIL_URL: "https://iteam.ru/user"
 };
 
 /***/ })
