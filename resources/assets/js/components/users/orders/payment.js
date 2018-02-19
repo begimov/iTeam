@@ -11,6 +11,7 @@ export default {
     methods: {
         ...mapActions('users/payment', [
             'closePayment',
+            'selectPaymentType',
         ]),
         close() {
             this.closePayment()

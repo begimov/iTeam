@@ -14,7 +14,9 @@
                         <div class="col">
                             <ul class="nav nav-pills nav-fill">
                                 <li class="nav-item" v-for="paymentType in paymentTypes" v-bind:key="paymentType.id">
-                                    <a :class="{ 'nav-link': true, 'active': paymentType.id === selectedPaymentTypeId }" href="#">{{ paymentType.name }}</a>
+                                    <a :class="{ 'nav-link': true, 'active': paymentType.id === selectedPaymentTypeId }" 
+                                        href="#"
+                                        @click.prevent="selectPaymentType(paymentType.id)">{{ paymentType.name }}</a>
                                 </li>
                             </ul>
                         </div>

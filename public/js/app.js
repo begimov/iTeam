@@ -47757,7 +47757,7 @@ var _vuex = __webpack_require__(3);
 exports.default = {
     props: ['order'],
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment']), {
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType']), {
         close: function close() {
             this.closePayment();
         }
@@ -47817,6 +47817,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       attrs: {
         "href": "#"
+      },
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.selectPaymentType(paymentType.id)
+        }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
   }))])])])]), _vm._v(" "), _vm._m(0)])])])
@@ -48225,6 +48231,11 @@ exports.default = {
     var commit = _ref.commit;
 
     commit('users/dashboard/setPaymentOrder', null, { root: true });
+  },
+  selectPaymentType: function selectPaymentType(_ref2, id) {
+    var commit = _ref2.commit;
+
+    commit('setSelectedPaymentType', id);
   }
 };
 
@@ -48239,7 +48250,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    //
+    setSelectedPaymentType: function setSelectedPaymentType(state, id) {
+        state.selectedPaymentTypeId = id;
+    }
 };
 
 /***/ })
