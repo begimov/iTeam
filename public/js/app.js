@@ -47765,7 +47765,7 @@ exports.default = {
         }
     }),
     mounted: function mounted() {
-        console.log(this.order);
+        //
     }
 };
 
@@ -47784,7 +47784,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-header"
   }, [_c('h5', {
     staticClass: "modal-title"
-  }, [_vm._v("Modal title")]), _vm._v(" "), _c('button', {
+  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('button', {
     staticClass: "close",
     attrs: {
       "type": "button"
@@ -47801,8 +47801,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("×")])])]), _vm._v(" "), _c('div', {
     staticClass: "modal-body"
-  }, [_vm._v("\n            ...\n        ")]), _vm._v(" "), _vm._m(0)])])])
+  }, [_c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('ul', {
+    staticClass: "nav nav-pills nav-fill"
+  }, [_c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    class: {
+      'nav-link': true, 'active': false
+    },
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("Яндекс.Касса")])]), _vm._v(" "), _vm._m(0)])])])])]), _vm._v(" "), _vm._m(1)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', {
+    staticClass: "nav-item"
+  }, [_c('a', {
+    staticClass: "nav-link",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("Единая касса")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
@@ -47810,7 +47836,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "button"
     }
-  }, [_vm._v("Save changes")])])
+  }, [_vm._v("ОПЛАТИТЬ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

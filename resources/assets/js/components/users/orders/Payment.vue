@@ -3,16 +3,29 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">{{ this.order.product.data.name }}</h5>
                 <button type="button" class="close" @click.prevent="close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="nav nav-pills nav-fill">
+                                <li class="nav-item">
+                                    <a :class="{ 'nav-link': true, 'active': false }" href="#">Яндекс.Касса</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Единая касса</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">ОПЛАТИТЬ</button>
             </div>
             </div>
         </div>
