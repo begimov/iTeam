@@ -1,6 +1,6 @@
 <template>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -21,3 +21,11 @@
 </template>
 
 <script src="./payment.js"></script>
+<style>
+.modal {
+    display: block;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #999;
+    background-color: rgba(0,0,0,0.4);
+}
+</style>
