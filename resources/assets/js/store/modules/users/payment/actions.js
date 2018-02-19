@@ -6,5 +6,8 @@ export default {
   },
   selectPaymentType({ commit }, id) {
     commit('setSelectedPaymentType', id)
+  },
+  pay({ commit, state }) {
+    //
   }
 }

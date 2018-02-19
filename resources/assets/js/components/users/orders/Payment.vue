@@ -4,7 +4,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ this.order.product.data.name }}</h5>
-                <button type="button" class="close" @click.prevent="close">
+                <button type="button" class="close" @click.prevent="closePayment">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">ОПЛАТИТЬ</button>
+                <button type="button" class="btn btn-primary" @click.prevent="pay">ОПЛАТИТЬ</button>
             </div>
             </div>
         </div>

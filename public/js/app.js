@@ -47757,11 +47757,7 @@ var _vuex = __webpack_require__(3);
 exports.default = {
     props: ['order'],
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType']), {
-        close: function close() {
-            this.closePayment();
-        }
-    }),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'pay'])),
     mounted: function mounted() {
         //
     }
@@ -47790,7 +47786,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": function($event) {
         $event.preventDefault();
-        _vm.close($event)
+        _vm.closePayment($event)
       }
     }
   }, [_c('span', {
@@ -47825,17 +47821,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])])])]), _vm._v(" "), _vm._m(0)])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }))])])])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "button"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.pay($event)
+      }
     }
-  }, [_vm._v("ОПЛАТИТЬ")])])
-}]}
+  }, [_vm._v("ОПЛАТИТЬ")])])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -48236,6 +48236,12 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('setSelectedPaymentType', id);
+  },
+  pay: function pay(_ref3) {
+    //
+
+    var commit = _ref3.commit,
+        state = _ref3.state;
   }
 };
 

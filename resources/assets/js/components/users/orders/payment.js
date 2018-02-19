@@ -12,10 +12,8 @@ export default {
         ...mapActions('users/payment', [
             'closePayment',
             'selectPaymentType',
+            'pay',
         ]),
-        close() {
-            this.closePayment()
-        }
     },
     mounted() {
         //
