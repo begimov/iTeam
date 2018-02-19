@@ -47407,6 +47407,9 @@ exports.default = {
     methods: {
         openProduct: function openProduct() {
             this.$emit('openProduct', this.order.id);
+        },
+        orderPayment: function orderPayment() {
+            this.$emit('orderPayment', this.order);
         }
     }
 };
@@ -47450,6 +47453,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-dark",
     attrs: {
       "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.orderPayment($event)
+      }
     }
   }, [_vm._v("Оплатить")]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-link",
