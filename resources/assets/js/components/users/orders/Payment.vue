@@ -13,11 +13,8 @@
                     <div class="row">
                         <div class="col">
                             <ul class="nav nav-pills nav-fill">
-                                <li class="nav-item">
-                                    <a :class="{ 'nav-link': true, 'active': false }" href="#">Яндекс.Касса</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Единая касса</a>
+                                <li class="nav-item" v-for="paymentType in paymentTypes" v-bind:key="paymentType.id">
+                                    <a :class="{ 'nav-link': true, 'active': paymentType.id === selectedPaymentTypeId }" href="#">{{ paymentType.name }}</a>
                                 </li>
                             </ul>
                         </div>

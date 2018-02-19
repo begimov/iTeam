@@ -47756,9 +47756,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: {
-        //
-    },
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment']), {
         close: function close() {
             this.closePayment();
@@ -47809,26 +47807,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col"
   }, [_c('ul', {
     staticClass: "nav nav-pills nav-fill"
-  }, [_c('li', {
-    staticClass: "nav-item"
-  }, [_c('a', {
-    class: {
-      'nav-link': true, 'active': false
-    },
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("Яндекс.Касса")])]), _vm._v(" "), _vm._m(0)])])])])]), _vm._v(" "), _vm._m(1)])])])
+  }, _vm._l((_vm.paymentTypes), function(paymentType) {
+    return _c('li', {
+      key: paymentType.id,
+      staticClass: "nav-item"
+    }, [_c('a', {
+      class: {
+        'nav-link': true, 'active': paymentType.id === _vm.selectedPaymentTypeId
+      },
+      attrs: {
+        "href": "#"
+      }
+    }, [_vm._v(_vm._s(paymentType.name))])])
+  }))])])])]), _vm._v(" "), _vm._m(0)])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', {
-    staticClass: "nav-item"
-  }, [_c('a', {
-    staticClass: "nav-link",
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("Единая касса")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
@@ -48188,7 +48180,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    paymentType: null
+    selectedPaymentTypeId: 1,
+    paymentTypes: [{ id: 1, name: 'Яндекс.Касса', desc: '' }, { id: 2, name: 'Единая касса', decs: '' }]
 };
 
 /***/ }),
@@ -48202,7 +48195,12 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    //
+    selectedPaymentTypeId: function selectedPaymentTypeId(state) {
+        return state.selectedPaymentTypeId;
+    },
+    paymentTypes: function paymentTypes(state) {
+        return state.paymentTypes;
+    }
 };
 
 /***/ }),
