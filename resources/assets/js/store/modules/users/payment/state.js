@@ -1,4 +1,3 @@
 export default {
-  isLoading: false,
-  paymentOrder: null
+    paymentType: null,
 }

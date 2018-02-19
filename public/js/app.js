@@ -47749,16 +47749,21 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(3);
+
 exports.default = {
     props: ['order'],
     computed: {
         //
     },
-    methods: {
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment']), {
         close: function close() {
-            console.log('closed');
+            this.closePayment();
         }
-    },
+    }),
     mounted: function mounted() {
         console.log(this.order);
     }
@@ -48154,11 +48159,10 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = {
-  isLoading: false,
-  paymentOrder: null
+    paymentType: null
 };
 
 /***/ }),
@@ -48169,15 +48173,10 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = {
-  // isLoading(state) {
-  //   return state.isLoading
-  // },
-  // order(state) {
-  //   return state.order
-  // },
+    //
 };
 
 /***/ }),
@@ -48198,13 +48197,11 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  // closeProduct({ commit }) {
-  //   commit('users/dashboard/setDisplayedOrderId', null, { root: true })
-  //   commit('setOrder', null)
-  // },
-  // setRootIsLoading({ commit }, value) {
-  //   commit('users/dashboard/setIsLoading', value, { root: true })
-  // }
+  closePayment: function closePayment(_ref) {
+    var commit = _ref.commit;
+
+    commit('users/dashboard/setPaymentOrder', null, { root: true });
+  }
 };
 
 /***/ }),
@@ -48215,15 +48212,10 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = {
-  //   setIsLoading (state, value) {
-  //       state.isLoading = value
-  //   },
-  //   setOrder (state, payload) {
-  //       state.order = payload
-  //   },
+    //
 };
 
 /***/ })

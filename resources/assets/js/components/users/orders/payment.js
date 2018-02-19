@@ -1,11 +1,16 @@
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
     props: ['order'],
     computed: {
         //
     },
     methods: {
+        ...mapActions('users/payment', [
+            'closePayment',
+        ]),
         close() {
-            console.log('closed')
+            this.closePayment()
         }
     },
     mounted() {
