@@ -6,7 +6,8 @@
             </div>
             <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png">
             <div class="card-body">
-                <p class="card-text">Название мастер-проекта или мастер-класса</p>
+                <p class="card-text">{{ order.product.data.name }}</p>
+                <h3 v-if="!isPaid"><span class="badge badge-primary">{{ order.price }}&nbsp;руб.</span></h3>
                 <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="openProduct">Материалы</a>
                 <template v-else>
                     <a href="#" class="btn btn-dark" @click.prevent="orderPayment">Оплатить</a>

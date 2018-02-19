@@ -47448,7 +47448,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-body"
   }, [_c('p', {
     staticClass: "card-text"
-  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), (_vm.isPaid) ? _c('a', {
+  }, [_vm._v(_vm._s(_vm.order.product.data.name))]), _vm._v(" "), (!_vm.isPaid) ? _c('h3', [_c('span', {
+    staticClass: "badge badge-primary"
+  }, [_vm._v(_vm._s(_vm.order.price) + " руб.")])]) : _vm._e(), _vm._v(" "), (_vm.isPaid) ? _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
