@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export default {
     props: ['order'],
     computed: {
@@ -5,5 +7,12 @@ export default {
     },
     methods: {
         //
+    },
+    mounted() {
+        $(document).ready(
+            function() {
+                $("#exampleModal").modal('toggle')
+            }
+        )
     }
 };
