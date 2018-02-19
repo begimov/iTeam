@@ -116,4 +116,14 @@ class OrderController extends Controller
     {
         //
     }
+
+    /**
+     * Returns available payment types
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function paymentTypes()
+    {
+        return 1;
+    }
 }

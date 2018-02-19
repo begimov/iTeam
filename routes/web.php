@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 // WebAPI
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Route for Profile.vue component
+    Route::get('orders/paymenttypes', 'Products\OrderController@paymentTypes');
     Route::resource('orders', 'Products\OrderController');
 });
 
