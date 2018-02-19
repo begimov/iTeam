@@ -11,4 +11,7 @@ export default {
   openProduct({ commit, state }, orderId) {
     commit('setDisplayedOrderId', orderId)
   },
+  orderPayment({ commit, state }, order) {
+    commit('setPaymentOrder', order)
+  },
 }

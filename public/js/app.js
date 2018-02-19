@@ -12172,6 +12172,12 @@ exports.default = {
         state = _ref2.state;
 
     commit('setDisplayedOrderId', orderId);
+  },
+  orderPayment: function orderPayment(_ref3, order) {
+    var commit = _ref3.commit,
+        state = _ref3.state;
+
+    commit('setPaymentOrder', order);
   }
 };
 
@@ -12238,6 +12244,9 @@ exports.default = {
     },
     setDisplayedOrderId: function setDisplayedOrderId(state, id) {
         state.displayedOrderId = id;
+    },
+    setPaymentOrder: function setPaymentOrder(state, order) {
+        state.paymentOrder = order;
     }
 };
 
@@ -47298,7 +47307,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId', 'paymentOrder'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct', 'orderPayment'])),
     mounted: function mounted() {
         this.getOrders();
     }
@@ -47330,7 +47339,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "order": order
       },
       on: {
-        "openProduct": _vm.openProduct
+        "openProduct": _vm.openProduct,
+        "orderPayment": _vm.orderPayment
       }
     })
   })), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {

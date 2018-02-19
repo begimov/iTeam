@@ -8,4 +8,7 @@ export default {
   setDisplayedOrderId (state, id) {
       state.displayedOrderId = id
   },
+  setPaymentOrder (state, order) {
+      state.paymentOrder = order
+  },
 }

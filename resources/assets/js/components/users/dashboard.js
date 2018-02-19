@@ -13,6 +13,7 @@ export default {
         ...mapActions('users/dashboard', [
             'getOrders',
             'openProduct',
+            'orderPayment',
         ])
     },
     mounted() {
