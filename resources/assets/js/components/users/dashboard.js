@@ -6,6 +6,7 @@ export default {
             'isLoading',
             'orders',
             'displayedOrderId',
+            'paymentOrder',
         ])
     },
     methods: {

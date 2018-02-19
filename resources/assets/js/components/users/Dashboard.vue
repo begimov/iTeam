@@ -11,7 +11,7 @@
                 :order="order"
                 v-on:openProduct="openProduct"></order-card>
         </div>
-        <order-payment order="1" />
+        <order-payment :order="this.paymentOrder" v-if="this.paymentOrder" />
     </div>
 </template>
 

@@ -12111,7 +12111,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: false,
   orders: [],
-  displayedOrderId: null
+  displayedOrderId: null,
+  paymentOrder: null
 };
 
 /***/ }),
@@ -12133,6 +12134,9 @@ exports.default = {
   },
   displayedOrderId: function displayedOrderId(state) {
     return state.displayedOrderId;
+  },
+  paymentOrder: function paymentOrder(state) {
+    return state.paymentOrder;
   }
 };
 
@@ -47293,7 +47297,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(3);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId', 'paymentOrder'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct'])),
     mounted: function mounted() {
         this.getOrders();
@@ -47329,11 +47333,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "openProduct": _vm.openProduct
       }
     })
-  })), _vm._v(" "), _c('order-payment', {
+  })), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
     attrs: {
-      "order": "1"
+      "order": this.paymentOrder
     }
-  })], 1)
+  }) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -47728,7 +47732,7 @@ exports.default = {
         //
     },
     mounted: function mounted() {
-        //
+        console.log(this.order);
     }
 };
 
