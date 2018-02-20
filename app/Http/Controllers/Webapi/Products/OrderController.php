@@ -12,13 +12,17 @@ use App\Transformers\Products\OrderTransformer;
 use App\Repositories\Contracts\Products\OrderRepository;
 use App\Repositories\Eloquent\Criteria\With;
 
+use App\Services\Payments\Contracts\IWalletOne;
+
 class OrderController extends Controller
 {
     protected $orders;
+    protected $walletOne;
 
-    public function __construct(OrderRepository $orders)
+    public function __construct(OrderRepository $orders, IWalletOne $walletOne)
     {
         $this->orders = $orders;
+        $this->walletOne = $walletOne;
     }
 
     /**
@@ -115,5 +119,15 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Get WalletOne payment signature.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getWalletOnePaymentSignature()
+    {
+        dd($this->walletOne);
     }
 }
