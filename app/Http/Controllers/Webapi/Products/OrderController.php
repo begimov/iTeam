@@ -122,7 +122,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Get WalletOne payment signature.
+     * Get payment signature.
      *
      * @return \Illuminate\Http\Response
      */
