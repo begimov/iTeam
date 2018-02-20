@@ -128,7 +128,6 @@ class OrderController extends Controller
      */
     public function getPaymentSignature(Request $request)
     {
-        dd($request->all());
-        // $this->walletOne;
+        dd($this->walletOne->generatePaymentSignature($request->all()));
     }
 }
