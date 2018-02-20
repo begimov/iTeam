@@ -10,4 +10,8 @@ export default {
   updateWalletOneOptions({ commit }, data) {
     commit('updateWalletOneOptions', data)
   },
+  buy({ commit, state }) {
+    console.log(state.walletOneOptions)
+    // commit('updateWalletOneOptions', data)
+  },
 }

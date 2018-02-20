@@ -34,7 +34,7 @@
                     <input type="hidden" name="WMI_SUCCESS_URL" v-model="walletOneOptions.WMI_SUCCESS_URL"/>
                     <input type="hidden" name="WMI_FAIL_URL" v-model="walletOneOptions.WMI_FAIL_URL"/>
                     <input type="hidden" name="WMI_SIGNATURE" v-model="walletOneOptions.WMI_SIGNATURE"/>
-                    <button type="submit" class="btn btn-primary">ОПЛАТИТЬ</button>
+                    <button type="submit" class="btn btn-primary" @click.prevent="buy">ОПЛАТИТЬ</button>
                 </form>
             </div>
             </div>

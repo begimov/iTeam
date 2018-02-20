@@ -126,8 +126,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getPaymentSignature()
+    public function getPaymentSignature(Request $request)
     {
-        dd($this->walletOne);
+        dd($request->all());
+        // $this->walletOne;
     }
 }

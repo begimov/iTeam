@@ -20,6 +20,7 @@ export default {
             'closePayment',
             'selectPaymentType',
             'updateWalletOneOptions',
+            'buy',
         ]),
     },
     mounted() {
