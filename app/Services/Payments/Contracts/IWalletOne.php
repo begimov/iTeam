@@ -4,5 +4,5 @@ namespace App\Services\Payments\Contracts;
 
 interface IWalletOne
 {
-    public function generatePaymentSignature();
+    public function generatePaymentSignature(array $formFields);
 }
