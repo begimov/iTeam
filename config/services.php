@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'walletone' => [
+        'key' => env('WALLETONE_KEY'),
+    ],
+
 ];
