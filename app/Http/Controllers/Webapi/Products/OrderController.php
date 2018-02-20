@@ -128,6 +128,11 @@ class OrderController extends Controller
      */
     public function getPaymentSignature(Request $request)
     {
-        dd($this->walletOne->generatePaymentSignature($request->all()));
+        return response()->json([
+            'status' => 'OK',
+            'data' => [
+                'WMI_SIGNATURE' => $this->walletOne->generatePaymentSignature($request->all())
+            ]
+        ]);
     }
 }
