@@ -12,6 +12,11 @@ export default {
   },
   buy({ commit, state }) {
     console.log(state.walletOneOptions)
-    // commit('updateWalletOneOptions', data)
+    api.payment.getPaymentSignature(state.walletOneOptions).then(res => {
+      console.log(res)
+      // resolve(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
 }

@@ -12514,7 +12514,12 @@ exports.default = {
         state = _ref4.state;
 
     console.log(state.walletOneOptions);
-    // commit('updateWalletOneOptions', data)
+    _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
+      console.log(res);
+      // resolve(res)
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 };
 
@@ -48551,7 +48556,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   getPaymentSignature: function getPaymentSignature(payload) {
     return new Promise(function (resolve, reject) {
-      axios.post("/webapi/orderspayment/signature", payload).then(function (res) {
+      axios.post("/webapi/orders/payment/signature", {
+        params: payload
+      }).then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);

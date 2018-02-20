@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 // WebAPI
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Route for Profile.vue component
-    Route::get('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
+    Route::post('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
     Route::resource('orders', 'Products\OrderController');
 });
 
