@@ -392,11 +392,16 @@ var _product = __webpack_require__(21);
 
 var _product2 = _interopRequireDefault(_product);
 
+var _payment = __webpack_require__(86);
+
+var _payment2 = _interopRequireDefault(_payment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   dashboard: _dashboard2.default,
-  product: _product2.default
+  product: _product2.default,
+  payment: _payment2.default
 };
 
 /***/ }),
@@ -48529,6 +48534,31 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getPaymentSignature: function getPaymentSignature(payload) {
+    return new Promise(function (resolve, reject) {
+      axios.post("/webapi/orderspayment/signature", payload).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
 
 /***/ })
 /******/ ]);
