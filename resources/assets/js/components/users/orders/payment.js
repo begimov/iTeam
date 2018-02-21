@@ -22,6 +22,15 @@ export default {
             'updateWalletOneOptions',
             'buy',
         ]),
+        purchase() {
+            this.buy().then(res => {
+                this.$nextTick(() => {
+                    this.$refs.woform.submit()
+                })
+            }).catch(err => {
+                console.log(err)
+            })
+        }
     },
     mounted() {
         this.updateWalletOneOptions({

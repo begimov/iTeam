@@ -12535,11 +12535,13 @@ exports.default = {
     var commit = _ref4.commit,
         state = _ref4.state;
 
-    _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
-      console.log(res.data.data);
-      commit('updateWalletOneOptions', res.data.data);
-    }).catch(function (err) {
-      console.log(err);
+    return new Promise(function (resolve, reject) {
+      _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
+        commit('updateWalletOneOptions', res.data.data);
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
     });
   }
 };
@@ -48122,7 +48124,19 @@ exports.default = {
     },
 
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes', 'walletOneOptions'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions', 'buy'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions', 'buy']), {
+        purchase: function purchase() {
+            var _this = this;
+
+            this.buy().then(function (res) {
+                _this.$nextTick(function () {
+                    _this.$refs.woform.submit();
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }),
     mounted: function mounted() {
         this.updateWalletOneOptions({
             WMI_MERCHANT_ID: _config2.default.payments.WMI_MERCHANT_ID,
@@ -48238,6 +48252,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))])])])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
+    ref: "woform",
     attrs: {
       "method": "post",
       "action": "https://wl.walletone.com/checkout/checkout/Index"
@@ -48430,7 +48445,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": function($event) {
         $event.preventDefault();
-        _vm.buy($event)
+        _vm.purchase($event)
       }
     }
   }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])

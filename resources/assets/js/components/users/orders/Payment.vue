@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <form method="post" action="https://wl.walletone.com/checkout/checkout/Index" v-if="selectedPaymentTypeId === 2">
+                <form ref="woform" method="post" action="https://wl.walletone.com/checkout/checkout/Index" v-if="selectedPaymentTypeId === 2">
                     <input type="hidden" name="WMI_MERCHANT_ID" v-model="walletOneOptions.WMI_MERCHANT_ID"/>
                     <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="walletOneOptions.WMI_PAYMENT_AMOUNT"/>
                     <input type="hidden" name="WMI_CURRENCY_ID" v-model="walletOneOptions.WMI_CURRENCY_ID"/>
@@ -34,7 +34,7 @@
                     <input type="hidden" name="WMI_SUCCESS_URL" v-model="walletOneOptions.WMI_SUCCESS_URL"/>
                     <input type="hidden" name="WMI_FAIL_URL" v-model="walletOneOptions.WMI_FAIL_URL"/>
                     <input type="hidden" name="WMI_SIGNATURE" v-model="walletOneOptions.WMI_SIGNATURE"/>
-                    <button type="submit" class="btn btn-primary" @click.prevent="buy">ОПЛАТИТЬ</button>
+                    <button type="submit" class="btn btn-primary" @click.prevent="purchase">ОПЛАТИТЬ</button>
                 </form>
             </div>
             </div>
