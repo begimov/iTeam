@@ -19,6 +19,7 @@ import store from './store'
 
 Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
 Vue.component('order-card', require('./components/users/orders/OrderCard.vue'));
+Vue.component('order-payment', require('./components/users/orders/Payment.vue'));
 Vue.component('product', require('./components/users/products/Product.vue'));
 
 const app = new Vue({

@@ -6,12 +6,14 @@ export default {
             'isLoading',
             'orders',
             'displayedOrderId',
+            'paymentOrder',
         ])
     },
     methods: {
         ...mapActions('users/dashboard', [
             'getOrders',
             'openProduct',
+            'orderPayment',
         ])
     },
     mounted() {

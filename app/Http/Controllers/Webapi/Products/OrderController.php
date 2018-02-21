@@ -12,13 +12,17 @@ use App\Transformers\Products\OrderTransformer;
 use App\Repositories\Contracts\Products\OrderRepository;
 use App\Repositories\Eloquent\Criteria\With;
 
+use App\Services\Payments\Contracts\IWalletOne;
+
 class OrderController extends Controller
 {
     protected $orders;
+    protected $walletOne;
 
-    public function __construct(OrderRepository $orders)
+    public function __construct(OrderRepository $orders, IWalletOne $walletOne)
     {
         $this->orders = $orders;
+        $this->walletOne = $walletOne;
     }
 
     /**
@@ -28,10 +32,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = $this->orders->getAuthUserOrders()->get();
+        $relations = ['product'];
+
+        $orders = $this->orders->withCriteria([
+            new With($relations)
+        ])->getAuthUserOrders()->get();
 
         return fractal()
             ->collection($orders)
+            ->parseIncludes($relations)
             ->transformWith(new OrderTransformer)
             ->toArray();
     }
@@ -110,5 +119,20 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Get payment signature.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getPaymentSignature(Request $request)
+    {
+        return response()->json([
+            'status' => 'OK',
+            'data' => [
+                'WMI_SIGNATURE' => $this->walletOne->generatePaymentSignature($request->all())
+            ]
+        ]);
     }
 }

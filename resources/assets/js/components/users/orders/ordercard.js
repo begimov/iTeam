@@ -8,6 +8,9 @@ export default {
     methods: {
         openProduct() {
             this.$emit('openProduct', this.order.id)
+        },
+        orderPayment() {
+            this.$emit('orderPayment', this.order)
         }
     }
 };

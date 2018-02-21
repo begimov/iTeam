@@ -71,7 +71,7 @@
 
 
 var bind = __webpack_require__(7);
-var isBuffer = __webpack_require__(40);
+var isBuffer = __webpack_require__(46);
 
 /*global toString:true*/
 
@@ -392,42 +392,20 @@ var _product = __webpack_require__(21);
 
 var _product2 = _interopRequireDefault(_product);
 
+var _payment = __webpack_require__(22);
+
+var _payment2 = _interopRequireDefault(_payment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   dashboard: _dashboard2.default,
-  product: _product2.default
+  product: _product2.default,
+  payment: _payment2.default
 };
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1373,107 +1351,7 @@ var index_esm = {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(43);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
-
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(8);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(8);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
-};
-
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-});
-
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(42)))
-
-/***/ }),
-/* 5 */
+/* 3 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -1568,6 +1446,133 @@ module.exports = function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(0);
+var normalizeHeaderName = __webpack_require__(49);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(8);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(8);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
 
 /***/ }),
 /* 6 */
@@ -11662,7 +11667,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 7 */
@@ -11690,12 +11695,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(44);
-var buildURL = __webpack_require__(46);
-var parseHeaders = __webpack_require__(47);
-var isURLSameOrigin = __webpack_require__(48);
+var settle = __webpack_require__(50);
+var buildURL = __webpack_require__(52);
+var parseHeaders = __webpack_require__(53);
+var isURLSameOrigin = __webpack_require__(54);
 var createError = __webpack_require__(9);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(49);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(55);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -11792,7 +11797,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(50);
+      var cookies = __webpack_require__(56);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -11876,7 +11881,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(45);
+var enhanceError = __webpack_require__(51);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -11937,7 +11942,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(83);
 
 
 /***/ }),
@@ -11959,7 +11964,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(32);
+__webpack_require__(38);
 
 window.Vue = __webpack_require__(6);
 
@@ -11969,9 +11974,10 @@ window.Vue = __webpack_require__(6);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('user-dashboard', __webpack_require__(58));
-Vue.component('order-card', __webpack_require__(61));
-Vue.component('product', __webpack_require__(64));
+Vue.component('user-dashboard', __webpack_require__(64));
+Vue.component('order-card', __webpack_require__(67));
+Vue.component('order-payment', __webpack_require__(70));
+Vue.component('product', __webpack_require__(80));
 
 var app = new Vue({
   el: '#app',
@@ -11997,7 +12003,7 @@ var _vue = __webpack_require__(6);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vuex = __webpack_require__(3);
+var _vuex = __webpack_require__(2);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -12026,23 +12032,27 @@ var _dashboard = __webpack_require__(16);
 
 var _dashboard2 = _interopRequireDefault(_dashboard);
 
-var _product = __webpack_require__(23);
+var _product = __webpack_require__(24);
 
 var _product2 = _interopRequireDefault(_product);
 
-var _state = __webpack_require__(28);
+var _payment = __webpack_require__(29);
+
+var _payment2 = _interopRequireDefault(_payment);
+
+var _state = __webpack_require__(34);
 
 var _state2 = _interopRequireDefault(_state);
 
-var _getters = __webpack_require__(29);
+var _getters = __webpack_require__(35);
 
 var _getters2 = _interopRequireDefault(_getters);
 
-var _actions = __webpack_require__(30);
+var _actions = __webpack_require__(36);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _mutations = __webpack_require__(31);
+var _mutations = __webpack_require__(37);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
@@ -12056,7 +12066,8 @@ exports.default = {
   mutations: _mutations2.default,
   modules: {
     dashboard: _dashboard2.default,
-    product: _product2.default
+    product: _product2.default,
+    payment: _payment2.default
   }
 };
 
@@ -12083,7 +12094,7 @@ var _actions = __webpack_require__(19);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _mutations = __webpack_require__(22);
+var _mutations = __webpack_require__(23);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
@@ -12110,7 +12121,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: false,
   orders: [],
-  displayedOrderId: null
+  displayedOrderId: null,
+  paymentOrder: null
 };
 
 /***/ }),
@@ -12132,6 +12144,9 @@ exports.default = {
   },
   displayedOrderId: function displayedOrderId(state) {
     return state.displayedOrderId;
+  },
+  paymentOrder: function paymentOrder(state) {
+    return state.paymentOrder;
   }
 };
 
@@ -12167,6 +12182,12 @@ exports.default = {
         state = _ref2.state;
 
     commit('setDisplayedOrderId', orderId);
+  },
+  orderPayment: function orderPayment(_ref3, order) {
+    var commit = _ref3.commit,
+        state = _ref3.state;
+
+    commit('setPaymentOrder', order);
   }
 };
 
@@ -12222,6 +12243,28 @@ exports.default = {
 
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getPaymentSignature: function getPaymentSignature(payload) {
+    return new Promise(function (resolve, reject) {
+      axios.post("/webapi/orders/payment/signature", payload).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
@@ -12233,11 +12276,14 @@ exports.default = {
     },
     setDisplayedOrderId: function setDisplayedOrderId(state, id) {
         state.displayedOrderId = id;
+    },
+    setPaymentOrder: function setPaymentOrder(state, order) {
+        state.paymentOrder = order;
     }
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12247,19 +12293,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _state = __webpack_require__(24);
+var _state = __webpack_require__(25);
 
 var _state2 = _interopRequireDefault(_state);
 
-var _getters = __webpack_require__(25);
+var _getters = __webpack_require__(26);
 
 var _getters2 = _interopRequireDefault(_getters);
 
-var _actions = __webpack_require__(26);
+var _actions = __webpack_require__(27);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _mutations = __webpack_require__(27);
+var _mutations = __webpack_require__(28);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
@@ -12274,7 +12320,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12289,7 +12335,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12308,7 +12354,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12349,7 +12395,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12368,20 +12414,6 @@ exports.default = {
 };
 
 /***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  //
-};
-
-/***/ }),
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12391,12 +12423,181 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _state = __webpack_require__(30);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(31);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(32);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(33);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    selectedPaymentTypeId: 1,
+    paymentTypes: [{ id: 1, name: 'Яндекс.Касса', desc: '' }, { id: 2, name: 'Единая касса', decs: '' }],
+    walletOneOptions: {
+        WMI_MERCHANT_ID: '',
+        WMI_PAYMENT_AMOUNT: '',
+        WMI_CURRENCY_ID: '',
+        WMI_PAYMENT_NO: '',
+        WMI_DESCRIPTION: '',
+        WMI_AUTO_LOCATION: '',
+        WMI_SUCCESS_URL: '',
+        WMI_FAIL_URL: '',
+        WMI_SIGNATURE: ''
+    }
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    selectedPaymentTypeId: function selectedPaymentTypeId(state) {
+        return state.selectedPaymentTypeId;
+    },
+    paymentTypes: function paymentTypes(state) {
+        return state.paymentTypes;
+    },
+    walletOneOptions: function walletOneOptions(state) {
+        return state.walletOneOptions;
+    }
+};
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(1);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  closePayment: function closePayment(_ref) {
+    var commit = _ref.commit;
+
+    commit('users/dashboard/setPaymentOrder', null, { root: true });
+  },
+  selectPaymentType: function selectPaymentType(_ref2, id) {
+    var commit = _ref2.commit;
+
+    commit('setSelectedPaymentType', id);
+  },
+  updateWalletOneOptions: function updateWalletOneOptions(_ref3, data) {
+    var commit = _ref3.commit;
+
+    commit('updateWalletOneOptions', data);
+  },
+  buy: function buy(_ref4) {
+    var commit = _ref4.commit,
+        state = _ref4.state;
+
+    return new Promise(function (resolve, reject) {
+      _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
+        commit('updateWalletOneOptions', res.data.data);
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = {
+    setSelectedPaymentType: function setSelectedPaymentType(state, id) {
+        state.selectedPaymentTypeId = id;
+    },
+    updateWalletOneOptions: function updateWalletOneOptions(state, data) {
+        state.walletOneOptions = _extends({}, state.walletOneOptions, data);
+    }
+};
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = {
   //
 };
 
 /***/ }),
-/* 30 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12417,7 +12618,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 31 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12431,13 +12632,13 @@ exports.default = {
 };
 
 /***/ }),
-/* 32 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-window._ = __webpack_require__(33);
+window._ = __webpack_require__(39);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -12446,9 +12647,9 @@ window._ = __webpack_require__(33);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(35);
-  window.Popper = __webpack_require__(36).default;
-  __webpack_require__(37);
+  window.$ = window.jQuery = __webpack_require__(41);
+  window.Popper = __webpack_require__(42).default;
+  __webpack_require__(43);
 } catch (e) {}
 
 /**
@@ -12457,7 +12658,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(38);
+window.axios = __webpack_require__(44);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -12491,7 +12692,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 33 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -29580,10 +29781,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(34)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(40)(module)))
 
 /***/ }),
-/* 34 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29611,7 +29812,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 35 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -39871,7 +40072,7 @@ return jQuery;
 
 
 /***/ }),
-/* 36 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42314,10 +42515,10 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
-/* 37 */
+/* 43 */
 /***/ (function(module, exports) {
 
 /*!
@@ -46173,13 +46374,13 @@ return exports;
 
 
 /***/ }),
-/* 38 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(39);
+module.exports = __webpack_require__(45);
 
 /***/ }),
-/* 39 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46187,8 +46388,8 @@ module.exports = __webpack_require__(39);
 
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(7);
-var Axios = __webpack_require__(41);
-var defaults = __webpack_require__(4);
+var Axios = __webpack_require__(47);
+var defaults = __webpack_require__(5);
 
 /**
  * Create an instance of Axios
@@ -46222,14 +46423,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(11);
-axios.CancelToken = __webpack_require__(56);
+axios.CancelToken = __webpack_require__(62);
 axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(57);
+axios.spread = __webpack_require__(63);
 
 module.exports = axios;
 
@@ -46238,7 +46439,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 40 */
+/* 46 */
 /***/ (function(module, exports) {
 
 /*!
@@ -46265,18 +46466,18 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 41 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(4);
+var defaults = __webpack_require__(5);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(51);
-var dispatchRequest = __webpack_require__(52);
-var isAbsoluteURL = __webpack_require__(54);
-var combineURLs = __webpack_require__(55);
+var InterceptorManager = __webpack_require__(57);
+var dispatchRequest = __webpack_require__(58);
+var isAbsoluteURL = __webpack_require__(60);
+var combineURLs = __webpack_require__(61);
 
 /**
  * Create a new instance of Axios
@@ -46358,7 +46559,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 42 */
+/* 48 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -46548,7 +46749,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 43 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46567,7 +46768,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 44 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46600,7 +46801,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 45 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46628,7 +46829,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 46 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46703,7 +46904,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 47 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46747,7 +46948,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 48 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46822,7 +47023,7 @@ module.exports = (
 
 
 /***/ }),
-/* 49 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46865,7 +47066,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 50 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46925,7 +47126,7 @@ module.exports = (
 
 
 /***/ }),
-/* 51 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46984,16 +47185,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 52 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(53);
+var transformData = __webpack_require__(59);
 var isCancel = __webpack_require__(10);
-var defaults = __webpack_require__(4);
+var defaults = __webpack_require__(5);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -47070,7 +47271,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 53 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47097,7 +47298,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 54 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47118,7 +47319,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 55 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47139,7 +47340,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 56 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47203,7 +47404,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 57 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47237,15 +47438,15 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 58 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(5)(
+var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(59),
+  __webpack_require__(65),
   /* template */
-  __webpack_require__(60),
+  __webpack_require__(66),
   /* styles */
   null,
   /* scopeId */
@@ -47277,7 +47478,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 59 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47289,18 +47490,18 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _vuex = __webpack_require__(3);
+var _vuex = __webpack_require__(2);
 
 exports.default = {
-    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId', 'paymentOrder'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct', 'orderPayment'])),
     mounted: function mounted() {
         this.getOrders();
     }
 };
 
 /***/ }),
-/* 60 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47325,10 +47526,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "order": order
       },
       on: {
-        "openProduct": _vm.openProduct
+        "openProduct": _vm.openProduct,
+        "orderPayment": _vm.orderPayment
       }
     })
-  }))])
+  })), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
+    attrs: {
+      "order": this.paymentOrder
+    }
+  }) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -47339,15 +47545,15 @@ if (false) {
 }
 
 /***/ }),
-/* 61 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(5)(
+var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(62),
+  __webpack_require__(68),
   /* template */
-  __webpack_require__(63),
+  __webpack_require__(69),
   /* styles */
   null,
   /* scopeId */
@@ -47379,7 +47585,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 62 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47398,12 +47604,15 @@ exports.default = {
     methods: {
         openProduct: function openProduct() {
             this.$emit('openProduct', this.order.id);
+        },
+        orderPayment: function orderPayment() {
+            this.$emit('orderPayment', this.order);
         }
     }
 };
 
 /***/ }),
-/* 63 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47426,7 +47635,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-body"
   }, [_c('p', {
     staticClass: "card-text"
-  }, [_vm._v("Название мастер-проекта или мастер-класса")]), _vm._v(" "), (_vm.isPaid) ? _c('a', {
+  }, [_vm._v(_vm._s(_vm.order.product.data.name))]), _vm._v(" "), (!_vm.isPaid) ? _c('h3', [_c('span', {
+    staticClass: "badge badge-primary"
+  }, [_vm._v(_vm._s(_vm.order.price) + " руб.")])]) : _vm._e(), _vm._v(" "), (_vm.isPaid) ? _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
@@ -47441,6 +47652,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-dark",
     attrs: {
       "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.orderPayment($event)
+      }
     }
   }, [_vm._v("Оплатить")]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-link",
@@ -47458,15 +47675,799 @@ if (false) {
 }
 
 /***/ }),
-/* 64 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(5)(
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(71)
+}
+var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(65),
+  __webpack_require__(76),
   /* template */
-  __webpack_require__(66),
+  __webpack_require__(79),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/users/orders/Payment.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Payment.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4eb5b491", Component.options)
+  } else {
+    hotAPI.reload("data-v-4eb5b491", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(72);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(74)("3919455c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb5b491\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb5b491\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(73)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.modal {\n    display: block;\n    overflow: auto; /* Enable scroll if needed */\n    background-color: #999;\n    background-color: rgba(0,0,0,0.4);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(75)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(2);
+
+var _config = __webpack_require__(77);
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    props: ['order'],
+    data: function data() {
+        return {
+            //
+        };
+    },
+
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes', 'walletOneOptions'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions', 'buy']), {
+        purchase: function purchase() {
+            var _this = this;
+
+            this.buy().then(function (res) {
+                _this.$nextTick(function () {
+                    _this.$refs.woform.submit();
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }),
+    mounted: function mounted() {
+        this.updateWalletOneOptions({
+            WMI_MERCHANT_ID: _config2.default.payments.WMI_MERCHANT_ID,
+            WMI_PAYMENT_AMOUNT: this.order.price,
+            WMI_CURRENCY_ID: _config2.default.payments.WMI_CURRENCY_ID,
+            WMI_PAYMENT_NO: this.order.id,
+            WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
+            WMI_AUTO_LOCATION: _config2.default.payments.WMI_AUTO_LOCATION,
+            WMI_SUCCESS_URL: _config2.default.payments.WMI_SUCCESS_URL,
+            WMI_FAIL_URL: _config2.default.payments.WMI_FAIL_URL,
+            WMI_SIGNATURE: "0"
+        });
+    }
+};
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _payments = __webpack_require__(78);
+
+var _payments2 = _interopRequireDefault(_payments);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    payments: _payments2.default
+};
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    WMI_MERCHANT_ID: "132360589069",
+    WMI_CURRENCY_ID: "643",
+    WMI_AUTO_LOCATION: "1",
+    WMI_SUCCESS_URL: "https://iteam.ru/user",
+    WMI_FAIL_URL: "https://iteam.ru/user"
+};
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "modal"
+  }, [_c('div', {
+    staticClass: "modal-dialog"
+  }, [_c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "modal-header"
+  }, [_c('h5', {
+    staticClass: "modal-title"
+  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('button', {
+    staticClass: "close",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.closePayment($event)
+      }
+    }
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]), _vm._v(" "), _c('div', {
+    staticClass: "modal-body"
+  }, [_c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('ul', {
+    staticClass: "nav nav-pills nav-fill"
+  }, _vm._l((_vm.paymentTypes), function(paymentType) {
+    return _c('li', {
+      key: paymentType.id,
+      staticClass: "nav-item"
+    }, [_c('a', {
+      class: {
+        'nav-link': true, 'active': paymentType.id === _vm.selectedPaymentTypeId
+      },
+      attrs: {
+        "href": "#"
+      },
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.selectPaymentType(paymentType.id)
+        }
+      }
+    }, [_vm._v(_vm._s(paymentType.name))])])
+  }))])])])]), _vm._v(" "), _c('div', {
+    staticClass: "modal-footer"
+  }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
+    ref: "woform",
+    attrs: {
+      "method": "post",
+      "action": "https://wl.walletone.com/checkout/checkout/Index"
+    }
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_MERCHANT_ID),
+      expression: "walletOneOptions.WMI_MERCHANT_ID"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_MERCHANT_ID"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_MERCHANT_ID)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_MERCHANT_ID = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT),
+      expression: "walletOneOptions.WMI_PAYMENT_AMOUNT"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_PAYMENT_AMOUNT"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_PAYMENT_AMOUNT = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_CURRENCY_ID),
+      expression: "walletOneOptions.WMI_CURRENCY_ID"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_CURRENCY_ID"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_CURRENCY_ID)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_CURRENCY_ID = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_PAYMENT_NO),
+      expression: "walletOneOptions.WMI_PAYMENT_NO"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_PAYMENT_NO"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_PAYMENT_NO)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_PAYMENT_NO = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_DESCRIPTION),
+      expression: "walletOneOptions.WMI_DESCRIPTION"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_DESCRIPTION"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_DESCRIPTION)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_DESCRIPTION = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_AUTO_LOCATION),
+      expression: "walletOneOptions.WMI_AUTO_LOCATION"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_AUTO_LOCATION"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_AUTO_LOCATION)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_AUTO_LOCATION = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_SUCCESS_URL),
+      expression: "walletOneOptions.WMI_SUCCESS_URL"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_SUCCESS_URL"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_SUCCESS_URL)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_SUCCESS_URL = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_FAIL_URL),
+      expression: "walletOneOptions.WMI_FAIL_URL"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_FAIL_URL"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_FAIL_URL)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_FAIL_URL = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.walletOneOptions.WMI_SIGNATURE),
+      expression: "walletOneOptions.WMI_SIGNATURE"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "WMI_SIGNATURE"
+    },
+    domProps: {
+      "value": (_vm.walletOneOptions.WMI_SIGNATURE)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.walletOneOptions.WMI_SIGNATURE = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "submit"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.purchase($event)
+      }
+    }
+  }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4eb5b491", module.exports)
+  }
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(81),
+  /* template */
+  __webpack_require__(82),
   /* styles */
   null,
   /* scopeId */
@@ -47498,7 +48499,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 65 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47510,7 +48511,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _vuex = __webpack_require__(3);
+var _vuex = __webpack_require__(2);
 
 exports.default = {
     props: ['orderId'],
@@ -47529,7 +48530,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 66 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47570,7 +48571,7 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 83 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

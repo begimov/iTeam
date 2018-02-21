@@ -8,4 +8,7 @@ export default {
   displayedOrderId(state) {
     return state.displayedOrderId
   },
+  paymentOrder(state) {
+    return state.paymentOrder
+  },
 }
