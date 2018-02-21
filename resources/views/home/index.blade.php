@@ -13,7 +13,12 @@
             <h1>Заголовок</h1>
             <p class="lead">Подзаголовок</p>
             <p>Описание</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">CTA Кнопка</a></p>
+            <form action="{{ route('orders.store') }}" method="post">
+              <input type="hidden" value="1" name="productId">
+              {{ csrf_field() }}
+              <button type="submit">КУПИТЬ Продукт 1</button>
+            </form>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">CTA</a></p>
           </div>
         </div>
       </div>
