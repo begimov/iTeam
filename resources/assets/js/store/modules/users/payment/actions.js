@@ -12,7 +12,8 @@ export default {
   },
   buy({ commit, state }) {
     api.payment.getPaymentSignature(state.walletOneOptions).then(res => {
-      console.log(res)
+      console.log(res.data.data)
+      commit('updateWalletOneOptions', res.data.data)
     }).catch(err => {
       console.log(err)
     })
