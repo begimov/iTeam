@@ -14,7 +14,8 @@
             <p class="lead">Подзаголовок</p>
             <p>Описание</p>
             <form action="{{ route('orders.store') }}" method="post">
-              <input type="hidden" value="1" name="productId">
+              <input type="hidden" value="3" name="product_id">
+              <input type="hidden" value="33" name="price_tag">
               {{ csrf_field() }}
               <button type="submit">КУПИТЬ Продукт 1</button>
             </form>

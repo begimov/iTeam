@@ -63,7 +63,9 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // TODO: add validation
+        // TODO: add validation, exists validation rule on products table
+        $this->orders->store($request->all());
+        return 'NOEN';
     }
 
     /**
