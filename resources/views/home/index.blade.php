@@ -13,7 +13,7 @@
             <h1>Заголовок</h1>
             <p class="lead">Подзаголовок</p>
             <p>Описание</p>
-            <p><a class="btn btn-primary btn-lg" href="{{ route('user.dashboard.index', ['product_id' => 3, 'price_tag' => 3]) }}" role="button">BUY</a></p>
+            <p><a class="btn btn-primary btn-lg" href="{{ route('user.dashboard.index', ['product_id' => 3, 'price_tag_id' => 3]) }}" role="button">BUY</a></p>
             <p><a class="btn btn-primary btn-lg" href="#" role="button">CTA</a></p>
           </div>
         </div>

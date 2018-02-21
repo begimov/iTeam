@@ -31,7 +31,8 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
                 'product_id' => $data['product_id']
             ],
             [
-                'price' => isset($data['price_tag']) ? $data['price_tag'] : $product->price
+                // TODO: find price_tag by incoming id and updated order's price
+                'price' => isset($data['price_tag_id']) ? $product->price : $product->price
             ]
         );
     }
