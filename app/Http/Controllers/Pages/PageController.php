@@ -9,16 +9,6 @@ use App\Models\Pages\Page;
 
 class PageController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('pages.index');
-    }
-
     public function show(Page $page)
     {
         $page = $page->with([
