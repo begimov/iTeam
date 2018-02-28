@@ -13,6 +13,9 @@
 
 Route::get('/', 'Home\HomeController@index')->name('home');
 
+// Pages
+Route::get('pages/{page}', 'Pages\PageController@show')->name('pages.show');
+
 // User dashboard & profile
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'], function () {
     Route::get('/', 'DashboardController@index')->name('user.dashboard.index');
