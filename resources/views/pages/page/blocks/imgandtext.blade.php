@@ -1,9 +1,10 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
-      <strong>MAIN.BLADE</strong>
-        <!-- <p id="main_1">{{ getElementContentData($element, 'main_1') }}</p>
-        <a id="main_2" href="{{ getElementContentData($element, 'main_2') }}">Link</a></p> -->
+      <strong>Image and text</strong>
+        <p>Путь: {{ $element->data['path'] }}</p>
+        <p>Имя: {{ $element->data['name'] }}</p>
+        <p>Ссылка: {{ $element->data['link'] }}</p>
     </div>
   </div>
 </div>
