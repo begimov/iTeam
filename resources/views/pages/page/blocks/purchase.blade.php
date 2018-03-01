@@ -3,7 +3,14 @@
     <p>
       <a 
         class="btn btn-primary btn-lg"
-        href="{{ route('user.dashboard.index', ['product_id' => $element->data['product']['productId'], 'price_tag_id' => $element->data['product']['pricetagId'] ]) }}"
+        href="{{ route(
+          'user.dashboard.index',
+          [
+            'product_id' => $element->data['product']['productId'],
+            'price_tag_id' => $element->data['product']['pricetagId']
+          ]
+          )
+        }}"
         role="button">
         BUY</a>
     </p>
