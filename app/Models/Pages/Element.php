@@ -4,6 +4,8 @@ namespace App\Models\Pages;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Content\File;
+
 /**
  * Represents Element of a Page using Block as view
  */
@@ -21,5 +23,10 @@ class Element extends Model
     public function block()
     {
         return $this->belongsTo(Block::class);
+    }
+
+    public function files()
+    {
+        return $this->hasMany(Files::class);
     }
 }
