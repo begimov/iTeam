@@ -27,6 +27,6 @@ class Element extends Model
 
     public function files()
     {
-        return $this->hasMany(Files::class);
+        return $this->hasMany(File::class);
     }
 }
