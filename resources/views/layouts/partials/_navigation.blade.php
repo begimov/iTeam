@@ -6,22 +6,22 @@
     <div class="collapse navbar-collapse bg-primary" id="navbarTogglerDemo01">
         <ul class="navbar-nav nav-fill mr-auto mt-2 mt-lg-0 justify-content-center w-100 font-weight-normal">
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">СТАТЬИ</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.articles')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">Мастер-классы</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.mk')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">Мастер-ПРОЕКТЫ</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.mp')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">О РУССКОМ МЕНЕДЖМЕНТЕ</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.about_rm')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">УСЛУГИ</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.services')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">Контакты</a>
+                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.contact')</a>
             </li>
         </ul>
     </div>
