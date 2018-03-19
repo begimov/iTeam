@@ -6,7 +6,7 @@
         <div class="col-lg-6 align-self-center py-3 py-lg-0">
             <ul class="list-inline m-0 text-lg-left text-center">
                 <li class="list-inline-item font-weight-bold m-0 pr-2">+7 (499) 110 26&nbsp;84</li>
-                <li class="list-inline-item font-weight-normal m-0"><a href="mailto:info@iteam.ru">info@iteam.ru</a></li>
+                <li class="list-inline-item font-weight-normal m-0"><a href="{{ config('urls.mail.info') }}">info@iteam.ru</a></li>
             </ul>
         </div>
         <div class="col-lg-4 text-lg-right text-center">

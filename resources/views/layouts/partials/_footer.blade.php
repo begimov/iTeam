@@ -2,27 +2,26 @@
 <div class="container-fluid bg-dark text-white block-footer mt-5">
     <div class="row p-5">
         <div class="col-xl-3 col-md-6 col-sm-8">
-            <p><h5>&copy;&nbsp;2002&nbsp;&mdash; 2018 iTeam</h5></p>
-            <p>Москва, Пресненская наб.&nbsp;12</p>
-            <p><span class="lead">(499) 110-2684</span><br><a href="{{ config('urls.mail.info') }}">info@iteam.ru</a></p>
-            <p>Все контакты</p>
+            <p><h5>@lang('partials.footer.copyright')</h5></p>
+            <p>@lang('partials.footer.address')</p>
+            <p><span class="lead">@lang('partials.header.phone')</span><br><a href="{{ config('urls.mail.info') }}">@lang('partials.header.email')</a></p>
+            <p><a href="">@lang('partials.footer.all_contacts')</a></p>
             <p>
-                <a href="">Пользовательское соглашение</a><br>
-                <a href="">Договор-оферта</a>
+                <a href="">@lang('partials.footer.terms_of_use')</a><br>
+                <a href="">@lang('partials.footer.offer')</a>
             </p>
         </div>
         <div class="col-xl-2 col-md-3 col-sm-4">
             <p><h5>Компания</h5></p>
             <p>
-                <a href="">О компании</a><br>
                 <a href="">Услуги</a><br>
-                <a href="">Проекты</a><br>
-                <a href="">Отзывы</a>
+                <a href="">О русском менеджменте</a>
             </p>
         </div>
         <div class="col-xl-2 col-md-3">
             <p><h5>Обучение</h5></p>
             <p>
+                <a href="">Статьи</a><br>
                 <a href="">Мастер-классы</a><br>
                 <a href="">Мастер-проекты</a>
             </p>

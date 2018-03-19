@@ -49,7 +49,6 @@
 <!-- RU MANAGEMENT -->
 <div class="container-fuild">
   <div class="row">
-    <!-- <div class="col-xl-3 col-lg-4 d-none d-lg-block rm"> -->
     <div class="col-xl-3 col-lg-4 d-none d-lg-block rm">&nbsp;</div>
     <div class="col-xl-9 col-lg-8 py-5">
       <div class="row py-5">
