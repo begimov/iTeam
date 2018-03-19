@@ -3,7 +3,7 @@
 <head>
   @include('layouts.partials._head')
 </head>
-<body>
+<body class="bg-light">
   <div id="app">
     @include('layouts.partials._header')
     @include('layouts.partials._navigation')

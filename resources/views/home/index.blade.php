@@ -17,7 +17,7 @@
     <div class="col-lg-6 p-0">
       <div class="row pt-4 pb-3">
         <div class="col-sm-4 align-self-center text-center">
-          <img src="img/V2/gift_box.jpg" class="img-fluid">
+          <img src="{{ asset('img/home/gift_box.jpg') }}" class="img-fluid">
         </div>
         <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
           <h2 class="font-weight-bold text-primary mb-1">Вам подарок!</h2>
@@ -107,7 +107,7 @@
         </div>
         <div class="card-body text-center video-1 p-5">
           <a href="#">
-            <img src="img/V2/btn_play.png">
+            <img src="{{ asset('img/home/btn_play.png') }}">
           </a>
         </div>
       </div>
@@ -119,7 +119,7 @@
         </div>
         <div class="card-body text-center video-2 p-5">
           <a href="#">
-            <img src="img/V2/btn_play.png">
+            <img src="{{ asset('img/home/btn_play.png') }}">
           </a>
         </div>
       </div>
@@ -131,7 +131,7 @@
         </div>
         <div class="card-body text-center video-3 p-5">
           <a href="#">
-            <img src="img/V2/btn_play.png">
+            <img src="{{ asset('img/home/btn_play.png') }}">
           </a>
         </div>
       </div>
