@@ -11045,6 +11045,11 @@ row:after {
   background-size: cover;
 }
 
+.rm {
+  background-image: url("/img/home/rm_bg.jpg");
+  background-size: cover;
+}
+
 .block-footer a {
   color: #fff;
   text-decoration: underline;

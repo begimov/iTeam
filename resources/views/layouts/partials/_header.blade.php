@@ -1,7 +1,8 @@
 <!-- HEADER -->
 <div class="container-fluid">
     <div class="row p-4">
-        <div class="col-lg-2 text-lg-left text-center"><img src="img/V2/header_logo.png" alt="iTeam logo"></div>
+        <div class="col-lg-2 text-lg-left text-center">
+          <img src="{{ asset('img/home/header_logo.png') }}" alt="iTeam logo"></div>
         <div class="col-lg-6 align-self-center py-3 py-lg-0">
             <ul class="list-inline m-0 text-lg-left text-center">
                 <li class="list-inline-item font-weight-bold m-0 pr-2">+7 (499) 110 26&nbsp;84</li>
