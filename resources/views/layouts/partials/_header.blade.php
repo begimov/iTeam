@@ -10,10 +10,24 @@
             </ul>
         </div>
         <div class="col-lg-4 text-lg-right text-center">
-            <ul class="list-inline m-0">
-                <li class="list-inline-item m-0 pr-1"><a href="#" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li>
-                <li class="list-inline-item m-0"><a href="#" class="btn btn-primary text-uppercase">@lang('partials.header.registration')</a></li>
-            </ul>
+            @if (Auth::guest())
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li>
+                    <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.registration')</a></li>
+                </ul>
+            @else
+            <div class="dropdown" style="z-index:9999;">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ Auth::user()->name }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{ route('user.dashboard.index') }}">@lang('partials.navigation.orders')</a>
+                    <a class="dropdown-item" href="{{ route('user.profile.settings') }}">@lang('partials.navigation.profile')</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('auth.logout')</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 </div>  
