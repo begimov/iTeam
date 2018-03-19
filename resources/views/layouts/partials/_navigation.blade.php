@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse bg-primary" id="navbarTogglerDemo01">
         <ul class="navbar-nav nav-fill mr-auto mt-2 mt-lg-0 justify-content-center w-100 font-weight-normal">
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.articles')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ config('urls.blog') }}">@lang('partials.navigation.articles')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.mk')</a>
