@@ -40,8 +40,8 @@
         </div>
         <div class="col-xl-2 col-md-6 col-sm-4">
             <p><h5>&nbsp;</h5></p>
-            <p><a href="https://megastock.ru/" target="_blank"><img src="{{ asset('img/wm.png') }}" alt="Webmoney"></a></p>
-            <p><a href="http://wiki.webmoney.ru/projects/webmoney/wiki/Оплата_товаров_и_услуг_через_сервис_Мерчант" target="_blank">порядок оплаты</a></p>
+            <p><a href="{{ config('urls.webmoney.megastock') }}" target="_blank"><img src="{{ asset('img/wm.png') }}" alt="Webmoney"></a></p>
+            <p><a href="{{ config('urls.webmoney.payments_info') }}" target="_blank">порядок оплаты</a></p>
         </div>
     </div>
 </div>

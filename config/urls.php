@@ -10,5 +10,9 @@ return [
     'mail' => [
         'info' => 'mailto:info@iteam.ru',
     ],
+    'webmoney' => [
+        'megastock' => 'https://megastock.ru/',
+        'payments_info' => 'http://wiki.webmoney.ru/projects/webmoney/wiki/Оплата_товаров_и_услуг_через_сервис_Мерчант',
+    ],
 
 ];
