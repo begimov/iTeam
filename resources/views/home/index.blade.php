@@ -163,7 +163,7 @@
             </p>
           </div>
           <div class="col-lg-3 col-sm-6">
-            <img src="img/V2/mp_boxes.jpg" class="img-fluid"> </div>
+            <img src="{{ asset('img/home/mp_boxes.jpg') }}" class="img-fluid"> </div>
           <div class="col-lg-5 col-sm-12 pt-4 pb-4">
             <h5 class="text-uppercase mb-4 font-weight-bold">что такое мастер-проект?</h5>
             <p>Находим и укрепляем «слабое звено» в цепи бизнес-процессов компании. Слабым звеном могут быть продажи, доставка
@@ -303,7 +303,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <img src="img/V2/clients.jpg" class="img-fluid"> </div>
+      <img src="{{ asset('img/home/clients.jpg') }}" class="img-fluid"> </div>
   </div>
 </div>
 @endsection
