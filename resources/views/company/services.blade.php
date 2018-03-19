@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>О компании</h1>
+                <h1>Услуги</h1>
             </div>
         </div>
     </div>

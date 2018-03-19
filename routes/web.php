@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
 
 // Company related routes
 Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
-    Route::get('about', 'CompanyController@about')->name('company.about');
+    Route::get('services', 'CompanyController@services')->name('company.services');
     Route::get('contact', 'CompanyController@contact')->name('company.contact');
 });
 

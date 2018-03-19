@@ -18,10 +18,10 @@
                 <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.about_rm')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.services')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ route('company.services') }}">@lang('partials.navigation.services')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.contact')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ route('company.contact') }}">@lang('partials.navigation.contact')</a>
             </li>
         </ul>
     </div>
