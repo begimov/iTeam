@@ -4,6 +4,8 @@ return [
     'header' => [
         'phone' => '(499) 110-2684',
         'email' => 'info@iteam.ru',
+        'signin' => 'Войти',
+        'registration' => 'Регистрация',
     ],
     'navigation' => [
         'articles'   => 'Статьи',
