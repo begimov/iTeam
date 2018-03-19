@@ -4,7 +4,7 @@
         <div class="col-xl-3 col-md-6 col-sm-8">
             <p><h5>&copy;&nbsp;2002&nbsp;&mdash; 2018 iTeam</h5></p>
             <p>Москва, Пресненская наб.&nbsp;12</p>
-            <p><span class="lead">(499) 110-2684</span><br><a href="mailto:info@iteam.ru">info@iteam.ru</a></p>
+            <p><span class="lead">(499) 110-2684</span><br><a href="{{ config('urls.mail.info') }}">info@iteam.ru</a></p>
             <p>Все контакты</p>
             <p>
                 <a href="">Пользовательское соглашение</a><br>
@@ -32,9 +32,9 @@
             <p>Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях</p>
             <p>
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="https://www.facebook.com/ITeam-Management-1538687959484919/"><img src="{{ asset('img/sn_fb.png') }}"></a></li>
-                    <li class="list-inline-item"><a href="https://vk.com/public150574411"><img src="{{ asset('img/sn_vk.png') }}"></a></li>
-                    <li class="list-inline-item"><a href="https://www.instagram.com/iteamanagement/"><img src="{{ asset('img/sn_instag.png') }}"></a></li>
+                    <li class="list-inline-item"><a href="{{ config('urls.social.facebook') }}"><img src="{{ asset('img/sn_fb.png') }}"></a></li>
+                    <li class="list-inline-item"><a href="{{ config('urls.social.vk') }}"><img src="{{ asset('img/sn_vk.png') }}"></a></li>
+                    <li class="list-inline-item"><a href="{{ config('urls.social.instagram') }}"><img src="{{ asset('img/sn_instag.png') }}"></a></li>
                 </ul>
             </p>
         </div>
