@@ -7,7 +7,7 @@
             <p><span class="lead">@lang('partials.header.phone')</span><br><a href="{{ config('urls.mail.info') }}">@lang('partials.header.email')</a></p>
             <p><a href="">@lang('partials.footer.all_contacts')</a></p>
             <p>
-                <a href="">@lang('partials.footer.terms_of_use')</a><br>
+                <a href="{{ route('company.terms') }}">@lang('partials.footer.terms_of_use')</a><br>
                 <a href="">@lang('partials.footer.offer')</a>
             </p>
         </div>

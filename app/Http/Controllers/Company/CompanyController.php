@@ -16,4 +16,9 @@ class CompanyController extends Controller
     {
         return view('company.contact');
     }
+
+    public function terms()
+    {
+        return view('company.terms');
+    }
 }
