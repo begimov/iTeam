@@ -23,5 +23,8 @@ return [
         'offer'   => 'Договор-оферта',
         'company'   => 'Компания',
         'training'   => 'Обучение',
+        'social_networks'   => 'Соц. сети',
+        'sn_subscribe'   => 'Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях',
+        'payment_order'   => 'порядок оплаты',
     ],
 ];

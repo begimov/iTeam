@@ -27,8 +27,8 @@
             </p>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-8">
-            <p><h5>Соц. сети</h5></p>
-            <p>Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях</p>
+            <p><h5>@lang('partials.footer.social_networks')</h5></p>
+            <p>@lang('partials.footer.sn_subscribe')</p>
             <p>
                 <ul class="list-inline">
                     <li class="list-inline-item"><a href="{{ config('urls.social.facebook') }}"><img src="{{ asset('img/sn_fb.png') }}"></a></li>
@@ -40,7 +40,7 @@
         <div class="col-xl-2 col-md-6 col-sm-4">
             <p><h5>&nbsp;</h5></p>
             <p><a href="{{ config('urls.webmoney.megastock') }}" target="_blank"><img src="{{ asset('img/wm.png') }}" alt="Webmoney"></a></p>
-            <p><a href="{{ config('urls.webmoney.payments_info') }}" target="_blank">порядок оплаты</a></p>
+            <p><a href="{{ config('urls.webmoney.payments_info') }}" target="_blank">@lang('partials.footer.payment_order')</a></p>
         </div>
     </div>
 </div>
