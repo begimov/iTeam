@@ -1,37 +1,5 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: #333333;
-    line-height: 1.25;
-}
-/* MODS */
-a, a:hover {
-    color: #870101;
-}
-.bg-dark {
-    background-color: #333333 !important;
-}
-.bg-primary, .btn-primary {
-    background-color: #870101 !important;
-}
-.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary{
-    border-color: #870101;
-}
-.btn-light, .btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active, .open>.dropdown-toggle.btn-light{
-    border-color: #333;
-}
-.text-primary {
-    color: #870101 !important;
-}
-.row {
-    margin: 0px;
-}
-.row:before, row:after {
-    display: none;
-}
-.navbar {
-    height: 50px;
-}
+@import "base";
+
 /* CUSTOM */
 .promo {
     background-image: url('/img/home/promo_bg.jpg');
@@ -57,17 +25,4 @@ a, a:hover {
 .block-footer a {
     color: #fff;
     text-decoration: underline;
-}
-
-// Cards
-.card {
-    margin-top: 20px;
-}
-.card-img-top {
-    margin-top: 20px;
-}
-
-// Footer
-.footer {
-    background-color: #f5f5f5;
 }

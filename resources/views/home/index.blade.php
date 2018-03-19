@@ -178,7 +178,7 @@
   </div>
 </div>
 <!-- MASTER-CLASSES -->
-<div class="container-fluid">
+<div class="container-fluid mt-4">
   <div class="row">
     <div class="col">
       <h5 class="text-uppercase font-weight-bold my-5">популярные мастер-классы</h5>
