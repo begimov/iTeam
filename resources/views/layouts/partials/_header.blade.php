@@ -1,34 +1,18 @@
+<!-- HEADER -->
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <svg id="svg1" width="48" height="48" fill="#c00" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-        <g id="svg1g0">
-          <circle id="svg1c0" r="20" cy="70" cx="70"/>
-        </g>
-        <g id="svg1g1">
-          <circle id="svg1c1" r="20" cy="20" cx="70"/>
-          <path id="svg1p1" fill="none" stroke="#c00" stroke-width="16" d="M36,34 A47,47 0 0 1 104,34" />
-        </g>
-        <g id="svg1g2" transform="rotate(120,70,70)">
-          <circle id="svg1c2" r="20" cy="20" cx="70"/>
-          <path id="svg1p2" fill="none" stroke="#c00" stroke-width="16" d="M36,34 A47,47 0 0 1 104,34" />
-        </g>
-        <g id="svg1g3" transform="rotate(-120,70,70)">
-          <circle id="svg1c3" r="20" cy="20" cx="70"/>
-          <path id="svg1p3" fill="none" stroke="#c00" stroke-width="16" d="M36,34 A47,47 0 0 1 104,34" />
-        </g>
-      </svg><a href="/">iTeam</a>
+    <div class="row p-4">
+        <div class="col-lg-2 text-lg-left text-center"><img src="img/V2/header_logo.png" alt="iTeam logo"></div>
+        <div class="col-lg-6 align-self-center py-3 py-lg-0">
+            <ul class="list-inline m-0 text-lg-left text-center">
+                <li class="list-inline-item font-weight-bold m-0 pr-2">+7 (499) 110 26&nbsp;84</li>
+                <li class="list-inline-item font-weight-normal m-0"><a href="mailto:info@iteam.ru">info@iteam.ru</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 text-lg-right text-center">
+            <ul class="list-inline m-0">
+                <li class="list-inline-item m-0 pr-1"><a href="#" class="btn btn-light">ВОЙТИ</a></li>
+                <li class="list-inline-item m-0"><a href="#" class="btn btn-primary">РЕГИСТРАЦИЯ</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="col-md-3 col-sm-6">
-      @lang('partials.header.slogan')
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <form class="form-inline">
-        <input class="form-control" type="search" aria-label="Search">
-      </form>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <a href="tel:+74991102684">+7 (499) 110 26 84</a>
-    </div>
-  </div>
-</div>
+</div>  
