@@ -11040,6 +11040,11 @@ row:after {
 
 /* CUSTOM */
 
+.promo {
+  background-image: url("/img/home/promo_bg.jpg");
+  background-size: cover;
+}
+
 .block-footer a {
   color: #fff;
   text-decoration: underline;
