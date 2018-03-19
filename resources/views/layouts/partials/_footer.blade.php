@@ -12,18 +12,18 @@
             </p>
         </div>
         <div class="col-xl-2 col-md-3 col-sm-4">
-            <p><h5>Компания</h5></p>
+            <p><h5>@lang('partials.footer.company')</h5></p>
             <p>
-                <a href="">Услуги</a><br>
-                <a href="">О русском менеджменте</a>
+                <a href="">@lang('partials.navigation.services')</a><br>
+                <a href="">@lang('partials.navigation.about_rm')</a>
             </p>
         </div>
         <div class="col-xl-2 col-md-3">
-            <p><h5>Обучение</h5></p>
+            <p><h5>@lang('partials.footer.training')</h5></p>
             <p>
-                <a href="">Статьи</a><br>
-                <a href="">Мастер-классы</a><br>
-                <a href="">Мастер-проекты</a>
+                <a href="">@lang('partials.navigation.articles')</a><br>
+                <a href="">@lang('partials.navigation.mk')</a><br>
+                <a href="">@lang('partials.navigation.mp')</a>
             </p>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-8">
