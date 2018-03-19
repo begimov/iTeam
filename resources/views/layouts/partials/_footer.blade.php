@@ -32,9 +32,9 @@
             <p>Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях</p>
             <p>
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="https://www.facebook.com/ITeam-Management-1538687959484919/"><img src="img/V2/sn_fb.png"></a></li>
-                    <li class="list-inline-item"><a href="https://vk.com/public150574411"><img src="img/V2/sn_vk.png"></a></li>
-                    <li class="list-inline-item"><a href="https://www.instagram.com/iteamanagement/"><img src="img/V2/sn_instag.png"></a></li>
+                    <li class="list-inline-item"><a href="https://www.facebook.com/ITeam-Management-1538687959484919/"><img src="{{ asset('img/sn_fb.png') }}"></a></li>
+                    <li class="list-inline-item"><a href="https://vk.com/public150574411"><img src="{{ asset('img/sn_vk.png') }}"></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/iteamanagement/"><img src="{{ asset('img/sn_instag.png') }}"></a></li>
                 </ul>
             </p>
         </div>
