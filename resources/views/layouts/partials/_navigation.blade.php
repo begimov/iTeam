@@ -9,10 +9,10 @@
                 <a class="nav-link text-uppercase text-white" href="{{ config('urls.blog') }}">@lang('partials.navigation.articles')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.mk')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ route('pages.category.index', config('urls.slugs.categories.mk')) }}">@lang('partials.navigation.mk')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.mp')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">@lang('partials.navigation.mp')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.about_rm')</a>

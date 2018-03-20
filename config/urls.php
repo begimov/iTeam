@@ -2,6 +2,13 @@
 
 return [
 
+    'slugs' => [
+        'categories' => [
+            'mk' => 'master-klassy',
+            'mp' => 'master-proekty',
+        ],
+    ],
+    
     'blog' => 'http://blog.iteam.ru/',
     
     'social' => [
