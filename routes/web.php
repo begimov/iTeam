@@ -15,7 +15,7 @@ Route::get('/', 'Home\HomeController@index')->name('home');
 
 // Pages
 Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
-    Route::get('category/{category}', 'CategoryController@index')->name('pages.category');
+    Route::get('category/{category}', 'PageController@index')->name('pages.category.index');
     Route::get('{page}', 'PageController@show')->name('pages.show');
 }); 
 
