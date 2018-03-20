@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  {{ dd($category) }}
+    @foreach ($category->pages as $page)
+        {{ $page->name }}
+    @endforeach
 @endsection

@@ -31,8 +31,6 @@ class PageController extends Controller
             new OrWhere('slug', $slug),
         ])->first();
 
-        // $pages = $category->pages();
-
         return view('pages.category.index', compact('category'));
     }
 
