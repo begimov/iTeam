@@ -5,7 +5,7 @@ namespace App\Models\Pages;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Represents view of an Element of a Page
+ * 
  */
 class Category extends Model
 {
@@ -17,5 +17,10 @@ class Category extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function pages()
+    {
+        return $this->hasMany(Page::class);
     }
 }

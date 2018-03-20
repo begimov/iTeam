@@ -12,7 +12,8 @@ class PageController extends Controller
 {
     public function index(Category $category)
     {
-        dd($category);
+        $pages = $category->pages;
+        return view('pages.category.index', compact('pages'));
     }
 
     public function show(Page $page)
