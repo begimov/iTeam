@@ -9,6 +9,7 @@ use App\Models\Pages\Page;
 use App\Models\Pages\Category;
 
 use App\Repositories\Eloquent\Criteria\With;
+use App\Repositories\Eloquent\Criteria\OrWhere;
 
 use App\Repositories\Contracts\Pages\CategoryRepository;
 
@@ -23,16 +24,16 @@ class PageController extends Controller
 
     public function index($slug)
     {
-        // $pages = $category->pages;
         $relations = ['pages'];
 
         $category = $this->categories->withCriteria([
-            new With($relations)
-        ])->findById($slug);
+            new With($relations),
+            new OrWhere('slug', $slug),
+        ])->first();
 
-        dd($category);
+        // $pages = $category->pages();
 
-        // return view('pages.category.index', compact('pages'));
+        return view('pages.category.index', compact('category'));
     }
 
     public function show(Page $page)

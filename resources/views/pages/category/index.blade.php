@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-  {{ $pages }}
+  {{ dd($category) }}
 @endsection
