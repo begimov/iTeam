@@ -34,6 +34,7 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
     Route::get('services', 'CompanyController@services')->name('company.services');
     Route::get('contact', 'CompanyController@contact')->name('company.contact');
     Route::get('terms', 'CompanyController@terms')->name('company.terms');
+    Route::get('offer', 'CompanyController@offer')->name('company.offer');
 });
 
 Auth::routes();

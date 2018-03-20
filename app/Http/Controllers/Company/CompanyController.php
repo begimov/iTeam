@@ -21,4 +21,9 @@ class CompanyController extends Controller
     {
         return view('company.terms');
     }
+
+    public function offer()
+    {
+        return view('company.offer');
+    }
 }

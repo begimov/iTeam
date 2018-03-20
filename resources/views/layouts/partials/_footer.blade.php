@@ -8,7 +8,7 @@
             <p><a href="">@lang('partials.footer.all_contacts')</a></p>
             <p>
                 <a href="{{ route('company.terms') }}">@lang('partials.footer.terms_of_use')</a><br>
-                <a href="">@lang('partials.footer.offer')</a>
+                <a href="{{ route('company.offer') }}">@lang('partials.footer.offer')</a>
             </p>
         </div>
         <div class="col-xl-2 col-md-3 col-sm-4">
