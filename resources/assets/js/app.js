@@ -18,7 +18,7 @@ import store from './store'
  */
 
 // Static company pages related components
-Vue.component('services-mission', require('./components/static/company/services/Mission.vue'));
+Vue.component('mission-philosophy', require('./components/static/company/services/Mission.vue'));
 
 Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
 Vue.component('order-card', require('./components/users/orders/OrderCard.vue'));
