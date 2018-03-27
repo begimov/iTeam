@@ -5,10 +5,12 @@
 </head>
 <body class="bg-light">
   <div id="app">
-    @include('layouts.partials._header')
-    @include('layouts.partials._navigation')
-    @yield('content')
-    @include ('layouts.partials._footer')
+    <div v-cloak>
+      @include('layouts.partials._header')
+      @include('layouts.partials._navigation')
+      @yield('content')
+      @include ('layouts.partials._footer')
+    </div>
   </div>
   @include ('layouts.partials._scripts')
   <script>
