@@ -1,4 +1,9 @@
 export default {
+    data() {
+        return {
+            active: 'philosophy'
+        }
+    },
     computed: {
         //
     },
