@@ -11,16 +11,26 @@
                     </p>
                     <p>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><img src="/img/company/services/services_01.png"></li>
-                            <li class="list-inline-item"><img src="/img/company/services/services_02.png"></li>
-                            <li class="list-inline-item"><img src="/img/company/services/services_03.png"></li>
-                            <li class="list-inline-item"><img src="/img/company/services/services_04.png"></li>
-                            <li class="list-inline-item"><img src="/img/company/services/services_05.png"></li>
+                            <li class="list-inline-item">
+                                <a href="#" @click.prevent="setActive(1)"><img src="/img/company/services/services_01.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" @click.prevent="setActive(2)"><img src="/img/company/services/services_02.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" @click.prevent="setActive(3)"><img src="/img/company/services/services_03.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" @click.prevent="setActive(4)"><img src="/img/company/services/services_04.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" @click.prevent="setActive(5)"><img src="/img/company/services/services_05.png"></a>
+                            </li>
                         </ul>
                     </p>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-3" v-if="this.active === 1">
                 <div class="col-lg-4 services-01">&nbsp;</div>
                 <div class="col-lg-8 p-3">
                     <h4 class="font-weight-normal mb-3">Создание системы целевого управления</h4>

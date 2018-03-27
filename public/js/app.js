@@ -48977,7 +48977,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     data: function data() {
         return {
-            // active: 'mission'
+            active: 1
         };
     },
 
@@ -48985,9 +48985,9 @@ exports.default = {
         //
     },
     methods: {
-        // switchActive() {
-        //     this.active = (this.active === 'mission') ? 'philosophy' : 'mission'
-        // }
+        setActive: function setActive(value) {
+            this.active = value;
+        }
     },
     mounted: function mounted() {
         //
@@ -48999,8 +48999,6 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "container py-5"
   }, [_c('div', {
@@ -49011,51 +49009,105 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "font-weight-light mb-3"
   }, [_vm._v("Услуги")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("Мы работаем с управленческими командами предприятий как наставники, помогая выработать и осуществить на практике решения, изменяющие компанию, чтобы преобразовать ее в эффективную систему, способную противостоять любым конкурентам на любых рынках.")]), _vm._v(" "), _c('p', {
-    staticClass: "text-primary font-weight-normal py-2"
-  }, [_c('span', {
-    staticClass: "lead font-weight-bold text-primary"
-  }, [_vm._v("Организационные изменения охватывают пять направлений.")]), _c('br'), _vm._v("\n                    Эти направления взаимосвязаны и при осуществлении любого из них затрагиваются все остальные.\n                ")]), _vm._v(" "), _c('p', [_c('ul', {
+  }, [_vm._v("Мы работаем с управленческими командами предприятий как наставники, помогая выработать и осуществить на практике решения, изменяющие компанию, чтобы преобразовать ее в эффективную систему, способную противостоять любым конкурентам на любых рынках.")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('p', [_c('ul', {
     staticClass: "list-inline"
   }, [_c('li', {
     staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(1)
+      }
+    }
   }, [_c('img', {
     attrs: {
       "src": "/img/company/services/services_01.png"
     }
-  })]), _vm._v(" "), _c('li', {
+  })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(2)
+      }
+    }
   }, [_c('img', {
     attrs: {
       "src": "/img/company/services/services_02.png"
     }
-  })]), _vm._v(" "), _c('li', {
+  })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(3)
+      }
+    }
   }, [_c('img', {
     attrs: {
       "src": "/img/company/services/services_03.png"
     }
-  })]), _vm._v(" "), _c('li', {
+  })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(4)
+      }
+    }
   }, [_c('img', {
     attrs: {
       "src": "/img/company/services/services_04.png"
     }
-  })]), _vm._v(" "), _c('li', {
+  })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(5)
+      }
+    }
   }, [_c('img', {
     attrs: {
       "src": "/img/company/services/services_05.png"
     }
-  })])])])])]), _vm._v(" "), _c('div', {
+  })])])])])])]), _vm._v(" "), (this.active === 1) ? _c('div', {
     staticClass: "row mt-3"
   }, [_c('div', {
     staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(1)]) : _vm._e()])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "text-primary font-weight-normal py-2"
+  }, [_c('span', {
+    staticClass: "lead font-weight-bold text-primary"
+  }, [_vm._v("Организационные изменения охватывают пять направлений.")]), _c('br'), _vm._v("\n                    Эти направления взаимосвязаны и при осуществлении любого из них затрагиваются все остальные.\n                ")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "col-lg-8 p-3"
   }, [_c('h4', {
     staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Создание системы целевого управления")]), _vm._v(" "), _c('p', [_vm._v("Мы помогаем руководителям предприятий построить все четыре уровня системы целевого управления:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Создать миссию компании — цель высшего уровня, которая определяет смысл деятельности компании.")]), _vm._v(" "), _c('li', [_vm._v("Разработать Сбалансированную систему показателей, направляющую все действия компании к ее стратегическим целям.")]), _vm._v(" "), _c('li', [_vm._v("Наладить систему годового планирования и контроля исполнения планов")]), _vm._v(" "), _c('li', [_vm._v("Внедрить KPI сотрудников, связанные со стратегическими и тактическими целями компании.")])]), _vm._v(" "), _c('p', [_vm._v("В ходе построения системы целевого управления мы уделяем особое внимание взаимным связям всех уровней, а также их взаимодействию с другими компонентами системы управления компанией: стратегией, процессами, структурой, корпоративной культурой.")])])])])])
+  }, [_vm._v("Создание системы целевого управления")]), _vm._v(" "), _c('p', [_vm._v("Мы помогаем руководителям предприятий построить все четыре уровня системы целевого управления:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Создать миссию компании — цель высшего уровня, которая определяет смысл деятельности компании.")]), _vm._v(" "), _c('li', [_vm._v("Разработать Сбалансированную систему показателей, направляющую все действия компании к ее стратегическим целям.")]), _vm._v(" "), _c('li', [_vm._v("Наладить систему годового планирования и контроля исполнения планов")]), _vm._v(" "), _c('li', [_vm._v("Внедрить KPI сотрудников, связанные со стратегическими и тактическими целями компании.")])]), _vm._v(" "), _c('p', [_vm._v("В ходе построения системы целевого управления мы уделяем особое внимание взаимным связям всех уровней, а также их взаимодействию с другими компонентами системы управления компанией: стратегией, процессами, структурой, корпоративной культурой.")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

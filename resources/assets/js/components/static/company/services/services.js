@@ -1,16 +1,16 @@
 export default {
     data() {
         return {
-            // active: 'mission'
+            active: 1
         }
     },
     computed: {
         //
     },
     methods: {
-        // switchActive() {
-        //     this.active = (this.active === 'mission') ? 'philosophy' : 'mission'
-        // }
+        setActive(value) {
+            this.active = value
+        }
     },
     mounted() {
         //
