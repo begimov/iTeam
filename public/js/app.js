@@ -48987,6 +48987,9 @@ exports.default = {
     methods: {
         setActive: function setActive(value) {
             this.active = value;
+        },
+        imgPath: function imgPath(value) {
+            return '/img/company/services/services_0' + value + (this.active === value ? '_active.png' : '.png');
         }
     },
     mounted: function mounted() {
@@ -49025,7 +49028,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/img/company/services/services_01.png"
+      "src": _vm.imgPath(1)
     }
   })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
@@ -49041,7 +49044,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/img/company/services/services_02.png"
+      "src": _vm.imgPath(2)
     }
   })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
@@ -49057,7 +49060,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/img/company/services/services_03.png"
+      "src": _vm.imgPath(3)
     }
   })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
@@ -49073,7 +49076,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/img/company/services/services_04.png"
+      "src": _vm.imgPath(4)
     }
   })])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
@@ -49089,7 +49092,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/img/company/services/services_05.png"
+      "src": _vm.imgPath(5)
     }
   })])])])])])]), _vm._v(" "), (this.active === 1) ? _c('div', {
     staticClass: "row mt-3"

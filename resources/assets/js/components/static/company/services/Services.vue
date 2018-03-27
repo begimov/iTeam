@@ -12,19 +12,19 @@
                     <p>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#" @click.prevent="setActive(1)"><img src="/img/company/services/services_01.png"></a>
+                                <a href="#" @click.prevent="setActive(1)"><img :src="imgPath(1)"></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" @click.prevent="setActive(2)"><img src="/img/company/services/services_02.png"></a>
+                                <a href="#" @click.prevent="setActive(2)"><img :src="imgPath(2)"></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" @click.prevent="setActive(3)"><img src="/img/company/services/services_03.png"></a>
+                                <a href="#" @click.prevent="setActive(3)"><img :src="imgPath(3)"></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" @click.prevent="setActive(4)"><img src="/img/company/services/services_04.png"></a>
+                                <a href="#" @click.prevent="setActive(4)"><img :src="imgPath(4)"></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" @click.prevent="setActive(5)"><img src="/img/company/services/services_05.png"></a>
+                                <a href="#" @click.prevent="setActive(5)"><img :src="imgPath(5)"></a>
                             </li>
                         </ul>
                     </p>
