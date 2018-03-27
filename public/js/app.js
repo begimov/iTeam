@@ -11979,6 +11979,7 @@ Vue.component('youtube-player', __webpack_require__(90));
 
 // Static company pages related components
 Vue.component('mission-philosophy', __webpack_require__(64));
+Vue.component('company-services', __webpack_require__(93));
 
 Vue.component('user-dashboard', __webpack_require__(67));
 Vue.component('order-card', __webpack_require__(70));
@@ -48920,6 +48921,88 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-007d49dc", module.exports)
+  }
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(94),
+  /* template */
+  __webpack_require__(95),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/static/company/services/Services.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Services.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-610c95ec", Component.options)
+  } else {
+    hotAPI.reload("data-v-610c95ec", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    data: function data() {
+        return {
+            // active: 'mission'
+        };
+    },
+
+    computed: {
+        //
+    },
+    methods: {
+        // switchActive() {
+        //     this.active = (this.active === 'mission') ? 'philosophy' : 'mission'
+        // }
+    },
+    mounted: function mounted() {
+        //
+    }
+};
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function(){},staticRenderFns:[]}
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-610c95ec", module.exports)
   }
 }
 
