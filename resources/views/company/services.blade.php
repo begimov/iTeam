@@ -240,3 +240,10 @@
         </div>
     </div>
 @endsection
+
+@section('postJquery')
+    @parent
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+@endsection

@@ -11,5 +11,10 @@
     @include ('layouts.partials._footer')
   </div>
   @include ('layouts.partials._scripts')
+  <script>
+    jQuery(document).ready(function() {
+      @yield('postJquery');
+    });
+  </script>
 </body>
 </html>
