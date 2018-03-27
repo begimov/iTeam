@@ -17,6 +17,9 @@ import store from './store'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Base components
+Vue.component('youtube-player', require('./components/base/Ytplayer.vue'));
+
 // Static company pages related components
 Vue.component('mission-philosophy', require('./components/static/company/services/Mission.vue'));
 

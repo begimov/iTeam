@@ -11974,6 +11974,9 @@ window.Vue = __webpack_require__(6);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Base components
+Vue.component('youtube-player', __webpack_require__(90));
+
 // Static company pages related components
 Vue.component('mission-philosophy', __webpack_require__(64));
 
@@ -48755,6 +48758,168 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(91),
+  /* template */
+  __webpack_require__(92),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/base/Ytplayer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Ytplayer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-007d49dc", Component.options)
+  } else {
+    hotAPI.reload("data-v-007d49dc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'Ytplayer',
+    props: ['videoId'],
+    data: function data() {
+        return {
+            videoUrl: ''
+        };
+    },
+
+    methods: {
+        onOpen: function onOpen() {
+            this.videoUrl = 'https://www.youtube.com/embed/' + this.videoId;
+        },
+        onClose: function onClose() {
+            this.videoUrl = '';
+        }
+    },
+    mounted: function mounted() {
+        //
+    }
+};
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-dark btn-lg play-video-btn",
+    attrs: {
+      "type": "button",
+      "data-toggle": "modal",
+      "data-backdrop": "static",
+      "data-target": '#' + this.videoId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.onOpen($event)
+      }
+    }
+  }, [_vm._v("Посмотреть видео")]), _vm._v(" "), _c('div', {
+    staticClass: "modal fade",
+    attrs: {
+      "id": this.videoId,
+      "tabindex": "-1",
+      "role": "dialog",
+      "aria-labelledby": "exampleModalLabel",
+      "aria-hidden": "true"
+    }
+  }, [_c('div', {
+    staticClass: "modal-dialog modal-lg",
+    attrs: {
+      "role": "document"
+    }
+  }, [_c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "modal-body"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('button', {
+    staticClass: "close",
+    attrs: {
+      "type": "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.onClose($event)
+      }
+    }
+  }, [_vm._m(0)])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('iframe', {
+    attrs: {
+      "width": "100%",
+      "height": "350",
+      "src": _vm.videoUrl,
+      "frameborder": "0",
+      "allow": "encrypted-media",
+      "allowfullscreen": ""
+    }
+  })])])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-007d49dc", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
