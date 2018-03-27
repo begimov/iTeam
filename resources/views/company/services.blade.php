@@ -72,88 +72,72 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid pb-5">
+    <div class="container-fluid bg-white">
         <div class="row text-center">
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/ilim.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0" 
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="Илим &mdash; крупнейший в России производитель целлюлозы и бумажной продукции">
+                    <img src="{{ asset('img/company/services/clients/ilim.png') }}" class="img-fluid">
+                </a>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/kamaz.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0" 
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="КАМАЗ &mdash; российский лидер по производству грузовых автомобилей">
+                    <img src="{{ asset('img/company/services/clients/kamaz.png') }}" class="img-fluid">
+                </a>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/praktik_med.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0" 
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="ПрактикМед &mdash; один из ведущих поставщиков материалов для медицинских учреждений">
+                    <img src="{{ asset('img/company/services/clients/praktik_med.png') }}" class="img-fluid">
+                </a>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/lapotok.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0"
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="Лапоток &mdash; быстро растущая федеральная сеть магазинов обуви">
+                    <img src="{{ asset('img/company/services/clients/lapotok.png') }}" class="img-fluid">
+                </a>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/mirriko.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0"
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="Миррико &mdash; лидирующая сервисная компания на рынке нефтедобычи">
+                    <img src="{{ asset('img/company/services/clients/mirriko.png') }}" class="img-fluid">
+                </a>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 p-1">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <a tabindex="0" 
-                            data-toggle="popover" 
-                            data-trigger="focus"
-                            data-placement="bottom" 
-                            data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="{{ asset('img/company/services/clients/visavis.png') }}" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
+                <a tabindex="0" 
+                    style="cursor:pointer;"
+                    data-toggle="popover" 
+                    data-trigger="focus"
+                    data-placement="bottom" 
+                    data-content="Vis-à-vis &mdash; крупнейшая федеральная сеть магазинов белья и одежды">
+                    <img src="{{ asset('img/company/services/clients/visavis.png') }}" class="img-fluid">
+                </a>
             </div>
         </div>
-        <div class="row mt-3">
+    </div>
+    <div class="container">
+        <div class="row mt-3 mb-2">
             <div class="col text-center">
                 <p><a href="#" class="btn btn-light btn-sm">Смотреть больше</a></p>
             </div>
