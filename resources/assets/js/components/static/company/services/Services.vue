@@ -11,11 +11,11 @@
                     </p>
                     <p>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_01.png') }}"></li>
-                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_02.png') }}"></li>
-                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_03.png') }}"></li>
-                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_04.png') }}"></li>
-                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_05.png') }}"></li>
+                            <li class="list-inline-item"><img src="/img/company/services/services_01.png"></li>
+                            <li class="list-inline-item"><img src="/img/company/services/services_02.png"></li>
+                            <li class="list-inline-item"><img src="/img/company/services/services_03.png"></li>
+                            <li class="list-inline-item"><img src="/img/company/services/services_04.png"></li>
+                            <li class="list-inline-item"><img src="/img/company/services/services_05.png"></li>
                         </ul>
                     </p>
                 </div>
