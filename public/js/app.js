@@ -48892,6 +48892,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col"
+  }, [_c('div', {
+    staticClass: "embed-responsive embed-responsive-16by9"
   }, [_c('iframe', {
     attrs: {
       "width": "100%",
@@ -48901,7 +48903,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "allow": "encrypted-media",
       "allowfullscreen": ""
     }
-  })])])])])])])])
+  })])])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     attrs: {

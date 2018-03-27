@@ -15,7 +15,9 @@
             </div>
             <div class="row">
               <div class="col">
-                  <iframe width="100%" height="350" :src="videoUrl" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="100%" height="350" :src="videoUrl" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>

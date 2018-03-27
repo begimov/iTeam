@@ -203,19 +203,19 @@
         </div>
         <div class="row">
             <div class="col-lg-4 text-center">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Rp4Jh-DP7is" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <youtube-player
+                    video-id="Rp4Jh-DP7is"
+                />
             </div>
             <div class="col-lg-4 text-center">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U4QFO0ILnmE" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <youtube-player
+                    video-id="U4QFO0ILnmE"
+                />
             </div>
             <div class="col-lg-4 text-center">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/C2MVqTRj40w" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <youtube-player
+                    video-id="C2MVqTRj40w"
+                />
             </div>
         </div>
     </div>
