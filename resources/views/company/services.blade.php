@@ -50,7 +50,7 @@
                 <div class="col text-center">
                     <h2 class="font-weight-light mb-3">Миссия</h2>
                     <p class="lead">Мы&nbsp;видим свое предназначение в&nbsp;преодолении дефицита управления, который препятствует развитию многих тысяч российских предприятий.</p>
-                    <p><img src="img/btn_play.png" width="100"></p>  
+                    <p><img src="{{ asset('img/home/btn_play.png') }}" width="100"></p>  
                 </div>
             </div>
             <div class="row mt-4">
@@ -81,11 +81,11 @@
                     </p>
                     <p>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><img src="img_services/services_01.png"></li>
-                            <li class="list-inline-item"><img src="img_services/services_02.png"></li>
-                            <li class="list-inline-item"><img src="img_services/services_03.png"></li>
-                            <li class="list-inline-item"><img src="img_services/services_04.png"></li>
-                            <li class="list-inline-item"><img src="img_services/services_05.png"></li>
+                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_01.png') }}"></li>
+                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_02.png') }}"></li>
+                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_03.png') }}"></li>
+                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_04.png') }}"></li>
+                            <li class="list-inline-item"><img src="{{ asset('img/company/services/services_05.png') }}"></li>
                         </ul>
                     </p>
                 </div>
@@ -136,7 +136,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/ilim.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/ilim.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/kamaz.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/kamaz.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/praktik_med.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/praktik_med.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/lapotok.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/lapotok.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/mirriko.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/mirriko.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                             data-trigger="focus"
                             data-placement="bottom" 
                             data-content="And here's some amazing content. It's very engaging. Right?">
-                            <img src="img_services/clients/visavis.png" class="img-fluid">
+                            <img src="{{ asset('img/company/services/clients/visavis.png') }}" class="img-fluid">
                         </a>
                     </div>
                 </div>
