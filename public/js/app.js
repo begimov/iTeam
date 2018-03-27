@@ -47493,7 +47493,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     data: function data() {
         return {
-            active: 'philosophy'
+            active: 'mission'
         };
     },
 
@@ -47501,7 +47501,9 @@ exports.default = {
         //
     },
     methods: {
-        //
+        switchActive: function switchActive() {
+            this.active = this.active === 'mission' ? 'philosophy' : 'mission';
+        }
     },
     mounted: function mounted() {
         //
@@ -47515,24 +47517,72 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [(_vm.active === 'mission') ? _c('div', {
     staticClass: "container py-5"
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), (_vm.active === 'philosophy') ? _c('div', {
-    staticClass: "container py-5"
-  }, [_vm._m(2), _vm._v(" "), _vm._m(3)]) : _vm._e()])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col text-center"
   }, [_c('h2', {
     staticClass: "font-weight-light mb-3"
-  }, [_vm._v("Миссия")]), _vm._v(" "), _c('p', {
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.switchActive($event)
+      }
+    }
+  }, [_vm._v("<")]), _vm._v(" Миссия "), _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.switchActive($event)
+      }
+    }
+  }, [_vm._v(">")])]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("Мы видим свое предназначение в преодолении дефицита управления, который препятствует развитию многих тысяч российских предприятий.")]), _vm._v(" "), _c('p', [_c('img', {
+  }, [_vm._v("Мы видим свое предназначение в преодолении дефицита управления, который препятствует развитию многих тысяч российских предприятий.")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), (_vm.active === 'philosophy') ? _c('div', {
+    staticClass: "container py-5"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col text-center"
+  }, [_c('h2', {
+    staticClass: "font-weight-light mb-3"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.switchActive($event)
+      }
+    }
+  }, [_vm._v("<")]), _vm._v(" Философия "), _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.switchActive($event)
+      }
+    }
+  }, [_vm._v(">")])]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Когда мы в 2002 году создавали нашу консалтинговую компанию, мы с самого начала отказались от пути, проторенного другими консультантами. Распространенная практика давала клиенту консалтинговый продукт, который предлагался как «таблетка от всех болезней». Мы решили строить другой консалтинг, поставив в центр организацию и ее проблемы.")]), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _vm._m(3)]) : _vm._e()])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_c('img', {
     attrs: {
       "src": "/img/home/btn_play.png",
       "width": "100"
     }
-  })])])])
+  })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row mt-4"
@@ -47544,20 +47594,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-6"
   }, [_c('p', [_vm._v("Обучая и консультируя собственников и руководителей компаний, мы помогаем им распутать клубок управленческих проблем и найти ясное системное решение.")]), _vm._v(" "), _c('p', [_vm._v("Для нас нет барьеров между дисциплинами менеджмента. Мы видим организацию как единую систему и применяем инженерный подход к проведению организационных изменений, сочетающий творческий поиск и аналитический инструментарий.")]), _vm._v(" "), _c('p', [_vm._v("Мы стремимся сделать Русский Менеджмент мировым брендом, образцом для управления организациями во всем мире!")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col text-center"
-  }, [_c('h2', {
-    staticClass: "font-weight-light mb-3"
-  }, [_vm._v("Философия")]), _vm._v(" "), _c('p', {
-    staticClass: "lead"
-  }, [_vm._v("Когда мы в 2002 году создавали нашу консалтинговую компанию, мы с самого начала отказались от пути, проторенного другими консультантами. Распространенная практика давала клиенту консалтинговый продукт, который предлагался как «таблетка от всех болезней». Мы решили строить другой консалтинг, поставив в центр организацию и ее проблемы.")]), _vm._v(" "), _c('p', [_c('img', {
+  return _c('p', [_c('img', {
     attrs: {
       "src": "/img/home/btn_play.png",
       "width": "100"
     }
-  })])])])
+  })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row mt-4"
