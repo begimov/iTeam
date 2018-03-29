@@ -18,6 +18,11 @@ abstract class EloquentRepositoryAbstract implements RepositoryInterface, Criter
     {
         return $this->entity->get();
     }
+
+    public function first()
+    {
+        return $this->entity->first();
+    }
     
     public function paginate($by)
     {

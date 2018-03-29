@@ -3,13 +3,20 @@
 <head>
   @include('layouts.partials._head')
 </head>
-<body>
+<body class="bg-light">
   <div id="app">
-    @include('layouts.partials._header')
-    @include('layouts.partials._navigation')
-    @yield('content')
-    @include ('layouts.partials._footer')
+    <div v-cloak>
+      @include('layouts.partials._header')
+      @include('layouts.partials._navigation')
+      @yield('content')
+      @include ('layouts.partials._footer')
+    </div>
   </div>
   @include ('layouts.partials._scripts')
+  <script>
+    jQuery(document).ready(function() {
+      @yield('postJquery');
+    });
+  </script>
 </body>
 </html>

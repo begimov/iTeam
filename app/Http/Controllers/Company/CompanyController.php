@@ -7,13 +7,23 @@ use App\Http\Controllers\Controller;
 
 class CompanyController extends Controller
 {
-    public function about()
+    public function services()
     {
-        return view('company.about');
+        return view('company.services');
     }
 
     public function contact()
     {
         return view('company.contact');
+    }
+
+    public function terms()
+    {
+        return view('company.terms');
+    }
+
+    public function offer()
+    {
+        return view('company.offer');
     }
 }

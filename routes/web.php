@@ -13,6 +13,12 @@
 
 Route::get('/', 'Home\HomeController@index')->name('home');
 
+// Pages
+Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
+    Route::get('category/{category}', 'PageController@index')->name('pages.category.index');
+    Route::get('{page}', 'PageController@show')->name('pages.show');
+}); 
+
 // User dashboard & profile
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'], function () {
     Route::get('/', 'DashboardController@index')->name('user.dashboard.index');
@@ -28,8 +34,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
 
 // Company related routes
 Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
-    Route::get('about', 'CompanyController@about')->name('company.about');
+    Route::get('services', 'CompanyController@services')->name('company.services');
     Route::get('contact', 'CompanyController@contact')->name('company.contact');
+    Route::get('terms', 'CompanyController@terms')->name('company.terms');
+    Route::get('offer', 'CompanyController@offer')->name('company.offer');
 });
 
 Auth::routes();
