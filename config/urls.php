@@ -18,6 +18,7 @@ return [
     ],
     'mail' => [
         'info' => 'mailto:info@iteam.ru',
+        'support' => 'mailto:support@iteam.ru',
     ],
     'webmoney' => [
         'megastock' => 'https://megastock.ru/',

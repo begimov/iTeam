@@ -63,7 +63,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->orders->store($request->all());
+        return redirect()->route('user.dashboard.index');
     }
 
     /**

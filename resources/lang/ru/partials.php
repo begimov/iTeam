@@ -29,4 +29,7 @@ return [
         'sn_subscribe'   => 'Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях',
         'payment_order'   => 'порядок оплаты',
     ],
+    'contact' => [
+        'support_email' => 'support@iteam.ru'
+    ]
 ];
