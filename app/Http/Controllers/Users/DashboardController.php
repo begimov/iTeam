@@ -15,10 +15,6 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        if (isset($request->product_id)) {
-            // TODO: add validation, exists validation rule on products table, price_tag_id exists and belongs to this product
-            $this->orders->store($request->all());
-        }
         return view('users.dashboard');
     }
 }
