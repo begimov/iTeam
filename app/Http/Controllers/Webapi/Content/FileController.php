@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Webapi\Content;
 
+use Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,7 +13,18 @@ class FileController extends Controller
     public function show(File $file)
     {
         // TODO: validation user paid for product which has current file in its materials
-        $path = storage_path('app/files/materials/id_' . $file->material->id . '/' . $file->name);
-        dd($path);
+        $path = config('urls.files.materials_files') . $file->material->id . '/' . $file->name;
+
+        if (!Storage::disk('local')->exists($path)) {
+            abort(404);
+        }
+    
+        return response()->download(
+            storage_path('app/' . $path), 
+            $file->name, 
+            [
+                "Content-Type" => Storage::disk('local')->mimeType($path)
+            ]
+        );
     }
 }

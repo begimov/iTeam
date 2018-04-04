@@ -26,7 +26,8 @@ return [
     ],
 
     'files' => [
-        'page_elements_files' => asset('storage/public/files/elements')
+        'page_elements_files' => asset('storage/public/files/elements'),
+        'materials_files' => 'files/materials/id_'
     ]
 
 ];
