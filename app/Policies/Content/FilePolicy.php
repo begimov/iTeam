@@ -27,9 +27,8 @@ class FilePolicy
         });
 
         // TODO: Use repository
-        // $orders = $this->orders
+        // $orders = $this->orders->getAuthUserOrders()
         //  ->withCriteria([
-        //     new BelongsToUser($user),
         //     new WhereIn('product_id', $products),
         //     new Where('payment_state_id', config('orders.payed_payment_state_id')),
         //  ])->get();
