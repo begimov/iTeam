@@ -27,7 +27,10 @@ class FilePolicy
             return $product->id;
         });
 
-        $orders = auth()->user()->orders()->whereIn('product_id', $products)->get();
+        $orders = auth()->user()->orders()
+            ->whereIn('product_id', $products)
+            ->where('payment_state_id', 1)
+            ->get();
         
         dd($products, $products, $orders);
         // TODO: check if user has paid order of product 
