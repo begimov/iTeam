@@ -22,12 +22,17 @@ class FilePolicy
 
     public function download(User $user, File $file)
     {
-        // TODO: use hasManyThrough insetad of file->material->products
         $products = $file->material->products->map(function ($product) {
             return $product->id;
         });
 
         // TODO: Use repository
+        // $orders = $this->orders
+        //  ->withCriteria([
+        //     new BelongsToUser($user),
+        //     new WhereIn('product_id', $products),
+        //     new Where('payment_state_id', config('orders.payed_payment_state_id')),
+        //  ])->get();
         $orders = $user->orders()
             ->whereIn('product_id', $products)
             ->where('payment_state_id', config('orders.payed_payment_state_id'))
