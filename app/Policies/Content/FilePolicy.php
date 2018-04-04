@@ -28,7 +28,7 @@ class FilePolicy
         });
 
         // TODO: Use repository
-        $orders = auth()->user()->orders()
+        $orders = $user->orders()
             ->whereIn('product_id', $products)
             ->where('payment_state_id', config('orders.payed_payment_state_id'))
             ->get();
