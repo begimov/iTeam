@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     // Route for Profile.vue component
     Route::post('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
     Route::resource('orders', 'Products\OrderController');
+    Route::resource('files', 'Content\FileController');
 });
 
 // Company related routes
