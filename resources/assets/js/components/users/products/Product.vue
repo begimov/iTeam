@@ -5,7 +5,7 @@
         <div v-for="material in materials" :key="material.id">
             <h2>{{ material.name }}</h2>
             <span v-for="file in material.files.data" :key="file.id">
-                <a :href="file.path" download>{{ file.name }}</a> - {{ Math.round(file.size/1024) }} Kb
+                <a :href="'webapi/files/' + file.id">{{ file.name }}</a> - {{ Math.round(file.size/1024) }} Kb
             </span>
         </div>
     </div> 

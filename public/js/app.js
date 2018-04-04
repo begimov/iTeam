@@ -11942,7 +11942,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(86);
+module.exports = __webpack_require__(92);
 
 
 /***/ }),
@@ -11975,16 +11975,16 @@ window.Vue = __webpack_require__(6);
  */
 
 // Base components
-Vue.component('youtube-player', __webpack_require__(90));
+Vue.component('youtube-player', __webpack_require__(64));
 
 // Static company pages related components
-Vue.component('mission-philosophy', __webpack_require__(64));
-Vue.component('company-services', __webpack_require__(93));
+Vue.component('mission-philosophy', __webpack_require__(67));
+Vue.component('company-services', __webpack_require__(70));
 
-Vue.component('user-dashboard', __webpack_require__(67));
-Vue.component('order-card', __webpack_require__(70));
-Vue.component('order-payment', __webpack_require__(73));
-Vue.component('product', __webpack_require__(83));
+Vue.component('user-dashboard', __webpack_require__(73));
+Vue.component('order-card', __webpack_require__(76));
+Vue.component('order-payment', __webpack_require__(79));
+Vue.component('product', __webpack_require__(89));
 
 var app = new Vue({
   el: '#app',
@@ -47461,6 +47461,167 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/base/Ytplayer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Ytplayer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-007d49dc", Component.options)
+  } else {
+    hotAPI.reload("data-v-007d49dc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'Ytplayer',
+    props: ['videoId'],
+    data: function data() {
+        return {
+            videoUrl: ''
+        };
+    },
+
+    methods: {
+        onOpen: function onOpen() {
+            this.videoUrl = 'https://www.youtube.com/embed/' + this.videoId;
+        },
+        onClose: function onClose() {
+            this.videoUrl = '';
+        }
+    },
+    mounted: function mounted() {
+        //
+    }
+};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-dark btn-lg play-video-btn",
+    attrs: {
+      "type": "button",
+      "data-toggle": "modal",
+      "data-backdrop": "static",
+      "data-target": '#' + this.videoId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.onOpen($event)
+      }
+    }
+  }, [_vm._v("Посмотреть видео")]), _vm._v(" "), _c('div', {
+    staticClass: "modal fade",
+    attrs: {
+      "id": this.videoId,
+      "tabindex": "-1",
+      "role": "dialog",
+      "aria-labelledby": "exampleModalLabel",
+      "aria-hidden": "true"
+    }
+  }, [_c('div', {
+    staticClass: "modal-dialog modal-lg",
+    attrs: {
+      "role": "document"
+    }
+  }, [_c('div', {
+    staticClass: "modal-content"
+  }, [_c('div', {
+    staticClass: "modal-body"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('button', {
+    staticClass: "close",
+    attrs: {
+      "type": "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.onClose($event)
+      }
+    }
+  }, [_vm._m(0)])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('div', {
+    staticClass: "embed-responsive embed-responsive-16by9"
+  }, [_c('iframe', {
+    attrs: {
+      "width": "100%",
+      "height": "350",
+      "src": _vm.videoUrl,
+      "frameborder": "0",
+      "allow": "encrypted-media",
+      "allowfullscreen": ""
+    }
+  })])])])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-007d49dc", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(68),
+  /* template */
+  __webpack_require__(69),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
 Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/static/company/services/Mission.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Mission.vue: functional components are not supported with templates, they should use render functions.")}
@@ -47485,7 +47646,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47515,7 +47676,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47622,15 +47783,251 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(68),
+  __webpack_require__(71),
   /* template */
-  __webpack_require__(69),
+  __webpack_require__(72),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/static/company/services/Services.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Services.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-610c95ec", Component.options)
+  } else {
+    hotAPI.reload("data-v-610c95ec", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    data: function data() {
+        return {
+            active: 1
+        };
+    },
+
+    computed: {
+        //
+    },
+    methods: {
+        setActive: function setActive(value) {
+            this.active = value;
+        },
+        imgPath: function imgPath(value) {
+            return '/img/company/services/services_0' + value + (this.active === value ? '_active.png' : '.png');
+        }
+    },
+    mounted: function mounted() {
+        //
+    }
+};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "container py-5"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col text-center"
+  }, [_c('h2', {
+    staticClass: "font-weight-light mb-3"
+  }, [_vm._v("Услуги")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Мы работаем с управленческими командами предприятий как наставники, помогая выработать и осуществить на практике решения, изменяющие компанию, чтобы преобразовать ее в эффективную систему, способную противостоять любым конкурентам на любых рынках.")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('p', [_c('ul', {
+    staticClass: "list-inline"
+  }, [_c('li', {
+    staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(1)
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.imgPath(1)
+    }
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(2)
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.imgPath(2)
+    }
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(3)
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.imgPath(3)
+    }
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(4)
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.imgPath(4)
+    }
+  })])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.setActive(5)
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.imgPath(5)
+    }
+  })])])])])])]), _vm._v(" "), (this.active === 1) ? _c('div', {
+    staticClass: "row mt-3"
+  }, [_c('div', {
+    staticClass: "col-lg-4 services-01"
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), (this.active === 2) ? _c('div', {
+    staticClass: "row mt-3"
+  }, [_c('div', {
+    staticClass: "col-lg-4 services-01"
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), (this.active === 3) ? _c('div', {
+    staticClass: "row mt-3"
+  }, [_c('div', {
+    staticClass: "col-lg-4 services-01"
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), (this.active === 4) ? _c('div', {
+    staticClass: "row mt-3"
+  }, [_c('div', {
+    staticClass: "col-lg-4 services-01"
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(4)]) : _vm._e(), _vm._v(" "), (this.active === 5) ? _c('div', {
+    staticClass: "row mt-3"
+  }, [_c('div', {
+    staticClass: "col-lg-4 services-01"
+  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(5)]) : _vm._e()])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "text-primary font-weight-normal py-2"
+  }, [_c('span', {
+    staticClass: "lead font-weight-bold text-primary"
+  }, [_vm._v("Организационные изменения охватывают пять направлений.")]), _c('br'), _vm._v("\n                    Эти направления взаимосвязаны и при осуществлении любого из них затрагиваются все остальные.\n                ")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-lg-8 p-3"
+  }, [_c('h4', {
+    staticClass: "font-weight-normal mb-3"
+  }, [_vm._v("Создание системы целевого управления")]), _vm._v(" "), _c('p', [_vm._v("Мы помогаем руководителям предприятий построить все четыре уровня системы целевого управления:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Создать миссию компании — цель высшего уровня, которая определяет смысл деятельности компании.")]), _vm._v(" "), _c('li', [_vm._v("Разработать Сбалансированную систему показателей, направляющую все действия компании к ее стратегическим целям.")]), _vm._v(" "), _c('li', [_vm._v("Наладить систему годового планирования и контроля исполнения планов")]), _vm._v(" "), _c('li', [_vm._v("Внедрить KPI сотрудников, связанные со стратегическими и тактическими целями компании.")])]), _vm._v(" "), _c('p', [_vm._v("В ходе построения системы целевого управления мы уделяем особое внимание взаимным связям всех уровней, а также их взаимодействию с другими компонентами системы управления компанией: стратегией, процессами, структурой, корпоративной культурой.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-lg-8 p-3"
+  }, [_c('h4', {
+    staticClass: "font-weight-normal mb-3"
+  }, [_vm._v("Разработка стратегии компании")]), _vm._v(" "), _c('p', [_vm._v("В проекте по разработке стратегии мы организуем и направляем работу управленческой команды предприятия по следующему пути:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Анализ стратегических проблем компании;")]), _vm._v(" "), _c('li', [_vm._v("Исследование возможностей для развития;")]), _vm._v(" "), _c('li', [_vm._v("Выработка стратегических решений с использованием SWOT-анализа;")]), _vm._v(" "), _c('li', [_vm._v("Определение позиционирования компании на рынке;")]), _vm._v(" "), _c('li', [_vm._v("Разработка целевой структуры управления;")]), _vm._v(" "), _c('li', [_vm._v("Определение стратегических ресурсов;")]), _vm._v(" "), _c('li', [_vm._v("Определение главных направлений развития;")]), _vm._v(" "), _c('li', [_vm._v("Построение карты стратегии;")]), _vm._v(" "), _c('li', [_vm._v("Разработка стратегических программ по направлениям.")])]), _vm._v(" "), _c('p', [_vm._v("Такой проект длится в среднем 4 месяца и завершается созданием победной стратегии, которая определяет план развития компании на 4-5 лет.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-lg-8 p-3"
+  }, [_c('h4', {
+    staticClass: "font-weight-normal mb-3"
+  }, [_vm._v("Разработка или преобразование организационной структуры")]), _vm._v(" "), _c('p', [_vm._v("Проект разработки организационной структуры начинается с анализа проблем в области управления и выявления слабых звеньев.")]), _vm._v(" "), _c('p', [_vm._v("На следующем этапе определяется состав бизнес-процессов, обслуживание которых должна обеспечить организационная структура.")]), _vm._v(" "), _c('p', [_vm._v("Третий этап — построение матрицы ответственности, связывающей бизнес-процессы с элементами организационной структуры.")]), _vm._v(" "), _c('p', [_vm._v("Четвертый этап — разработка Положения об организационной структуре, закрепляющего функции и области ответственности каждого структурного подразделения.")]), _vm._v(" "), _c('p', [_vm._v("На завершающем этапе разрабатывается план организационных изменений и проводится внедрение новой организационной структуры.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-lg-8 p-3"
+  }, [_c('h4', {
+    staticClass: "font-weight-normal mb-3"
+  }, [_vm._v("Построение системы управления процессами")]), _vm._v(" "), _c('p', [_vm._v("Создавая систему управления процессами, мы даем управленческой команде предприятия детально проработанную «дорожную карту» и ведем ее по всем этапам этого пути:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Анализ проблемной области компании")]), _vm._v(" "), _c('li', [_vm._v("Определение стратегии развития")]), _vm._v(" "), _c('li', [_vm._v("Разработка архитектуры процессов")]), _vm._v(" "), _c('li', [_vm._v("Определение «слабого звена» в цепи процессов")]), _vm._v(" "), _c('li', [_vm._v("Определение ключевых характеристик процессов")]), _vm._v(" "), _c('li', [_vm._v("Разработка модели процессов")]), _vm._v(" "), _c('li', [_vm._v("Разработка регламента процессов")]), _vm._v(" "), _c('li', [_vm._v("Трансформация организационной структуры")]), _vm._v(" "), _c('li', [_vm._v("Создание системы контроллинга на основе KPI")]), _vm._v(" "), _c('li', [_vm._v("Обучение исполнителей и внедрение процессов")])]), _vm._v(" "), _c('p', [_vm._v("Особенностью наших методов является системный подход к управлению процессами. Проектируя и внедряя процессы мы связываем их со стратегией, организационной структурой, целеполаганием и корпоративной культурой.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-lg-8 p-3"
+  }, [_c('h4', {
+    staticClass: "font-weight-normal mb-3"
+  }, [_vm._v("Трансформация корпоративной культуры")]), _vm._v(" "), _c('p', [_vm._v("Мы видим корпоративную культуру как фундамент организации. В каждом проекте она рассматривается как компонент, определяющий ход преобразований. В большинстве случаев для успешного проведения изменений в компании необходима трансформация корпоративной культуры. Это программа, охватывающая весь коллектив предприятия:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Исследование и оценка действующих корпоративных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Определение целевого (желаемого) состояния корпоративных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Разработка комплекса мероприятий и проектов по развитию внутренних коммуникаций и укреплению позитивных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Анализ изменений в корпоративной культуре и корректировка действий")])]), _vm._v(" "), _c('p', [_vm._v("Программа длится 1,5-2 года и приводит к глубоким изменениям в подходах к ведению дел на всех уровнях компании, росту мотивации сотрудников и ускорению динамики развития организации.")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-610c95ec", module.exports)
+  }
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(74),
+  /* template */
+  __webpack_require__(75),
   /* styles */
   null,
   /* scopeId */
@@ -47662,7 +48059,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47685,7 +48082,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 69 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47729,15 +48126,15 @@ if (false) {
 }
 
 /***/ }),
-/* 70 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(71),
+  __webpack_require__(77),
   /* template */
-  __webpack_require__(72),
+  __webpack_require__(78),
   /* styles */
   null,
   /* scopeId */
@@ -47769,7 +48166,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47796,7 +48193,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 72 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -47859,19 +48256,19 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(74)
+  __webpack_require__(80)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(79),
+  __webpack_require__(85),
   /* template */
-  __webpack_require__(82),
+  __webpack_require__(88),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -47903,17 +48300,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 74 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(75);
+var content = __webpack_require__(81);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(77)("3919455c", content, false);
+var update = __webpack_require__(83)("3919455c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -47929,10 +48326,10 @@ if(false) {
 }
 
 /***/ }),
-/* 75 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(76)(undefined);
+exports = module.exports = __webpack_require__(82)(undefined);
 // imports
 
 
@@ -47943,7 +48340,7 @@ exports.push([module.i, "\n.modal {\n    display: block;\n    overflow: auto; /*
 
 
 /***/ }),
-/* 76 */
+/* 82 */
 /***/ (function(module, exports) {
 
 /*
@@ -48025,7 +48422,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 77 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -48044,7 +48441,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(78)
+var listToStyles = __webpack_require__(84)
 
 /*
 type StyleObject = {
@@ -48246,7 +48643,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 78 */
+/* 84 */
 /***/ (function(module, exports) {
 
 /**
@@ -48279,7 +48676,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 79 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48293,7 +48690,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _vuex = __webpack_require__(3);
 
-var _config = __webpack_require__(80);
+var _config = __webpack_require__(86);
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -48337,7 +48734,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 80 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48347,7 +48744,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _payments = __webpack_require__(81);
+var _payments = __webpack_require__(87);
 
 var _payments2 = _interopRequireDefault(_payments);
 
@@ -48358,7 +48755,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 81 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48376,7 +48773,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 82 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -48643,15 +49040,15 @@ if (false) {
 }
 
 /***/ }),
-/* 83 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(84),
+  __webpack_require__(90),
   /* template */
-  __webpack_require__(85),
+  __webpack_require__(91),
   /* styles */
   null,
   /* scopeId */
@@ -48683,7 +49080,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48714,7 +49111,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 85 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -48739,8 +49136,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         key: file.id
       }, [_c('a', {
         attrs: {
-          "href": file.path,
-          "download": ""
+          "href": 'webapi/files/' + file.id
         }
       }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
     })], 2)
@@ -48755,410 +49151,10 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 92 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(91),
-  /* template */
-  __webpack_require__(92),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/base/Ytplayer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Ytplayer.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-007d49dc", Component.options)
-  } else {
-    hotAPI.reload("data-v-007d49dc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    name: 'Ytplayer',
-    props: ['videoId'],
-    data: function data() {
-        return {
-            videoUrl: ''
-        };
-    },
-
-    methods: {
-        onOpen: function onOpen() {
-            this.videoUrl = 'https://www.youtube.com/embed/' + this.videoId;
-        },
-        onClose: function onClose() {
-            this.videoUrl = '';
-        }
-    },
-    mounted: function mounted() {
-        //
-    }
-};
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('button', {
-    staticClass: "btn btn-dark btn-lg play-video-btn",
-    attrs: {
-      "type": "button",
-      "data-toggle": "modal",
-      "data-backdrop": "static",
-      "data-target": '#' + this.videoId
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.onOpen($event)
-      }
-    }
-  }, [_vm._v("Посмотреть видео")]), _vm._v(" "), _c('div', {
-    staticClass: "modal fade",
-    attrs: {
-      "id": this.videoId,
-      "tabindex": "-1",
-      "role": "dialog",
-      "aria-labelledby": "exampleModalLabel",
-      "aria-hidden": "true"
-    }
-  }, [_c('div', {
-    staticClass: "modal-dialog modal-lg",
-    attrs: {
-      "role": "document"
-    }
-  }, [_c('div', {
-    staticClass: "modal-content"
-  }, [_c('div', {
-    staticClass: "modal-body"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('button', {
-    staticClass: "close",
-    attrs: {
-      "type": "button",
-      "data-dismiss": "modal",
-      "aria-label": "Close"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.onClose($event)
-      }
-    }
-  }, [_vm._m(0)])])]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('div', {
-    staticClass: "embed-responsive embed-responsive-16by9"
-  }, [_c('iframe', {
-    attrs: {
-      "width": "100%",
-      "height": "350",
-      "src": _vm.videoUrl,
-      "frameborder": "0",
-      "allow": "encrypted-media",
-      "allowfullscreen": ""
-    }
-  })])])])])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    attrs: {
-      "href": "#"
-    }
-  }, [_c('span', {
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("×")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-007d49dc", module.exports)
-  }
-}
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(94),
-  /* template */
-  __webpack_require__(95),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/max/Desktop/iTeam/resources/assets/js/components/static/company/services/Services.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Services.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-610c95ec", Component.options)
-  } else {
-    hotAPI.reload("data-v-610c95ec", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-    data: function data() {
-        return {
-            active: 1
-        };
-    },
-
-    computed: {
-        //
-    },
-    methods: {
-        setActive: function setActive(value) {
-            this.active = value;
-        },
-        imgPath: function imgPath(value) {
-            return '/img/company/services/services_0' + value + (this.active === value ? '_active.png' : '.png');
-        }
-    },
-    mounted: function mounted() {
-        //
-    }
-};
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "container py-5"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col text-center"
-  }, [_c('h2', {
-    staticClass: "font-weight-light mb-3"
-  }, [_vm._v("Услуги")]), _vm._v(" "), _c('p', {
-    staticClass: "lead"
-  }, [_vm._v("Мы работаем с управленческими командами предприятий как наставники, помогая выработать и осуществить на практике решения, изменяющие компанию, чтобы преобразовать ее в эффективную систему, способную противостоять любым конкурентам на любых рынках.")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('p', [_c('ul', {
-    staticClass: "list-inline"
-  }, [_c('li', {
-    staticClass: "list-inline-item"
-  }, [_c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.setActive(1)
-      }
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.imgPath(1)
-    }
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "list-inline-item"
-  }, [_c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.setActive(2)
-      }
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.imgPath(2)
-    }
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "list-inline-item"
-  }, [_c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.setActive(3)
-      }
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.imgPath(3)
-    }
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "list-inline-item"
-  }, [_c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.setActive(4)
-      }
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.imgPath(4)
-    }
-  })])]), _vm._v(" "), _c('li', {
-    staticClass: "list-inline-item"
-  }, [_c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.setActive(5)
-      }
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.imgPath(5)
-    }
-  })])])])])])]), _vm._v(" "), (this.active === 1) ? _c('div', {
-    staticClass: "row mt-3"
-  }, [_c('div', {
-    staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), (this.active === 2) ? _c('div', {
-    staticClass: "row mt-3"
-  }, [_c('div', {
-    staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), (this.active === 3) ? _c('div', {
-    staticClass: "row mt-3"
-  }, [_c('div', {
-    staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), (this.active === 4) ? _c('div', {
-    staticClass: "row mt-3"
-  }, [_c('div', {
-    staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(4)]) : _vm._e(), _vm._v(" "), (this.active === 5) ? _c('div', {
-    staticClass: "row mt-3"
-  }, [_c('div', {
-    staticClass: "col-lg-4 services-01"
-  }, [_vm._v(" ")]), _vm._v(" "), _vm._m(5)]) : _vm._e()])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "text-primary font-weight-normal py-2"
-  }, [_c('span', {
-    staticClass: "lead font-weight-bold text-primary"
-  }, [_vm._v("Организационные изменения охватывают пять направлений.")]), _c('br'), _vm._v("\n                    Эти направления взаимосвязаны и при осуществлении любого из них затрагиваются все остальные.\n                ")])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-8 p-3"
-  }, [_c('h4', {
-    staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Создание системы целевого управления")]), _vm._v(" "), _c('p', [_vm._v("Мы помогаем руководителям предприятий построить все четыре уровня системы целевого управления:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Создать миссию компании — цель высшего уровня, которая определяет смысл деятельности компании.")]), _vm._v(" "), _c('li', [_vm._v("Разработать Сбалансированную систему показателей, направляющую все действия компании к ее стратегическим целям.")]), _vm._v(" "), _c('li', [_vm._v("Наладить систему годового планирования и контроля исполнения планов")]), _vm._v(" "), _c('li', [_vm._v("Внедрить KPI сотрудников, связанные со стратегическими и тактическими целями компании.")])]), _vm._v(" "), _c('p', [_vm._v("В ходе построения системы целевого управления мы уделяем особое внимание взаимным связям всех уровней, а также их взаимодействию с другими компонентами системы управления компанией: стратегией, процессами, структурой, корпоративной культурой.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-8 p-3"
-  }, [_c('h4', {
-    staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Разработка стратегии компании")]), _vm._v(" "), _c('p', [_vm._v("В проекте по разработке стратегии мы организуем и направляем работу управленческой команды предприятия по следующему пути:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Анализ стратегических проблем компании;")]), _vm._v(" "), _c('li', [_vm._v("Исследование возможностей для развития;")]), _vm._v(" "), _c('li', [_vm._v("Выработка стратегических решений с использованием SWOT-анализа;")]), _vm._v(" "), _c('li', [_vm._v("Определение позиционирования компании на рынке;")]), _vm._v(" "), _c('li', [_vm._v("Разработка целевой структуры управления;")]), _vm._v(" "), _c('li', [_vm._v("Определение стратегических ресурсов;")]), _vm._v(" "), _c('li', [_vm._v("Определение главных направлений развития;")]), _vm._v(" "), _c('li', [_vm._v("Построение карты стратегии;")]), _vm._v(" "), _c('li', [_vm._v("Разработка стратегических программ по направлениям.")])]), _vm._v(" "), _c('p', [_vm._v("Такой проект длится в среднем 4 месяца и завершается созданием победной стратегии, которая определяет план развития компании на 4-5 лет.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-8 p-3"
-  }, [_c('h4', {
-    staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Разработка или преобразование организационной структуры")]), _vm._v(" "), _c('p', [_vm._v("Проект разработки организационной структуры начинается с анализа проблем в области управления и выявления слабых звеньев.")]), _vm._v(" "), _c('p', [_vm._v("На следующем этапе определяется состав бизнес-процессов, обслуживание которых должна обеспечить организационная структура.")]), _vm._v(" "), _c('p', [_vm._v("Третий этап — построение матрицы ответственности, связывающей бизнес-процессы с элементами организационной структуры.")]), _vm._v(" "), _c('p', [_vm._v("Четвертый этап — разработка Положения об организационной структуре, закрепляющего функции и области ответственности каждого структурного подразделения.")]), _vm._v(" "), _c('p', [_vm._v("На завершающем этапе разрабатывается план организационных изменений и проводится внедрение новой организационной структуры.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-8 p-3"
-  }, [_c('h4', {
-    staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Построение системы управления процессами")]), _vm._v(" "), _c('p', [_vm._v("Создавая систему управления процессами, мы даем управленческой команде предприятия детально проработанную «дорожную карту» и ведем ее по всем этапам этого пути:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Анализ проблемной области компании")]), _vm._v(" "), _c('li', [_vm._v("Определение стратегии развития")]), _vm._v(" "), _c('li', [_vm._v("Разработка архитектуры процессов")]), _vm._v(" "), _c('li', [_vm._v("Определение «слабого звена» в цепи процессов")]), _vm._v(" "), _c('li', [_vm._v("Определение ключевых характеристик процессов")]), _vm._v(" "), _c('li', [_vm._v("Разработка модели процессов")]), _vm._v(" "), _c('li', [_vm._v("Разработка регламента процессов")]), _vm._v(" "), _c('li', [_vm._v("Трансформация организационной структуры")]), _vm._v(" "), _c('li', [_vm._v("Создание системы контроллинга на основе KPI")]), _vm._v(" "), _c('li', [_vm._v("Обучение исполнителей и внедрение процессов")])]), _vm._v(" "), _c('p', [_vm._v("Особенностью наших методов является системный подход к управлению процессами. Проектируя и внедряя процессы мы связываем их со стратегией, организационной структурой, целеполаганием и корпоративной культурой.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-8 p-3"
-  }, [_c('h4', {
-    staticClass: "font-weight-normal mb-3"
-  }, [_vm._v("Трансформация корпоративной культуры")]), _vm._v(" "), _c('p', [_vm._v("Мы видим корпоративную культуру как фундамент организации. В каждом проекте она рассматривается как компонент, определяющий ход преобразований. В большинстве случаев для успешного проведения изменений в компании необходима трансформация корпоративной культуры. Это программа, охватывающая весь коллектив предприятия:")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Исследование и оценка действующих корпоративных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Определение целевого (желаемого) состояния корпоративных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Разработка комплекса мероприятий и проектов по развитию внутренних коммуникаций и укреплению позитивных ценностей")]), _vm._v(" "), _c('li', [_vm._v("Анализ изменений в корпоративной культуре и корректировка действий")])]), _vm._v(" "), _c('p', [_vm._v("Программа длится 1,5-2 года и приводит к глубоким изменениям в подходах к ведению дел на всех уровнях компании, росту мотивации сотрудников и ускорению динамики развития организации.")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-610c95ec", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
