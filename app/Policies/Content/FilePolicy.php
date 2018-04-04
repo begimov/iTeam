@@ -29,7 +29,7 @@ class FilePolicy
 
         $orders = auth()->user()->orders()
             ->whereIn('product_id', $products)
-            ->where('payment_state_id', 1)
+            ->where('payment_state_id', config('orders.payed_payment_state_id'))
             ->get();
         
         dd($products, $products, $orders);
