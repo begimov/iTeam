@@ -12,6 +12,7 @@ class FileController extends Controller
 {
     public function show(File $file)
     {
+        $this->authorize('download', $file);
         // TODO: validation user paid for product which has current file in its materials
         $path = config('urls.files.materials_files') . $file->material->id . '/' . $file->name;
 
