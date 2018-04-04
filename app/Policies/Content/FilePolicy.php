@@ -22,8 +22,14 @@ class FilePolicy
 
     public function download(User $user, File $file)
     {
-        $products = $file->material->products;
-        dd($products);
+        // TODO: use hasManyThrough insetad of file->material->products
+        $products = $file->material->products->map(function ($product) {
+            return $product->id;
+        });
+
+        $orders = auth()->user()->orders()->whereIn('product_id', $products)->get();
+        
+        dd($products, $products, $orders);
         // TODO: check if user has paid order of product 
         // to which material passed file belongs to 
         return false;
