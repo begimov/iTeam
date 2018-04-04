@@ -25,4 +25,8 @@ return [
         'payments_info' => 'http://wiki.webmoney.ru/projects/webmoney/wiki/Оплата_товаров_и_услуг_через_сервис_Мерчант',
     ],
 
+    'files' => [
+        'page_elements_files' => asset('storage/public/files/elements')
+    ]
+
 ];
