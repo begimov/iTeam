@@ -27,14 +27,12 @@ class FilePolicy
             return $product->id;
         });
 
+        // TODO: Use repository
         $orders = auth()->user()->orders()
             ->whereIn('product_id', $products)
             ->where('payment_state_id', config('orders.payed_payment_state_id'))
             ->get();
         
-        dd($products, $products, $orders);
-        // TODO: check if user has paid order of product 
-        // to which material passed file belongs to 
-        return false;
+        return $orders->isNotEmpty();
     }
 }
