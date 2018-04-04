@@ -22,7 +22,10 @@ class FilePolicy
 
     public function download(User $user, File $file)
     {
-        dd($file);
-        return true;
+        $products = $file->material->products;
+        dd($products);
+        // TODO: check if user has paid order of product 
+        // to which material passed file belongs to 
+        return false;
     }
 }
