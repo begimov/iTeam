@@ -6,18 +6,22 @@ use App\User;
 use App\Models\Content\File;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+use App\Repositories\Contracts\Products\OrderRepository;
+
 class FilePolicy
 {
     use HandlesAuthorization;
+
+    protected $orders;
 
     /**
      * Create a new policy instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(OrderRepository $orders)
     {
-        //
+        $this->orders = $orders;
     }
 
     public function download(User $user, File $file)
