@@ -4,19 +4,19 @@ namespace App\Repositories\Eloquent\Criteria;
 
 use App\Repositories\Criteria\CriterionInterface;
 
-class WhereIn implements CriterionInterface
+class Where implements CriterionInterface
 {
     protected $column;
-    protected $values;
+    protected $value;
 
-    public function __construct($column, array $values)
+    public function __construct($column, $value)
     {
         $this->column = $column;
-        $this->values = $values;
+        $this->value = $value;
     }
 
     public function apply($entity)
     {
-        return $entity->whereIn($this->column, $this->values);
+        return $entity->where($this->column, $this->value);
     }
 }
