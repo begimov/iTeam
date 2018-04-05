@@ -6,6 +6,9 @@ use App\User;
 use App\Models\Content\File;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+use App\Repositories\Eloquent\Criteria\WhereIn;
+use App\Repositories\Eloquent\Criteria\Where;
+
 use App\Repositories\Contracts\Products\OrderRepository;
 
 class FilePolicy
@@ -30,16 +33,11 @@ class FilePolicy
             return $product->id;
         });
 
-        // TODO: Use repository
-        // $orders = $this->orders->getAuthUserOrders()
-        //  ->withCriteria([
-        //     new WhereIn('product_id', $products),
-        //     new Where('payment_state_id', config('orders.payed_payment_state_id')),
-        //  ])->get();
-        $orders = $user->orders()
-            ->whereIn('product_id', $products)
-            ->where('payment_state_id', config('orders.payed_payment_state_id'))
-            ->get();
+        $orders = $this->orders->getAuthUserOrders()
+         ->withCriteria([
+            new WhereIn('product_id', $products),
+            new Where('payment_state_id', config('orders.payed_payment_state_id')),
+         ])->get();
         
         return $orders->isNotEmpty();
     }

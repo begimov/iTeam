@@ -9,7 +9,7 @@ class WhereIn implements CriterionInterface
     protected $column;
     protected $values;
 
-    public function __construct($column, array $values)
+    public function __construct($column, $values)
     {
         $this->column = $column;
         $this->values = $values;
