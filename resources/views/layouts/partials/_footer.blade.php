@@ -22,8 +22,8 @@
             <p><h5>@lang('partials.footer.training')</h5></p>
             <p>
                 <a href="{{ config('urls.blog') }}">@lang('partials.navigation.articles')</a><br>
-                <a href="">@lang('partials.navigation.mk')</a><br>
-                <a href="">@lang('partials.navigation.mp')</a>
+                <a href="{{ route('pages.category.index', config('urls.slugs.categories.mk')) }}">@lang('partials.navigation.mk')</a><br>
+                <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">@lang('partials.navigation.mp')</a>
             </p>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-8">
