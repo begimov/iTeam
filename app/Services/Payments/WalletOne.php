@@ -6,6 +6,13 @@ use App\Services\Payments\Contracts\IWalletOne;
 
 class WalletOne implements IWalletOne
 {
+    protected $key;
+
+    public function __construct()
+    {
+        $this->key = config('services.walletone.key');
+    }
+
     public function generatePaymentSignature(array $formFields)
     {   
         $filteredFormFields = $this->filterFormFields($formFields);
@@ -16,7 +23,7 @@ class WalletOne implements IWalletOne
                 return $result . iconv("UTF-8", "Windows-1251", $fieldValue);
         }, "");
 
-        return base64_encode(pack("H*", md5($fieldValues . config('services.walletone.key'))));
+        return base64_encode(pack("H*", md5($fieldValues . $this->key)));
     }
 
     protected function filterFormFields($formFields)

@@ -38,6 +38,23 @@ class WalletOneWebhookController extends Controller
         );
     }
 
+    protected function isSignatureCorrect($payload)
+    {
+        $params = array_filter($payload, function ($key) {
+            return $key !== "WMI_SIGNATURE";
+        }, ARRAY_FILTER_USE_KEY);
+
+        uksort($params, "strcasecmp");
+
+        $values = array_reduce($params, function ($result, $elem) {
+            return $result . $elem;
+        }, "");
+
+        $signature = base64_encode(pack("H*", md5($values . config('services.walletone.key'))));
+
+        return $signature == $payload['WMI_SIGNATURE'];
+    }
+
     protected function printResponse($status, $desc = '')
     {
         print "WMI_RESULT=" . strtoupper($status) . "&";
