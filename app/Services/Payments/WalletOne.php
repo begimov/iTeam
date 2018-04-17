@@ -16,7 +16,7 @@ class WalletOne implements IWalletOne
     public function handlePayment(array $payload)
     {
         if(!$this->parametersExist($payload)) {
-            $this->printResponse("RETRY", "Required parameter is missing");
+            return $this->respond("RETRY", "Required parameter is missing");
         }
 
         $method = 'handle'.$payload['WMI_ORDER_STATE'];
@@ -24,7 +24,7 @@ class WalletOne implements IWalletOne
         if (method_exists($this, $method)) {
             return $this->{$method}($payload);
         } else {
-            return $this->printResponse('RETRY', 'Method does not exist');
+            return $this->respond('RETRY', 'Method does not exist');
         }
     }
 
@@ -64,9 +64,7 @@ class WalletOne implements IWalletOne
 
     protected function isSignatureCorrect($payload)
     {
-        $params = array_filter($payload, function ($key) {
-            return $key !== "WMI_SIGNATURE";
-        }, ARRAY_FILTER_USE_KEY);
+        $params = $this->filterFormFields($payload);
 
         uksort($params, "strcasecmp");
 
@@ -79,10 +77,11 @@ class WalletOne implements IWalletOne
         return $signature == $payload['WMI_SIGNATURE'];
     }
 
-    protected function printResponse($status, $desc = '')
+    protected function respond($status, $description = '')
     {
-        print "WMI_RESULT=" . strtoupper($status) . "&";
-        print "WMI_DESCRIPTION=" .urlencode($desc);
-        exit();
+        return [
+            'status' => $status,
+            'description' => $description
+        ];
     }
 }

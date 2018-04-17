@@ -20,6 +20,13 @@ class WalletOneWebhookController extends Controller
     {
         $payload = $request->all();
 
-        $this->walletOne->handlePayment($payload);
+        $this->printResponse($this->walletOne->handlePayment($payload));
+    }
+
+    protected function printResponse(array $data)
+    {
+        print "WMI_RESULT=" . strtoupper($data['status']) . "&";
+        print "WMI_DESCRIPTION=" .urlencode($data['description']);
+        exit();
     }
 }
