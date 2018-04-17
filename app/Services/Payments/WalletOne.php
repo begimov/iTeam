@@ -4,7 +4,6 @@ namespace App\Services\Payments;
 
 use App\Services\Payments\Contracts\IWalletOne;
 
-use App\Models\Products\Order;
 use App\Repositories\Contracts\Products\OrderRepository;
 
 class WalletOne implements IWalletOne
@@ -85,7 +84,7 @@ class WalletOne implements IWalletOne
 
     protected function markOrderAsPayed($payload)
     {
-        Order::find($payload['WMI_PAYMENT_NO'])->markAsPayed();
+        $this->orders->findById($payload['WMI_PAYMENT_NO'])->markAsPayed();
     }
 
     protected function respond($status, $description = null)
