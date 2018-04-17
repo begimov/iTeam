@@ -46,5 +46,5 @@ Auth::routes();
 
 // Webhooks
 Route::group(['prefix' => 'webhooks', 'namespace' => 'Webhooks'], function () {
-    Route::get('walletone', 'WalletOneWebhookController@handleWebhook');
+    Route::post('walletone', 'WalletOneWebhookController@handleWebhook');
 });
