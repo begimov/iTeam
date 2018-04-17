@@ -104,13 +104,10 @@
         <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
           НЕ&nbsp;ПЛАНИРУЙТЕ В&nbsp;ОДИНОЧКУ?!
         </div>
-        <div class="card-body text-center p-5">
+        <div class="card-body text-center p-5 home-video-1">
           <youtube-player 
             video-id="J3xvXchigx4"
           ></youtube-player>
-          <!-- <a href="#">
-            <img src="{{ asset('img/home/btn_play.png') }}">
-          </a> -->
         </div>
       </div>
     </div>
@@ -119,7 +116,7 @@
         <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
           УПРАВЛЕНЧЕСКАЯ КОМАНДА&nbsp;&mdash; СЛАБОЕ ЗВЕНО?
         </div>
-        <div class="card-body text-center p-5">
+        <div class="card-body text-center p-5 home-video-2">
           <youtube-player 
             video-id="xYb5GFiAzwY"
           ></youtube-player>
@@ -131,7 +128,7 @@
         <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
         Привлекайте сотрудников к внедрению ПРОЦЕССОВ с самого начала!
         </div>
-        <div class="card-body text-center p-5">
+        <div class="card-body text-center p-5 home-video-3">
           <youtube-player 
             video-id="bHeKh59-1tg"
           ></youtube-player>

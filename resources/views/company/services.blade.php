@@ -152,17 +152,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-1 p-5">
                 <youtube-player
                     video-id="Rp4Jh-DP7is"
                 ></youtube-player>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-2 p-5">
                 <youtube-player
                     video-id="U4QFO0ILnmE"
                 ></youtube-player>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-3 p-5">
                 <youtube-player
                     video-id="C2MVqTRj40w"
                 ></youtube-player>
