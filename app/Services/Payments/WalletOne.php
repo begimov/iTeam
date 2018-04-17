@@ -73,7 +73,7 @@ class WalletOne implements IWalletOne
             return $result . $elem;
         }, "");
 
-        $signature = base64_encode(pack("H*", md5($values . config('services.walletone.key'))));
+        $signature = base64_encode(pack("H*", md5($values . $this->key)));
 
         return $signature == $payload['WMI_SIGNATURE'];
     }
