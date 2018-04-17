@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     // Route for Profile.vue component
     Route::post('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
     Route::resource('orders', 'Products\OrderController');
+    Route::resource('files', 'Content\FileController');
 });
 
 // Company related routes
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
     Route::get('contact', 'CompanyController@contact')->name('company.contact');
     Route::get('terms', 'CompanyController@terms')->name('company.terms');
     Route::get('offer', 'CompanyController@offer')->name('company.offer');
+    Route::get('aboutrm', 'CompanyController@aboutrm')->name('company.aboutrm');
 });
 
 Auth::routes();

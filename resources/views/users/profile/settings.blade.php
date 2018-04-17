@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <form method="get" action="#">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col mb-4">
+                <h1>Профиль</h1>
+            </div>
+        </div>
+        <form method="POST" action="#">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -27,9 +32,14 @@
                         <label for="businessEntity">ОПФ</label>
                         <input type="text" class="form-control" name="businessEntity" id="businessEntity">
                     </div>
+                    
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </div>
         </form>
     </div>
 @endsection

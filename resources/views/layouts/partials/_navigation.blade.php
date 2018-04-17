@@ -15,7 +15,7 @@
                 <a class="nav-link text-uppercase text-white" href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">@lang('partials.navigation.mp')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase text-white" href="#">@lang('partials.navigation.about_rm')</a>
+                <a class="nav-link text-uppercase text-white" href="{{ route('company.aboutrm') }}">@lang('partials.navigation.about_rm')</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-uppercase text-white" href="{{ route('company.services') }}">@lang('partials.navigation.services')</a>
