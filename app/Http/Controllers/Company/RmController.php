@@ -16,4 +16,9 @@ class RmController extends Controller
     {
         return view('company.rm.model');
     }
+
+    public function origins()
+    {
+        return view('company.rm.origins');
+    }
 }

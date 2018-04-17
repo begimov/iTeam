@@ -4,22 +4,21 @@
     @include ('company.rm.partials._rmsubnav')
     <!-- TOP -->
     <div class="container-fluid p-0">
-            <div class="col pt-5 pb-lg-5">
-                <div class="row text-center">
-                    <div class="col align-self-center">
-                        <h2 class="mb-3 font-weight-bold text-primary">Истоки Русского Менеджмента</h2>
-                        <h4 class="mb-3 font-weight-light">Вы&nbsp;конечно&nbsp;же знаете, что такое &laquo;американский менеджмент&raquo;. Он&nbsp;ассоциируются с&nbsp;именами Деминга, Друкера, Уэлча и&nbsp;целого ряда других создателей этого бренда, покорившего весь мир. Не&nbsp;менее известен &laquo;японский менеджмент&raquo; построенный трудами руководителей концерна Toyota и&nbsp;тысяч других предприятий &laquo;страны восходящего солнца&raquo;.</h4>
-                    </div>
+        <div class="col pt-5 pb-lg-5">
+            <div class="row text-center">
+                <div class="col align-self-center">
+                    <h2 class="mb-3 font-weight-bold text-primary">Истоки Русского Менеджмента</h2>
+                    <h4 class="mb-3 font-weight-light">Вы&nbsp;конечно&nbsp;же знаете, что такое &laquo;американский менеджмент&raquo;. Он&nbsp;ассоциируются с&nbsp;именами Деминга, Друкера, Уэлча и&nbsp;целого ряда других создателей этого бренда, покорившего весь мир. Не&nbsp;менее известен &laquo;японский менеджмент&raquo; построенный трудами руководителей концерна Toyota и&nbsp;тысяч других предприятий &laquo;страны восходящего солнца&raquo;.</h4>
                 </div>
-                <div class="row pt-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p class="lead font-weight-normal">А&nbsp;что&nbsp;Вы знаете о&nbsp;&laquo;русском менеджменте&raquo;? Пожалуй, сегодня это словосочетание имеет негативный оттенок и&nbsp;наводит на&nbsp;мысли о&nbsp;бестолковом управлении.</p>
-                            </div>
-                            <div class="col-lg-6">
-                                <p class="font-weight-normal">Но&nbsp;известно&nbsp;ли Вам, что русский менеджмент появился задолго до&nbsp;того, как американцы и&nbsp;японцы задумались об&nbsp;управлении как системе? Ведь победы и&nbsp;достижения нашей страны стали возможны благодаря блестящим управленческим талантам выдающихся полководцев и&nbsp;руководителей. Их&nbsp;опыт актуален сегодня как никогда. Он&nbsp;органичен нашей культуре, нашему мироощущению. Пора овладевать этим ценнейшим наследием!</p>
-                            </div>
+            </div>
+            <div class="row pt-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="lead font-weight-normal">А&nbsp;что&nbsp;Вы знаете о&nbsp;&laquo;русском менеджменте&raquo;? Пожалуй, сегодня это словосочетание имеет негативный оттенок и&nbsp;наводит на&nbsp;мысли о&nbsp;бестолковом управлении.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="font-weight-normal">Но&nbsp;известно&nbsp;ли Вам, что русский менеджмент появился задолго до&nbsp;того, как американцы и&nbsp;японцы задумались об&nbsp;управлении как системе? Ведь победы и&nbsp;достижения нашей страны стали возможны благодаря блестящим управленческим талантам выдающихся полководцев и&nbsp;руководителей. Их&nbsp;опыт актуален сегодня как никогда. Он&nbsp;органичен нашей культуре, нашему мироощущению. Пора овладевать этим ценнейшим наследием!</p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +29,7 @@
     <!-- SUVOROV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-01 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-01 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -74,14 +73,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-2-02 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- KOROLEV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-03 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-03 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -122,14 +121,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-2-04 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-04 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- TARASOV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-05 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-05 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -157,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-2-06 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-06 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 @endsection

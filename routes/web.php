@@ -43,6 +43,7 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
     Route::group(['prefix' => 'rm'], function () {
         Route::get('/', 'RmController@index')->name('company.rm.index');
         Route::get('model', 'RmController@model')->name('company.rm.model');
+        Route::get('origins', 'RmController@origins')->name('company.rm.origins');
     });
 });
 

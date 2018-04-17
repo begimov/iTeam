@@ -4,22 +4,21 @@
     @include ('company.rm.partials._rmsubnav')
     <!-- TOP -->
     <div class="container-fluid p-0 rm-index-howto-block">
-            <div class="col py-5">
-                <div class="row text-center">
-                    <div class="col align-self-center">
-                        <h2 class="mb-3 font-weight-bold text-primary">Русский менеджмент</h2>
-                        <h4 class="mb-3 font-weight-light">Русский Менеджмент&nbsp;&mdash; это модель управления организациями, которая формируется сегодня в&nbsp;русскоязычном пространстве. Она многое заимствует из&nbsp;мирового управленческого опыта, но, в&nbsp;то&nbsp;же время, имеет собственные уникальные отличия и&nbsp;самобытность, истоки которых находятся в&nbsp;русской культуре.</h4>
-                        <h4 class="mb-3 font-weight-normal">Русский Менеджмент&nbsp;&mdash; это единство пяти тесно связанных компонент:</h4>
-                        <ul class="list-inline m-0">
-                            <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Ценности</span></h4></li>
-                            <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Цели</span></h4></li>
-                            <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Стратегия</span></h4></li>
-                        </ul>
-                        <ul class="list-inline m-0">
-                            <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Структура</span></h4></li>
-                            <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Процессы</span></h4></li>
-                        </ul>
-                    </div>
+        <div class="col py-5">
+            <div class="row text-center">
+                <div class="col align-self-center">
+                    <h2 class="mb-3 font-weight-bold text-primary">Русский менеджмент</h2>
+                    <h4 class="mb-3 font-weight-light">Русский Менеджмент&nbsp;&mdash; это модель управления организациями, которая формируется сегодня в&nbsp;русскоязычном пространстве. Она многое заимствует из&nbsp;мирового управленческого опыта, но, в&nbsp;то&nbsp;же время, имеет собственные уникальные отличия и&nbsp;самобытность, истоки которых находятся в&nbsp;русской культуре.</h4>
+                    <h4 class="mb-3 font-weight-normal">Русский Менеджмент&nbsp;&mdash; это единство пяти тесно связанных компонент:</h4>
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Ценности</span></h4></li>
+                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Цели</span></h4></li>
+                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Стратегия</span></h4></li>
+                    </ul>
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Структура</span></h4></li>
+                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Процессы</span></h4></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -90,12 +89,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-rm-1-03 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-03 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-rm-1-04 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-04 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -126,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-rm-1-05 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-05 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
     <div class="container-fluid pt-md-4 pb-4 bg-white">
@@ -207,7 +206,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-rm-1-06 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-06 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
     <div class="container-fluid py-5">
@@ -245,7 +244,7 @@
     </div>
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-rm-1-08 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-08 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">                        
@@ -295,7 +294,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-rm-1-09 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 bg-rm-model-09 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
     <div class="container-fluid py-5">
