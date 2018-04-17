@@ -11133,3 +11133,40 @@ row:after {
   background-size: cover;
 }
 
+/* RM_MODEL */
+
+.bg-rm-1-01 {
+  background-image: url("/img/company/rm/model/01_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-03 {
+  background-image: url("/img/company/rm/model/03_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-04 {
+  background-image: url("/img/company/rm/model/04_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-05 {
+  background-image: url("/img/company/rm/model/05_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-06 {
+  background-image: url("/img/company/rm/model/06_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-08 {
+  background-image: url("/img/company/rm/model/08_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-1-09 {
+  background-image: url("/img/company/rm/model/09_bg.jpg");
+  background-size: cover;
+}
+

@@ -3,7 +3,7 @@
 @section('content')
     @include ('company.rm.partials._rmsubnav')
     <!-- TOP -->
-    <div class="container-fluid p-0 howto-block">
+    <div class="container-fluid p-0 rm-index-howto-block">
             <div class="col py-5">
                 <div class="row text-center">
                     <div class="col align-self-center">
@@ -26,7 +26,7 @@
     </div>
 
     <!-- WHY -->
-    <div class="container-fluid p-0 block-subnav">
+    <div class="container-fluid p-0">
         <div class="row pt-5 pb-2">
             <div class="col text-center">
                 <h2 class="font-weight-light mb-3 text-primary">Почему именно эти?</h2>
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 d-none d-md-block"><img src="img_rm_1/rm_01.png" class="img-fluid"></div>
+                    <div class="col-md-3 d-none d-md-block"><img src="{{ asset('img/company/rm/model/rm_01.png') }}" class="img-fluid"></div>
                     <div class="col-md-9">
                         <div class="row">
                             <div class="col align-self-center">
@@ -152,7 +152,7 @@
     </div>
     <div class="container-fluid p-0">
         <div class="row py-5">
-            <div class="col-lg-5"><img src="img_rm_1/rm_02.png" class="img-fluid"></div>
+            <div class="col-lg-5"><img src="{{ asset('img/company/rm/model/rm_02.png') }}" class="img-fluid"></div>
             <div class="col-xl-6 col-lg-7">
                 <div class="row">
                     <div class="col align-self-center">                        
