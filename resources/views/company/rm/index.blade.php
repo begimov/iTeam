@@ -5,7 +5,7 @@
     <!-- TOP -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-5 top-rm d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-5 rm-index-top d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-6 col-lg-7 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -41,13 +41,13 @@
     <!-- SUBNAV2 -->
     <div class="container-fluid a-white p-0">
         <div class="row text-center text-white">
-            <div class="col bg-dark py-4 font-weight-normal subnav-04">
+            <div class="col bg-dark py-4 font-weight-normal rm-subnav-04">
                 <a href="">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
             </div>
-            <div class="col bg-secondary py-4 font-weight-normal subnav-05">
+            <div class="col bg-secondary py-4 font-weight-normal rm-subnav-05">
                 <a href="">Высший пилотаж в&nbsp;Русском менеджменте</a>
             </div>
-            <div class="col bg-dark py-4 font-weight-normal subnav-06">
+            <div class="col bg-dark py-4 font-weight-normal rm-subnav-06">
                 <a href="">Как овладеть инструментами Русского Менеджмента</a>
             </div>
         </div>
@@ -56,7 +56,7 @@
     <!-- MANAGEMENT -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-01 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-01 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -103,14 +103,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-02 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-02 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- PROCESSES -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-03 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-03 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -156,14 +156,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-04 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-04 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- CULTURE -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-05 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-05 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -212,7 +212,7 @@
     <!-- FINANCES -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-06 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-06 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -255,14 +255,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 bg-07 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-07 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- MARKETING -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-4 bg-08 d-none d-md-block">&nbsp;</div>
+            <div class="col-md-4 rm-index-bg-08 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -283,7 +283,7 @@
     </div>
 
     <!-- PILOTAGE -->
-    <div class="container-fluid py-5 text-white a-white pilotage-block">
+    <div class="container-fluid py-5 text-white a-white rm-index-pilotage-block">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -313,7 +313,7 @@
     </div>
 
     <!-- INSTRUMENTS -->
-    <div class="container-fluid py-5 howto-block">
+    <div class="container-fluid py-5 rm-index-howto-block">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
