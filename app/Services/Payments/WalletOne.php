@@ -50,7 +50,7 @@ class WalletOne implements IWalletOne
 
     protected function handleAccepted($payload)
     {
-        if (!$this->isSignatureCorrect($payload)) {
+        if ($this->isSignatureCorrect($payload)) {
             // $this->updatePayedOrder($request);
             return $this->respond('OK');
         } else {
@@ -60,11 +60,7 @@ class WalletOne implements IWalletOne
 
     protected function parametersExist($payload)
     {
-        return isset(
-            $payload['WMI_SIGNATURE'], 
-            $payload['WMI_PAYMENT_NO'], 
-            $payload['WMI_ORDER_STATE']
-        );
+        return isset($payload['WMI_SIGNATURE'], $payload['WMI_PAYMENT_NO'], $payload['WMI_ORDER_STATE']);
     }
 
     protected function isSignatureCorrect($payload)
@@ -82,11 +78,10 @@ class WalletOne implements IWalletOne
         return $signature == $payload['WMI_SIGNATURE'];
     }
 
-    protected function respond($status, $description = '')
+    protected function respond($status, $description = null)
     {
-        return [
-            'status' => $status,
-            'description' => $description
-        ];
+        $status = "WMI_RESULT=" . strtoupper($status);
+        $description = isset($description) ? "&WMI_DESCRIPTION=" . urlencode($description) : '';
+        return  $status . $description;
     }
 }

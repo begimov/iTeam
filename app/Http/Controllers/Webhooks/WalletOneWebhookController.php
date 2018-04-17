@@ -23,10 +23,9 @@ class WalletOneWebhookController extends Controller
         $this->printResponse($this->walletOne->handlePayment($payload));
     }
 
-    protected function printResponse(array $data)
+    protected function printResponse($string)
     {
-        print "WMI_RESULT=" . strtoupper($data['status']) . "&";
-        print "WMI_DESCRIPTION=" .urlencode($data['description']);
+        print $string;
         exit();
     }
 }
