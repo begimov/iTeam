@@ -21,4 +21,9 @@ class RmController extends Controller
     {
         return view('company.rm.origins');
     }
+
+    public function project()
+    {
+        return view('company.rm.project');
+    }
 }

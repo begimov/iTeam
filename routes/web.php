@@ -44,6 +44,7 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
         Route::get('/', 'RmController@index')->name('company.rm.index');
         Route::get('model', 'RmController@model')->name('company.rm.model');
         Route::get('origins', 'RmController@origins')->name('company.rm.origins');
+        Route::get('project', 'RmController@project')->name('company.rm.project');
     });
 });
 
