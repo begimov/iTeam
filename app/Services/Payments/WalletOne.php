@@ -5,13 +5,16 @@ namespace App\Services\Payments;
 use App\Services\Payments\Contracts\IWalletOne;
 
 use App\Models\Products\Order;
+use App\Repositories\Contracts\Products\OrderRepository;
 
 class WalletOne implements IWalletOne
 {
+    protected $orders;
     protected $key;
 
-    public function __construct()
+    public function __construct(OrderRepository $orders)
     {
+        $this->orders = $orders;
         $this->key = config('services.walletone.key');
     }
 
@@ -52,7 +55,7 @@ class WalletOne implements IWalletOne
 
     protected function handleAccepted($payload)
     {
-        if (!$this->isSignatureCorrect($payload)) {
+        if ($this->isSignatureCorrect($payload)) {
             $this->markOrderAsPayed($payload);
             return $this->respond('OK');
         } else {
