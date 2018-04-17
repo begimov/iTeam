@@ -47,7 +47,7 @@
     </div>
 
     <!-- RM -->
-    <div class="container-fluid p-0 bg-dark text-white block-subnav">
+    <div class="container-fluid p-0 bg-dark text-white a-white">
         <div class="row pt-5 pb-2">
             <div class="col text-center">
                 <h2 class="font-weight-light mb-3">Истоки Русского Менеджмента</h2>

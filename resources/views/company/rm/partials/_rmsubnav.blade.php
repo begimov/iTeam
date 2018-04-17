@@ -8,7 +8,7 @@
             <a href="{{ route('company.rm.origins') }}">Истоки Русского Менеджмента</a>
         </div>
         <div class="col bg-dark py-4 font-weight-normal rm-subnav-03">
-            <a href="">Проект &laquo;Русский Менеджмент&raquo;</a>
+            <a href="{{ route('company.rm.project') }}">Проект &laquo;Русский Менеджмент&raquo;</a>
         </div>
     </div>
 </div>

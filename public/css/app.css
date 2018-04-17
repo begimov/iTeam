@@ -11197,3 +11197,20 @@ row:after {
   background-size: cover;
 }
 
+/* RM_PROJECT */
+
+.bg-rm-project-01 {
+  background-image: url("/img/company/rm/project/01_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-project-02 {
+  background-image: url("/img/company/rm/project/02_bg.jpg");
+  background-size: cover;
+}
+
+.bg-rm-project-06 {
+  background-image: url("/img/company/rm/project/06_bg.jpg");
+  background-size: cover;
+}
+
