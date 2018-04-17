@@ -18,12 +18,19 @@ class WalletOneWebhookController extends Controller
         if (method_exists($this, $method)) {
             return $this->{$method}($payload);
         } else {
-            return $this->missingMethod();
+            return $this->printResponse('RETRY');
         }
     }
 
     protected function handleAccepted($payload)
     {
-        return 1;
+        //
+    }
+
+    protected function printResponse($status, $desc = '')
+    {
+        print "WMI_RESULT=" . strtoupper($status) . "&";
+        print "WMI_DESCRIPTION=" .urlencode($desc);
+        exit();
     }
 }
