@@ -13,6 +13,11 @@ class WalletOne implements IWalletOne
         $this->key = config('services.walletone.key');
     }
 
+    public function handlePayment(array $payload)
+    {
+        //
+    }
+
     public function generatePaymentSignature(array $formFields)
     {   
         $filteredFormFields = $this->filterFormFields($formFields);
