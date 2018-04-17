@@ -24,7 +24,7 @@ class WalletOne implements IWalletOne
         if (method_exists($this, $method)) {
             return $this->{$method}($payload);
         } else {
-            return $this->respond('RETRY', 'Method does not exist');
+            return $this->respond('RETRY', 'Method does not exist: handle' . $payload['WMI_ORDER_STATE']);
         }
     }
 
@@ -50,7 +50,12 @@ class WalletOne implements IWalletOne
 
     protected function handleAccepted($payload)
     {
-        //
+        if (!$this->isSignatureCorrect($payload)) {
+            // $this->updatePayedOrder($request);
+            return $this->respond('OK');
+        } else {
+            return $this->respond("Retry", "Неверная подпись " . $payload['WMI_SIGNATURE']);
+        }
     }
 
     protected function parametersExist($payload)
