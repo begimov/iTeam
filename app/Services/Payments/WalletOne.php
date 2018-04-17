@@ -4,6 +4,8 @@ namespace App\Services\Payments;
 
 use App\Services\Payments\Contracts\IWalletOne;
 
+use App\Models\Products\Order;
+
 class WalletOne implements IWalletOne
 {
     protected $key;
@@ -50,8 +52,8 @@ class WalletOne implements IWalletOne
 
     protected function handleAccepted($payload)
     {
-        if ($this->isSignatureCorrect($payload)) {
-            // $this->updatePayedOrder($request);
+        if (!$this->isSignatureCorrect($payload)) {
+            $this->markOrderAsPayed($payload);
             return $this->respond('OK');
         } else {
             return $this->respond("Retry", "Неверная подпись " . $payload['WMI_SIGNATURE']);
@@ -76,6 +78,11 @@ class WalletOne implements IWalletOne
         $signature = base64_encode(pack("H*", md5($values . $this->key)));
 
         return $signature == $payload['WMI_SIGNATURE'];
+    }
+
+    protected function markOrderAsPayed($payload)
+    {
+        Order::find($payload['WMI_PAYMENT_NO'])->markAsPayed();
     }
 
     protected function respond($status, $description = null)
