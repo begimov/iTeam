@@ -15,7 +15,7 @@
             <p><h5>@lang('partials.footer.company')</h5></p>
             <p>
                 <a href="{{ route('company.services') }}">@lang('partials.navigation.services')</a><br>
-                <a href="{{ route('company.aboutrm') }}">@lang('partials.navigation.about_rm')</a>
+                <a href="{{ route('company.rm.index') }}">@lang('partials.navigation.about_rm')</a>
             </p>
         </div>
         <div class="col-xl-2 col-md-3">
