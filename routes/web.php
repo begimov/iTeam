@@ -43,3 +43,8 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
 });
 
 Auth::routes();
+
+// Webhooks
+Route::group(['prefix' => 'webhooks', 'namespace' => 'Webhooks'], function () {
+    Route::post('walletone', 'WalletOneWebhookController@handleWebhook');
+});

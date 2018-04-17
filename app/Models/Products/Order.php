@@ -21,4 +21,10 @@ class Order extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function markAsPayed()
+    {
+        $this->payment_state_id = config('orders.payed_payment_state_id');
+        $this->save();
+    }
 }
