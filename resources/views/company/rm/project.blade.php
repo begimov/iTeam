@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 d-none d-lg-block bg-rm-3-01">&nbsp;</div>
+            <div class="col-lg-4 d-none d-lg-block bg-rm-project-01">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 align-self-center pt-lg-5 pb-5">
                 <div class="row">
                     <div class="col align-self-center pl-0 pl-lg-3">
@@ -65,14 +65,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 bg-rm-3-02 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-5 bg-rm-project-02 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- SUVOROV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-01 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-01 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -110,14 +110,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-2-02 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- KOROLEV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-03 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-03 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -158,14 +158,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-2-04 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-04 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
     <!-- TARASOV -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-lg-4 bg-rm-2-05 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-05 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
                 <div class="row">
                     <div class="col align-self-center">
@@ -198,7 +198,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-3-06 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-project-06 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 @endsection
