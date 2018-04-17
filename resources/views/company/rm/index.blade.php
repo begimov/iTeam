@@ -1,20 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- SUBNAVIGATION -->
-    <div class="container-fluid block-subnav p-0">
-        <div class="row text-center text-white">
-            <div class="col bg-dark py-4 font-weight-normal subnav-01">
-                <a href="">Модель Русского Менеджмента</a>
-            </div>
-            <div class="col bg-secondary py-4 font-weight-normal subnav-02">
-                <a href="">Истоки Русского Менеджмента</a>
-            </div>
-            <div class="col bg-dark py-4 font-weight-normal subnav-03">
-                <a href="">Проект &laquo;Русский Менеджмент&raquo;</a>
-            </div>
-        </div>
-    </div>
+    @include ('company.rm.partials._rmsubnav')
     <!-- TOP -->
     <div class="container-fluid p-0">
         <div class="row">
@@ -52,7 +39,7 @@
     </div>
 
     <!-- SUBNAV2 -->
-    <div class="container-fluid block-subnav p-0">
+    <div class="container-fluid a-white p-0">
         <div class="row text-center text-white">
             <div class="col bg-dark py-4 font-weight-normal subnav-04">
                 <a href="">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
@@ -296,7 +283,7 @@
     </div>
 
     <!-- PILOTAGE -->
-    <div class="container-fluid py-5 text-white block-subnav pilotage-block">
+    <div class="container-fluid py-5 text-white a-white pilotage-block">
         <div class="container">
             <div class="row">
                 <div class="col text-center">

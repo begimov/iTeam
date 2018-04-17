@@ -11015,6 +11015,13 @@ row:after {
   height: 50px;
 }
 
+/* CUSTOM */
+
+.a-white a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .promo {
   background-image: url("/img/home/promo_bg.jpg");
   background-size: cover;
@@ -11023,11 +11030,6 @@ row:after {
 .rm {
   background-image: url("/img/home/rm_bg.jpg");
   background-size: cover;
-}
-
-.block-footer a {
-  color: #fff;
-  text-decoration: underline;
 }
 
 /* SERVICES */
@@ -11043,11 +11045,6 @@ row:after {
 }
 
 /* RM_INDEX */
-
-.block-subnav a {
-  color: #fff;
-  text-decoration: underline;
-}
 
 .subnav-01 {
   background-image: url("/img/company/rm/index/subnav_bg_01.jpg");

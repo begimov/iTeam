@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<div class="container-fluid bg-dark text-white block-footer mt-5">
+<div class="container-fluid bg-dark text-white a-white mt-5">
     <div class="row p-5">
         <div class="col-xl-3 col-md-6 col-sm-8">
             <p><h5>@lang('partials.footer.copyright')</h5></p>
