@@ -11,4 +11,9 @@ class RmController extends Controller
     {
         return view('company.rm.index');
     }
+
+    public function model()
+    {
+        return view('company.rm.model');
+    }
 }
