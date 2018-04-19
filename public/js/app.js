@@ -47522,7 +47522,7 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('button', {
-    staticClass: "btn btn-dark btn-lg play-video-btn",
+    staticClass: "button-ytplayer",
     attrs: {
       "type": "button",
       "data-toggle": "modal",
@@ -47535,7 +47535,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.onOpen($event)
       }
     }
-  }, [_vm._v("Посмотреть видео")]), _vm._v(" "), _c('div', {
+  }, [_c('img', {
+    attrs: {
+      "src": "/img/home/btn_play.png"
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "modal fade",
     attrs: {
       "id": this.videoId,
@@ -47556,7 +47560,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col"
+    staticClass: "col pb-1"
   }, [_c('button', {
     staticClass: "close",
     attrs: {

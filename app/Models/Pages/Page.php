@@ -25,6 +25,6 @@ class Page extends Model
 
     public function elements()
     {
-        return $this->hasMany(Element::class);
+        return $this->hasMany(Element::class)->orderBy('sort_order', 'asc');
     }
 }

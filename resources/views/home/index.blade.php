@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 <!-- TEASERS -->
-<div class="container-fuild">
+<div class="container-fluid p-0">
   <div class="row">
     <div class="col-lg-6 p-5 promo">
       <div class="row h-100">
@@ -47,7 +47,7 @@
   </div>
 </div>
 <!-- RU MANAGEMENT -->
-<div class="container-fuild">
+<div class="container-fluid p-0">
   <div class="row">
     <div class="col-xl-3 col-lg-4 d-none d-lg-block rm">&nbsp;</div>
     <div class="col-xl-9 col-lg-8 py-5">
@@ -102,36 +102,36 @@
     <div class="col-lg-4 col-md-12 mt-2">
       <div class="card h-100">
         <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
-          Как разработать победную стратегию
+          НЕ&nbsp;ПЛАНИРУЙТЕ В&nbsp;ОДИНОЧКУ?!
         </div>
-        <div class="card-body text-center video-1 p-5">
-          <a href="#">
-            <img src="{{ asset('img/home/btn_play.png') }}">
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mt-2">
-      <div class="card h-100">
-        <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
-          Как успешно Реформировать бизнес-процессы
-        </div>
-        <div class="card-body text-center video-2 p-5">
-          <a href="#">
-            <img src="{{ asset('img/home/btn_play.png') }}">
-          </a>
+        <div class="card-body text-center p-5 home-video-1">
+          <youtube-player 
+            video-id="J3xvXchigx4"
+          ></youtube-player>
         </div>
       </div>
     </div>
     <div class="col-lg-4 col-md-6 mt-2">
       <div class="card h-100">
         <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
-          Как преобразовать корпоративную культуру
+          УПРАВЛЕНЧЕСКАЯ КОМАНДА&nbsp;&mdash; СЛАБОЕ ЗВЕНО?
         </div>
-        <div class="card-body text-center video-3 p-5">
-          <a href="#">
-            <img src="{{ asset('img/home/btn_play.png') }}">
-          </a>
+        <div class="card-body text-center p-5 home-video-2">
+          <youtube-player 
+            video-id="xYb5GFiAzwY"
+          ></youtube-player>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mt-2">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white text-uppercase text-center font-weight-normal">
+        Привлекайте сотрудников к внедрению ПРОЦЕССОВ с самого начала!
+        </div>
+        <div class="card-body text-center p-5 home-video-3">
+          <youtube-player 
+            video-id="bHeKh59-1tg"
+          ></youtube-player>
         </div>
       </div>
     </div>

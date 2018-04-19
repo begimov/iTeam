@@ -2,7 +2,7 @@
 
 @section('content')
      <!-- TOP -->
-     <div class="container-fuild">
+     <div class="container-fluid">
         <div class="row">
             <div class="col py-5">
                 <div class="row">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <!-- RU MANAGEMENT -->
-    <div class="container-fuild">
+    <div class="container-fluid p-0">
         <div class="row text-white">
             <div class="col-lg-6 bg-dark text-center py-5">
                 <h2 class="font-weight-light mb-4">Русский Менеджмент это:</h2>
@@ -44,15 +44,15 @@
     </div>
 
     <!-- MISSION & PHILOSOPHY -->
-    <div class="container-fuild mission">
+    <div class="container-fluid mission">
         <mission-philosophy/>
     </div>
 
     <!-- SERVICES -->
-    <div class="container-fuild">
+    <div class="container-fluid">
         <company-services/>
     </div>
-    <div class="container-fuild bg-dark text-white">
+    <div class="container-fluid bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col text-center py-4">
@@ -152,20 +152,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-1 p-5">
                 <youtube-player
                     video-id="Rp4Jh-DP7is"
-                />
+                ></youtube-player>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-2 p-5">
                 <youtube-player
                     video-id="U4QFO0ILnmE"
-                />
+                ></youtube-player>
             </div>
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center services-video-3 p-5">
                 <youtube-player
                     video-id="C2MVqTRj40w"
-                />
+                ></youtube-player>
             </div>
         </div>
     </div>

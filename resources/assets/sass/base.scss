@@ -25,3 +25,21 @@ body {
 .navbar {
     height: 50px;
 }
+
+/* CUSTOM */
+.a-white a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.button-ytplayer {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    box-shadow: none;
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none;
+}
