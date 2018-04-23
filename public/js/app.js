@@ -49143,18 +49143,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.closeProduct($event)
       }
     }
-  }, [_vm._v("Вернуться к заказам")]), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
+  }, [_vm._v("Вернуться к заказам")]), _vm._v(" "), _c('h1', {
+    staticClass: "my-4"
+  }, [_vm._v("«" + _vm._s(_vm.product.name) + "»")]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
     return _c('div', {
-      key: material.id
-    }, [_c('h2', [_vm._v(_vm._s(material.name))]), _vm._v(" "), _vm._l((material.files.data), function(file) {
-      return _c('span', {
+      key: material.id,
+      staticClass: "card mb-3"
+    }, [_c('div', {
+      staticClass: "card-header pb-1"
+    }, [_c('h2', [_vm._v(_vm._s(material.name))])]), _vm._v(" "), _c('div', {
+      staticClass: "card-body"
+    }, [(material.files.data.length) ? [_c('h3', {
+      staticClass: "mb-3"
+    }, [_vm._v("Файлы:")]), _vm._v(" "), _c('ul', _vm._l((material.files.data), function(file) {
+      return _c('li', {
         key: file.id
       }, [_c('a', {
         attrs: {
           "href": 'webapi/files/' + file.id
         }
-      }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
-    })], 2)
+      }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n                    ")])
+    }))] : _vm._e()], 2)])
   })], 2) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
