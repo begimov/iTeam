@@ -48800,10 +48800,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-header"
   }, [_c('h5', {
     staticClass: "modal-title"
-  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('button', {
-    staticClass: "close",
+  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('a', {
     attrs: {
-      "type": "button"
+      "href": "#"
     },
     on: {
       "click": function($event) {
@@ -48811,11 +48810,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.closePayment($event)
       }
     }
-  }, [_c('span', {
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("×")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0)])]), _vm._v(" "), _c('div', {
     staticClass: "modal-body"
   }, [_c('div', {
     staticClass: "container-fluid"
@@ -49043,7 +49038,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h3', [_c('span', {
+    staticClass: "font-weight-bold",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
