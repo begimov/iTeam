@@ -48102,7 +48102,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "orderId": _vm.displayedOrderId
     }
-  })], 1) : _c('div', {
+  })], 1) : _vm._e(), _vm._v(" "), _vm._m(0), _vm._v(" "), (_vm.orders.length) ? _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.orders), function(order) {
     return _c('order-card', {
@@ -48115,12 +48115,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "orderPayment": _vm.orderPayment
       }
     })
-  })), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
+  })) : _c('div', {
+    staticClass: "row"
+  }, [_vm._m(1)]), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
     attrs: {
       "order": this.paymentOrder
     }
   }) : _vm._e()], 1)
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('h1', {
+    staticClass: "mb-4"
+  }, [_vm._v("Заказы")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col"
+  }, [_c('p', [_vm._v("У вас пока нет ни одного заказа")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
