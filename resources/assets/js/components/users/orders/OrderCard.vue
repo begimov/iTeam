@@ -2,11 +2,11 @@
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
         <div class="card" :class="{'border-success': isPaid, 'border-danger': !isPaid}">
             <div class="card-header text-white" :class="[isPaid ? 'bg-success' : 'bg-danger']">
-                {{ isPaid ? 'Оплачен' : 'Не оплачен' }} ({{order.id}})
+                {{ isPaid ? 'Оплачен' : 'Не оплачен' }}
             </div>
-            <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png">
+            <!-- <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png"> -->
             <div class="card-body">
-                <p class="card-text">{{ order.product.data.name }}</p>
+                <p class="card-text lead font-weight-normal">{{ order.product.data.name }}</p>
                 <h3 v-if="!isPaid"><span class="badge badge-primary">{{ order.price }}&nbsp;руб.</span></h3>
                 <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="openProduct">Материалы</a>
                 <template v-else>
