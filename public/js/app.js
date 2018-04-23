@@ -48793,7 +48793,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "modal"
   }, [_c('div', {
-    staticClass: "modal-dialog"
+    staticClass: "modal-dialog modal-lg"
   }, [_c('div', {
     staticClass: "modal-content"
   }, [_c('div', {
@@ -48838,7 +48838,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])])])]), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 2) ? _c('div', {
+    staticClass: "row mt-4"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-body bg-dark text-white lead"
+  }, [_vm._v("\n                                    Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n                                ")])]), _vm._v(" "), _vm._m(1)])]) : _vm._e()])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
     ref: "woform",
@@ -49045,6 +49053,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "aria-hidden": "true"
     }
   }, [_vm._v("×")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card mt-2"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_c('p', [_vm._v("Платежный сервис Wallet One, используемый для оплаты наших продуктов, "), _c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("лицензирован надзорным органом в каждой стране присутствия, а значит, полностью безопасен.")])]), _vm._v(" "), _c('p', [_vm._v("Wallet One использует стандарт безопасности PCI DSS, SSL-протокол, системы безопасности Verified by Visa и MasterCard SecureCode.")]), _vm._v(" "), _c('p', [_c('a', {
+    attrs: {
+      "href": "https://www.walletone.com/ru/merchant/security/",
+      "target": "_blank"
+    }
+  }, [_vm._v("Подробнее здесь...")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
