@@ -49174,9 +49174,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "card-header pb-1"
     }, [_c('h2', [_vm._v(_vm._s(material.name))])]), _vm._v(" "), _c('div', {
       staticClass: "card-body"
-    }, [(material.files.data.length) ? [_c('h3', {
+    }, [(material.resources.data.length) ? [_c('h3', [_vm._v("Видео:")]), _vm._v(" "), _c('div', {
+      staticClass: "row mb-4"
+    }, _vm._l((material.resources.data), function(resource) {
+      return _c('div', {
+        key: resource.id,
+        staticClass: "col-md-6 mt-3"
+      }, [_c('div', {
+        staticClass: "embed-responsive embed-responsive-16by9"
+      }, [_c('iframe', {
+        staticClass: "embed-responsive-item",
+        attrs: {
+          "src": 'https://www.youtube.com/embed/' + resource.identifier,
+          "allowfullscreen": ""
+        }
+      })])])
+    }))] : _vm._e(), _vm._v(" "), (material.files.data.length) ? [_c('h3', {
       staticClass: "mb-3"
-    }, [_vm._v("Файлы:")]), _vm._v(" "), _c('ul', _vm._l((material.files.data), function(file) {
+    }, [_vm._v("Материалы:")]), _vm._v(" "), _c('ul', _vm._l((material.files.data), function(file) {
       return _c('li', {
         key: file.id
       }, [_c('a', {
