@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\PaymentServiceProvider::class,
+        App\Providers\RelationsServiceProvider::class,
 
     ],
 
