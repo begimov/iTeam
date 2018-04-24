@@ -17,4 +17,9 @@ class Material extends Model
     {
         return $this->belongsToMany(Product::class, 'products_materials');
     }
+
+    public function resources()
+    {
+        return $this->morphMany('App\Models\Content\Resource', 'resourceable');
+    }
 }
