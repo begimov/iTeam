@@ -49179,16 +49179,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((material.resources.data), function(resource) {
       return _c('div', {
         key: resource.id,
-        staticClass: "col-md-6 mt-3"
-      }, [_c('div', {
-        staticClass: "embed-responsive embed-responsive-16by9"
-      }, [_c('iframe', {
-        staticClass: "embed-responsive-item",
+        staticClass: "col-md-4 mt-3"
+      }, [_c('youtube-player', {
         attrs: {
-          "src": 'https://www.youtube.com/embed/' + resource.identifier,
-          "allowfullscreen": ""
+          "videoId": resource.identifier
         }
-      })])])
+      })], 1)
     }))] : _vm._e(), _vm._v(" "), (material.files.data.length) ? [_c('h3', {
       staticClass: "mb-3"
     }, [_vm._v("Материалы:")]), _vm._v(" "), _c('ul', _vm._l((material.files.data), function(file) {

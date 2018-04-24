@@ -8,10 +8,8 @@
                 <template v-if="material.resources.data.length">
                     <h3>Видео:</h3>
                     <div class="row mb-4">
-                        <div class="col-md-6 mt-3" v-for="resource in material.resources.data" :key="resource.id">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" :src="'https://www.youtube.com/embed/' + resource.identifier" allowfullscreen></iframe>
-                            </div>
+                        <div class="col-md-4 mt-3" v-for="resource in material.resources.data" :key="resource.id">
+                            <youtube-player :videoId="resource.identifier"/>
                         </div>
                     </div>
                 </template>
