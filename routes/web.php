@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 });
 
 // WebAPI
+Route::post('/magnets/register', 'Pages\MagnetController@register');
+
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Route for Profile.vue component
     Route::post('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
