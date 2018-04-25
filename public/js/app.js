@@ -47999,8 +47999,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _axios = __webpack_require__(7);
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -48009,17 +48007,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
     name: 'FreeMagnet',
-    props: ['campaign_token', 'buttonText', 'redirect'],
+    props: ['campaignToken', 'buttonText'],
     data: function data() {
         return {
-            modal: {
+            params: {
                 name: '',
                 email: '',
                 phone: '',
-                campaign_token: this.campaign_token
+                campaignToken: this.campaignToken
             },
-            msg: '',
-            error: '',
             isLoading: false
         };
     },
@@ -48028,36 +48024,18 @@ exports.default = {
         register: function register() {
             var _this = this;
 
-            var payload = _extends({}, this.modal);
-            this.error = '';
-            this.msg = '';
             this.isLoading = true;
-            _axios2.default.get('https://iteam.ru/grform', {
-                params: _extends({}, payload)
-            }).then(function (response) {
-                if (response.data.status === 'ok') {
-                    _this.msg = response.data.msg;
-                    if (_this.redirect === 'true') {
-                        window.location.href = "https://iteam.ru/promo/processes/programm.pdf";
-                    }
-                    // this.$router.push({ path: 'purchase' })
-                    // location.reload()
-                } else if (response.data.status === 'error') {
-                    _this.error = response.data.msg;
-                }
+            _axios2.default.get('https://iteam.ru/grform', this.params).then(function (response) {
+                //
                 _this.isLoading = false;
             }).catch(function (error) {
-                if (error.response.status === 422) {
-                    _this.error = 'Все поля обязательны к заполнению';
-                } else {
-                    _this.error = 'Ошибка, пожалуйста проверьте правильность введенных данных и попробуйте еще раз';
-                }
+                //
                 _this.isLoading = false;
             });
         }
     },
     mounted: function mounted() {
-        // $('#myModal').modal('hide');
+        //
     }
 };
 
@@ -49359,8 +49337,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.modal.name),
-      expression: "modal.name"
+      value: (_vm.params.name),
+      expression: "params.name"
     }],
     staticClass: "form-control",
     attrs: {
@@ -49369,12 +49347,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Имя"
     },
     domProps: {
-      "value": (_vm.modal.name)
+      "value": (_vm.params.name)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.modal.name = $event.target.value
+        _vm.params.name = $event.target.value
       }
     }
   })]), _vm._v(" "), _c('div', {
@@ -49383,8 +49361,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.modal.email),
-      expression: "modal.email"
+      value: (_vm.params.email),
+      expression: "params.email"
     }],
     staticClass: "form-control",
     attrs: {
@@ -49393,12 +49371,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Эл.адрес"
     },
     domProps: {
-      "value": (_vm.modal.email)
+      "value": (_vm.params.email)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.modal.email = $event.target.value
+        _vm.params.email = $event.target.value
       }
     }
   })]), _vm._v(" "), _c('div', {
@@ -49407,8 +49385,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.modal.phone),
-      expression: "modal.phone"
+      value: (_vm.params.phone),
+      expression: "params.phone"
     }],
     staticClass: "form-control",
     attrs: {
@@ -49417,32 +49395,32 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Телефон"
     },
     domProps: {
-      "value": (_vm.modal.phone)
+      "value": (_vm.params.phone)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.modal.phone = $event.target.value
+        _vm.params.phone = $event.target.value
       }
     }
   })]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.modal.campaign_token),
-      expression: "modal.campaign_token"
+      value: (_vm.params.campaignToken),
+      expression: "params.campaignToken"
     }],
     attrs: {
       "type": "hidden",
       "name": "campaign_token"
     },
     domProps: {
-      "value": (_vm.modal.campaign_token)
+      "value": (_vm.params.campaignToken)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.modal.campaign_token = $event.target.value
+        _vm.params.campaignToken = $event.target.value
       }
     }
   }), _vm._v(" "), (_vm.isLoading) ? _c('button', {
@@ -49455,17 +49433,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "grFormBtn"
     }
-  }, [_vm._v(_vm._s(_vm.buttonText))]), _vm._v(" "), (_vm.error) ? _c('p', {
-    staticClass: "help-block alert-danger",
-    attrs: {
-      "id": "grFormHelpBlock"
-    }
-  }, [_vm._v(_vm._s(_vm.error))]) : _vm._e(), _vm._v(" "), (_vm.msg) ? _c('p', {
-    staticClass: "help-block alert-success",
-    attrs: {
-      "id": "grFormHelpBlock"
-    }
-  }, [_vm._v(_vm._s(_vm.msg))]) : _vm._e()])])
+  }, [_vm._v(_vm._s(_vm.buttonText))])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

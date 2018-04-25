@@ -20,21 +20,9 @@
           <img src="{{ asset('img/home/gift_box.jpg') }}" class="img-fluid">
         </div>
         <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
-          <free-magnet button-text="ПОЛУЧИТЬ"></free-magnet>
-          <h2 class="font-weight-bold text-primary mb-1">Вам подарок!</h2>
-          <p class="mb-2 lead">Мастер-класс &laquo;Как улучшить бизнес процессы компании&raquo;</p>
-          <form>
-            <div class="form-group mb-2">
-              <input type="text" class="form-control" placeholder="Имя">
-            </div>
-            <div class="form-group mb-2">
-              <input type="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group mb-2">
-              <input type="text" class="form-control" placeholder="Телефон">
-            </div>
-            <button type="submit" class="btn btn-primary">ПОЛУЧИТЬ</button>
-          </form>
+          <free-magnet 
+            button-text="ПОЛУЧИТЬ"
+            campaign-token="111" />
         </div>
       </div>
       <div class="row bg-primary text-center text-white">
