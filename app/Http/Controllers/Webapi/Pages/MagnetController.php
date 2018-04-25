@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class MagnetController extends Controller
 {
-    public function register(Request $request)
+    public function subscribe(Request $request)
     {
         return response()->json($request->all());
     }

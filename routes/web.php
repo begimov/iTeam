@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 
 // WebAPI
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
-    Route::post('magnets/register', 'Pages\MagnetController@register');
+    Route::post('magnets/subscribe', 'Pages\MagnetController@subscribe');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
