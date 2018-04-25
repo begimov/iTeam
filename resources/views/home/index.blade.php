@@ -21,7 +21,6 @@
         </div>
         <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
           <free-magnet 
-            button-text="ПОЛУЧИТЬ"
             campaign-token="111" />
         </div>
       </div>

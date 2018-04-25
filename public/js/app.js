@@ -48007,7 +48007,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
     name: 'FreeMagnet',
-    props: ['campaignToken', 'buttonText'],
+    props: {
+        campaignToken: {
+            required: true
+        },
+        buttonText: {
+            default: 'ПОЛУЧИТЬ'
+        }
+    },
     data: function data() {
         return {
             params: {
@@ -48027,12 +48034,22 @@ exports.default = {
 
             this.isLoading = true;
             _axios2.default.post('/webapi/magnets/subscribe', this.params).then(function (response) {
-                //
+                _this.resetState();
                 _this.isLoading = false;
             }).catch(function (err) {
                 _this.errors = err.response.data.errors;
                 _this.isLoading = false;
             });
+        },
+        resetState: function resetState() {
+            var _this2 = this;
+
+            _.each(this.params, function (value, key) {
+                if (key !== 'campaignToken') {
+                    _this2.params[key] = '';
+                }
+            });
+            this.errors = {};
         }
     },
     computed: {
