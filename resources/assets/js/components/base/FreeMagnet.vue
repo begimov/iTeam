@@ -13,8 +13,7 @@
                 <input type="text" class="form-control" name="phone" placeholder="Телефон" v-model="params.phone">
             </div>
             <input type="hidden" name="campaign_token" v-model="params.campaignToken" />
-            <button class="btn btn-primary disabled" id="grFormBtn" v-if="isLoading">ОТПРАВКА...</button>
-            <button class="btn btn-primary" id="grFormBtn" v-else>{{ buttonText }}</button>
+            <button class="btn btn-primary" id="grFormBtn">{{ buttonText }}</button>
         </form>
     </div>
 </template>

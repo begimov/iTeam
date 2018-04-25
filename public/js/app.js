@@ -48025,7 +48025,7 @@ exports.default = {
             var _this = this;
 
             this.isLoading = true;
-            _axios2.default.get('https://iteam.ru/grform', this.params).then(function (response) {
+            _axios2.default.post('/magnets/register', this.params).then(function (response) {
                 //
                 _this.isLoading = false;
             }).catch(function (error) {
@@ -49423,12 +49423,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.params.campaignToken = $event.target.value
       }
     }
-  }), _vm._v(" "), (_vm.isLoading) ? _c('button', {
-    staticClass: "btn btn-primary disabled",
-    attrs: {
-      "id": "grFormBtn"
-    }
-  }, [_vm._v("ОТПРАВКА...")]) : _c('button', {
+  }), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "id": "grFormBtn"

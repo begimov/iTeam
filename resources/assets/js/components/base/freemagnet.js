@@ -20,7 +20,7 @@ export default {
     methods: {
         register() {
             this.isLoading = true
-            axios.get('https://iteam.ru/grform', this.params).then((response) => {
+            axios.post('/magnets/register', this.params).then((response) => {
                 //
                 this.isLoading = false
             }).catch((error) => {
