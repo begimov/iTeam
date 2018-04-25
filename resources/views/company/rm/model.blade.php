@@ -11,13 +11,33 @@
                     <h4 class="mb-3 font-weight-light">Русский Менеджмент&nbsp;&mdash; это модель управления организациями, которая формируется сегодня в&nbsp;русскоязычном пространстве. Она многое заимствует из&nbsp;мирового управленческого опыта, но, в&nbsp;то&nbsp;же время, имеет собственные уникальные отличия и&nbsp;самобытность, истоки которых находятся в&nbsp;русской культуре.</h4>
                     <h4 class="mb-3 font-weight-normal">Русский Менеджмент&nbsp;&mdash; это единство пяти тесно связанных компонент:</h4>
                     <ul class="list-inline m-0">
-                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Ценности</span></h4></li>
-                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Цели</span></h4></li>
-                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Стратегия</span></h4></li>
+                        <li class="list-inline-item m-0">
+                            <h4><span class="badge badge-primary font-weight-light p-3 a-white">
+                                <a href="#_values">Ценности</a>
+                            </span></h4>
+                        </li>
+                        <li class="list-inline-item m-0">
+                            <h4><span class="badge badge-primary font-weight-light p-3 a-white">
+                                <a href="#_goals">Цели</a>
+                            </span></h4>
+                        </li>
+                        <li class="list-inline-item m-0">
+                            <h4><span class="badge badge-primary font-weight-light p-3 a-white">
+                                <a href="#_strategy">Стратегия</a>
+                            </span></h4>
+                        </li>
                     </ul>
                     <ul class="list-inline m-0">
-                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Структура</span></h4></li>
-                        <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-3">Процессы</span></h4></li>
+                        <li class="list-inline-item m-0">
+                            <h4><span class="badge badge-primary font-weight-light p-3 a-white">
+                                <a href="#_structure">Структура</a>
+                            </span></h4>
+                        </li>
+                        <li class="list-inline-item m-0">
+                            <h4><span class="badge badge-primary font-weight-light p-3 a-white">
+                                <a href="#_processes">Процессы</a>
+                            </span></h4>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -69,7 +89,7 @@
     </div>
 
     <!-- VALUES -->
-    <div class="container-fluid py-5 bg-primary text-white">
+    <div class="container-fluid py-5 bg-primary text-white" id="_values">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -139,7 +159,7 @@
     </div>
 
     <!-- GOALS -->
-    <div class="container-fluid py-5 bg-primary text-white">
+    <div class="container-fluid py-5 bg-primary text-white" id="_goals">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -180,7 +200,7 @@
 
 
     <!-- STRATEGY -->
-    <div class="container-fluid py-5 bg-primary text-white">
+    <div class="container-fluid py-5 bg-primary text-white" id="_strategy">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -232,7 +252,7 @@
     </div>
 
     <!-- STRUCTURE -->
-    <div class="container-fluid py-5 bg-primary text-white">
+    <div class="container-fluid py-5 bg-primary text-white" id="_structure">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -272,7 +292,7 @@
     </div>
 
     <!-- PROCESSES -->
-    <div class="container-fluid py-5 bg-primary text-white">
+    <div class="container-fluid py-5 bg-primary text-white" id="_processes">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
