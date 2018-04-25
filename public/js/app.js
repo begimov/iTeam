@@ -48025,7 +48025,7 @@ exports.default = {
             var _this = this;
 
             this.isLoading = true;
-            _axios2.default.post('/magnets/register', this.params).then(function (response) {
+            _axios2.default.post('/webapi/magnets/register', this.params).then(function (response) {
                 //
                 _this.isLoading = false;
             }).catch(function (error) {

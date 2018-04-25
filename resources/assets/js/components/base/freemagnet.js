@@ -20,7 +20,7 @@ export default {
     methods: {
         register() {
             this.isLoading = true
-            axios.post('/magnets/register', this.params).then((response) => {
+            axios.post('/webapi/magnets/register', this.params).then((response) => {
                 //
                 this.isLoading = false
             }).catch((error) => {
