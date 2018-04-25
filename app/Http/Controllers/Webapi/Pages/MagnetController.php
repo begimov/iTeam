@@ -9,6 +9,6 @@ class MagnetController extends Controller
 {
     public function register(Request $request)
     {
-        //
+        return response()->json($request->all());
     }
 }
