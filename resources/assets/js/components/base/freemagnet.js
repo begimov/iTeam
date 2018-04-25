@@ -4,11 +4,20 @@ export default {
     name: 'FreeMagnet',
     props: {
         campaignToken: {
+            type: String,
             required: true
         },
         buttonText: {
+            type: String,
             default: 'ПОЛУЧИТЬ'
-        }
+        },
+        title: {
+            type: String,
+            default: 'Вам подарок!'
+        },
+        description: {
+            type: String,
+        },
     },
     data() {
         return {
