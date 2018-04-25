@@ -25,13 +25,33 @@
                 <h2 class="font-weight-light mb-3">Пять элементов &laquo;Русского Менеджмента&raquo;</h2>
                 <p class="lead">Система &laquo;Русского Менеджмента&raquo; складывается из&nbsp;пяти взаимосвязанных элементов:</p>
                 <ul class="list-inline m-0">
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Целевое управление</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Стратегическое управление</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Управление процессами</span></h4></li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_management">Целевое управление</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_strategy">Стратегическое управление</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_processes">Управление процессами</a>
+                        </span></h4>
+                    </li>
                 </ul>
                 <ul class="list-inline m-0">
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Организационная структура</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Корпоративная культура</span></h4></li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_orgstructure">Организационная структура</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_motivation">Корпоративная культура</a>
+                        </span></h4>
+                    </li>
                 </ul>
                 <p class="mt-2">Дорожная карта знакомит вас с&nbsp;каждым из&nbsp;элементов &laquo;Русского Менеджмента&raquo;.</p>
             </div>
