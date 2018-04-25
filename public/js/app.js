@@ -48102,7 +48102,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "orderId": _vm.displayedOrderId
     }
-  })], 1) : _c('div', {
+  })], 1) : [_vm._m(0), _vm._v(" "), (_vm.orders.length) ? _c('div', {
     staticClass: "row"
   }, _vm._l((_vm.orders), function(order) {
     return _c('order-card', {
@@ -48115,12 +48115,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "orderPayment": _vm.orderPayment
       }
     })
-  })), _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
+  })) : _c('div', {
+    staticClass: "row"
+  }, [_vm._m(1)])], _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
     attrs: {
       "order": this.paymentOrder
     }
-  }) : _vm._e()], 1)
-},staticRenderFns: []}
+  }) : _vm._e()], 2)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('h1', {
+    staticClass: "mb-4"
+  }, [_vm._v("Заказы")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col"
+  }, [_c('p', [_vm._v("У вас пока нет ни одного заказа")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -48211,15 +48225,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "card-header text-white",
     class: [_vm.isPaid ? 'bg-success' : 'bg-danger']
-  }, [_vm._v("\n            " + _vm._s(_vm.isPaid ? 'Оплачен' : 'Не оплачен') + " (" + _vm._s(_vm.order.id) + ")\n        ")]), _vm._v(" "), _c('img', {
-    staticClass: "card-img-top",
-    attrs: {
-      "src": "https://iteam.ru/landing/template/img/mp_ychet.png"
-    }
-  }), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            " + _vm._s(_vm.isPaid ? 'Оплачен' : 'Не оплачен') + "\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "card-body"
   }, [_c('p', {
-    staticClass: "card-text"
+    staticClass: "card-text lead font-weight-normal"
   }, [_vm._v(_vm._s(_vm.order.product.data.name))]), _vm._v(" "), (!_vm.isPaid) ? _c('h3', [_c('span', {
     staticClass: "badge badge-primary"
   }, [_vm._v(_vm._s(_vm.order.price) + " руб.")])]) : _vm._e(), _vm._v(" "), (_vm.isPaid) ? _c('a', {
@@ -48784,17 +48793,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "modal"
   }, [_c('div', {
-    staticClass: "modal-dialog"
+    staticClass: "modal-dialog modal-lg"
   }, [_c('div', {
     staticClass: "modal-content"
   }, [_c('div', {
     staticClass: "modal-header"
   }, [_c('h5', {
     staticClass: "modal-title"
-  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('button', {
-    staticClass: "close",
+  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('a', {
     attrs: {
-      "type": "button"
+      "href": "#"
     },
     on: {
       "click": function($event) {
@@ -48802,11 +48810,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.closePayment($event)
       }
     }
-  }, [_c('span', {
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("×")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0)])]), _vm._v(" "), _c('div', {
     staticClass: "modal-body"
   }, [_c('div', {
     staticClass: "container-fluid"
@@ -48834,7 +48838,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])])])]), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 2) ? _c('div', {
+    staticClass: "row mt-4"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-body bg-dark text-white lead"
+  }, [_vm._v("\n                                    Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n                                ")])]), _vm._v(" "), _vm._m(1)])]) : _vm._e()])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
     ref: "woform",
@@ -49034,7 +49046,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h3', [_c('span', {
+    staticClass: "font-weight-bold",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "card mt-2"
+  }, [_c('div', {
+    staticClass: "card-body"
+  }, [_c('p', [_vm._v("Платежный сервис Wallet One, используемый для оплаты наших продуктов, "), _c('span', {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("лицензирован надзорным органом в каждой стране присутствия, а значит, полностью безопасен.")])]), _vm._v(" "), _c('p', [_vm._v("Wallet One использует стандарт безопасности PCI DSS, SSL-протокол, системы безопасности Verified by Visa и MasterCard SecureCode.")]), _vm._v(" "), _c('p', [_c('a', {
+    attrs: {
+      "href": "https://www.walletone.com/ru/merchant/security/",
+      "target": "_blank"
+    }
+  }, [_vm._v("Подробнее здесь...")])])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -49132,18 +49164,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.closeProduct($event)
       }
     }
-  }, [_vm._v("Вернуться к заказам")]), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
+  }, [_vm._v("Вернуться к заказам")]), _vm._v(" "), _c('h1', {
+    staticClass: "my-4"
+  }, [_vm._v("«" + _vm._s(_vm.product.name) + "»")]), _vm._v(" "), _vm._l((_vm.materials), function(material) {
     return _c('div', {
-      key: material.id
-    }, [_c('h2', [_vm._v(_vm._s(material.name))]), _vm._v(" "), _vm._l((material.files.data), function(file) {
-      return _c('span', {
+      key: material.id,
+      staticClass: "card mb-3"
+    }, [_c('div', {
+      staticClass: "card-header pb-1"
+    }, [_c('h2', [_vm._v(_vm._s(material.name))])]), _vm._v(" "), _c('div', {
+      staticClass: "card-body"
+    }, [(material.resources.data.length) ? [_c('h3', [_vm._v("Видео:")]), _vm._v(" "), _c('div', {
+      staticClass: "row mb-4"
+    }, _vm._l((material.resources.data), function(resource) {
+      return _c('div', {
+        key: resource.id,
+        staticClass: "col-md-4 mt-3"
+      }, [_c('youtube-player', {
+        attrs: {
+          "videoId": resource.identifier
+        }
+      })], 1)
+    }))] : _vm._e(), _vm._v(" "), (material.files.data.length) ? [_c('h3', {
+      staticClass: "mb-3"
+    }, [_vm._v("Материалы:")]), _vm._v(" "), _c('ul', _vm._l((material.files.data), function(file) {
+      return _c('li', {
         key: file.id
       }, [_c('a', {
         attrs: {
           "href": 'webapi/files/' + file.id
         }
-      }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n        ")])
-    })], 2)
+      }, [_vm._v(_vm._s(file.name))]), _vm._v(" - " + _vm._s(Math.round(file.size / 1024)) + " Kb\n                    ")])
+    }))] : _vm._e()], 2)])
   })], 2) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
