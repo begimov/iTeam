@@ -25,13 +25,33 @@
                 <h2 class="font-weight-light mb-3">Пять элементов &laquo;Русского Менеджмента&raquo;</h2>
                 <p class="lead">Система &laquo;Русского Менеджмента&raquo; складывается из&nbsp;пяти взаимосвязанных элементов:</p>
                 <ul class="list-inline m-0">
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Целевое управление</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Стратегическое управление</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Управление процессами</span></h4></li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_management">Целевое управление</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_strategy">Стратегическое управление</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_processes">Управление процессами</a>
+                        </span></h4>
+                    </li>
                 </ul>
                 <ul class="list-inline m-0">
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Организационная структура</span></h4></li>
-                    <li class="list-inline-item m-0"><h4><span class="badge badge-primary font-weight-light p-2">Корпоративная культура</span></h4></li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_orgstructure">Организационная структура</a>
+                        </span></h4>
+                    </li>
+                    <li class="list-inline-item m-0">
+                        <h4><span class="badge badge-primary font-weight-light p-2 a-white">
+                            <a href="#_motivation">Корпоративная культура</a>
+                        </span></h4>
+                    </li>
                 </ul>
                 <p class="mt-2">Дорожная карта знакомит вас с&nbsp;каждым из&nbsp;элементов &laquo;Русского Менеджмента&raquo;.</p>
             </div>
@@ -42,19 +62,19 @@
     <div class="container-fluid a-white p-0">
         <div class="row text-center text-white">
             <div class="col bg-dark py-4 font-weight-normal rm-subnav-04">
-                <a href="">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
+                <a href="#_competence">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
             </div>
             <div class="col bg-secondary py-4 font-weight-normal rm-subnav-05">
-                <a href="">Высший пилотаж в&nbsp;Русском менеджменте</a>
+                <a href="#_pilotage">Высший пилотаж в&nbsp;Русском менеджменте</a>
             </div>
             <div class="col bg-dark py-4 font-weight-normal rm-subnav-06">
-                <a href="">Как овладеть инструментами Русского Менеджмента</a>
+                <a href="#_instruments">Как овладеть инструментами Русского Менеджмента</a>
             </div>
         </div>
     </div>
 
     <!-- MANAGEMENT -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_management">
         <div class="row">
             <div class="col-md-4 rm-index-bg-01 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -81,7 +101,7 @@
     </div>
 
     <!-- STRATEGIC MANAGEMENT -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white" id="_strategy">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -108,7 +128,7 @@
     </div>
 
     <!-- PROCESSES -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_processes">
         <div class="row">
             <div class="col-md-4 rm-index-bg-03 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -134,7 +154,7 @@
     </div>
 
     <!-- ORG STRUCTURE -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white" id="_orgstructure">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -161,7 +181,7 @@
     </div>
 
     <!-- CULTURE -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_motivation">
         <div class="row">
             <div class="col-md-4 rm-index-bg-05 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -191,7 +211,7 @@
     </div>
 
     <!-- 3KEY -->
-    <div class="container-fluid py-5 bg-dark text-white">
+    <div class="container-fluid py-5 bg-dark text-white" id="_competence">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -283,7 +303,7 @@
     </div>
 
     <!-- PILOTAGE -->
-    <div class="container-fluid py-5 text-white a-white rm-index-pilotage-block">
+    <div class="container-fluid py-5 text-white a-white rm-index-pilotage-block" id="_pilotage">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -313,7 +333,7 @@
     </div>
 
     <!-- INSTRUMENTS -->
-    <div class="container-fluid py-5 rm-index-howto-block">
+    <div class="container-fluid py-5 rm-index-howto-block" id="_instruments">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
