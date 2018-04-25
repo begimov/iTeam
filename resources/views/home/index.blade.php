@@ -57,39 +57,41 @@
             <div class="col-4 rm d-lg-none"></div>
             <div class="col-8 py-5 px-3 p-lg-0">
               <h4 class="text-uppercase">
-                <a href="#">
+                <a href="{{ route('company.rm.index') . '#_strategy' }}">
                   <span class="badge badge-dark font-weight-light">Стратегия</span>
                 </a>
               </h4>
               <h4 class="text-uppercase font-weight-light">
-                <a href="#">
-                  <span class="badge badge-dark font-weight-light">Бизнес-процессы</span>
+                <a href="{{ route('company.rm.index') . '#_motivation' }}">
+                  <span class="badge badge-dark font-weight-light">Мотивация</span>
                 </a>
               </h4>
               <h4 class="text-uppercase">
-                <a href="#">
+                <a href="{{ route('company.rm.index') . '#_orgstructure' }}">
                   <span class="badge badge-dark font-weight-light">Оргструктура</span>
                 </a>
               </h4>
               <h4 class="text-uppercase">
-                <a href="#">
-                  <span class="badge badge-dark font-weight-light">Мотивация</span>
+                <a href="{{ route('company.rm.index') . '#_processes' }}">
+                  <span class="badge badge-dark font-weight-light">Бизнес-процессы</span>
+                </a>
+              </h4>
+              <h4 class="text-uppercase">
+                <a href="{{ route('company.rm.index') . '#_management' }}">
+                  <span class="badge badge-dark font-weight-light">Целевое управление</span>
                 </a>
               </h4>
             </div>
           </div>
         </div>
         <div class="col-xl-9 mt-5 mt-sm-5 mt-md-5 mt-lg-5 mt-xl-0">
-          <h2 class="text-uppercase font-weight-bold">русский менеджмент</h2>
-          <p class="lead font-weight-bold">Сделайте вашу компанию управляемой и эффективной!</p>
-          <p class="lead">«Русский Менеджмент» - это феномен, который пока только зарождается. Его проблески проявляются в действиях немногих
-            руководителей российских компаний, одержимых своим видением будущего и верой в людей, с которыми они вместе трудятся.
-            Им пока не хватает системности в организации работы и последовательности действий, но они на верном пути. «Русский
-            Менеджмент» прорастает и крепнет на наших глазах, и мы верим, что он станет явлением мирового масштаба, реальным
-            вкладом российских предприятий в прогресс человечества.</p>
+          <h2 class="text-uppercase font-weight-bold">Русский Менеджмент</h2>
+          <p class="lead">
+            Наш сайт&nbsp;&mdash; это портал в&nbsp;Русский Менеджмент. Представленные на&nbsp;нем материалы образуют единую систему знаний об&nbsp;управлении организациями, которую мы&nbsp;создаем и&nbsp;развиваем вместе с&nbsp;тысячами управленцев на&nbsp;русскоязычном пространстве.<br>
+            Мы&nbsp;даем дорожную карту, которая поможет вашей компании найти путь к&nbsp;управляемости и&nbsp;эффективности в&nbsp;пространстве Русского Менеджмента.
+          </p>
           <p>
-            <a href="" class="btn btn-light text-uppercase">о проекте</a>
-            <a href="" class="btn btn-light text-uppercase">что такое рм</a>
+            <a href="{{ route('company.rm.index') }}" class="btn btn-light text-uppercase btn-sm">Узнать больше о Русском Менеджменте</a>
           </p>
         </div>
       </div>
