@@ -22,7 +22,7 @@
                 </div>
             </div>
             <input type="hidden" name="campaign_token" v-model="params.campaignToken" />
-            <button class="btn btn-primary" id="grFormBtn">{{ buttonText }}</button>
+            <button class="btn btn-primary" id="grFormBtn" v-if="!isLoading">{{ buttonText }}</button>
         </form>
     </div>
 </template>
