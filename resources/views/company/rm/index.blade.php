@@ -54,7 +54,7 @@
     </div>
 
     <!-- MANAGEMENT -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_management">
         <div class="row">
             <div class="col-md-4 rm-index-bg-01 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -81,7 +81,7 @@
     </div>
 
     <!-- STRATEGIC MANAGEMENT -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white" id="_strategy">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -108,7 +108,7 @@
     </div>
 
     <!-- PROCESSES -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_processes">
         <div class="row">
             <div class="col-md-4 rm-index-bg-03 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -134,7 +134,7 @@
     </div>
 
     <!-- ORG STRUCTURE -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white" id="_orgstructure">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -161,7 +161,7 @@
     </div>
 
     <!-- CULTURE -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="_motivation">
         <div class="row">
             <div class="col-md-4 rm-index-bg-05 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
