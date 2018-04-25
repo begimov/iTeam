@@ -62,13 +62,13 @@
     <div class="container-fluid a-white p-0">
         <div class="row text-center text-white">
             <div class="col bg-dark py-4 font-weight-normal rm-subnav-04">
-                <a href="">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
+                <a href="#_competence">Три ключевые компетенции в&nbsp;Русском Менеджменте</a>
             </div>
             <div class="col bg-secondary py-4 font-weight-normal rm-subnav-05">
-                <a href="">Высший пилотаж в&nbsp;Русском менеджменте</a>
+                <a href="#_pilotage">Высший пилотаж в&nbsp;Русском менеджменте</a>
             </div>
             <div class="col bg-dark py-4 font-weight-normal rm-subnav-06">
-                <a href="">Как овладеть инструментами Русского Менеджмента</a>
+                <a href="#_instruments">Как овладеть инструментами Русского Менеджмента</a>
             </div>
         </div>
     </div>
@@ -211,7 +211,7 @@
     </div>
 
     <!-- 3KEY -->
-    <div class="container-fluid py-5 bg-dark text-white">
+    <div class="container-fluid py-5 bg-dark text-white" id="_competence">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -303,7 +303,7 @@
     </div>
 
     <!-- PILOTAGE -->
-    <div class="container-fluid py-5 text-white a-white rm-index-pilotage-block">
+    <div class="container-fluid py-5 text-white a-white rm-index-pilotage-block" id="_pilotage">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -333,7 +333,7 @@
     </div>
 
     <!-- INSTRUMENTS -->
-    <div class="container-fluid py-5 rm-index-howto-block">
+    <div class="container-fluid py-5 rm-index-howto-block" id="_instruments">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
