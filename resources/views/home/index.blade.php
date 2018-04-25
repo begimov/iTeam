@@ -20,6 +20,7 @@
           <img src="{{ asset('img/home/gift_box.jpg') }}" class="img-fluid">
         </div>
         <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
+          <free-magnet></free-magnet>
           <h2 class="font-weight-bold text-primary mb-1">Вам подарок!</h2>
           <p class="mb-2 lead">Мастер-класс &laquo;Как улучшить бизнес процессы компании&raquo;</p>
           <form>
