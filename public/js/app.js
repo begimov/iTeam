@@ -48016,6 +48016,7 @@ exports.default = {
                 phone: '',
                 campaignToken: this.campaignToken
             },
+            errors: {},
             isLoading: false
         };
     },
@@ -48028,11 +48029,14 @@ exports.default = {
             _axios2.default.post('/webapi/magnets/subscribe', this.params).then(function (response) {
                 //
                 _this.isLoading = false;
-            }).catch(function (error) {
-                //
+            }).catch(function (err) {
+                _this.errors = err.response.data.errors;
                 _this.isLoading = false;
             });
         }
+    },
+    computed: {
+        //
     },
     mounted: function mounted() {
         //
@@ -49340,7 +49344,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.params.name),
       expression: "params.name"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors.name
+    },
     attrs: {
       "type": "text",
       "name": "name",
@@ -49355,7 +49361,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.params.name = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), (_vm.errors.name) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                " + _vm._s(_vm.errors.name[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group mb-2"
   }, [_c('input', {
     directives: [{
@@ -49364,7 +49372,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.params.email),
       expression: "params.email"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors.email
+    },
     attrs: {
       "type": "email",
       "name": "email",
@@ -49379,7 +49389,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.params.email = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), (_vm.errors.email) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                " + _vm._s(_vm.errors.email[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group mb-2"
   }, [_c('input', {
     directives: [{
@@ -49388,7 +49400,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.params.phone),
       expression: "params.phone"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors.phone
+    },
     attrs: {
       "type": "text",
       "name": "phone",
@@ -49403,7 +49417,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.params.phone = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('input', {
+  }), _vm._v(" "), (_vm.errors.phone) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                " + _vm._s(_vm.errors.phone[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",

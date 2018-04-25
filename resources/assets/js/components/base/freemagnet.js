@@ -14,6 +14,7 @@ export default {
                 phone: '',
                 campaignToken: this.campaignToken
             },
+            errors: {},
             isLoading: false
         }
     },
@@ -23,11 +24,14 @@ export default {
             axios.post('/webapi/magnets/subscribe', this.params).then((response) => {
                 //
                 this.isLoading = false
-            }).catch((error) => {
-                //
+            }).catch((err) => {
+                this.errors = err.response.data.errors
                 this.isLoading = false
             })
         }
+    },
+    computed: {
+        //
     },
     mounted() {
         //
