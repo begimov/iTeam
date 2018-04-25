@@ -107,8 +107,14 @@ return [
     */
 
     'custom'               => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'Необходимо ввести имя.',
+        ],
+        'email' => [
+            'required' => 'Необходимо ввести email.',
+        ],
+        'phone' => [
+            'required' => 'Необходимо ввести номер телефона.',
         ],
     ],
 
