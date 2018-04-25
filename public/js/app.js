@@ -47918,19 +47918,15 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(70)
-}
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(73),
   /* template */
-  __webpack_require__(74),
+  __webpack_require__(101),
   /* styles */
-  injectStyle,
+  null,
   /* scopeId */
-  "data-v-2c93d216",
+  null,
   /* moduleIdentifier (server only) */
   null
 )
@@ -47958,46 +47954,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(71);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(14)("7f368f92", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c93d216\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FreeMagnet.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c93d216\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FreeMagnet.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(13)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.help-block[data-v-2c93d216] {\n  margin-top: 20px;\n  padding: 5px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 70 */,
+/* 71 */,
 /* 72 */
 /***/ (function(module, exports) {
 
@@ -48051,7 +48009,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
     name: 'FreeMagnet',
-    props: ['campaign_token', 'cta', 'redirect'],
+    props: ['campaign_token', 'buttonText', 'redirect'],
     data: function data() {
         return {
             modal: {
@@ -48104,155 +48062,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('form', {
-    attrs: {
-      "action": "/grform/payment",
-      "method": "get",
-      "id": "grForm"
-    }
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('div', {
-    staticClass: "form-group form-group-lg"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.modal.name),
-      expression: "modal.name"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "name": "name",
-      "placeholder": "Имя"
-    },
-    domProps: {
-      "value": (_vm.modal.name)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.modal.name = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group form-group-lg"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.modal.email),
-      expression: "modal.email"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "email",
-      "name": "email",
-      "placeholder": "Эл.адрес"
-    },
-    domProps: {
-      "value": (_vm.modal.email)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.modal.email = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group form-group-lg"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.modal.phone),
-      expression: "modal.phone"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "name": "phone",
-      "placeholder": "Телефон"
-    },
-    domProps: {
-      "value": (_vm.modal.phone)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.modal.phone = $event.target.value
-      }
-    }
-  })])]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.modal.campaign_token),
-      expression: "modal.campaign_token"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "campaign_token"
-    },
-    domProps: {
-      "value": (_vm.modal.campaign_token)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.modal.campaign_token = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), (_vm.isLoading) ? _c('a', {
-    staticClass: "btn btn-danger btn-lg disabled",
-    attrs: {
-      "href": "#",
-      "id": "grFormBtn"
-    }
-  }, [_vm._v("ОТПРАВКА...")]) : _c('a', {
-    staticClass: "btn btn-danger btn-lg",
-    attrs: {
-      "href": "#",
-      "id": "grFormBtn"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.register($event)
-      }
-    }
-  }, [_vm._v(_vm._s(_vm.cta))])]), _vm._v(" "), (_vm.error) ? _c('p', {
-    staticClass: "help-block alert-danger",
-    attrs: {
-      "id": "grFormHelpBlock"
-    }
-  }, [_vm._v(_vm._s(_vm.error))]) : _vm._e(), _vm._v(" "), (_vm.msg) ? _c('p', {
-    staticClass: "help-block alert-success",
-    attrs: {
-      "id": "grFormHelpBlock"
-    }
-  }, [_vm._v(_vm._s(_vm.msg))]) : _vm._e()])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2c93d216", module.exports)
-  }
-}
-
-/***/ }),
+/* 74 */,
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49518,6 +49328,152 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('h2', {
+    staticClass: "font-weight-bold text-primary mb-1"
+  }, [_vm._v("Вам подарок!")]), _vm._v(" "), _c('p', {
+    staticClass: "mb-2 lead"
+  }, [_vm._v("Мастер-класс «Как улучшить бизнес процессы компании»")]), _vm._v(" "), _c('form', {
+    attrs: {
+      "action": "/grform/payment",
+      "method": "get",
+      "id": "grForm"
+    },
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.register($event)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "form-group mb-2"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.modal.name),
+      expression: "modal.name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "name",
+      "placeholder": "Имя"
+    },
+    domProps: {
+      "value": (_vm.modal.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.modal.name = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group mb-2"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.modal.email),
+      expression: "modal.email"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "email",
+      "name": "email",
+      "placeholder": "Эл.адрес"
+    },
+    domProps: {
+      "value": (_vm.modal.email)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.modal.email = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group mb-2"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.modal.phone),
+      expression: "modal.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "phone",
+      "placeholder": "Телефон"
+    },
+    domProps: {
+      "value": (_vm.modal.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.modal.phone = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.modal.campaign_token),
+      expression: "modal.campaign_token"
+    }],
+    attrs: {
+      "type": "hidden",
+      "name": "campaign_token"
+    },
+    domProps: {
+      "value": (_vm.modal.campaign_token)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.modal.campaign_token = $event.target.value
+      }
+    }
+  }), _vm._v(" "), (_vm.isLoading) ? _c('button', {
+    staticClass: "btn btn-primary disabled",
+    attrs: {
+      "id": "grFormBtn"
+    }
+  }, [_vm._v("ОТПРАВКА...")]) : _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "id": "grFormBtn"
+    }
+  }, [_vm._v(_vm._s(_vm.buttonText))]), _vm._v(" "), (_vm.error) ? _c('p', {
+    staticClass: "help-block alert-danger",
+    attrs: {
+      "id": "grFormHelpBlock"
+    }
+  }, [_vm._v(_vm._s(_vm.error))]) : _vm._e(), _vm._v(" "), (_vm.msg) ? _c('p', {
+    staticClass: "help-block alert-success",
+    attrs: {
+      "id": "grFormHelpBlock"
+    }
+  }, [_vm._v(_vm._s(_vm.msg))]) : _vm._e()])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2c93d216", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

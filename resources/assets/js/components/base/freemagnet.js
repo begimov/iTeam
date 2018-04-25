@@ -4,7 +4,7 @@ export default {
     name: 'FreeMagnet',
     props: [
         'campaign_token',
-        'cta',
+        'buttonText',
         'redirect'
     ],
     data() {
