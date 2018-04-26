@@ -22,7 +22,7 @@
         <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
           <free-magnet 
             description="Мастер-класс &laquo;Как улучшить бизнес процессы компании&raquo;"
-            campaign-token="111" />
+            campaign-token="nlopl" />
         </div>
       </div>
       <div class="row bg-primary text-center text-white">

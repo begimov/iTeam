@@ -42,29 +42,22 @@ class GetResponse implements IGetResponse
      * @param string $http_method
      * @param array $params
      * @return mixed
-     * @throws Exception
      */
     private function call($api_method, $http_method = 'GET', $params = array())
     {
-        $params = json_encode($params);
         $url = $this->api_url . '/' . $api_method;
 
-        $options = array(
-            CURLOPT_URL => $url,
-            CURLOPT_ENCODING => 'gzip,deflate',
-            CURLOPT_FRESH_CONNECT => 1,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_TIMEOUT => $this->timeout,
-            CURLOPT_HEADER => false,
-            CURLOPT_USERAGENT => 'PHP GetResponse client 0.0.2',
-            CURLOPT_HTTPHEADER => array('X-Auth-Token: api-key ' . $this->api_key, 'Content-Type: application/json')
+        $response = $this->guzzle->request(
+            $http_method, 
+            $url,
+            [
+                'headers' => [
+                    'X-Auth-Token' => 'api-key ' . $this->api_key,
+                ],
+                'form_params' => $params,
+            ]
         );
 
-        $curl = curl_init();
-        curl_setopt_array($curl, $options);
-        $response = json_decode(curl_exec($curl));
-        $this->http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-        return (object)$response;
+        dd($response);
     }
 }

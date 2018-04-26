@@ -13,11 +13,21 @@ class MagnetController extends Controller
     public function __construct(IGetResponse $gr)
     {
         $this->gr = $gr;
-        dd($gr);
     }
     
     public function subscribe(SubscribeOnMagnet $request)
     {
-        return response()->json($request->all());
+        $this->gr->addContact(array(
+			'name'              => $request->name,
+			'email'             => $request->email,
+			'dayOfCycle'        => 0,
+			'campaign'          => array('campaignId' => $request->campaignToken),
+			'customFieldValues' => array(
+			    array(
+			        'customFieldId' => 'VvNs',
+			        'value' => array($request->phone),
+			    ),
+			),
+		));
     }
 }
