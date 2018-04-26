@@ -6,7 +6,7 @@ class GetResponse
 {
     private $api_key;
 
-    private $api_url = 'https://api.getresponse.com/v3';
+    private $api_url;
 
     private $timeout = 8;
 
@@ -31,10 +31,8 @@ class GetResponse
      */
     public function __construct($api_key = null, $api_url = null)
     {
-        $this->api_key = ($api_key) ? $api_key : config('getresponse.api3_key');
-        if (!empty($api_url)) {
-            $this->api_url = $api_url;
-        }
+        $this->api_key = $api_key ?: config('services.getresponse.key');
+        $this->api_url = $api_url ?: config('services.getresponse.url');
     }
 
     /**
@@ -319,7 +317,7 @@ class GetResponse
     {
         return $this->call('forms?' . $this->setParams($params));
     }
-    
+
     /**
      * Curl run request
      *

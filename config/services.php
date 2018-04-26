@@ -39,4 +39,9 @@ return [
         'key' => env('WALLETONE_KEY'),
     ],
 
+    'getresponse' => [
+        'url' => env('GETRESPONSE_URL'),
+        'key' => env('GETRESPONSE_KEY'),
+    ],
+
 ];
