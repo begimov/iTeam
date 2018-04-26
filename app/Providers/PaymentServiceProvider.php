@@ -15,7 +15,7 @@ class PaymentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind(IWalletOne::class, WalletOne::class);
+        //
     }
 
     /**
@@ -25,6 +25,6 @@ class PaymentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(IWalletOne::class, WalletOne::class);
     }
 }

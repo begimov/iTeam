@@ -6,6 +6,8 @@ use App\Services\Marketing\Contracts\IGetResponse;
 
 class GetResponse implements IGetResponse
 {
+    protected $guzzle;
+
     private $api_key;
 
     private $api_url;
@@ -15,10 +17,11 @@ class GetResponse implements IGetResponse
      * @param      $api_key
      * @param null $api_url
      */
-    public function __construct($api_key = null, $api_url = null)
+    public function __construct($guzzle, $api_key, $api_url)
     {
-        $this->api_key = $api_key ?: config('services.getresponse.key');
-        $this->api_url = $api_url ?: config('services.getresponse.url');
+        $this->guzzle = $guzzle;
+        $this->api_key = $api_key;
+        $this->api_url = $api_url;
     }
 
     /**
