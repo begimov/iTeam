@@ -28,6 +28,6 @@ class MagnetController extends Controller
 			        'value' => array($request->phone),
 			    ),
 			),
-		));
+        ));
     }
 }

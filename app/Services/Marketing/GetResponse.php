@@ -25,6 +25,16 @@ class GetResponse implements IGetResponse
     }
 
     /**
+     * get single campaign
+     * @param string $campaign_id retrieved using API
+     * @return mixed
+     */
+    public function getCampaign($campaign_id)
+    {
+        return $this->call('campaigns/' . $campaign_id);
+    }
+
+    /**
      * add single contact into your campaign
      *
      * @param $params
@@ -47,17 +57,23 @@ class GetResponse implements IGetResponse
     {
         $url = $this->api_url . '/' . $api_method;
 
-        $response = $this->guzzle->request(
-            $http_method, 
-            $url,
-            [
-                'headers' => [
-                    'X-Auth-Token' => 'api-key ' . $this->api_key,
-                ],
-                'form_params' => $params,
-            ]
-        );
+        try {
+            $response = $this->guzzle->request(
+                $http_method, 
+                $url,
+                [
+                    'headers' => [
+                        'X-Auth-Token' => 'api-key ' . $this->api_key,
+                    ],
+                    'form_params' => $params,
+                ]
+            );
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $response = json_decode((string) $e->getResponse()->getBody());
+            dd($response, $response->httpStatus, $response->code);
+        }
 
         dd($response);
+        // dd(json_decode((string) $response->getBody()));
     }
 }
