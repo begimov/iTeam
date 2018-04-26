@@ -42,7 +42,24 @@ class GetResponse implements IGetResponse
      */
     public function addContact($params)
     {
+        $params = $this->getParams($params);
         return $this->call('contacts', 'POST', $params);
+    }
+
+    protected function getParams($data)
+    {
+        return array(
+			'name'              => $data['name'],
+			'email'             => $data['email'],
+			'dayOfCycle'        => 0,
+			'campaign'          => array('campaignId' => $data['campaignToken']),
+			'customFieldValues' => array(
+			    array(
+			        'customFieldId' => 'VvNs',
+			        'value' => array($data['phone']),
+			    ),
+			),
+        );
     }
 
     /**

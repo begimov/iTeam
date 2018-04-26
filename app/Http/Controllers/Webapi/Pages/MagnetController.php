@@ -17,17 +17,6 @@ class MagnetController extends Controller
     
     public function subscribe(SubscribeOnMagnet $request)
     {
-        $this->gr->addContact(array(
-			'name'              => $request->name,
-			'email'             => $request->email,
-			'dayOfCycle'        => 0,
-			'campaign'          => array('campaignId' => $request->campaignToken),
-			'customFieldValues' => array(
-			    array(
-			        'customFieldId' => 'VvNs',
-			        'value' => array($request->phone),
-			    ),
-			),
-        ));
+        $this->gr->addContact($request->all());
     }
 }
