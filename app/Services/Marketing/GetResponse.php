@@ -2,7 +2,9 @@
 
 namespace App\Services\Marketing;
 
-class GetResponse
+use App\Services\Marketing\Contracts\IGetResponse;
+
+class GetResponse implements IGetResponse
 {
     private $api_key;
 
