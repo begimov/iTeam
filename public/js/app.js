@@ -47684,6 +47684,10 @@ exports.default = {
         },
         description: {
             type: String
+        },
+        redirectUrl: {
+            type: String,
+            default: null
         }
     },
     data: function data() {
@@ -47706,6 +47710,11 @@ exports.default = {
             this.isLoading = true;
             _axios2.default.post('/webapi/magnets/subscribe', this.params).then(function (response) {
                 _this.resetState();
+
+                if (_this.redirectUrl) {
+                    window.location.href = _this.redirectUrl;
+                }
+
                 _this.isLoading = false;
             }).catch(function (err) {
                 _this.errors = err.response.data.errors;

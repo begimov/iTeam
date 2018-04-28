@@ -40,6 +40,11 @@ export default {
             this.isLoading = true
             axios.post('/webapi/magnets/subscribe', this.params).then((response) => {
                 this.resetState()
+
+                if (this.redirectUrl) {
+                    window.location.href = this.redirectUrl;
+                }
+
                 this.isLoading = false
             }).catch((err) => {
                 this.errors = err.response.data.errors
