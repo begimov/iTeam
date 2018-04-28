@@ -5,7 +5,7 @@ export default {
     props: {
         layoutType: {
             type: String,
-            default: 'horizontal'
+            default: 'vertical'
         },
         campaignToken: {
             type: String,

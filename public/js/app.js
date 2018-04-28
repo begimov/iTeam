@@ -47672,7 +47672,7 @@ exports.default = {
     props: {
         layoutType: {
             type: String,
-            default: 'horizontal'
+            default: 'vertical'
         },
         campaignToken: {
             type: String,
@@ -47749,7 +47749,11 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h2', {
+  return _c('div', {
+    class: {
+      'text-center': _vm.layoutType === 'horizontal'
+    }
+  }, [_c('h2', {
     staticClass: "font-weight-bold text-primary mb-1"
   }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('p', {
     staticClass: "mb-2 lead"
@@ -47764,6 +47768,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         $event.preventDefault();
         _vm.register($event)
       }
+    }
+  }, [_c('div', {
+    class: {
+      'row': _vm.layoutType === 'horizontal'
+    }
+  }, [_c('div', {
+    class: {
+      'col-md-4': _vm.layoutType === 'horizontal'
     }
   }, [_c('div', {
     staticClass: "form-group mb-2"
@@ -47793,7 +47805,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), (_vm.errors.name) ? _c('div', {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                " + _vm._s(_vm.errors.name[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        " + _vm._s(_vm.errors.name[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+    class: {
+      'col-md-4': _vm.layoutType === 'horizontal'
+    }
+  }, [_c('div', {
     staticClass: "form-group mb-2"
   }, [_c('input', {
     directives: [{
@@ -47821,7 +47837,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), (_vm.errors.email) ? _c('div', {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                " + _vm._s(_vm.errors.email[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        " + _vm._s(_vm.errors.email[0]) + "\n                    ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
+    class: {
+      'col-md-4': _vm.layoutType === 'horizontal'
+    }
+  }, [_c('div', {
     staticClass: "form-group mb-2"
   }, [_c('input', {
     directives: [{
@@ -47849,7 +47869,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), (_vm.errors.phone) ? _c('div', {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                " + _vm._s(_vm.errors.phone[0]) + "\n            ")]) : _vm._e()]), _vm._v(" "), _c('input', {
+  }, [_vm._v("\n                        " + _vm._s(_vm.errors.phone[0]) + "\n                    ")]) : _vm._e()])])]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
