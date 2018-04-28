@@ -3,6 +3,10 @@ import axios from 'axios'
 export default {
     name: 'FreeMagnet',
     props: {
+        layoutType: {
+            type: String,
+            default: 'horizontal'
+        },
         campaignToken: {
             type: String,
             required: true

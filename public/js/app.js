@@ -47670,6 +47670,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
     name: 'FreeMagnet',
     props: {
+        layoutType: {
+            type: String,
+            default: 'horizontal'
+        },
         campaignToken: {
             type: String,
             required: true
