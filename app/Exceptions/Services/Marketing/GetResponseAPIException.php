@@ -33,7 +33,7 @@ class GetResponseAPIException extends Exception
     {
         return response()->json([
             'errors' => [
-                '_message' => 'Пожалуйста проверьте правильность введенных данных'
+                '_message' => trans('validation.exception_errors.check_your_data')
             ]
         ], $this->response->httpStatus);
     }
