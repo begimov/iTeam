@@ -18,6 +18,10 @@ export default {
         description: {
             type: String,
         },
+        redirectUrl: {
+            type: String,
+            default: null
+        },
     },
     data() {
         return {

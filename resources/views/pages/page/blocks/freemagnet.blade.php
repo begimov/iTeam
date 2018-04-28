@@ -4,8 +4,7 @@
       title="{{ $element->data['title'] }}"
       description="{{ $element->data['description'] }}"
       campaign-token="{{ $element->data['campaignToken'] }}"
-      button-text="{{ $element->data['buttonText'] }}" />
-
-    {{-- <img src="{{ getElementsFilePath($element, 'img1') }}" class="img-fluid"> --}}
+      button-text="{{ $element->data['buttonText'] }}"
+      redirect-url="{{ getElementsFilePath($element, 'doc1') }}" />
   </div>
 </div>
