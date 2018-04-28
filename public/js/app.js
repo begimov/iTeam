@@ -47894,7 +47894,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "alert"
     }
-  }, [_vm._v("\n            " + _vm._s(_vm.errors._message) + "\n        ")]) : _vm._e(), _vm._v(" "), (!_vm.isLoading) ? _c('button', {
+  }, [_vm._v("\n            " + _vm._s(_vm.errors._message) + "\n        ")]) : _vm._e(), _vm._v(" "), (_vm.isLoading) ? _c('div', {
+    staticClass: "alert alert-success"
+  }, [_vm._v("Пожалуйста подождите...")]) : _vm._e(), _vm._v(" "), (!_vm.isLoading) ? _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "id": "grFormBtn"

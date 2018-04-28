@@ -39,6 +39,7 @@
             <div class="alert alert-danger" role="alert" v-if="errors._message">
                 {{ errors._message }}
             </div>
+            <div v-if="isLoading" class="alert alert-success">Пожалуйста подождите...</div>
             <button class="btn btn-primary" id="grFormBtn" v-if="!isLoading">{{ buttonText }}</button>
         </form>
 
