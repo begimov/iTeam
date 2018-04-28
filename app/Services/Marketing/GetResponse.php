@@ -89,6 +89,11 @@ class GetResponse implements IGetResponse
             );
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $response = json_decode((string) $e->getResponse()->getBody());
+
+            if ($response->code === 1008) {
+                return;
+            }
+
             throw new GetResponseAPIException($response);
         }
     }
