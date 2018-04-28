@@ -4,6 +4,8 @@ namespace App\Services\Marketing;
 
 use App\Services\Marketing\Contracts\IGetResponse;
 
+use App\Exceptions\Services\Marketing\GetResponseAPIException;
+
 class GetResponse implements IGetResponse
 {
     protected $guzzle;
@@ -87,10 +89,7 @@ class GetResponse implements IGetResponse
             );
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             $response = json_decode((string) $e->getResponse()->getBody());
-            dd($response, $response->httpStatus, $response->code);
+            throw new GetResponseAPIException($response);
         }
-
-        dd($response);
-        // dd(json_decode((string) $response->getBody()));
     }
 }

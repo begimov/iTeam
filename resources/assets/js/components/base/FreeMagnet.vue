@@ -36,6 +36,9 @@
                 </div>
             </div>
             <input type="hidden" name="campaign_token" v-model="params.campaignToken" />
+            <div class="alert alert-danger" role="alert" v-if="errors._message">
+                {{ errors._message }}
+            </div>
             <button class="btn btn-primary" id="grFormBtn" v-if="!isLoading">{{ buttonText }}</button>
         </form>
 
