@@ -4,8 +4,8 @@ if (!function_exists('getElementsFile')) {
 	{
 		$file = $element->files->where('id', $element->data['files'][$fileTag])->first();
 	
-		return config('urls.files.page_elements_files') 
+		return $file ? config('urls.files.page_elements_files') 
 			. '/' . $file->created_at->toDateString() 
-			. '/' . $file->name;
+			. '/' . $file->name : '';
 	}
 }
