@@ -20,4 +20,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Material::class, 'products_materials');
     }
+
+    public function priceTags()
+    {
+        return $this->hasMany(PriceTag::class);
+    }
 }
