@@ -42,7 +42,7 @@ class PageController extends Controller
 
         if (!Auth::check()) {
             session([
-                'pagepath' => request()->path()
+                config('session.keys.page_path') => request()->path()
             ]);
         }
 

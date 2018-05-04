@@ -48,12 +48,12 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if (session()->has('pagepath')) {
+        if (session()->has($key = config('session.keys.page_path'))) {
 
-            $pagePath = session('pagepath');
+            $pagePath = session($key);
 
-            session()->forget('pagepath');
-            
+            session()->forget($key);
+
             return redirect($pagePath);
         }
 
