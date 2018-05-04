@@ -9,3 +9,18 @@ if (!function_exists('getElementsFile')) {
 			. '/' . $file->name : '';
 	}
 }
+
+if (!function_exists('getProductPrice')) {
+	function getProductPrice($data)
+	{
+		$product = \App\Models\Products\Product::with('priceTags')->find($data['productId']);
+
+		if (!$data['pricetagId']) {
+			return $product->price;
+		}
+
+		$priceTag = $product->priceTags->where('id', $data['pricetagId'])->first();
+
+		return $priceTag->price;
+	}
+}

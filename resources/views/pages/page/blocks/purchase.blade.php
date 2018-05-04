@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col">
-  <?php $elementsProduct = \App\Models\Products\Product::find($element->data['product']['productId']) ?>
-    <h2>{{ $element->data['product']['pricetagId'] ?: $elementsProduct->price }}</h2>
+    <h2>{{ getProductPrice($element->data['product']) }}</h2>
     <p>
     <form action="{{ route('orders.store') }}" method="POST">
       {{ csrf_field() }}
