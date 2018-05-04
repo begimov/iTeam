@@ -107,8 +107,14 @@ return [
     */
 
     'custom'               => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'Необходимо ввести имя.',
+        ],
+        'email' => [
+            'required' => 'Необходимо ввести email.',
+        ],
+        'phone' => [
+            'required' => 'Необходимо ввести номер телефона.',
         ],
     ],
 
@@ -132,5 +138,10 @@ return [
     'attributes'           => [
         //
     ],
+
+    'exception_errors' => [
+        'check_your_data' => 'Пожалуйста проверьте правильность введенных данных',
+        '404' => 'К сожалению, запрашиваемая страница не найдена.',
+    ]
 
 ];
