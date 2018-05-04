@@ -13,7 +13,11 @@ if (!function_exists('getElementsFile')) {
 if (!function_exists('getProductPrice')) {
 	function getProductPrice($data)
 	{
-		$product = \App\Models\Products\Product::with('priceTags')->find($data['productId']);
+		$products = app()->make(\App\Repositories\Contracts\Products\ProductRepository::class);
+
+		$product = $products->withCriteria([
+            new \App\Repositories\Eloquent\Criteria\With(['priceTags'])
+		])->findById($data['productId']);
 
 		if (!$data['pricetagId']) {
 			return $product->price;
