@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Pages\Page;
 use App\Models\Pages\Category;
 
@@ -37,6 +39,13 @@ class PageController extends Controller
     public function show(Page $page)
     {
         $page->load('elements', 'elements.block', 'elements.files');
+
+        if (!Auth::check()) {
+            session([
+                'pagepath' => request()->path()
+            ]);
+        }
+
         return view('pages.page.container', compact('page'));
     }
 }
