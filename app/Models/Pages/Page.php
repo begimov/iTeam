@@ -21,6 +21,10 @@ class Page extends Model
         static::addGlobalScope('published', function (Builder $builder) {
             $builder->where('status', 1);
         });
+
+        static::addGlobalScope('latestfirst', function (Builder $builder) {
+            $builder->latest();
+        });
     }
 
     public function elements()
