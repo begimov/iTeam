@@ -23,7 +23,7 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
 
     public function store($data)
     {
-        $product = Product::find($data['product_id']);
+        $product = Product::with(['priceTags'])->find($data['product_id']);
 
         $order = Order::updateOrCreate(
             [
@@ -31,8 +31,9 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
                 'product_id' => $data['product_id']
             ],
             [
-                // TODO: find price_tag by incoming id and updated order's price
-                'price' => isset($data['price_tag_id']) ? $product->price : $product->price
+                'price' => isset($data['price_tag_id']) 
+                    ? $product->priceTags->where('id', $data['price_tag_id'])->first()->price
+                    : $product->price
             ]
         );
     }

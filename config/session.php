@@ -176,4 +176,8 @@ return [
 
     'http_only' => true,
 
+    'keys' => [
+        'page_path' => 'pagepath'
+    ]
+
 ];
