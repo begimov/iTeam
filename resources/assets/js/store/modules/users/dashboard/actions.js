@@ -14,7 +14,11 @@ export default {
   orderPayment({ commit, state }, order) {
     commit('setPaymentOrder', order)
   },
-  deleteOrder({ commit, state }, orderId) {
-    // commit('setPaymentOrder', order)
+  deleteOrder({ commit, dispatch, state }, orderId) {
+    commit('setIsLoading', true)
+    api.dashboard.deleteOrder(orderId).then(res => {
+      commit('setIsLoading', false)
+      dispatch('getOrders')
+    })
   },
 }

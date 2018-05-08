@@ -12204,10 +12204,15 @@ exports.default = {
     commit('setPaymentOrder', order);
   },
   deleteOrder: function deleteOrder(_ref4, orderId) {
-    // commit('setPaymentOrder', order)
-
     var commit = _ref4.commit,
+        dispatch = _ref4.dispatch,
         state = _ref4.state;
+
+    commit('setIsLoading', true);
+    _api2.default.dashboard.deleteOrder(orderId).then(function (res) {
+      commit('setIsLoading', false);
+      dispatch('getOrders');
+    });
   }
 };
 
@@ -12225,6 +12230,15 @@ exports.default = {
   getOrders: function getOrders(page, params) {
     return new Promise(function (resolve, reject) {
       axios.get("/webapi/orders").then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  },
+  deleteOrder: function deleteOrder(orderId) {
+    return new Promise(function (resolve, reject) {
+      axios.delete("/webapi/orders/" + orderId).then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);
