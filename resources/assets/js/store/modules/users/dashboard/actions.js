@@ -14,4 +14,7 @@ export default {
   orderPayment({ commit, state }, order) {
     commit('setPaymentOrder', order)
   },
+  deleteOrder({ commit, state }, orderId) {
+    // commit('setPaymentOrder', order)
+  },
 }

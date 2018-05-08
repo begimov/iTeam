@@ -119,7 +119,8 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // TODO: policy, users can only delete their orders
+        dd($id);
     }
 
     /**

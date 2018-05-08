@@ -12202,6 +12202,12 @@ exports.default = {
         state = _ref3.state;
 
     commit('setPaymentOrder', order);
+  },
+  deleteOrder: function deleteOrder(_ref4, orderId) {
+    // commit('setPaymentOrder', order)
+
+    var commit = _ref4.commit,
+        state = _ref4.state;
   }
 };
 
@@ -48381,7 +48387,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/dashboard', ['isLoading', 'orders', 'displayedOrderId', 'paymentOrder'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct', 'orderPayment'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/dashboard', ['getOrders', 'openProduct', 'orderPayment', 'deleteOrder'])),
     mounted: function mounted() {
         this.getOrders();
     }
@@ -48414,7 +48420,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "openProduct": _vm.openProduct,
-        "orderPayment": _vm.orderPayment
+        "orderPayment": _vm.orderPayment,
+        "deleteOrder": _vm.deleteOrder
       }
     })
   })) : _c('div', {
@@ -48508,6 +48515,9 @@ exports.default = {
         },
         orderPayment: function orderPayment() {
             this.$emit('orderPayment', this.order);
+        },
+        deleteOrder: function deleteOrder() {
+            this.$emit('deleteOrder', this.order.id);
         }
     }
 };
@@ -48559,6 +48569,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-link",
     attrs: {
       "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.deleteOrder($event)
+      }
     }
   }, [_vm._v("Удалить")])]], 2)])])
 },staticRenderFns: []}

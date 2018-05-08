@@ -14,6 +14,7 @@ export default {
             'getOrders',
             'openProduct',
             'orderPayment',
+            'deleteOrder',
         ])
     },
     mounted() {
