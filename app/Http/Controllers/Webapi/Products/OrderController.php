@@ -121,7 +121,9 @@ class OrderController extends Controller
     {
         $this->authorize('delete', $order);
 
-        dd('YES');
+        if (!$order->isPaid()) {
+            $this->orders->destroy($order);
+        }
     }
 
     /**
