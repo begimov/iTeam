@@ -13,21 +13,21 @@
                 <form method="POST" action="{{ route('user.profile.settings.store') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">@lang('auth.email')</label>
                         <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="email" value="{{ old('email', auth()->user()->email) }}">
                         <div class="invalid-feedback">
                             {{ $errors->first('email') }}
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name">Имя</label>
+                        <label for="name">@lang('auth.name')</label>
                         <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ old('name', auth()->user()->name) }}">
                         <div class="invalid-feedback">
                             {{ $errors->first('name') }}
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                        <button type="submit" class="btn btn-primary">@lang('auth.save')</button>
                     </div>
                 </form>
             </div>
@@ -37,7 +37,7 @@
                     {{ csrf_field() }}
     
                     <div class="form-group">
-                        <label for="password_current" class="control-label">Current password</label>
+                        <label for="password_current" class="control-label">@lang('auth.current_password')</label>
                         <input type="password" name="password_current" id="password_current" 
                             class="form-control{{ $errors->has('password_current') ? ' is-invalid' : '' }}">
                         <div class="invalid-feedback">
@@ -46,7 +46,7 @@
                     </div>
     
                     <div class="form-group">
-                        <label for="password" class="control-label">New password</label>
+                        <label for="password" class="control-label">@lang('auth.new_password')</label>
                         <input type="password" name="password" id="password" 
                             class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}">
                         <div class="invalid-feedback">
@@ -55,7 +55,7 @@
                     </div>
     
                     <div class="form-group">
-                        <label for="password_confirmation" class="control-label">Password confirmation</label>
+                        <label for="password_confirmation" class="control-label">@lang('auth.confirm_password')</label>
                         <input type="password" name="password_confirmation" id="password_confirmation" 
                             class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}">
                         <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
     
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">@lang('auth.save')</button>
                 </form>
             </div>
         </div>

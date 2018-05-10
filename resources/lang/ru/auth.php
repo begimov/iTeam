@@ -35,4 +35,8 @@ return [
     // Reset Password
     'reset_password' => 'Восстановление пароля',
     'send_password_reset_link_btn' => 'Отправить ссылку для смены пароля',
+
+    'current_password' => 'Текущий пароль',
+    'new_password' => 'Новый пароль',
+    'save' => 'Сохранить',
 ];

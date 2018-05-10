@@ -18,7 +18,7 @@ class CurrentPassword implements Rule
     {
         return Hash::check($value, auth()->user()->password);
     }
-    
+
     /**
      * Get the validation error message.
      *
@@ -26,6 +26,6 @@ class CurrentPassword implements Rule
      */
     public function message()
     {
-        return 'Current password is invalid.';
+        return 'Текущий пароль не верен.';
     }
 }
