@@ -14,6 +14,6 @@ class PasswordController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return back()->withSuccess('Password has been updated.');
+        return back()->withSuccess(trans('auth.password_changed'));
     }
 }

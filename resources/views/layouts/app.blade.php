@@ -8,6 +8,7 @@
     <div v-cloak>
       @include('layouts.partials._header')
       @include('layouts.partials._navigation')
+      @include('layouts.partials.alerts._alerts')
       @yield('content')
       @include ('layouts.partials._footer')
     </div>

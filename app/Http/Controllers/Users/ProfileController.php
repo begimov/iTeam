@@ -17,6 +17,6 @@ class ProfileController extends Controller
     public function store(ProfileStoreRequest $request)
     {
         $request->user()->update($request->only('name', 'email'));
-        return back()->withSuccess('Account has been updated.');
+        return back()->withSuccess(trans('auth.profile_updated'));
     }
 }

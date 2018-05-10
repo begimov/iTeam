@@ -39,4 +39,7 @@ return [
     'current_password' => 'Текущий пароль',
     'new_password' => 'Новый пароль',
     'save' => 'Сохранить',
+
+    'profile_updated' => 'Данные профиля успешно обновлены.',
+    'password_changed' => 'Пароль был успешно изменен.',
 ];
