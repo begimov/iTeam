@@ -20,11 +20,13 @@ Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
 }); 
 
 // User dashboard & profile
-Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'], function () {
-    Route::get('/', 'DashboardController@index')->name('user.dashboard.index');
+Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users', 'as' => 'user.'], function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
-    Route::get('profile/settings', 'ProfileController@edit')->name('user.profile.settings');
-    Route::post('profile/settings', 'ProfileController@store')->name('user.profile.settings.store');
+    Route::get('profile/settings', 'ProfileController@edit')->name('profile.settings');
+    Route::post('profile/settings', 'ProfileController@store')->name('profile.settings.store');
+
+    Route::post('profile/settings/password', 'PasswordController@store')->name('profile.settings.password.store');
 });
 
 // WebAPI
