@@ -9,7 +9,13 @@ class ProfileController extends Controller
 {
     public function edit()
     {
-        $user = auth()->user();
-        return view('users.profile.settings', compact('user'));
+        return view('users.profile.settings');
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->only('name', 'email'));
+        $request->user()->update($request->only('name', 'email'));
+        return back()->withSuccess('Account has been updated.');
     }
 }
