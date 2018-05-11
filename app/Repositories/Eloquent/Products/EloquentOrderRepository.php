@@ -40,6 +40,6 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
 
     public function destroy(Order $order)
     {
-        $order->markAsDeleted();
+        $order->delete();
     }
 }

@@ -32,11 +32,4 @@ class Order extends Model
     {
         return $this->payment_state_id === config('orders.payed_payment_state_id');
     }
-
-    public function markAsDeleted()
-    {
-        $this->payment_state_id = config('orders.deleted_payment_state_id');
-        $this->save();
-        $this->delete();
-    }
 }
