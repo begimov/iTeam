@@ -12496,7 +12496,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Яндекс.Касса', desc: '' }, { id: 2, name: 'Единая касса', decs: '' }],
+    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }],
     walletOneOptions: {
         WMI_MERCHANT_ID: '',
         WMI_PAYMENT_AMOUNT: '',
@@ -49170,7 +49170,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 2) ? _c('div', {
+  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 1) ? _c('div', {
     staticClass: "row mt-4"
   }, [_c('div', {
     staticClass: "col"
@@ -49180,7 +49180,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-body bg-dark text-white lead"
   }, [_vm._v("\n                                    Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n                                ")])]), _vm._v(" "), _vm._m(1)])]) : _vm._e()])]), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
-  }, [(_vm.selectedPaymentTypeId === 2) ? _c('form', {
+  }, [(_vm.selectedPaymentTypeId === 1) ? _c('form', {
     ref: "woform",
     attrs: {
       "method": "post",
