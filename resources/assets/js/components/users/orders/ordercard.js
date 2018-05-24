@@ -11,6 +11,9 @@ export default {
         },
         orderPayment() {
             this.$emit('orderPayment', this.order)
+        },
+        deleteOrder() {
+            this.$emit('deleteOrder', this.order.id)
         }
     }
 };

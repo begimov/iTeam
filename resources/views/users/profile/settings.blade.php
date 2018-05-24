@@ -7,39 +7,65 @@
                 <h1>Профиль</h1>
             </div>
         </div>
-        <form method="POST" action="#">
-            <div class="row">
-                <div class="col-sm-6">
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="POST" action="{{ route('user.profile.settings.store') }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}">
+                        <label for="email">@lang('auth.email')</label>
+                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="email" value="{{ old('email', auth()->user()->email) }}">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('email') }}
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{ $user->name }}">
+                        <label for="name">@lang('auth.name')</label>
+                        <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ old('name', auth()->user()->name) }}">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('name') }}
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Телефон</label>
-                        <input type="text" class="form-control" name="phone" id="phone">
+                        <button type="submit" class="btn btn-primary">@lang('auth.save')</button>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="company">Компания</label>
-                        <input type="text" class="form-control" name="company" id="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="businessEntity">ОПФ</label>
-                        <input type="text" class="form-control" name="businessEntity" id="businessEntity">
-                    </div>
-                    
-                </div>
+                </form>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary">Сохранить</button>
-                </div>
+            
+            <div class="col-sm-6">
+                <form action="{{ route('user.profile.settings.password.store') }}" method="POST">
+                    {{ csrf_field() }}
+    
+                    <div class="form-group">
+                        <label for="password_current" class="control-label">@lang('auth.current_password')</label>
+                        <input type="password" name="password_current" id="password_current" 
+                            class="form-control{{ $errors->has('password_current') ? ' is-invalid' : '' }}">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('password_current') }}
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password" class="control-label">@lang('auth.new_password')</label>
+                        <input type="password" name="password" id="password" 
+                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('password') }}
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password_confirmation" class="control-label">@lang('auth.confirm_password')</label>
+                        <input type="password" name="password_confirmation" id="password_confirmation" 
+                            class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('password_confirmation') }}
+                        </div>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary">@lang('auth.save')</button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @endsection

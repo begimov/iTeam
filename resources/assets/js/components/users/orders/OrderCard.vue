@@ -11,7 +11,7 @@
                 <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="openProduct">Материалы</a>
                 <template v-else>
                     <a href="#" class="btn btn-dark" @click.prevent="orderPayment">Оплатить</a>
-                    <a href="#" class="btn btn-link">Удалить</a>
+                    <a href="#" class="btn btn-link" @click.prevent="deleteOrder">Удалить</a>
                 </template>
             </div>
         </div>

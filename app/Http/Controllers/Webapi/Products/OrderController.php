@@ -117,9 +117,13 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        //
+        $this->authorize('delete', $order);
+
+        if (!$order->isPaid()) {
+            $this->orders->destroy($order);
+        }
     }
 
     /**

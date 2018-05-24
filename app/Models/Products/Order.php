@@ -27,4 +27,9 @@ class Order extends Model
         $this->payment_state_id = config('orders.payed_payment_state_id');
         $this->save();
     }
+
+    public function isPaid()
+    {
+        return $this->payment_state_id === config('orders.payed_payment_state_id');
+    }
 }

@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col">
+<div class="row my-5">
+  <div class="col text-center">
     <h2>{{ getProductPrice($element->data['product']) }}</h2>
     <p>
     <form action="{{ route('orders.store') }}" method="POST">

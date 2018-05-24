@@ -21,7 +21,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row mt-4" v-if="selectedPaymentTypeId === 2">
+                        <div class="row mt-4" v-if="selectedPaymentTypeId === 1">
                             <div class="col">
                                 <div class="card">
                                     <div class="card-body bg-dark text-white lead">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <form ref="woform" method="post" action="https://wl.walletone.com/checkout/checkout/Index" v-if="selectedPaymentTypeId === 2">
+                    <form ref="woform" method="post" action="https://wl.walletone.com/checkout/checkout/Index" v-if="selectedPaymentTypeId === 1">
                         <input type="hidden" name="WMI_MERCHANT_ID" v-model="walletOneOptions.WMI_MERCHANT_ID"/>
                         <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="walletOneOptions.WMI_PAYMENT_AMOUNT"/>
                         <input type="hidden" name="WMI_CURRENCY_ID" v-model="walletOneOptions.WMI_CURRENCY_ID"/>
