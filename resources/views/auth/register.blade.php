@@ -58,5 +58,13 @@
 
         </div>
     </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col text-center">
+            <h2>@lang('auth.already_registered')</h2>
+            <p class="mt-3"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></p>
+        </div>
+    </div>
+
 </div>
 @endsection
