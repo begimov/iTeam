@@ -12483,6 +12483,10 @@ var _walletone = __webpack_require__(104);
 
 var _walletone2 = _interopRequireDefault(_walletone);
 
+var _invoice = __webpack_require__(112);
+
+var _invoice2 = _interopRequireDefault(_invoice);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -12492,7 +12496,8 @@ exports.default = {
   actions: _actions2.default,
   mutations: _mutations2.default,
   modules: {
-    walletone: _walletone2.default
+    walletone: _walletone2.default,
+    invoice: _invoice2.default
   }
 };
 
@@ -49900,6 +49905,106 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-4bcc7990", module.exports)
   }
 }
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(113);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(114);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(115);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(116);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(2);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
 
 /***/ })
 /******/ ]);
