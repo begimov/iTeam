@@ -28,6 +28,7 @@ return [
 
     // Registration
     'register' => 'Регистрация',
+    'already_registered' => 'Уже регистрировались?',
     'register_btn' => 'Зарегистрироваться',
     'name' => 'Имя',
     'confirm_password' => 'Повторите пароль',

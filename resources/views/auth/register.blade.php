@@ -13,7 +13,7 @@
             <form method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="name" class="font-weight-normal">@lang('auth.name')</label>
                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                     @if ($errors->has('name'))
@@ -21,7 +21,7 @@
                             <strong>{{ $errors->first('name') }}</strong>
                         </div>
                     @endif
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <label for="email" class="font-weight-normal">@lang('auth.email')</label>
@@ -44,10 +44,10 @@
 
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="password-confirm" class="font-weight-normal">@lang('auth.confirm_password')</label>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">
@@ -58,5 +58,13 @@
 
         </div>
     </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col text-center">
+            <h2>@lang('auth.already_registered')</h2>
+            <p class="mt-3"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></p>
+        </div>
+    </div>
+
 </div>
 @endsection

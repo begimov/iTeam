@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\Traits\RedirectsToVisitedPage;
 
 class LoginController extends Controller
 {
@@ -20,7 +21,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers, RedirectsToVisitedPage;
 
     /**
      * Where to redirect users after login.
@@ -48,15 +49,6 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if (session()->has($key = config('session.keys.page_path'))) {
-
-            $pagePath = session($key);
-
-            session()->forget($key);
-
-            return redirect($pagePath);
-        }
-
-        return redirect('/user');
+        return $this->redirectToPreviouslyVisitedPage();
     }
 }
