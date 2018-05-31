@@ -10,17 +10,13 @@ export default {
     },
     computed: {
         ...mapGetters('users/payment', [
-            'selectedPaymentTypeId',
-            'paymentTypes',
-            'walletOneOptions',
+            'walletOneOptions'
         ]),
     },
     methods: {
         ...mapActions('users/payment', [
-            'closePayment',
-            'selectPaymentType',
             'updateWalletOneOptions',
-            'buy',
+            'buy'
         ]),
         purchase() {
             this.buy().then(res => {

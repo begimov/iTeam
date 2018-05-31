@@ -49053,32 +49053,10 @@ exports.default = {
         };
     },
 
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes', 'walletOneOptions'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions', 'buy']), {
-        purchase: function purchase() {
-            var _this = this;
-
-            this.buy().then(function (res) {
-                _this.$nextTick(function () {
-                    _this.$refs.woform.submit();
-                });
-            }).catch(function (err) {
-                console.log(err);
-            });
-        }
-    }),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
-        this.updateWalletOneOptions({
-            WMI_MERCHANT_ID: _config2.default.payments.WMI_MERCHANT_ID,
-            WMI_PAYMENT_AMOUNT: this.order.price,
-            WMI_CURRENCY_ID: _config2.default.payments.WMI_CURRENCY_ID,
-            WMI_PAYMENT_NO: this.order.id,
-            WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
-            WMI_AUTO_LOCATION: _config2.default.payments.WMI_AUTO_LOCATION,
-            WMI_SUCCESS_URL: _config2.default.payments.WMI_SUCCESS_URL,
-            WMI_FAIL_URL: _config2.default.payments.WMI_FAIL_URL,
-            WMI_SIGNATURE: "0"
-        });
+        //
     }
 };
 
@@ -49176,212 +49154,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(paymentType.name))])])
   }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 1) ? _c('div', {
     staticClass: "row mt-4"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('div', {
-    staticClass: "card"
-  }, [_c('div', {
-    staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n                                    Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n                                ")])]), _vm._v(" "), _vm._m(1)])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "modal-footer"
-  }, [(_vm.selectedPaymentTypeId === 1) ? _c('form', {
-    ref: "woform",
+  }, [_c('walletone-payment', {
     attrs: {
-      "method": "post",
-      "action": "https://wl.walletone.com/checkout/checkout/Index"
+      "order": _vm.order
     }
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_MERCHANT_ID),
-      expression: "walletOneOptions.WMI_MERCHANT_ID"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_MERCHANT_ID"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_MERCHANT_ID)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_MERCHANT_ID = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT),
-      expression: "walletOneOptions.WMI_PAYMENT_AMOUNT"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_PAYMENT_AMOUNT"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_PAYMENT_AMOUNT)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_PAYMENT_AMOUNT = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_CURRENCY_ID),
-      expression: "walletOneOptions.WMI_CURRENCY_ID"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_CURRENCY_ID"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_CURRENCY_ID)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_CURRENCY_ID = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_PAYMENT_NO),
-      expression: "walletOneOptions.WMI_PAYMENT_NO"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_PAYMENT_NO"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_PAYMENT_NO)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_PAYMENT_NO = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_DESCRIPTION),
-      expression: "walletOneOptions.WMI_DESCRIPTION"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_DESCRIPTION"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_DESCRIPTION)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_DESCRIPTION = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_AUTO_LOCATION),
-      expression: "walletOneOptions.WMI_AUTO_LOCATION"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_AUTO_LOCATION"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_AUTO_LOCATION)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_AUTO_LOCATION = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_SUCCESS_URL),
-      expression: "walletOneOptions.WMI_SUCCESS_URL"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_SUCCESS_URL"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_SUCCESS_URL)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_SUCCESS_URL = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_FAIL_URL),
-      expression: "walletOneOptions.WMI_FAIL_URL"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_FAIL_URL"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_FAIL_URL)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_FAIL_URL = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.walletOneOptions.WMI_SIGNATURE),
-      expression: "walletOneOptions.WMI_SIGNATURE"
-    }],
-    attrs: {
-      "type": "hidden",
-      "name": "WMI_SIGNATURE"
-    },
-    domProps: {
-      "value": (_vm.walletOneOptions.WMI_SIGNATURE)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.walletOneOptions.WMI_SIGNATURE = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "submit"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.purchase($event)
-      }
-    }
-  }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
+  })], 1) : _vm._e()])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h3', [_c('span', {
     staticClass: "font-weight-bold",
@@ -49389,19 +49166,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "aria-hidden": "true"
     }
   }, [_vm._v("×")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "card mt-2"
-  }, [_c('div', {
-    staticClass: "card-body"
-  }, [_c('p', [_vm._v("Платежный сервис Wallet One, используемый для оплаты наших продуктов, "), _c('span', {
-    staticClass: "font-weight-bold"
-  }, [_vm._v("лицензирован надзорным органом в каждой стране присутствия, а значит, полностью безопасен.")])]), _vm._v(" "), _c('p', [_vm._v("Wallet One использует стандарт безопасности PCI DSS, SSL-протокол, системы безопасности Verified by Visa и MasterCard SecureCode.")]), _vm._v(" "), _c('p', [_c('a', {
-    attrs: {
-      "href": "https://www.walletone.com/ru/merchant/security/",
-      "target": "_blank"
-    }
-  }, [_vm._v("Подробнее здесь...")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -49664,8 +49428,8 @@ exports.default = {
         };
     },
 
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes', 'walletOneOptions'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType', 'updateWalletOneOptions', 'buy']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['walletOneOptions'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['updateWalletOneOptions', 'buy']), {
         purchase: function purchase() {
             var _this = this;
 
@@ -49699,64 +49463,12 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "modal"
-  }, [_c('div', {
-    staticClass: "modal-dialog modal-lg"
-  }, [_c('div', {
-    staticClass: "modal-content"
-  }, [_c('div', {
-    staticClass: "modal-header"
-  }, [_c('h5', {
-    staticClass: "modal-title"
-  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "#"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.closePayment($event)
-      }
-    }
-  }, [_vm._m(0)])]), _vm._v(" "), _c('div', {
-    staticClass: "modal-body"
-  }, [_c('div', {
-    staticClass: "container-fluid"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('ul', {
-    staticClass: "nav nav-pills nav-fill"
-  }, _vm._l((_vm.paymentTypes), function(paymentType) {
-    return _c('li', {
-      key: paymentType.id,
-      staticClass: "nav-item"
-    }, [_c('a', {
-      class: {
-        'nav-link': true, 'active': paymentType.id === _vm.selectedPaymentTypeId
-      },
-      attrs: {
-        "href": "#"
-      },
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.selectPaymentType(paymentType.id)
-        }
-      }
-    }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 1) ? _c('div', {
-    staticClass: "row mt-4"
-  }, [_c('div', {
     staticClass: "col"
   }, [_c('div', {
     staticClass: "card"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n                                    Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n                                ")])]), _vm._v(" "), _vm._m(1)])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "modal-footer"
-  }, [(_vm.selectedPaymentTypeId === 1) ? _c('form', {
+  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('form', {
     ref: "woform",
     attrs: {
       "method": "post",
@@ -49953,15 +49665,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.purchase($event)
       }
     }
-  }, [_vm._v("ОПЛАТИТЬ")])]) : _vm._e()])])])])
+  }, [_vm._v("ОПЛАТИТЬ")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('h3', [_c('span', {
-    staticClass: "font-weight-bold",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("×")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card mt-2"
   }, [_c('div', {
