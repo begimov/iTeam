@@ -49798,7 +49798,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['getOpf']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['businessEntities', 'getOpf']), {
         'opf': {
             get: function get() {
                 return this.getOpf;
@@ -50008,6 +50008,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    businessEntities: function businessEntities(state) {
+        return state.options.businessEntities;
+    },
     getOpf: function getOpf(state) {
         return state.params.company.business_entity_id;
     }

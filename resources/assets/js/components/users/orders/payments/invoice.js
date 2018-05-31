@@ -4,6 +4,7 @@ export default {
     props: ['order'],
     computed: {
         ...mapGetters('users/payment/invoice', [
+            'businessEntities',
             'getOpf'
         ]),
         'opf': {
