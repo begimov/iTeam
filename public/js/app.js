@@ -49008,20 +49008,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _vuex = __webpack_require__(3);
 
-var _config = __webpack_require__(89);
-
-var _config2 = _interopRequireDefault(_config);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 exports.default = {
     props: ['order'],
-    data: function data() {
-        return {
-            //
-        };
-    },
-
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
@@ -49391,12 +49379,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
     props: ['order'],
-    data: function data() {
-        return {
-            //
-        };
-    },
-
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment/walletone', ['walletOneOptions'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment/walletone', ['updateWalletOneOptions', 'buy']), {
         purchase: function purchase() {
@@ -49434,10 +49416,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "col"
   }, [_c('div', {
-    staticClass: "card"
+    staticClass: "card mb-2"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('form', {
+  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n        ")])]), _vm._v(" "), _c('div', {
+    staticClass: "text-center"
+  }, [_c('form', {
     ref: "woform",
     attrs: {
       "method": "post",
@@ -49624,7 +49608,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
+    staticClass: "btn btn-primary btn-lg",
     attrs: {
       "type": "submit"
     },
@@ -49634,7 +49618,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.purchase($event)
       }
     }
-  }, [_vm._v("ОПЛАТИТЬ")])])])
+  }, [_vm._v("ОПЛАТИТЬ")])])]), _vm._v(" "), _vm._m(0)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card mt-2"
