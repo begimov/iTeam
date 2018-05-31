@@ -16,7 +16,7 @@
                 <form>
                     <div class="form-group">
                         <label for="opf">Организационно-правовая форма</label>
-                        <input type="text" class="form-control" id="opf" aria-describedby="opf" placeholder="ОПФ...">
+                        <input type="text" class="form-control" v-model="opf" id="opf" aria-describedby="opf" placeholder="ОПФ...">
                     </div>
                     <div class="form-group">
                         <label for="company">Название компании</label>

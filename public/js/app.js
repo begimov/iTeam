@@ -49792,16 +49792,23 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: {
-        //
-    },
-    methods: {
-        //
-    },
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['getOpf']), {
+        'opf': {
+            get: function get() {
+                return this.getOpf;
+            },
+            set: function set(value) {
+                this.updateOpf(value);
+            }
+        }
+    }),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['updateOpf'])),
     mounted: function mounted() {
         //
     }
@@ -49818,7 +49825,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card mb-2"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., пожалуйста заполните данные для выставления счета.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])
+  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., пожалуйста заполните данные для выставления счета.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "row my-4"
+  }, [_c('div', {
+    staticClass: "col"
+  }, [_c('form', [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "opf"
+    }
+  }, [_vm._v("Организационно-правовая форма")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.opf),
+      expression: "opf"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "opf",
+      "aria-describedby": "opf",
+      "placeholder": "ОПФ..."
+    },
+    domProps: {
+      "value": (_vm.opf)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.opf = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_vm._v("Получить")])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card bg-warning"
@@ -49832,24 +49877,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Важно! Прочитайте до того, как оплатить счёт")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "row my-4"
-  }, [_c('div', {
-    staticClass: "col"
-  }, [_c('form', [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "opf"
-    }
-  }, [_vm._v("Организационно-правовая форма")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "opf",
-      "aria-describedby": "opf",
-      "placeholder": "ОПФ..."
-    }
-  })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -49863,7 +49890,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "aria-describedby": "company",
       "placeholder": "Введите название компании..."
     }
-  })]), _vm._v(" "), _c('div', {
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -49877,7 +49906,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "aria-describedby": "name",
       "placeholder": "Введите ваше имя..."
     }
-  })]), _vm._v(" "), _c('div', {
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -49891,12 +49922,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "aria-describedby": "phone",
       "placeholder": "Введите ваш телефон..."
     }
-  })]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "submit"
-    }
-  }, [_vm._v("Получить")])])])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -49979,7 +50005,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    //
+    getOpf: function getOpf(state) {
+        return state.params.company.business_entity_id;
+    }
 };
 
 /***/ }),
@@ -50000,7 +50028,11 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  //
+  updateOpf: function updateOpf(_ref, value) {
+    var commit = _ref.commit;
+
+    commit('updateOpf', value);
+  }
 };
 
 /***/ }),
@@ -50014,7 +50046,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    //
+    updateOpf: function updateOpf(state, id) {
+        state.params.company.business_entity_id = id;
+    }
 };
 
 /***/ })
