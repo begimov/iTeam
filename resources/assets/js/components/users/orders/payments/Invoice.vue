@@ -6,8 +6,20 @@
             </div>
         </div>
 
-        <div class="text-center">
-            //
+        <div class="row mt-4">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="opf">Организационно-правовая форма</label>
+                        <input type="text" class="form-control" id="opf" aria-describedby="opf" placeholder="ОПФ...">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Название компании</label>
+                        <input type="text" class="form-control" id="company" aria-describedby="company" placeholder="Введите название компании...">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Получить</button>
+                </form>
+            </div>
         </div>
     </div>
 </template>
