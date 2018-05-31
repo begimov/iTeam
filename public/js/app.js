@@ -49816,7 +49816,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., пожалуйста заполните данные для выставления счета.\n        ")])]), _vm._v(" "), _vm._m(0)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "row mt-4"
+    staticClass: "row my-4"
   }, [_c('div', {
     staticClass: "col"
   }, [_c('form', [_c('div', {
@@ -49846,6 +49846,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "company",
       "aria-describedby": "company",
       "placeholder": "Введите название компании..."
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Ваше имя")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "name",
+      "aria-describedby": "name",
+      "placeholder": "Введите ваше имя..."
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Телефон")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "phone",
+      "aria-describedby": "phone",
+      "placeholder": "Введите ваш телефон..."
     }
   })]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
