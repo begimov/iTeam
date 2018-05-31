@@ -3,7 +3,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ this.order.product.data.name }}</h5>
+                    <h5 class="modal-title">{{ order.product.data.name }}</h5>
                     <a href="#" @click.prevent="closePayment">
                         <h3><span class="font-weight-bold" aria-hidden="true">&times;</span></h3>
                     </a>
@@ -21,8 +21,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row mt-4" v-if="selectedPaymentTypeId === 1">
-                            <walletone-payment :order="order"/>
+                        <div class="row mt-4">
+                            <walletone-payment v-if="selectedPaymentTypeId === 1" :order="order"/>
                         </div>
                     </div>
                 </div>

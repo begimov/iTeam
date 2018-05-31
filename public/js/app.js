@@ -12521,6 +12521,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    order: function order(state, getters, rootState, rootGetters) {
+        return rootGetters['users/dashboard/paymentOrder'];
+    },
     selectedPaymentTypeId: function selectedPaymentTypeId(state) {
         return state.selectedPaymentTypeId;
     },
@@ -48413,11 +48416,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   })) : _c('div', {
     staticClass: "row"
-  }, [_vm._m(1)])], _vm._v(" "), (this.paymentOrder) ? _c('order-payment', {
-    attrs: {
-      "order": this.paymentOrder
-    }
-  }) : _vm._e()], 2)
+  }, [_vm._m(1)])], _vm._v(" "), (this.paymentOrder) ? _c('order-payment') : _vm._e()], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
@@ -49009,8 +49008,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _vuex = __webpack_require__(3);
 
 exports.default = {
-    props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['selectedPaymentTypeId', 'paymentTypes'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['order', 'selectedPaymentTypeId', 'paymentTypes'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
         //
@@ -49071,7 +49069,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-header"
   }, [_c('h5', {
     staticClass: "modal-title"
-  }, [_vm._v(_vm._s(this.order.product.data.name))]), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.order.product.data.name))]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "#"
     },
@@ -49109,13 +49107,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(paymentType.name))])])
-  }))])]), _vm._v(" "), (_vm.selectedPaymentTypeId === 1) ? _c('div', {
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "row mt-4"
-  }, [_c('walletone-payment', {
+  }, [(_vm.selectedPaymentTypeId === 1) ? _c('walletone-payment', {
     attrs: {
       "order": _vm.order
     }
-  })], 1) : _vm._e()])])])])])
+  }) : _vm._e()], 1)])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h3', [_c('span', {
     staticClass: "font-weight-bold",
