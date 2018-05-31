@@ -5,6 +5,11 @@
                 Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.price }}&nbsp;руб., пожалуйста заполните данные для выставления счета.
             </div>
         </div>
+        <div class="card bg-warning">
+            <div class="card-body">
+                <a href="/company/offer" target="_blank">Важно! Прочитайте до того, как оплатить счёт</a>
+            </div>
+        </div>  
 
         <div class="row my-4">
             <div class="col">
