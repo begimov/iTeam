@@ -31,4 +31,4 @@
     </div>
 </template>
 
-<script src="./walletone.js"></script>
+<script src="./invoice.js"></script>
