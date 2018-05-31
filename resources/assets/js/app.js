@@ -25,9 +25,13 @@ Vue.component('free-magnet', require('./components/base/FreeMagnet.vue'));
 Vue.component('mission-philosophy', require('./components/static/company/services/Mission.vue'));
 Vue.component('company-services', require('./components/static/company/services/Services.vue'));
 
+// User dashboard
 Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
 Vue.component('order-card', require('./components/users/orders/OrderCard.vue'));
+// Payments
 Vue.component('order-payment', require('./components/users/orders/Payment.vue'));
+Vue.component('walletone-payment', require('./components/users/orders/payments/WalletOne.vue'));
+// Paid product materials
 Vue.component('product', require('./components/users/products/Product.vue'));
 
 const app = new Vue({
