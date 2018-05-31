@@ -49798,17 +49798,17 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['businessEntities', 'getOpf']), {
-        'opf': {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['businessEntities', 'getBusinessEntitiyId']), {
+        'businessEntitiyId': {
             get: function get() {
-                return this.getOpf;
+                return this.getBusinessEntitiyId;
             },
-            set: function set(value) {
-                this.updateOpf(value);
+            set: function set(id) {
+                this.updateBusinessEntitiyId(id);
             }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['updateOpf'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['updateBusinessEntitiyId'])),
     mounted: function mounted() {
         //
     }
@@ -49831,34 +49831,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col"
   }, [_c('form', [_c('div', {
     staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "opf"
-    }
-  }, [_vm._v("Организационно-правовая форма")]), _vm._v(" "), _c('input', {
+  }, [_c('label', [_vm._v("Организационно-правовая форма")]), _vm._v(" "), _c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.opf),
-      expression: "opf"
+      value: (_vm.businessEntitiyId),
+      expression: "businessEntitiyId"
     }],
     staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "opf",
-      "aria-describedby": "opf",
-      "placeholder": "ОПФ..."
-    },
-    domProps: {
-      "value": (_vm.opf)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.opf = $event.target.value
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.businessEntitiyId = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
       }
     }
-  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('button', {
+  }, [_c('option', {
+    attrs: {
+      "disabled": "",
+      "value": ""
+    }
+  }, [_vm._v("Выберите один из вариантов")]), _vm._v(" "), _vm._l((_vm.businessEntities), function(businessEntitiy) {
+    return _c('option', {
+      key: businessEntitiy.id,
+      domProps: {
+        "value": businessEntitiy.id
+      }
+    }, [_vm._v("\n                            " + _vm._s(businessEntitiy.name) + "\n                        ")])
+  })], 2)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "submit"
@@ -50011,7 +50015,7 @@ exports.default = {
     businessEntities: function businessEntities(state) {
         return state.options.businessEntities;
     },
-    getOpf: function getOpf(state) {
+    getBusinessEntitiyId: function getBusinessEntitiyId(state) {
         return state.params.company.business_entity_id;
     }
 };
@@ -50034,10 +50038,10 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  updateOpf: function updateOpf(_ref, value) {
+  updateBusinessEntitiyId: function updateBusinessEntitiyId(_ref, id) {
     var commit = _ref.commit;
 
-    commit('updateOpf', value);
+    commit('updateBusinessEntitiyId', id);
   }
 };
 
@@ -50052,7 +50056,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    updateOpf: function updateOpf(state, id) {
+    updateBusinessEntitiyId: function updateBusinessEntitiyId(state, id) {
         state.params.company.business_entity_id = id;
     }
 };

@@ -5,20 +5,20 @@ export default {
     computed: {
         ...mapGetters('users/payment/invoice', [
             'businessEntities',
-            'getOpf'
+            'getBusinessEntitiyId'
         ]),
-        'opf': {
+        'businessEntitiyId': {
             get () {
-              return this.getOpf
+              return this.getBusinessEntitiyId
             },
-            set (value) {
-              this.updateOpf(value)
+            set (id) {
+              this.updateBusinessEntitiyId(id)
             }
         },
     },
     methods: {
         ...mapActions('users/payment/invoice', [
-            'updateOpf'
+            'updateBusinessEntitiyId'
         ]),
     },
     mounted() {

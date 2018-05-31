@@ -15,8 +15,13 @@
             <div class="col">
                 <form>
                     <div class="form-group">
-                        <label for="opf">Организационно-правовая форма</label>
-                        <input type="text" class="form-control" v-model="opf" id="opf" aria-describedby="opf" placeholder="ОПФ...">
+                        <label>Организационно-правовая форма</label>
+                        <select v-model="businessEntitiyId" class="form-control">
+                            <option disabled value="">Выберите один из вариантов</option>
+                            <option v-for="businessEntitiy in businessEntities" :key="businessEntitiy.id" :value="businessEntitiy.id">
+                                {{ businessEntitiy.name }}
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="company">Название компании</label>

@@ -1,5 +1,5 @@
 export default {
-    updateOpf(state, id) {
+    updateBusinessEntitiyId(state, id) {
         state.params.company.business_entity_id = id
     }
 }
