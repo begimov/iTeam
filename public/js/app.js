@@ -49980,6 +49980,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    options: {
+        businessEntities: [{ id: 1, name: 'ООО' }, { id: 2, name: 'ИП' }]
+    },
     params: {
         company: {
             name: '',
