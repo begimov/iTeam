@@ -12507,7 +12507,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }]
+    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }, { id: 2, name: 'Счет на Юр. лицо', decs: '' }]
 };
 
 /***/ }),
@@ -49384,7 +49384,7 @@ exports.default = {
 
             this.buy().then(function (res) {
                 _this.$nextTick(function () {
-                    // this.$refs.woform.submit()
+                    _this.$refs.woform.submit();
                 });
             }).catch(function (err) {
                 console.log(err);

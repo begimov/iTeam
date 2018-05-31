@@ -16,7 +16,7 @@ export default {
         purchase() {
             this.buy().then(res => {
                 this.$nextTick(() => {
-                    // this.$refs.woform.submit()
+                    this.$refs.woform.submit()
                 })
             }).catch(err => {
                 console.log(err)
