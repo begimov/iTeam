@@ -4,8 +4,5 @@ export default {
     },
     paymentTypes(state) {
         return state.paymentTypes
-    },
-    walletOneOptions(state) {
-        return state.walletOneOptions
     }
 }

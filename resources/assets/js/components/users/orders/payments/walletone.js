@@ -9,19 +9,19 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('users/payment', [
+        ...mapGetters('users/payment/walletone', [
             'walletOneOptions'
         ]),
     },
     methods: {
-        ...mapActions('users/payment', [
+        ...mapActions('users/payment/walletone', [
             'updateWalletOneOptions',
             'buy'
         ]),
         purchase() {
             this.buy().then(res => {
                 this.$nextTick(() => {
-                    this.$refs.woform.submit()
+                    // this.$refs.woform.submit()
                 })
             }).catch(err => {
                 console.log(err)

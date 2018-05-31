@@ -12478,6 +12478,10 @@ var _mutations = __webpack_require__(34);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
+var _walletone = __webpack_require__(104);
+
+var _walletone2 = _interopRequireDefault(_walletone);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -12485,7 +12489,10 @@ exports.default = {
   state: _state2.default,
   getters: _getters2.default,
   actions: _actions2.default,
-  mutations: _mutations2.default
+  mutations: _mutations2.default,
+  modules: {
+    walletone: _walletone2.default
+  }
 };
 
 /***/ }),
@@ -12500,18 +12507,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }],
-    walletOneOptions: {
-        WMI_MERCHANT_ID: '',
-        WMI_PAYMENT_AMOUNT: '',
-        WMI_CURRENCY_ID: '',
-        WMI_PAYMENT_NO: '',
-        WMI_DESCRIPTION: '',
-        WMI_AUTO_LOCATION: '',
-        WMI_SUCCESS_URL: '',
-        WMI_FAIL_URL: '',
-        WMI_SIGNATURE: ''
-    }
+    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }]
 };
 
 /***/ }),
@@ -12530,9 +12526,6 @@ exports.default = {
     },
     paymentTypes: function paymentTypes(state) {
         return state.paymentTypes;
-    },
-    walletOneOptions: function walletOneOptions(state) {
-        return state.walletOneOptions;
     }
 };
 
@@ -12563,24 +12556,6 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('setSelectedPaymentType', id);
-  },
-  updateWalletOneOptions: function updateWalletOneOptions(_ref3, data) {
-    var commit = _ref3.commit;
-
-    commit('updateWalletOneOptions', data);
-  },
-  buy: function buy(_ref4) {
-    var commit = _ref4.commit,
-        state = _ref4.state;
-
-    return new Promise(function (resolve, reject) {
-      _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
-        commit('updateWalletOneOptions', res.data.data);
-        resolve(res);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    });
   }
 };
 
@@ -12594,15 +12569,9 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 exports.default = {
     setSelectedPaymentType: function setSelectedPaymentType(state, id) {
         state.selectedPaymentTypeId = id;
-    },
-    updateWalletOneOptions: function updateWalletOneOptions(state, data) {
-        state.walletOneOptions = _extends({}, state.walletOneOptions, data);
     }
 };
 
@@ -49428,14 +49397,14 @@ exports.default = {
         };
     },
 
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['walletOneOptions'])),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['updateWalletOneOptions', 'buy']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/walletone', ['walletOneOptions'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/walletone', ['updateWalletOneOptions', 'buy']), {
         purchase: function purchase() {
             var _this = this;
 
             this.buy().then(function (res) {
                 _this.$nextTick(function () {
-                    _this.$refs.woform.submit();
+                    // this.$refs.woform.submit()
                 });
             }).catch(function (err) {
                 console.log(err);
@@ -49687,6 +49656,140 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-0da47960", module.exports)
   }
 }
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(105);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(106);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(107);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(108);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    walletOneOptions: {
+        WMI_MERCHANT_ID: '',
+        WMI_PAYMENT_AMOUNT: '',
+        WMI_CURRENCY_ID: '',
+        WMI_PAYMENT_NO: '',
+        WMI_DESCRIPTION: '',
+        WMI_AUTO_LOCATION: '',
+        WMI_SUCCESS_URL: '',
+        WMI_FAIL_URL: '',
+        WMI_SIGNATURE: ''
+    }
+};
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    walletOneOptions: function walletOneOptions(state) {
+        return state.walletOneOptions;
+    }
+};
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(2);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  updateWalletOneOptions: function updateWalletOneOptions(_ref, data) {
+    var commit = _ref.commit;
+
+    commit('updateWalletOneOptions', data);
+  },
+  buy: function buy(_ref2) {
+    var commit = _ref2.commit,
+        state = _ref2.state;
+
+    return new Promise(function (resolve, reject) {
+      _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
+        commit('updateWalletOneOptions', res.data.data);
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = {
+    updateWalletOneOptions: function updateWalletOneOptions(state, data) {
+        state.walletOneOptions = _extends({}, state.walletOneOptions, data);
+    }
+};
 
 /***/ })
 /******/ ]);
