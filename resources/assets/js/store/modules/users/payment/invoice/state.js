@@ -1,9 +1,6 @@
 export default {
     options: {
-        businessEntities: [
-            { id: 1, name: 'ООО' },
-            { id: 2, name: 'ИП' }
-        ]
+        businessEntities: []
     },
     params: {
         company: {

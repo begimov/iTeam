@@ -12751,7 +12751,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     options: {
-        businessEntities: [{ id: 1, name: 'ООО' }, { id: 2, name: 'ИП' }]
+        businessEntities: []
     },
     params: {
         company: {
@@ -12809,8 +12809,7 @@ exports.default = {
 
     // commit('setIsLoading', true)
     _api2.default.invoice.getInitialData().then(function (res) {
-      console.log(res.data.data);
-      // commit('setOrders', res.data)
+      commit('setBusinessEntities', res.data.data);
       // commit('setIsLoading', false)
     });
   },
@@ -12832,6 +12831,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    setBusinessEntities: function setBusinessEntities(state, data) {
+        state.options.businessEntities = data;
+    },
     updateBusinessEntitiyId: function updateBusinessEntitiyId(state, id) {
         state.params.company.business_entity_id = id;
     }

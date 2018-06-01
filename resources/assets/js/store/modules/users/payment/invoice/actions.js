@@ -4,8 +4,7 @@ export default {
   getInitialData({ commit }) {
     // commit('setIsLoading', true)
     api.invoice.getInitialData().then(res => {
-      console.log(res.data.data)
-      // commit('setOrders', res.data)
+      commit('setBusinessEntities', res.data.data)
       // commit('setIsLoading', false)
     })
   },
