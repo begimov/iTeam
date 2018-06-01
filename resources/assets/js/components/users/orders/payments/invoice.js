@@ -18,10 +18,11 @@ export default {
     },
     methods: {
         ...mapActions('users/payment/invoice', [
+            'getInitialData',
             'updateBusinessEntitiyId'
         ]),
     },
     mounted() {
-        //
+        this.getInitialData()
     }
 };

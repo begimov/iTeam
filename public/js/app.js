@@ -493,12 +493,17 @@ var _walletone = __webpack_require__(115);
 
 var _walletone2 = _interopRequireDefault(_walletone);
 
+var _invoice = __webpack_require__(116);
+
+var _invoice2 = _interopRequireDefault(_invoice);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   dashboard: _dashboard2.default,
   product: _product2.default,
-  walletone: _walletone2.default
+  walletone: _walletone2.default,
+  invoice: _invoice2.default
 };
 
 /***/ }),
@@ -12799,8 +12804,18 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  updateBusinessEntitiyId: function updateBusinessEntitiyId(_ref, id) {
+  getInitialData: function getInitialData(_ref) {
     var commit = _ref.commit;
+
+    // commit('setIsLoading', true)
+    _api2.default.invoice.getInitialData().then(function (res) {
+      console.log(res.data.data);
+      // commit('setOrders', res.data)
+      // commit('setIsLoading', false)
+    });
+  },
+  updateBusinessEntitiyId: function updateBusinessEntitiyId(_ref2, id) {
+    var commit = _ref2.commit;
 
     commit('updateBusinessEntitiyId', id);
   }
@@ -49770,9 +49785,9 @@ exports.default = {
             }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['updateBusinessEntitiyId'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId'])),
     mounted: function mounted() {
-        //
+        this.getInitialData();
     }
 };
 
@@ -50052,6 +50067,28 @@ exports.default = {
   getPaymentSignature: function getPaymentSignature(payload) {
     return new Promise(function (resolve, reject) {
       axios.post("/webapi/orders/payments/walletone/signature", payload).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getInitialData: function getInitialData() {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/orders/payments/invoices/create").then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);
