@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\Transformers\Users\BusinessEntityTransformer;
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
-use App\Http\Requests\Payments\InvoiceStoreRequest;
+
+use App\Http\Requests\Webapi\Payments\InvoiceStoreRequest;
 
 class InvoiceController extends Controller
 {
