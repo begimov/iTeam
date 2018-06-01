@@ -11,4 +11,7 @@ export default {
   updateBusinessEntitiyId({ commit }, id) {
     commit('updateBusinessEntitiyId', id)
   },
+  updateCompanyName({ commit }, name) {
+    commit('updateCompanyName', name)
+  },
 }

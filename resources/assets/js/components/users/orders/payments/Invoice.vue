@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="company">Название компании</label>
-                        <input type="text" class="form-control" id="company" aria-describedby="company" placeholder="Введите название компании...">
+                        <input type="text" v-model="companyName" class="form-control" id="company" aria-describedby="company" placeholder="Введите название компании...">
                     </div>
                     <div class="form-group">
                         <label for="name">Ваше имя</label>

@@ -8,4 +8,7 @@ export default {
     getBusinessEntitiyId(state) {
         return state.params.company.business_entity_id
     },
+    getCompanyName(state) {
+        return state.params.company.name
+    },
 }

@@ -12787,6 +12787,9 @@ exports.default = {
     },
     getBusinessEntitiyId: function getBusinessEntitiyId(state) {
         return state.params.company.business_entity_id;
+    },
+    getCompanyName: function getCompanyName(state) {
+        return state.params.company.name;
     }
 };
 
@@ -12821,6 +12824,11 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('updateBusinessEntitiyId', id);
+  },
+  updateCompanyName: function updateCompanyName(_ref3, name) {
+    var commit = _ref3.commit;
+
+    commit('updateCompanyName', name);
   }
 };
 
@@ -12843,6 +12851,9 @@ exports.default = {
     },
     updateBusinessEntitiyId: function updateBusinessEntitiyId(state, id) {
         state.params.company.business_entity_id = id;
+    },
+    updateCompanyName: function updateCompanyName(state, name) {
+        state.params.company.name = name;
     }
 };
 
@@ -49784,7 +49795,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId', 'getCompanyName']), {
         'businessEntitiyId': {
             get: function get() {
                 return this.getBusinessEntitiyId;
@@ -49792,9 +49803,17 @@ exports.default = {
             set: function set(id) {
                 this.updateBusinessEntitiyId(id);
             }
+        },
+        'companyName': {
+            get: function get() {
+                return this.getCompanyName;
+            },
+            set: function set(name) {
+                this.updateCompanyName(name);
+            }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName'])),
     mounted: function mounted() {
         this.getInitialData();
     }
@@ -49852,7 +49871,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": businessEntitiy.id
       }
     }, [_vm._v("\n                            " + _vm._s(businessEntitiy.name) + "\n                        ")])
-  })], 2)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('button', {
+  })], 2)]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "company"
+    }
+  }, [_vm._v("Название компании")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.companyName),
+      expression: "companyName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "company",
+      "aria-describedby": "company",
+      "placeholder": "Введите название компании..."
+    },
+    domProps: {
+      "value": (_vm.companyName)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.companyName = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "submit"
@@ -49869,22 +49917,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("Важно! Прочитайте до того, как оплатить счёт")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "company"
-    }
-  }, [_vm._v("Название компании")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "company",
-      "aria-describedby": "company",
-      "placeholder": "Введите название компании..."
-    }
-  })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"
