@@ -10,5 +10,8 @@ export default {
     },
     updateCompanyName(state, name) {
         state.params.company.name = name
+    },
+    updateUsername(state, name) {
+        state.params.user.name = name
     }
 }

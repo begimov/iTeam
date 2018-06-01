@@ -12790,6 +12790,9 @@ exports.default = {
     },
     getCompanyName: function getCompanyName(state) {
         return state.params.company.name;
+    },
+    getUsername: function getUsername(state) {
+        return state.params.user.name;
     }
 };
 
@@ -12829,6 +12832,11 @@ exports.default = {
     var commit = _ref3.commit;
 
     commit('updateCompanyName', name);
+  },
+  updateUsername: function updateUsername(_ref4, name) {
+    var commit = _ref4.commit;
+
+    commit('updateUsername', name);
   }
 };
 
@@ -12854,6 +12862,9 @@ exports.default = {
     },
     updateCompanyName: function updateCompanyName(state, name) {
         state.params.company.name = name;
+    },
+    updateUsername: function updateUsername(state, name) {
+        state.params.user.name = name;
     }
 };
 
@@ -49795,7 +49806,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId', 'getCompanyName']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId', 'getCompanyName', 'getUsername']), {
         'businessEntitiyId': {
             get: function get() {
                 return this.getBusinessEntitiyId;
@@ -49811,9 +49822,17 @@ exports.default = {
             set: function set(name) {
                 this.updateCompanyName(name);
             }
+        },
+        'username': {
+            get: function get() {
+                return this.getUsername;
+            },
+            set: function set(name) {
+                this.updateUsername(name);
+            }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername'])),
     mounted: function mounted() {
         this.getInitialData();
     }
@@ -49900,7 +49919,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.companyName = $event.target.value
       }
     }
-  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('button', {
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Ваше имя")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.username),
+      expression: "username"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "name",
+      "aria-describedby": "name",
+      "placeholder": "Введите ваше имя..."
+    },
+    domProps: {
+      "value": (_vm.username)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.username = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "submit"
@@ -49917,22 +49965,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("Важно! Прочитайте до того, как оплатить счёт")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "name"
-    }
-  }, [_vm._v("Ваше имя")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "name",
-      "aria-describedby": "name",
-      "placeholder": "Введите ваше имя..."
-    }
-  })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"

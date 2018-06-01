@@ -11,4 +11,7 @@ export default {
     getCompanyName(state) {
         return state.params.company.name
     },
+    getUsername(state) {
+        return state.params.user.name
+    },
 }

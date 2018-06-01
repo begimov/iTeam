@@ -7,7 +7,8 @@ export default {
             'isLoading',
             'businessEntities',
             'getBusinessEntitiyId',
-            'getCompanyName'
+            'getCompanyName',
+            'getUsername'
         ]),
         'businessEntitiyId': {
             get () {
@@ -25,12 +26,21 @@ export default {
               this.updateCompanyName(name)
             }
         },
+        'username': {
+            get () {
+              return this.getUsername
+            },
+            set (name) {
+              this.updateUsername(name)
+            }
+        },
     },
     methods: {
         ...mapActions('users/payment/invoice', [
             'getInitialData',
             'updateBusinessEntitiyId',
-            'updateCompanyName'
+            'updateCompanyName',
+            'updateUsername'
         ]),
     },
     mounted() {

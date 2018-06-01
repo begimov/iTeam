@@ -14,4 +14,7 @@ export default {
   updateCompanyName({ commit }, name) {
     commit('updateCompanyName', name)
   },
+  updateUsername({ commit }, name) {
+    commit('updateUsername', name)
+  },
 }

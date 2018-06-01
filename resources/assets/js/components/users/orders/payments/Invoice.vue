@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Ваше имя</label>
-                        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Введите ваше имя...">
+                        <input type="text" v-model="username" class="form-control" id="name" aria-describedby="name" placeholder="Введите ваше имя...">
                     </div>
                     <div class="form-group">
                         <label for="phone">Телефон</label>
