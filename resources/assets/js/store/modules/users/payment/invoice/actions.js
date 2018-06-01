@@ -2,10 +2,10 @@ import api from '../../../../api'
 
 export default {
   getInitialData({ commit }) {
-    // commit('setIsLoading', true)
+    commit('setIsLoading', true)
     api.invoice.getInitialData().then(res => {
       commit('setBusinessEntities', res.data.data)
-      // commit('setIsLoading', false)
+      commit('setIsLoading', false)
     })
   },
   updateBusinessEntitiyId({ commit }, id) {

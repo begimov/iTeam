@@ -12764,7 +12764,8 @@ exports.default = {
         userProfile: {
             phone: ''
         }
-    }
+    },
+    isLoading: false
 };
 
 /***/ }),
@@ -12807,10 +12808,10 @@ exports.default = {
   getInitialData: function getInitialData(_ref) {
     var commit = _ref.commit;
 
-    // commit('setIsLoading', true)
+    commit('setIsLoading', true);
     _api2.default.invoice.getInitialData().then(function (res) {
       commit('setBusinessEntities', res.data.data);
-      // commit('setIsLoading', false)
+      commit('setIsLoading', false);
     });
   },
   updateBusinessEntitiyId: function updateBusinessEntitiyId(_ref2, id) {
@@ -12831,6 +12832,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    setIsLoading: function setIsLoading(state, value) {
+        state.isLoading = value;
+    },
     setBusinessEntities: function setBusinessEntities(state, data) {
         state.options.businessEntities = data;
     },

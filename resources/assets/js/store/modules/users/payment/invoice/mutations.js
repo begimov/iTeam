@@ -1,4 +1,7 @@
 export default {
+    setIsLoading (state, value) {
+        state.isLoading = value
+    },
     setBusinessEntities(state, data) {
         state.options.businessEntities = data
     },

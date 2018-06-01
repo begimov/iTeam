@@ -13,5 +13,6 @@ export default {
         userProfile: {
             phone: ''
         }
-    }
+    },
+    isLoading: false
 }
