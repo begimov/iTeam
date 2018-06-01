@@ -12845,6 +12845,15 @@ exports.default = {
     var commit = _ref5.commit;
 
     commit('updatePhone', num);
+  },
+  getInvoice: function getInvoice(_ref6) {
+    var commit = _ref6.commit,
+        state = _ref6.state;
+
+    commit('setIsLoading', true);
+    _api2.default.invoice.getInvoice(state.params).then(function (res) {
+      commit('setIsLoading', false);
+    });
   }
 };
 
@@ -49851,7 +49860,7 @@ exports.default = {
             }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername', 'updatePhone'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername', 'updatePhone', 'getInvoice'])),
     mounted: function mounted() {
         this.getInitialData();
     }
@@ -49876,7 +49885,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row my-4"
   }, [_c('div', {
     staticClass: "col"
-  }, [_c('form', [_c('div', {
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.getInvoice($event)
+      }
+    }
+  }, [_c('div', {
     staticClass: "form-group"
   }, [_c('label', [_vm._v("Организационно-правовая форма")]), _vm._v(" "), _c('select', {
     directives: [{
@@ -50203,6 +50219,16 @@ exports.default = {
         console.log(err);
       });
     });
+  },
+  getInvoice: function getInvoice(payload) {
+    console.log(payload);
+    // return new Promise((resolve, reject) => {
+    //   axios.get(`/webapi/orders/payments/invoices/create`).then(res => {
+    //     resolve(res)
+    //   }).catch(err => {
+    //     console.log(err)
+    //   })
+    // })
   }
 };
 

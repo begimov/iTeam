@@ -50,7 +50,8 @@ export default {
             'updateBusinessEntitiyId',
             'updateCompanyName',
             'updateUsername',
-            'updatePhone'
+            'updatePhone',
+            'getInvoice'
         ]),
     },
     mounted() {

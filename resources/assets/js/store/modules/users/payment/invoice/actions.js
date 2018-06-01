@@ -19,5 +19,11 @@ export default {
   },
   updatePhone({ commit }, num) {
     commit('updatePhone', num)
+  },
+  getInvoice({ commit, state }) {
+    commit('setIsLoading', true)
+    api.invoice.getInvoice(state.params).then(res => {
+      commit('setIsLoading', false)
+    })
   }
 }
