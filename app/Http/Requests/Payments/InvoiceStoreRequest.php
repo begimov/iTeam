@@ -13,7 +13,7 @@ class InvoiceStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class InvoiceStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'company.name' => 'required|string|max:255',
+            'company.business_entity_id' => 'required|numeric|exists:business_entities,id',
+            'user.name' => 'required|string|max:255',
+            'userProfile.phone' => 'required|string|max:255',
         ];
     }
 }

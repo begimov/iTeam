@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Transformers\Users\BusinessEntityTransformer;
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
+use App\Http\Requests\Payments\InvoiceStoreRequest;
 
 class InvoiceController extends Controller
 {
@@ -38,7 +39,7 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InvoiceStoreRequest $request)
     {
         //
     }
