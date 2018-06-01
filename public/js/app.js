@@ -12779,6 +12779,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    isLoading: function isLoading(state) {
+        return state.isLoading;
+    },
     businessEntities: function businessEntities(state) {
         return state.options.businessEntities;
     },
@@ -49781,7 +49784,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['businessEntities', 'getBusinessEntitiyId']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId']), {
         'businessEntitiyId': {
             get: function get() {
                 return this.getBusinessEntitiyId;
@@ -49805,6 +49808,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "col"
   }, [_c('div', {
+    class: {
+      'isActive': _vm.isLoading, 'loader': true, 'loader-def': true
+    }
+  }), _vm._v(" "), _c('div', {
     staticClass: "card mb-2"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
