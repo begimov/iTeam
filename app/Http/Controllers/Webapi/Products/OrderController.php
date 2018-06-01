@@ -12,17 +12,13 @@ use App\Transformers\Products\OrderTransformer;
 use App\Repositories\Contracts\Products\OrderRepository;
 use App\Repositories\Eloquent\Criteria\With;
 
-use App\Services\Payments\Contracts\IWalletOne;
-
 class OrderController extends Controller
 {
     protected $orders;
-    protected $walletOne;
 
-    public function __construct(OrderRepository $orders, IWalletOne $walletOne)
+    public function __construct(OrderRepository $orders)
     {
         $this->orders = $orders;
-        $this->walletOne = $walletOne;
     }
 
     /**
