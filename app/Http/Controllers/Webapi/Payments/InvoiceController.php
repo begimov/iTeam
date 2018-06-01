@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Webapi\Payments;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Transformers\Users\BusinessEntityTransformer;
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
 
 class InvoiceController extends Controller
@@ -23,6 +24,11 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        $businessEntities = $this->businessEntities->get();
+
+        return fractal()
+            ->collection($businessEntities)
+            ->transformWith(new BusinessEntityTransformer)
+            ->toArray();
     }
 }
