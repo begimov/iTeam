@@ -17,6 +17,9 @@ use App\Repositories\Eloquent\Products\{
 use App\Repositories\Contracts\Pages\CategoryRepository;
 use App\Repositories\Eloquent\Pages\EloquentCategoryRepository;
 
+use App\Repositories\Contracts\Users\BusinessEntityRepository;
+use App\Repositories\Eloquent\Users\EloquentBusinessEntityRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -29,6 +32,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(OrderRepository::class, EloquentOrderRepository::class);
         $this->app->bind(CategoryRepository::class, EloquentCategoryRepository::class);
         $this->app->bind(ProductRepository::class, EloquentProductRepository::class);
+        $this->app->bind(BusinessEntityRepository::class, EloquentBusinessEntityRepository::class);
     }
 
     /**
