@@ -125,19 +125,4 @@ class OrderController extends Controller
             $this->orders->destroy($order);
         }
     }
-
-    /**
-     * Get payment signature.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getPaymentSignature(Request $request)
-    {
-        return response()->json([
-            'status' => 'OK',
-            'data' => [
-                'WMI_SIGNATURE' => $this->walletOne->generatePaymentSignature($request->all())
-            ]
-        ]);
-    }
 }
