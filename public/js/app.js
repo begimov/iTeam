@@ -12853,6 +12853,9 @@ exports.default = {
     commit('setIsLoading', true);
     _api2.default.invoice.getInvoice(state.params).then(function (res) {
       commit('setIsLoading', false);
+    }).catch(function (err) {
+      console.log(err.response.data);
+      commit('setIsLoading', false);
     });
   }
 };
