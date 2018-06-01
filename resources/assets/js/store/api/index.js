@@ -1,9 +1,9 @@
 import dashboard from './users/dashboard'
 import product from './users/product'
-import payment from './users/payment'
+import walletone from './users/payments/walletone'
 
 export default {
   dashboard,
   product,
-  payment,
+  walletone,
 }

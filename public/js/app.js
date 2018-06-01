@@ -489,16 +489,16 @@ var _product = __webpack_require__(22);
 
 var _product2 = _interopRequireDefault(_product);
 
-var _payment = __webpack_require__(23);
+var _walletone = __webpack_require__(115);
 
-var _payment2 = _interopRequireDefault(_payment);
+var _walletone2 = _interopRequireDefault(_walletone);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   dashboard: _dashboard2.default,
   product: _product2.default,
-  payment: _payment2.default
+  walletone: _walletone2.default
 };
 
 /***/ }),
@@ -12275,28 +12275,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  getPaymentSignature: function getPaymentSignature(payload) {
-    return new Promise(function (resolve, reject) {
-      axios.post("/webapi/orders/payments/walletone/signature", payload).then(function (res) {
-        resolve(res);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    });
-  }
-};
-
-/***/ }),
+/* 23 */,
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12689,7 +12668,7 @@ exports.default = {
         state = _ref2.state;
 
     return new Promise(function (resolve, reject) {
-      _api2.default.payment.getPaymentSignature(state.walletOneOptions).then(function (res) {
+      _api2.default.walletone.getPaymentSignature(state.walletOneOptions).then(function (res) {
         commit('updateWalletOneOptions', res.data.data);
         resolve(res);
       }).catch(function (err) {
@@ -50055,6 +50034,31 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getPaymentSignature: function getPaymentSignature(payload) {
+    return new Promise(function (resolve, reject) {
+      axios.post("/webapi/orders/payments/walletone/signature", payload).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
 
 /***/ })
 /******/ ]);
