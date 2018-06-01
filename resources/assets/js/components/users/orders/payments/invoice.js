@@ -8,7 +8,8 @@ export default {
             'businessEntities',
             'getBusinessEntitiyId',
             'getCompanyName',
-            'getUsername'
+            'getUsername',
+            'getPhone'
         ]),
         'businessEntitiyId': {
             get () {
@@ -34,13 +35,22 @@ export default {
               this.updateUsername(name)
             }
         },
+        'phone': {
+            get () {
+              return this.getPhone
+            },
+            set (num) {
+              this.updatePhone(num)
+            }
+        }
     },
     methods: {
         ...mapActions('users/payment/invoice', [
             'getInitialData',
             'updateBusinessEntitiyId',
             'updateCompanyName',
-            'updateUsername'
+            'updateUsername',
+            'updatePhone'
         ]),
     },
     mounted() {

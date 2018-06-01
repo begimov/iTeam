@@ -17,4 +17,7 @@ export default {
   updateUsername({ commit }, name) {
     commit('updateUsername', name)
   },
+  updatePhone({ commit }, num) {
+    commit('updatePhone', num)
+  }
 }

@@ -14,4 +14,7 @@ export default {
     getUsername(state) {
         return state.params.user.name
     },
+    getPhone(state) {
+        return state.params.userProfile.phone
+    }
 }

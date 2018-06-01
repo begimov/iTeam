@@ -13,5 +13,8 @@ export default {
     },
     updateUsername(state, name) {
         state.params.user.name = name
+    },
+    updatePhone(state, num) {
+        state.params.userProfile.phone = num
     }
 }

@@ -12793,6 +12793,9 @@ exports.default = {
     },
     getUsername: function getUsername(state) {
         return state.params.user.name;
+    },
+    getPhone: function getPhone(state) {
+        return state.params.userProfile.phone;
     }
 };
 
@@ -12837,6 +12840,11 @@ exports.default = {
     var commit = _ref4.commit;
 
     commit('updateUsername', name);
+  },
+  updatePhone: function updatePhone(_ref5, num) {
+    var commit = _ref5.commit;
+
+    commit('updatePhone', num);
   }
 };
 
@@ -12865,6 +12873,9 @@ exports.default = {
     },
     updateUsername: function updateUsername(state, name) {
         state.params.user.name = name;
+    },
+    updatePhone: function updatePhone(state, num) {
+        state.params.userProfile.phone = num;
     }
 };
 
@@ -49806,7 +49817,7 @@ var _vuex = __webpack_require__(3);
 
 exports.default = {
     props: ['order'],
-    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId', 'getCompanyName', 'getUsername']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('users/payment/invoice', ['isLoading', 'businessEntities', 'getBusinessEntitiyId', 'getCompanyName', 'getUsername', 'getPhone']), {
         'businessEntitiyId': {
             get: function get() {
                 return this.getBusinessEntitiyId;
@@ -49830,9 +49841,17 @@ exports.default = {
             set: function set(name) {
                 this.updateUsername(name);
             }
+        },
+        'phone': {
+            get: function get() {
+                return this.getPhone;
+            },
+            set: function set(num) {
+                this.updatePhone(num);
+            }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername', 'updatePhone'])),
     mounted: function mounted() {
         this.getInitialData();
     }
@@ -49948,7 +49967,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.username = $event.target.value
       }
     }
-  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('button', {
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Телефон")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phone),
+      expression: "phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "id": "phone",
+      "aria-describedby": "phone",
+      "placeholder": "Введите ваш телефон..."
+    },
+    domProps: {
+      "value": (_vm.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phone = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "submit"
@@ -49965,22 +50013,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("Важно! Прочитайте до того, как оплатить счёт")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Телефон")]), _vm._v(" "), _c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "id": "phone",
-      "aria-describedby": "phone",
-      "placeholder": "Введите ваш телефон..."
-    }
-  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {

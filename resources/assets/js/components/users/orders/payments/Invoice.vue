@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Телефон</label>
-                        <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Введите ваш телефон...">
+                        <input type="text" v-model="phone" class="form-control" id="phone" aria-describedby="phone" placeholder="Введите ваш телефон...">
                     </div>
                     <button type="submit" class="btn btn-primary">Получить</button>
                 </form>
