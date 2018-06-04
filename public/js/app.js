@@ -12314,7 +12314,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   getInitialData: function getInitialData() {
     return new Promise(function (resolve, reject) {
-      axios.get("/webapi/orders/payments/invoices/create").then(function (res) {
+      axios.get('/webapi/orders/payments/invoices/create').then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);
@@ -12323,10 +12323,16 @@ exports.default = {
   },
   getInvoice: function getInvoice(payload) {
     return new Promise(function (resolve, reject) {
-      axios.post("/webapi/orders/payments/invoices", payload).then(function (res) {
+      axios.post('/webapi/orders/payments/invoices', payload, {
+        responseType: 'blob'
+      }).then(function (res) {
         resolve(res);
       }).catch(function (err) {
-        reject(err);
+        var reader = new FileReader();
+        reader.addEventListener('loadend', function (e) {
+          reject(JSON.parse(e.srcElement.result));
+        });
+        reader.readAsText(err.response.data);
       });
     });
   }
@@ -12909,8 +12915,11 @@ exports.default = {
     commit('setIsLoading', true);
     _api2.default.invoice.getInvoice(state.params).then(function (res) {
       commit('setIsLoading', false);
+      var data = [res.data];
+      var blob = new Blob(data, { type: 'application/pdf' });
+      window.open(window.URL.createObjectURL(blob));
     }).catch(function (err) {
-      commit('setErrors', err.response.data);
+      commit('setErrors', err);
       commit('setIsLoading', false);
     });
   }

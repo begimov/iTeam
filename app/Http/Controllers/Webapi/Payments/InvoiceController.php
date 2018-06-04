@@ -42,10 +42,7 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
-        \PDF::loadView('payments.invoice.pdf', $request->all())
-            ->save(storage_path('app/invoices/temp.pdf'));
-        
-        return response()->download(storage_path('app/invoices/temp.pdf'));
-        // return $pdf->download('a.pdf');
+        return \PDF::loadView('payments.invoice.pdf', $request->all())
+            ->download('temp.pdf');
     }
 }

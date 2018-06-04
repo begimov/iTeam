@@ -24,8 +24,11 @@ export default {
     commit('setIsLoading', true)
     api.invoice.getInvoice(state.params).then(res => {
       commit('setIsLoading', false)
+      const data = [res.data]
+      const blob = new Blob(data, {type : 'application/pdf'});
+      window.open(window.URL.createObjectURL(blob))
     }).catch(err => {
-      commit('setErrors', err.response.data)
+      commit('setErrors', err)
       commit('setIsLoading', false)
     })
   }
