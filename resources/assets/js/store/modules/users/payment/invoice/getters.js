@@ -16,5 +16,8 @@ export default {
     },
     getPhone(state) {
         return state.params.userProfile.phone
+    },
+    errors(state) {
+        return state.errors
     }
 }

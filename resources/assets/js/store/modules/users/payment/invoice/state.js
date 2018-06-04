@@ -14,5 +14,6 @@ export default {
             phone: ''
         }
     },
-    isLoading: false
+    isLoading: false,
+    errors: {}
 }

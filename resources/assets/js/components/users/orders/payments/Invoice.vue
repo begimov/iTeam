@@ -23,6 +23,10 @@
                                 {{ businessEntitiy.name }}
                             </option>
                         </select>
+                        <span class="help-block alert-danger" 
+                            v-if="errors.company && errors.company.business_entity_id">
+                                {{ errors.company.business_entity_id[0] }}
+                        </span>
                     </div>
                     <div class="form-group">
                         <label for="company">Название компании</label>

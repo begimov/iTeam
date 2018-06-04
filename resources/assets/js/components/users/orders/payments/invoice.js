@@ -9,7 +9,8 @@ export default {
             'getBusinessEntitiyId',
             'getCompanyName',
             'getUsername',
-            'getPhone'
+            'getPhone',
+            'errors'
         ]),
         'businessEntitiyId': {
             get () {
