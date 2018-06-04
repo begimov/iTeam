@@ -12911,6 +12911,7 @@ exports.default = {
       commit('setIsLoading', false);
     }).catch(function (err) {
       console.log(err.response.data);
+      commit('setErrors', err.response.data);
       commit('setIsLoading', false);
     });
   }
@@ -12944,6 +12945,9 @@ exports.default = {
     },
     updatePhone: function updatePhone(state, num) {
         state.params.userProfile.phone = num;
+    },
+    setErrors: function setErrors(state, errors) {
+        state.errors = errors.errors;
     }
 };
 
@@ -49984,9 +49988,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": businessEntitiy.id
       }
     }, [_vm._v("\n                            " + _vm._s(businessEntitiy.name) + "\n                        ")])
-  })], 2), _vm._v(" "), (_vm.errors.company && _vm.errors.company.business_entity_id) ? _c('span', {
+  })], 2), _vm._v(" "), (_vm.errors['company.business_entity_id']) ? _c('span', {
     staticClass: "help-block alert-danger"
-  }, [_vm._v("\n                            " + _vm._s(_vm.errors.company.business_entity_id[0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                            " + _vm._s(_vm.errors['company.business_entity_id'][0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {

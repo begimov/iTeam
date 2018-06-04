@@ -16,5 +16,8 @@ export default {
     },
     updatePhone(state, num) {
         state.params.userProfile.phone = num
+    },
+    setErrors(state, errors) {
+        state.errors = errors.errors
     }
 }
