@@ -25,7 +25,6 @@ export default {
     api.invoice.getInvoice(state.params).then(res => {
       commit('setIsLoading', false)
     }).catch(err => {
-      console.log(err.response.data)
       commit('setErrors', err.response.data)
       commit('setIsLoading', false)
     })

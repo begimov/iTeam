@@ -12910,7 +12910,6 @@ exports.default = {
     _api2.default.invoice.getInvoice(state.params).then(function (res) {
       commit('setIsLoading', false);
     }).catch(function (err) {
-      console.log(err.response.data);
       commit('setErrors', err.response.data);
       commit('setIsLoading', false);
     });
@@ -49964,7 +49963,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.businessEntitiyId),
       expression: "businessEntitiyId"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors['company.business_entity_id']
+    },
     on: {
       "change": function($event) {
         var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
@@ -49987,9 +49988,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       domProps: {
         "value": businessEntitiy.id
       }
-    }, [_vm._v("\n                            " + _vm._s(businessEntitiy.name) + "\n                        ")])
-  })], 2), _vm._v(" "), (_vm.errors['company.business_entity_id']) ? _c('span', {
-    staticClass: "help-block alert-danger"
+    }, [_vm._v("\n                                " + _vm._s(businessEntitiy.name) + "\n                            ")])
+  })], 2), _vm._v(" "), (_vm.errors['company.business_entity_id']) ? _c('div', {
+    staticClass: "invalid-feedback"
   }, [_vm._v("\n                            " + _vm._s(_vm.errors['company.business_entity_id'][0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
@@ -50003,7 +50004,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.companyName),
       expression: "companyName"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors['company.name']
+    },
     attrs: {
       "type": "text",
       "id": "company",
@@ -50019,7 +50022,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.companyName = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), (_vm.errors['company.name']) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                            " + _vm._s(_vm.errors['company.name'][0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -50032,7 +50037,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.username),
       expression: "username"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors['user.name']
+    },
     attrs: {
       "type": "text",
       "id": "name",
@@ -50048,7 +50055,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.username = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), (_vm.errors['user.name']) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                            " + _vm._s(_vm.errors['user.name'][0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -50061,7 +50070,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.phone),
       expression: "phone"
     }],
-    staticClass: "form-control",
+    class: {
+      'form-control': true, 'is-invalid': _vm.errors['userProfile.phone']
+    },
     attrs: {
       "type": "text",
       "id": "phone",
@@ -50077,7 +50088,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.phone = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('button', {
+  }), _vm._v(" "), (_vm.errors['userProfile.phone']) ? _c('div', {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                            " + _vm._s(_vm.errors['userProfile.phone'][0]) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "submit"
