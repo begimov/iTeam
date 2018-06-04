@@ -10,8 +10,6 @@ use App\Repositories\Contracts\Users\BusinessEntityRepository;
 
 use App\Http\Requests\Webapi\Payments\InvoiceStoreRequest;
 
-use Barryvdh\DomPDF\Facade as PDF;
-
 class InvoiceController extends Controller
 {
     protected $businessEntities;
@@ -44,6 +42,10 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
-        $pdf = PDF::loadView('payments.invoice.pdf', $request->all());
+        \PDF::loadView('payments.invoice.pdf', $request->all())
+            ->save(storage_path('app/invoices/temp.pdf'));
+        
+        return response()->download(storage_path('app/invoices/temp.pdf'));
+        // return $pdf->download('a.pdf');
     }
 }
