@@ -9,6 +9,8 @@ use App\Transformers\Users\BusinessEntityTransformer;
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
 
 use App\Http\Requests\Webapi\Payments\InvoiceStoreRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class InvoiceController extends Controller
 {
@@ -42,7 +44,9 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
+        Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
+        
         \PDF::loadView('payments.invoice.pdf', $request->all())
-            ->save(storage_path('app/invoices/temp.pdf'));
+            ->save(storage_path('app/' . $directory . '/temp.pdf'));
     }
 }
