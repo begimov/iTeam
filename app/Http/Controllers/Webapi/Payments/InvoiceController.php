@@ -44,6 +44,7 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
+        dd($request->all());
         Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
         
         \PDF::loadView('payments.invoice.pdf', $request->all())
