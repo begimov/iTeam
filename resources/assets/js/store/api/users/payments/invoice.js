@@ -8,9 +8,9 @@ export default {
       })
     })
   },
-  getInvoice(payload) {
+  getInvoice(payload, orderId) {
     return new Promise((resolve, reject) => {
-      axios.post(`/webapi/orders/payments/invoices`, payload).then(res => {
+      axios.post(`/webapi/orders/${orderId}/payments/invoices`, payload).then(res => {
         resolve(res)
       }).catch(err => {
         reject(err)

@@ -12321,9 +12321,9 @@ exports.default = {
       });
     });
   },
-  getInvoice: function getInvoice(payload) {
+  getInvoice: function getInvoice(payload, orderId) {
     return new Promise(function (resolve, reject) {
-      axios.post("/webapi/orders/payments/invoices", payload).then(function (res) {
+      axios.post("/webapi/orders/" + orderId + "/payments/invoices", payload).then(function (res) {
         resolve(res);
       }).catch(function (err) {
         reject(err);
@@ -12902,12 +12902,12 @@ exports.default = {
 
     commit('updatePhone', num);
   },
-  getInvoice: function getInvoice(_ref6) {
+  getInvoice: function getInvoice(_ref6, orderId) {
     var commit = _ref6.commit,
         state = _ref6.state;
 
     commit('setIsLoading', true);
-    _api2.default.invoice.getInvoice(state.params).then(function (res) {
+    _api2.default.invoice.getInvoice(state.params, orderId).then(function (res) {
       commit('setIsLoading', false);
     }).catch(function (err) {
       commit('setErrors', err.response.data);
@@ -49922,7 +49922,11 @@ exports.default = {
             }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername', 'updatePhone', 'getInvoice'])),
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/invoice', ['getInitialData', 'updateBusinessEntitiyId', 'updateCompanyName', 'updateUsername', 'updatePhone', 'getInvoice']), {
+        generateInvoice: function generateInvoice() {
+            this.getInvoice(this.order.id);
+        }
+    }),
     mounted: function mounted() {
         this.getInitialData();
     }
@@ -49951,7 +49955,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "submit": function($event) {
         $event.preventDefault();
-        _vm.getInvoice($event)
+        _vm.generateInvoice($event)
       }
     }
   }, [_c('div', {

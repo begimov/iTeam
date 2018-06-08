@@ -20,9 +20,9 @@ export default {
   updatePhone({ commit }, num) {
     commit('updatePhone', num)
   },
-  getInvoice({ commit, state }) {
+  getInvoice({ commit, state }, orderId) {
     commit('setIsLoading', true)
-    api.invoice.getInvoice(state.params).then(res => {
+    api.invoice.getInvoice(state.params, orderId).then(res => {
       commit('setIsLoading', false)
     }).catch(err => {
       commit('setErrors', err.response.data)

@@ -54,6 +54,9 @@ export default {
             'updatePhone',
             'getInvoice'
         ]),
+        generateInvoice() {
+            this.getInvoice(this.order.id)
+        }
     },
     mounted() {
         this.getInitialData()

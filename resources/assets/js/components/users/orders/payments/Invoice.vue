@@ -14,7 +14,7 @@
 
         <div class="row my-4">
             <div class="col">
-                <form @submit.prevent="getInvoice">
+                <form @submit.prevent="generateInvoice">
                     <div class="form-group">
                         <label>Организационно-правовая форма</label>
                         <select v-model="businessEntitiyId" 
