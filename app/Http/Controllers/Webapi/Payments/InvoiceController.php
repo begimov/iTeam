@@ -48,13 +48,15 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request, $orderId)
     {
+        $data = $request->all();
+
         $order = $this->orders->findById($orderId);
 
-        $data = $request->all();
+        $businessEntity = $this->businessEntities->findById($data['company']['business_entity_id']);
 
         Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
         
-        \PDF::loadView('payments.invoice.pdf', compact('data', 'order'))
+        \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
             ->save(storage_path('app/' . $directory . '/temp.pdf'));
     }
 }

@@ -1,7 +1,7 @@
 <html>
 	<head>
-		{{dd($data, $order)}}
-		<title>Заказ № {!! $data['inv_id'] !!}</title>
+		{{dd($data, $order, $businessEntity)}}
+		<title>Заказ № {!! $order->id !!}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<style>
 			body {
@@ -48,7 +48,7 @@
 			</tbody>
 		</table>
 		<br>
-		<h2 style="font-size: 18px">СЧЕТ-ДОГОВОР ОФЕРТА № {!! $data['inv_id'] !!} от {!! HTML::humanDateFormat($data['date'],0,0,1) !!}</h2>
+		<h2 style="font-size: 18px">СЧЕТ-ДОГОВОР ОФЕРТА № {!! $order->id !!} от {!! now() !!}</h2>
 		<p>Исполнитель: ООО &quot;АйТим Менеджмент&quot;, ИНН 7703381761, КПП 770301001<br />
 		Юридический адрес 123112, г. Москва, Пресненская набережная, дом 12,<br />
 		ММДЦ &quot;Москва Сити&quot;, башня &quot;Федерация ВОСТОК&quot;, этаж 29, офис &quot;А 28&quot;<br />
