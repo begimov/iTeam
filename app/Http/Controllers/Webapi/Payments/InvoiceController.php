@@ -62,6 +62,11 @@ class InvoiceController extends Controller
         ]);
     }
 
+    public function show($fileName)
+    {
+        dd($fileName);
+    }
+
     protected function prepareInvoiceData($request, $orderId)
     {
         $data = $request->all();
