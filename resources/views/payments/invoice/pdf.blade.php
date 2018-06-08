@@ -1,5 +1,6 @@
 <html>
 	<head>
+		{{dd($data)}}
 		<title>Заказ № {!! $data['inv_id'] !!}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<style>

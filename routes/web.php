@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     // Payment routes
     Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');
     Route::get('orders/payments/invoices/create', 'Payments\InvoiceController@create');
-    Route::post('orders/payments/invoices', 'Payments\InvoiceController@store');
+    Route::post('orders/{id}/payments/invoices', 'Payments\InvoiceController@store');
     
     // Dashboard routes
     Route::resource('orders', 'Products\OrderController');
