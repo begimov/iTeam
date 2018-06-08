@@ -55,7 +55,11 @@ class InvoiceController extends Controller
         Storage::makeDirectory($directory = config('orders.invoices.storage_dir_prefix') . Auth::id());
 
         \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
-            ->save(storage_path('app/' . $directory . '/' . $this->getInvoiceFilename($order->id)));
+            ->save(storage_path('app/' . $directory . '/' . $fileName = $this->getInvoiceFilename($order->id)));
+
+        return response()->json([
+            'url' => route('orders.invoices.show', $fileName)
+        ]);
     }
 
     protected function prepareInvoiceData($request, $orderId)

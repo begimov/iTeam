@@ -23,6 +23,7 @@ export default {
   getInvoice({ commit, state }, orderId) {
     commit('setIsLoading', true)
     api.invoice.getInvoice(state.params, orderId).then(res => {
+      console.log(res.data.url)
       commit('setIsLoading', false)
     }).catch(err => {
       commit('setErrors', err.response.data)
