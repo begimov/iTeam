@@ -13,6 +13,8 @@ use App\Http\Requests\Webapi\Payments\InvoiceStoreRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+use App\Repositories\Eloquent\Criteria\With;
+
 class InvoiceController extends Controller
 {
     protected $businessEntities;
@@ -50,7 +52,9 @@ class InvoiceController extends Controller
     {
         $data = $request->all();
 
-        $order = $this->orders->findById($orderId);
+        $order = $this->orders->withCriteria([
+            new With(['product'])
+        ])->findById($orderId);
 
         $businessEntity = $this->businessEntities->findById($data['company']['business_entity_id']);
 
