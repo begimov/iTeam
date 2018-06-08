@@ -64,7 +64,19 @@ class InvoiceController extends Controller
 
     public function show($fileName)
     {
-        dd($fileName);
+        $path = config('orders.invoices.storage_dir_prefix') . Auth::id() . '/' . $fileName;
+
+        if (!Storage::disk('local')->exists($path)) {
+            abort(404);
+        }
+
+        return response()->download(
+            storage_path('app/' . $path), 
+            $fileName, 
+            [
+                "Content-Type" => Storage::disk('local')->mimeType($path)
+            ]
+        );
     }
 
     protected function prepareInvoiceData($request, $orderId)
