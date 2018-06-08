@@ -50,6 +50,18 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request, $orderId)
     {
+        list($data, $order, $businessEntity) = $this->prepareInvoiceData($request, $orderId);
+
+        Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
+
+        $fileName = generateOrderNumber($order->id) . '_iteam_invoice.pdf';
+        
+        \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
+            ->save(storage_path('app/' . $directory . '/' . $fileName));
+    }
+
+    protected function prepareInvoiceData($request, $orderId)
+    {
         $data = $request->all();
 
         $order = $this->orders->withCriteria([
@@ -58,11 +70,8 @@ class InvoiceController extends Controller
 
         $businessEntity = $this->businessEntities->findById($data['company']['business_entity_id']);
 
-        Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
-
-        $fileName = generateOrderNumber($order->id) . '_iteam_invoice.pdf';
-        
-        \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
-            ->save(storage_path('app/' . $directory . '/' . $fileName));
+        return [
+            $data, $order, $businessEntity
+        ];
     }
 }
