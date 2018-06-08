@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Заказ № {{ $order->id }}</title>
+		<title>Заказ № {{ generateOrderNumber($order->id) }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<style>
 			body {
@@ -47,7 +47,7 @@
 			</tbody>
 		</table>
 		<br>
-		<h2 style="font-size: 18px">СЧЕТ-ДОГОВОР ОФЕРТА № {{ $order->id }} от {{ now()->format('d/m/Y') }}</h2>
+		<h2 style="font-size: 18px">СЧЕТ-ДОГОВОР ОФЕРТА № {{ generateOrderNumber($order->id) }} от {{ now()->format('d/m/Y') }}</h2>
 		<p>Исполнитель: ООО &quot;АйТим Менеджмент&quot;, ИНН 7703381761, КПП 770301001<br />
 		Юридический адрес 123112, г. Москва, Пресненская набережная, дом 12,<br />
 		ММДЦ &quot;Москва Сити&quot;, башня &quot;Федерация ВОСТОК&quot;, этаж 29, офис &quot;А 28&quot;<br />
