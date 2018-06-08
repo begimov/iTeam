@@ -59,8 +59,10 @@ class InvoiceController extends Controller
         $businessEntity = $this->businessEntities->findById($data['company']['business_entity_id']);
 
         Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
+
+        $fileName = generateOrderNumber($order->id) . '_iteam_invoice.pdf';
         
         \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
-            ->save(storage_path('app/' . $directory . '/temp.pdf'));
+            ->save(storage_path('app/' . $directory . '/' . $fileName));
     }
 }
