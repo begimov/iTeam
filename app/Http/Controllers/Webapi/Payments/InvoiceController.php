@@ -52,12 +52,10 @@ class InvoiceController extends Controller
     {
         list($data, $order, $businessEntity) = $this->prepareInvoiceData($request, $orderId);
 
-        Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
+        Storage::makeDirectory($directory = config('orders.invoices.storage_dir_prefix') . Auth::id());
 
-        $fileName = generateOrderNumber($order->id) . '_iteam_invoice.pdf';
-        
         \PDF::loadView('payments.invoice.pdf', compact('data', 'order', 'businessEntity'))
-            ->save(storage_path('app/' . $directory . '/' . $fileName));
+            ->save(storage_path('app/' . $directory . '/' . $this->getInvoiceFilename($order->id)));
     }
 
     protected function prepareInvoiceData($request, $orderId)
@@ -73,5 +71,10 @@ class InvoiceController extends Controller
         return [
             $data, $order, $businessEntity
         ];
+    }
+
+    protected function getInvoiceFilename($orderId)
+    {
+        return generateOrderNumber($orderId) . config('orders.invoices.pdf_filename_postfix');
     }
 }
