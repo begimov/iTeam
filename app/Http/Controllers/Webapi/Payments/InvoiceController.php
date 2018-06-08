@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Transformers\Users\BusinessEntityTransformer;
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
+use App\Repositories\Contracts\Products\OrderRepository;
 
 use App\Http\Requests\Webapi\Payments\InvoiceStoreRequest;
 use Illuminate\Support\Facades\Auth;
@@ -16,9 +17,12 @@ class InvoiceController extends Controller
 {
     protected $businessEntities;
 
-    public function __construct(BusinessEntityRepository $businessEntities)
+    protected $orders;
+
+    public function __construct(BusinessEntityRepository $businessEntities, OrderRepository $orders)
     {
         $this->businessEntities = $businessEntities;
+        $this->orders = $orders;
     }
 
     /**
@@ -42,10 +46,11 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InvoiceStoreRequest $request)
+    public function store(InvoiceStoreRequest $request, $orderId)
     {
+        dd($orderId);
         $data = $request->all();
-        
+
         Storage::makeDirectory($directory = 'invoices/users/id_' . Auth::id());
         
         \PDF::loadView('payments.invoice.pdf', compact('data'))
