@@ -12908,7 +12908,6 @@ exports.default = {
 
     commit('setIsLoading', true);
     _api2.default.invoice.getInvoice(state.params, orderId).then(function (res) {
-      console.log(res.data.url);
 
       var a = document.createElement("a");
       document.body.appendChild(a);

@@ -23,13 +23,12 @@ export default {
   getInvoice({ commit, state }, orderId) {
     commit('setIsLoading', true)
     api.invoice.getInvoice(state.params, orderId).then(res => {
-      console.log(res.data.url)
 
-      const a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style = "display: none";
-      a.href = res.data.url;
-      a.click();
+      const a = document.createElement("a")
+      document.body.appendChild(a)
+      a.style = "display: none"
+      a.href = res.data.url
+      a.click()
 
       commit('setIsLoading', false)
     }).catch(err => {
