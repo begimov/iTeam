@@ -33,7 +33,6 @@
         </template>
 
         <order-payment 
-            :order="this.paymentOrder" 
             v-if="this.paymentOrder" />
     </div>
 </template>

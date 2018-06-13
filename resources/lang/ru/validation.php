@@ -148,6 +148,22 @@ return [
     'exception_errors' => [
         'check_your_data' => 'Пожалуйста проверьте правильность введенных данных',
         '404' => 'К сожалению, запрашиваемая страница не найдена.',
-    ]
+    ],
+
+    // Custom messages
+    'store-invoice-request' => [
+        'companyName' => [
+            'required' => 'Введите название компании'
+        ],
+        'companyBusinessEntityId' => [
+            'required' => 'Укажите ОПФ компании'
+        ],
+        'username' => [
+            'required' => 'Введите ваше имя'
+        ],
+        'userProfilePhone' => [
+            'required' => 'Введите ваш телефон'
+        ],
+    ],
 
 ];

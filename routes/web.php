@@ -35,8 +35,13 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
-    // Route for Profile.vue component
-    Route::post('orders/payment/signature', 'Products\OrderController@getPaymentSignature');
+    // Payment routes
+    Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');
+    Route::get('orders/payments/invoices/create', 'Payments\InvoiceController@create');
+    Route::post('orders/{id}/payments/invoices', 'Payments\InvoiceController@store');
+    Route::get('orders/payments/invoices/{fileName}', 'Payments\InvoiceController@show')->name('orders.invoices.show');
+    
+    // Dashboard routes
     Route::resource('orders', 'Products\OrderController');
     Route::resource('files', 'Content\FileController');
 });

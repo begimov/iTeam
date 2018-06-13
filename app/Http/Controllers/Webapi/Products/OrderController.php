@@ -12,17 +12,13 @@ use App\Transformers\Products\OrderTransformer;
 use App\Repositories\Contracts\Products\OrderRepository;
 use App\Repositories\Eloquent\Criteria\With;
 
-use App\Services\Payments\Contracts\IWalletOne;
-
 class OrderController extends Controller
 {
     protected $orders;
-    protected $walletOne;
 
-    public function __construct(OrderRepository $orders, IWalletOne $walletOne)
+    public function __construct(OrderRepository $orders)
     {
         $this->orders = $orders;
-        $this->walletOne = $walletOne;
     }
 
     /**
@@ -124,20 +120,5 @@ class OrderController extends Controller
         if (!$order->isPaid()) {
             $this->orders->destroy($order);
         }
-    }
-
-    /**
-     * Get payment signature.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getPaymentSignature(Request $request)
-    {
-        return response()->json([
-            'status' => 'OK',
-            'data' => [
-                'WMI_SIGNATURE' => $this->walletOne->generatePaymentSignature($request->all())
-            ]
-        ]);
     }
 }

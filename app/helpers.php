@@ -28,3 +28,10 @@ if (!function_exists('getProductPrice')) {
 		return $priceTag->price;
 	}
 }
+
+if (!function_exists('generateOrderNumber')) {
+	function generateOrderNumber($orderId)
+	{
+		return config('orders.base_order_number') + $orderId;
+	}
+}
