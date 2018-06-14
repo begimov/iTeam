@@ -43,3 +43,8 @@ body {
     -webkit-box-shadow: none; 
     -moz-box-shadow: none;
 }
+
+/* QUILL EDITOR */
+.ql-align-center {
+    @extend .text-center;
+}
