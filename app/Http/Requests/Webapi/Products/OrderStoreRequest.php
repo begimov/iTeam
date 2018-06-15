@@ -25,7 +25,7 @@ class OrderStoreRequest extends FormRequest
     {
         return [
             'product_id' => 'required|integer|exists:products,id',
-            'price_tag_id' => 'sometimes|required|integer|exists:price_tags,id',
+            'price_tag_id' => 'sometimes|nullable|integer|exists:price_tags,id',
             'quantity' => 'sometimes|required|integer|min:1'
         ];
     }
