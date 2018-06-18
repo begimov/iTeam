@@ -9,7 +9,7 @@
                 <p class="card-text lead font-weight-normal">{{ order.product.data.name }}</p>
                 <div v-if="!isPaid">
                     <p v-if="order.quantity > 1">{{ order.price }}&nbsp;руб. * {{ order.quantity }}&nbsp;шт.</p>
-                    <h3><span class="badge badge-primary">{{ order.price * order.quantity }}&nbsp;руб.</span></h3>
+                    <h3><span class="badge badge-primary">{{ order.total_price }}&nbsp;руб.</span></h3>
                 </div>
                 <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="openProduct">Материалы</a>
                 <template v-else>

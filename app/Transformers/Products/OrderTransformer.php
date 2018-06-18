@@ -16,6 +16,7 @@ class OrderTransformer extends \League\Fractal\TransformerAbstract
             'payment_type_id' => $order->payment_type_id,
             'price' => $order->price,
             'quantity' => $order->quantity,
+            'total_price' => $order->price * $order->quantity,
             'created_at_human' => $order->created_at->format('d/m/y, H:i'),
             'updated_at_human' => $order->updated_at->format('d/m/y, H:i'),
         ];

@@ -48908,7 +48908,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-text lead font-weight-normal"
   }, [_vm._v(_vm._s(_vm.order.product.data.name))]), _vm._v(" "), (!_vm.isPaid) ? _c('div', [(_vm.order.quantity > 1) ? _c('p', [_vm._v(_vm._s(_vm.order.price) + " руб. * " + _vm._s(_vm.order.quantity) + " шт.")]) : _vm._e(), _vm._v(" "), _c('h3', [_c('span', {
     staticClass: "badge badge-primary"
-  }, [_vm._v(_vm._s(_vm.order.price * _vm.order.quantity) + " руб.")])])]) : _vm._e(), _vm._v(" "), (_vm.isPaid) ? _c('a', {
+  }, [_vm._v(_vm._s(_vm.order.total_price) + " руб.")])])]) : _vm._e(), _vm._v(" "), (_vm.isPaid) ? _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
