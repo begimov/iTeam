@@ -49956,7 +49956,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card mb-2"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., пожалуйста заполните данные для выставления счета.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.total_price) + " руб., пожалуйста заполните данные для выставления счета.\n        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "row my-4"
   }, [_c('div', {
     staticClass: "col"
