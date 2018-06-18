@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
           <div class="col-sm-2">  
             <div class="form-group">
-              <input type="text" name="quantity" value="1" class="form-control">
+              <input type="number" min="1" step="1" name="quantity" value="1" class="form-control">
             </div>
           </div>
         </div>
