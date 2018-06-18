@@ -2,11 +2,12 @@
     <div class="col">
         <div class="card mb-2">
             <div class="card-body bg-dark text-white lead">
-                Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.price }}&nbsp;руб., сейчас вы&nbsp;будете перенаправлены на&nbsp;страницу платежного агрегатора WalletOne.
+                Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.total_price }}&nbsp;руб., сейчас вы&nbsp;будете перенаправлены на&nbsp;страницу платежного агрегатора WalletOne.
             </div>
         </div>
 
         <div class="text-center">
+            <h3><span class="badge badge-dark">{{ order.total_price }}&nbsp;руб.</span></h3>
             <form ref="woform" method="post" action="https://wl.walletone.com/checkout/checkout/Index">
                 <input type="hidden" name="WMI_MERCHANT_ID" v-model="walletOneOptions.WMI_MERCHANT_ID"/>
                 <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="walletOneOptions.WMI_PAYMENT_AMOUNT"/>

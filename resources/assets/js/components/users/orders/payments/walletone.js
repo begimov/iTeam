@@ -26,7 +26,7 @@ export default {
     mounted() {
         this.updateWalletOneOptions({
             WMI_MERCHANT_ID: config.payments.WMI_MERCHANT_ID,
-            WMI_PAYMENT_AMOUNT: this.order.price,
+            WMI_PAYMENT_AMOUNT: this.order.total_price,
             WMI_CURRENCY_ID: config.payments.WMI_CURRENCY_ID,
             WMI_PAYMENT_NO: this.order.id,
             WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',

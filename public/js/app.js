@@ -49554,7 +49554,7 @@ exports.default = {
     mounted: function mounted() {
         this.updateWalletOneOptions({
             WMI_MERCHANT_ID: _config2.default.payments.WMI_MERCHANT_ID,
-            WMI_PAYMENT_AMOUNT: this.order.price,
+            WMI_PAYMENT_AMOUNT: this.order.total_price,
             WMI_CURRENCY_ID: _config2.default.payments.WMI_CURRENCY_ID,
             WMI_PAYMENT_NO: this.order.id,
             WMI_DESCRIPTION: 'iTeam: "' + this.order.product.data.name + '"',
@@ -49616,9 +49616,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card mb-2"
   }, [_c('div', {
     staticClass: "card-body bg-dark text-white lead"
-  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n        ")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            Вы выбрали продукт «" + _vm._s(this.order.product.data.name) + "», к оплате — " + _vm._s(this.order.total_price) + " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора WalletOne.\n        ")])]), _vm._v(" "), _c('div', {
     staticClass: "text-center"
-  }, [_c('form', {
+  }, [_c('h3', [_c('span', {
+    staticClass: "badge badge-dark"
+  }, [_vm._v(_vm._s(_vm.order.total_price) + " руб.")])]), _vm._v(" "), _c('form', {
     ref: "woform",
     attrs: {
       "method": "post",
