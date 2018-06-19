@@ -9524,11 +9524,13 @@ a.bg-dark:hover {
   text-align: left !important;
 }
 
-.text-right {
+.text-right,
+.ql-align-right {
   text-align: right !important;
 }
 
-.text-center {
+.text-center,
+.ql-align-center {
   text-align: center !important;
 }
 
@@ -11033,6 +11035,8 @@ row:after {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
+
+/* QUILL EDITOR */
 
 .promo {
   background-image: url("/img/home/promo_bg.jpg");

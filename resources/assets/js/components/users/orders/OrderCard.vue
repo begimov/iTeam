@@ -7,7 +7,10 @@
             <!-- <img class="card-img-top" src="https://iteam.ru/landing/template/img/mp_ychet.png"> -->
             <div class="card-body">
                 <p class="card-text lead font-weight-normal">{{ order.product.data.name }}</p>
-                <h3 v-if="!isPaid"><span class="badge badge-primary">{{ order.price }}&nbsp;руб.</span></h3>
+                <div v-if="!isPaid">
+                    <p v-if="order.quantity > 1">{{ order.price }}&nbsp;руб. * {{ order.quantity }}&nbsp;шт.</p>
+                    <h3><span class="badge badge-primary">{{ order.total_price }}&nbsp;руб.</span></h3>
+                </div>
                 <a href="#" class="btn btn-primary" v-if="isPaid" @click.prevent="openProduct">Материалы</a>
                 <template v-else>
                     <a href="#" class="btn btn-dark" @click.prevent="orderPayment">Оплатить</a>

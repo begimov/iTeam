@@ -32,8 +32,9 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
             ],
             [
                 'price' => isset($data['price_tag_id']) 
-                    ? $product->priceTags->where('id', $data['price_tag_id'])->first()->price
-                    : $product->price
+                    ? $product->priceTags->find($data['price_tag_id'])->price
+                    : $product->price,
+                'quantity' => $data['quantity'] ?? 1
             ]
         );
     }

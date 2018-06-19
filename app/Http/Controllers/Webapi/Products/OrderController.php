@@ -12,6 +12,8 @@ use App\Transformers\Products\OrderTransformer;
 use App\Repositories\Contracts\Products\OrderRepository;
 use App\Repositories\Eloquent\Criteria\With;
 
+use App\Http\Requests\Webapi\Products\OrderStoreRequest;
+
 class OrderController extends Controller
 {
     protected $orders;
@@ -57,7 +59,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderStoreRequest $request)
     {
         $this->orders->store($request->all());
         return redirect()->route('user.dashboard.index');
