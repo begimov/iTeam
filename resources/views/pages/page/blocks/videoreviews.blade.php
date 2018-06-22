@@ -1,4 +1,4 @@
-<div class="row text-center mt-5">
+<div class="row text-center my-4">
     <div class="col">
         <h3>Отзывы наших участников:</h3>
     </div>

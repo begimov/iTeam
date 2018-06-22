@@ -1,4 +1,4 @@
-<div class="row my-5">
+<div class="row my-4">
   <div class="col text-center">
     <h2>{{ getProductPrice($element->data['product']) }}~</h2>
     <p>
