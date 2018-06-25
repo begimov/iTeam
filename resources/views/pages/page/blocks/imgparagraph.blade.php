@@ -1,5 +1,6 @@
 <div class="row my-4">
-  <div class="col-md-4 text-center text-md-left">
+  <div class="{{ 'col-md-4 text-center text-md-left'
+    .((isset($element->data['reversed']) && $element->data['reversed']) ? ' order-md-last' : '') }}">
     <img src="{{ getElementsFilePath($element, 'img1') }}" class="img-fluid">
   </div>
 
