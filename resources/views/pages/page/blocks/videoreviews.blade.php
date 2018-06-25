@@ -1,6 +1,6 @@
 <div class="row text-center my-4">
     <div class="col">
-        <h3>Отзывы наших участников:</h3>
+        <h2>Отзывы наших участников:</h2>
     </div>
 </div>
 <div class="row text-center mb-5">
