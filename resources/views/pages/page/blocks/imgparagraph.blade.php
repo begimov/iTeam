@@ -4,7 +4,7 @@
   </div>
 
   @if(isset($element->data['isCard']) && $element->data['isCard'])
-  <div class="col-md-8 align-self-center lead">
+  <div class="col-md-8 align-self-center lead mt-4 mt-sm-4">
     <div class="card card-default">
       <div class="card-body">
         {!! $element->data['text'] !!}
@@ -12,7 +12,7 @@
     </div>
   </div>
   @else
-  <div class="col-md-8 align-self-center lead">
+  <div class="col-md-8 align-self-center lead mt-4 mt-sm-4">
     {!! $element->data['text'] !!}
   </div>
   @endif
