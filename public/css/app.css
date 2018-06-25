@@ -11961,3 +11961,13 @@ row:after {
   background-size: cover;
 }
 
+.page-container h1,
+.page-container h2 {
+  font-family: serif;
+}
+
+.page-container h1 p,
+.page-container h2 p {
+  color: red;
+}
+
