@@ -1,5 +1,5 @@
 <div class="row my-4">
-  <div class="col-md-4">
+  <div class="col-md-4 text-center text-md-left">
     <img src="{{ getElementsFilePath($element, 'img1') }}" class="img-fluid">
   </div>
 
