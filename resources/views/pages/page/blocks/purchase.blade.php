@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row my-5 justify-content-center">
+  <div class="row my-4 justify-content-center">
     <div class="col-lg-4 col-md-6 col-sm-8 text-center">
       <div class="card purchase-card">
         <div class="card-header bg-dark text-light"></div>

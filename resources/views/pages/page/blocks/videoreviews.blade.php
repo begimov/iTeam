@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row text-center my-4">
+<div class="container mb-4">
+    <div class="row text-center mt-5">
         <div class="col">
             <h2>Отзывы наших участников:</h2>
         </div>
