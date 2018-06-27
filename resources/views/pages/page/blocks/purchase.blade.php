@@ -4,7 +4,7 @@
       <div class="card purchase-card">
         <div class="card-header bg-dark text-light"></div>
         <div class="card-body">
-          <h2><span class="badge badge-success price-badge">{{ getProductPrice($element->data['product']) }}~</span></h2>
+          <h2><span class="badge badge-info price-badge">{{ getProductPrice($element->data['product']) }}~</span></h2>
           <form action="{{ route('orders.store') }}" method="POST">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $element->data['product']['productId'] }}">
