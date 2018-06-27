@@ -11978,6 +11978,10 @@ row:after {
   font-family: 'Lora', serif;
 }
 
+.page-container .subtitle {
+  font-family: 'PT Sans', sans-serif;
+}
+
 .title-container {
   background-image: url("/img/home/promo_bg.jpg");
   background-size: cover;
