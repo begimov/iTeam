@@ -11987,3 +11987,12 @@ row:after {
   background-size: cover;
 }
 
+.purchase-card {
+  -webkit-box-shadow: 0 0 10px #dddddd;
+          box-shadow: 0 0 10px #dddddd;
+}
+
+.price-badge {
+  font-size: 105%;
+}
+
