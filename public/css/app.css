@@ -11961,3 +11961,20 @@ row:after {
   background-size: cover;
 }
 
+.page-container {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 110%;
+}
+
+.page-container strong {
+  font-weight: 700;
+}
+
+.page-container h1,
+.page-container h2,
+.page-container h3,
+.page-container h4,
+.page-container h5 {
+  font-family: 'Lora', serif;
+}
+
