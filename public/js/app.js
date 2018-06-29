@@ -51387,7 +51387,9 @@ exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['order', 'selectedPaymentTypeId', 'paymentTypes'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
-        //
+        if (this.order.total_price > 400) {
+            this.selectPaymentType(2);
+        }
     }
 };
 
