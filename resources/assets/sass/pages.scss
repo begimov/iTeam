@@ -7,4 +7,22 @@
     h1, h2, h3, h4, h5 {
         font-family: 'Lora', serif;
     }
+    .subtitle {
+        font-family: 'PT Sans', sans-serif;
+    }
+}
+
+// BLOCKS
+// Title
+.title-container {
+    background-image: url('/img/home/promo_bg.jpg');
+    background-size: cover;
+}
+
+// Purchase
+.purchase-card {
+    box-shadow: 0 0 10px #dddddd;
+}
+.price-badge {
+    font-size: 105%;
 }
