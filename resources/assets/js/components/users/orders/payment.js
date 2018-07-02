@@ -15,6 +15,8 @@ export default {
         ]),
     },
     mounted() {
-        //
+        if (this.order.total_price > 5000) {
+            this.selectPaymentType(2)
+        }
     }
 };

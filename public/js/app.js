@@ -26522,7 +26522,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Единый кошелек', decs: '' }, { id: 2, name: 'Счет на Юр. лицо', decs: '' }]
+    paymentTypes: [{ id: 1, name: 'Оплата онлайн', decs: '' }, { id: 2, name: 'Счет на Юр. лицо', decs: '' }]
 };
 
 /***/ }),
@@ -51387,7 +51387,9 @@ exports.default = {
     computed: _extends({}, (0, _vuex.mapGetters)('users/payment', ['order', 'selectedPaymentTypeId', 'paymentTypes'])),
     methods: _extends({}, (0, _vuex.mapActions)('users/payment', ['closePayment', 'selectPaymentType'])),
     mounted: function mounted() {
-        //
+        if (this.order.total_price > 5000) {
+            this.selectPaymentType(2);
+        }
     }
 };
 
