@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="col">
+      <div class="col">
+
+        <ul class="nav nav-tabs nav-tabs-links" id="myTab" role="tablist">
+          @foreach ($element->data['reviews'] as $key => $review)
+            <li class="nav-item">
+              <a class="nav-link{{ $key === 0 ? ' active' : '' }}" id="{{ $key }}-tab" data-toggle="tab" href="#{{ $key }}" role="tab" aria-controls="{{ $key }}" aria-selected="false">Этап&nbsp;№{{ $key + 1 }}</a>
+            </li>
+          @endforeach
+        </ul>
+        
+        <div class="tab-content" id="myTabContent">
+
+          @foreach ($element->data['reviews'] as $key => $review)
+            <div class="tab-pane fade{{ $key === 0 ? ' show active' : '' }}" id="{{ $key }}" role="tabpanel" aria-labelledby="{{ $key }}-tab">
+                <div class="card">
+                  <h5 class="card-header bg-white">{{$review['name']}}</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      {!! $review['text'] !!}
+                    </p>
+                  </div>
+                </div>
+            </div>
+          @endforeach
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
