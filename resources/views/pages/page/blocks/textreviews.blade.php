@@ -1,34 +1,17 @@
-<div class="container">
-  <div class="row my-4">
+<div class="container my-5">
+  <div class="row text-center">
     <div class="col">
-      <div class="col">
-
-        <ul class="nav nav-tabs nav-tabs-links" id="myTab" role="tablist">
-          @foreach ($element->data['reviews'] as $key => $review)
-            <li class="nav-item">
-              <a class="nav-link{{ $key === 0 ? ' active' : '' }}" id="{{ $key }}-tab" data-toggle="tab" href="#{{ $key }}" role="tab" aria-controls="{{ $key }}" aria-selected="false">Этап&nbsp;№{{ $key + 1 }}</a>
-            </li>
-          @endforeach
-        </ul>
-        
-        <div class="tab-content" id="myTabContent">
-
-          @foreach ($element->data['reviews'] as $key => $review)
-            <div class="tab-pane fade{{ $key === 0 ? ' show active' : '' }}" id="{{ $key }}" role="tabpanel" aria-labelledby="{{ $key }}-tab">
-                <div class="card">
-                  <h5 class="card-header bg-white">{{$review['name']}}</h5>
-                  <div class="card-body">
-                    <p class="card-text">
-                      {!! $review['text'] !!}
-                    </p>
-                  </div>
-                </div>
-            </div>
-          @endforeach
-
-        </div>
-
-      </div>
+        <h2>Отзывы наших участников:</h2>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      @foreach ($element->data['reviews'] as $key => $review)
+        <blockquote class="blockquote">
+          <p class="mb-0">{!! $review['text'] !!}</p>
+          <footer class="blockquote-footer mb-4">{{$review['name']}}</footer>
+        </blockquote>
+      @endforeach
     </div>
   </div>
 </div>
