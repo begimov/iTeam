@@ -6,6 +6,8 @@
         <div class="card-body">
           @if(($productPrice = getProductPrice($element->data['product'])) > 0)
             <h2><span class="badge badge-info price-badge">{{ $productPrice }}~</span></h2>
+          @else
+            <h3><span class="badge badge-info price-badge">БЕСПЛАТНО</span></h3>
           @endif
           <form action="{{ route('orders.store') }}" method="POST">
             {{ csrf_field() }}
