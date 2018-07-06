@@ -1,5 +1,5 @@
 <?php
-if (!function_exists('getElementsFile')) {
+if (!function_exists('getElementsFilePath')) {
 	function getElementsFilePath($element, $fileTag)
 	{
 		$file = $element->files->where('id', $element->data['files'][$fileTag])->first();
