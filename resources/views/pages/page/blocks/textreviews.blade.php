@@ -6,10 +6,10 @@
   </div>
   @foreach ($element->data['reviews'] as $key => $review)
     <div class="row mt-4">
-      <div class="col-md-1 col-sm-2">
-        <img src="{{ getElementsFilePath($element, 'avatar') }}" class="img-fluid rounded">
+      <div class="col-md-2 col-sm-3 col-4">
+        <img src="{{ getElementsFilePath($review, 'avatar') }}" class="img-fluid rounded-circle">
       </div>
-      <div class="col-md-11 col-sm-10">
+      <div class="col-md-10 col-sm-9 col-8">
         <blockquote class="blockquote">
           <p class="mb-0">{!! $review['text'] !!}</p>
           <footer class="blockquote-footer mb-4">{{$review['name']}}</footer>
