@@ -4,6 +4,7 @@
   @include('layouts.partials._head')
 </head>
 <body class="bg-light">
+  @yield('scripts')
   <div id="app">
     <div v-cloak>
       @include('layouts.partials._header')
