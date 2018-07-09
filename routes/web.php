@@ -20,7 +20,7 @@ Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
 }); 
 
 // Free products
-Route::group(['prefix' => 'products', 'namespace' => 'Products'], function () {
+Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' => 'Products'], function () {
     Route::get('{product}', 'ProductController@show')->name('products.show');
 }); 
 
