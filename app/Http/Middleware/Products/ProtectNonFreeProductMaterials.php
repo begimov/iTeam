@@ -16,7 +16,7 @@ class ProtectNonFreeProductMaterials
     public function handle($request, Closure $next)
     {
         $product = $request->route('product');
-        dd($product);
+        dd($product->isFree());
         return $next($request);
     }
 }

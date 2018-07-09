@@ -25,4 +25,9 @@ class Product extends Model
     {
         return $this->hasMany(PriceTag::class);
     }
+
+    public function isFree()
+    {
+        return $this->price == 0;
+    }
 }
