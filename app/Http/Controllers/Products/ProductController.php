@@ -10,6 +10,8 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        dd($product);
+        $product->load('materials', 'materials.files', 'materials.resources');
+        
+        return view('products.product.show', compact('product'));
     }
 }
