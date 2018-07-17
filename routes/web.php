@@ -22,6 +22,7 @@ Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
 // Free products
 Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' => 'Products'], function () {
     Route::get('{product}', 'ProductController@show')->name('products.show');
+    Route::get('{product}/materials/{material}/files/{file}', 'ProductController@download');
 }); 
 
 // User dashboard & profile
