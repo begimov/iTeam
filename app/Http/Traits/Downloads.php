@@ -4,9 +4,9 @@ namespace App\Http\Traits;
 
 use Storage;
 
-trait Downloadable
+trait Downloads
 {
-    protected function downloadMaterialFile()
+    protected function downloadMaterialFile($file)
     {
         $path = config('urls.files.materials_files') . $file->material->id . '/' . $file->name;
 
