@@ -12,7 +12,7 @@ use App\Http\Traits\Downloads;
 class ProductController extends Controller
 {
     use Downloads;
-    
+
     public function show(Product $product)
     {
         $product->load('materials', 'materials.files', 'materials.resources');
@@ -22,6 +22,6 @@ class ProductController extends Controller
 
     public function download(Product $product, $materialId, File $file)
     {
-        dd($product, $materialId, $file);
+        return $this->downloadMaterialFile($file);
     }
 }
