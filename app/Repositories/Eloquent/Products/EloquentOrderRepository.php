@@ -25,18 +25,17 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
     {
         $product = Product::with(['priceTags'])->find($data['product_id']);
 
-        $order = Order::updateOrCreate(
-            [
-                'user_id' => auth()->user()->id,
-                'product_id' => $data['product_id']
-            ],
-            [
-                'price' => isset($data['price_tag_id']) 
-                    ? $product->priceTags->find($data['price_tag_id'])->price
-                    : $product->price,
-                'quantity' => $data['quantity'] ?? 1
-            ]
-        );
+        $order = Order::create([
+            'user_id' => auth()->user()->id,
+            'product_id' => $data['product_id'],
+            'price' => isset($data['price_tag_id']) 
+                ? $orderPrice = $product->priceTags->find($data['price_tag_id'])->price
+                : $orderPrice = $product->price,
+            'quantity' => $data['quantity'] ?? 1,
+            'payment_state_id' => ($orderPrice == 0) 
+                ? config('orders.payed_payment_state_id') 
+                : config('orders.unpaid_payment_state_id')
+        ]);
     }
 
     public function destroy(Order $order)

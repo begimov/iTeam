@@ -19,6 +19,12 @@ Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
     Route::get('{page}', 'PageController@show')->name('pages.show');
 }); 
 
+// Free products
+Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' => 'Products'], function () {
+    Route::get('{product}', 'ProductController@show')->name('products.show');
+    Route::get('{product}/materials/{material}/files/{file}', 'ProductController@download');
+}); 
+
 // User dashboard & profile
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users', 'as' => 'user.'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');

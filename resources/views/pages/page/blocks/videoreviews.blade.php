@@ -1,7 +1,7 @@
 <div class="container mb-4">
     <div class="row text-center mt-5">
         <div class="col">
-            <h2>Отзывы наших участников:</h2>
+            <h2>Видео отзывы наших участников:</h2>
         </div>
     </div>
     <div class="row text-center mb-5">
