@@ -49614,7 +49614,7 @@ var render = function() {
         _vm._v(_vm._s(_vm.title))
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "mb-2 lead" }, [_vm._v(_vm._s(_vm.description))]),
+      _c("p", { staticClass: "mb-3 lead" }, [_vm._v(_vm._s(_vm.description))]),
       _vm._v(" "),
       _c(
         "form",

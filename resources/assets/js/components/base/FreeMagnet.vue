@@ -2,7 +2,7 @@
     <div :class="{ 'text-center': layoutType === 'horizontal' }">
 
         <h2 class="font-weight-bold text-primary mb-2">{{ title }}</h2>
-        <p class="mb-2 lead">{{ description }}</p>
+        <p class="mb-3 lead">{{ description }}</p>
 
         <form action="/grform/payment" method="get" id="grForm" @submit.prevent="register">
 
