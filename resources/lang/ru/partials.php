@@ -28,6 +28,7 @@ return [
         'social_networks'   => 'Соц. сети',
         'sn_subscribe'   => 'Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях',
         'payment_order'   => 'порядок оплаты',
+        'we_answer_all_questions' => 'Мы с удовольствием ответим на все ваши вопросы:'
     ],
     'contact' => [
         'support_email' => 'support@iteam.ru'

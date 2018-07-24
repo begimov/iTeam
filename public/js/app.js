@@ -49610,11 +49610,11 @@ var render = function() {
     "div",
     { class: { "text-center": _vm.layoutType === "horizontal" } },
     [
-      _c("h2", { staticClass: "font-weight-bold text-primary mb-1" }, [
+      _c("h2", { staticClass: "font-weight-bold text-primary mb-2" }, [
         _vm._v(_vm._s(_vm.title))
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "mb-2 lead" }, [_vm._v(_vm._s(_vm.description))]),
+      _c("p", { staticClass: "mb-3 lead" }, [_vm._v(_vm._s(_vm.description))]),
       _vm._v(" "),
       _c(
         "form",
@@ -49633,7 +49633,7 @@ var render = function() {
               "div",
               { class: { "col-md-4": _vm.layoutType === "horizontal" } },
               [
-                _c("div", { staticClass: "form-group mb-2" }, [
+                _c("div", { staticClass: "form-group mb-3" }, [
                   _c("input", {
                     directives: [
                       {
@@ -49676,7 +49676,7 @@ var render = function() {
               "div",
               { class: { "col-md-4": _vm.layoutType === "horizontal" } },
               [
-                _c("div", { staticClass: "form-group mb-2" }, [
+                _c("div", { staticClass: "form-group mb-3" }, [
                   _c("input", {
                     directives: [
                       {
@@ -49723,7 +49723,7 @@ var render = function() {
               "div",
               { class: { "col-md-4": _vm.layoutType === "horizontal" } },
               [
-                _c("div", { staticClass: "form-group mb-2" }, [
+                _c("div", { staticClass: "form-group mb-3" }, [
                   _c("input", {
                     directives: [
                       {
@@ -49811,7 +49811,10 @@ var render = function() {
           !_vm.isLoading
             ? _c(
                 "button",
-                { staticClass: "btn btn-primary", attrs: { id: "grFormBtn" } },
+                {
+                  staticClass: "btn btn-primary btn-lg",
+                  attrs: { id: "grFormBtn" }
+                },
                 [_vm._v(_vm._s(_vm.buttonText))]
               )
             : _vm._e()
