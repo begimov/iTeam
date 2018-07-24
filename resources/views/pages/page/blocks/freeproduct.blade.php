@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row my-4">
+  <div class="row my-5">
     <div class="col">
       <free-magnet 
         title="ПОЛУЧИТЬ БЕСПЛАТНО"
