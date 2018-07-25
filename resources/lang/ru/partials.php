@@ -2,7 +2,7 @@
 
 return [
     'header' => [
-        'phone' => '(499) 110-2684',
+        'phone' => '+7 (499) 110-26-84',
         'email' => 'info@iteam.ru',
         'signin' => 'Войти',
         'registration' => 'Регистрация',
