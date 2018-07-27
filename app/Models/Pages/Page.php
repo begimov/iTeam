@@ -31,4 +31,14 @@ class Page extends Model
     {
         return $this->hasMany(Element::class)->orderBy('sort_order', 'asc');
     }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
