@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Модель Русского Менеджмента</title>
+@endsection
+
 @section('content')
     @include ('company.rm.partials._rmsubnav')
     <!-- TOP -->
