@@ -12,7 +12,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h3><a href="{{ route('pages.show', $page->id) }}">{{ $page->name }}</a></h3>
+                            <h3><a href="{{ route('pages.show', $page->slug) }}">{{ $page->name }}</a></h3>
                             <p class="lead m-0">{{ $page->description }}</p>
                         </div>
                     </div>
