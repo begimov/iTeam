@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Пользовательское соглашение</title>
+@endsection
+
 @section('content')
     <div class="container my-5">
         <div class="row">

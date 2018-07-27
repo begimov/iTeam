@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>О Консалтинговой компании iTeam</title>
+@endsection
+
 @section('content')
      <!-- TOP -->
      <div class="container-fluid">
