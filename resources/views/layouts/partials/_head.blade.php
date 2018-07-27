@@ -7,6 +7,6 @@
 <link href="https://fonts.googleapis.com/css?family=Lora:700&amp;subset=cyrillic" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 
-<title>{{ config('app.name', 'Laravel') }}</title>
+@yield('title')
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
