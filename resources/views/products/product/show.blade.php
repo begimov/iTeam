@@ -35,7 +35,7 @@
                                         <li>
                                             <a href="{{ '/products/' . $product->id 
                                                 . '/materials/' . $material->id 
-                                                . '/files/' . $file->id }}">{{ $file->name }}</a> - {{ round($file->size/1024) }} Kb
+                                                . '/files/' . $file->id }}">{{ $file->original_name ?: $file->name }}</a> - {{ round($file->size/1024) }} Kb
                                         </li>
                                     @endforeach
                                 </ul>
