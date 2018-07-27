@@ -19,6 +19,7 @@ class FileTransformer extends \League\Fractal\TransformerAbstract
             'id' => $file->id,
             'name' => $file->name,
             'size' => $file->size,
+            'original_name' => $file->original_name,
         ];
     }
 }

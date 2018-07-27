@@ -52523,7 +52523,15 @@ var render = function() {
                               _c(
                                 "a",
                                 { attrs: { href: "webapi/files/" + file.id } },
-                                [_vm._v(_vm._s(file.name))]
+                                [
+                                  _vm._v(
+                                    _vm._s(
+                                      file.original_name
+                                        ? file.original_name
+                                        : file.name
+                                    )
+                                  )
+                                ]
                               ),
                               _vm._v(
                                 " - " +

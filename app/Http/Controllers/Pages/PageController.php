@@ -11,7 +11,7 @@ use App\Models\Pages\Page;
 use App\Models\Pages\Category;
 
 use App\Repositories\Eloquent\Criteria\With;
-use App\Repositories\Eloquent\Criteria\OrWhere;
+use App\Repositories\Eloquent\Criteria\Where;
 
 use App\Repositories\Contracts\Pages\CategoryRepository;
 
@@ -30,8 +30,12 @@ class PageController extends Controller
 
         $category = $this->categories->withCriteria([
             new With($relations),
-            new OrWhere('slug', $slug),
+            new Where('slug', $slug),
         ])->first();
+
+        if (!isset($category)) {
+            return abort(404);
+        }
 
         return view('pages.category.index', compact('category'));
     }

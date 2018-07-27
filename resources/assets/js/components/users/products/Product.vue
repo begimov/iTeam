@@ -18,7 +18,7 @@
                     <h3 class="mb-3">Материалы:</h3>
                     <ul>
                         <li v-for="file in material.files.data" :key="file.id">
-                            <a :href="'webapi/files/' + file.id">{{ file.name }}</a> - {{ Math.round(file.size/1024) }} Kb
+                            <a :href="'webapi/files/' + file.id">{{ file.original_name ? file.original_name : file.name }}</a> - {{ Math.round(file.size/1024) }} Kb
                         </li>
                     </ul>
                 </template>
