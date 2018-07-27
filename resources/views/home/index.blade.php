@@ -1,4 +1,10 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+
+@section('title')
+    <title>iTeam.ru - Стратегия. Бизнес-процессы. Оргструктура. Мотивация.</title>
+@endsection
+
+@section('content')
 <!-- TEASERS -->
 <div class="container-fluid p-0">
   <div class="row">
