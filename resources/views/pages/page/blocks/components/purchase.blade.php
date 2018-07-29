@@ -1,4 +1,4 @@
-<div class="card purchase-card">
+<div class="card purchase-card h-100">
     <div class="card-header bg-dark text-light text-center lead">
         @isset($element['data']['title'])
         {{ $element['data']['title'] }}
