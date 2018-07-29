@@ -1,25 +1,25 @@
 <div class="card purchase-card">
     <div class="card-header bg-dark text-light text-center lead">
-        @isset($element->data['product']['data']['title'])
-        {{ $element->data['product']['data']['title'] }}
+        @isset($element['data']['title'])
+        {{ $element['data']['title'] }}
         @endisset
     </div>
     <div class="card-body">
-        @isset($element->data['product']['data']['description'])
-        {!! $element->data['product']['data']['description'] !!}
+        @isset($element['data']['description'])
+        {!! $element['data']['description'] !!}
         <hr>
         @endisset
         <div class="text-center">
-        @if(($productPrice = getProductPrice($element->data['product'])) > 0)
+        @if(($productPrice = getProductPrice($element)) > 0)
             <h2><span class="badge badge-info price-badge">{{ $productPrice }}~</span></h2>
         @else
             <h3><span class="badge badge-info price-badge">БЕСПЛАТНО</span></h3>
         @endif
         <form action="{{ route('orders.store') }}" method="POST">
             {{ csrf_field() }}
-            <input type="hidden" name="product_id" value="{{ $element->data['product']['productId'] }}">
-            <input type="hidden" name="price_tag_id" value="{{ $element->data['product']['pricetagId'] }}">
-            @if($element->data['product']['isBundle'])
+            <input type="hidden" name="product_id" value="{{ $element['productId'] }}">
+            <input type="hidden" name="price_tag_id" value="{{ $element['pricetagId'] }}">
+            @if($element['isBundle'])
             <div class="row">
                 <div class="col">
                 <p>X</p>
