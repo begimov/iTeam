@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>@lang('auth.reset_password')</title>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

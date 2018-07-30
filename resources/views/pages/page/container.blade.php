@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>{{ $page->name }}</title>
+@endsection
+
 @section('content')
 <div class="container-fluid mb-5 p-0 page-container">
   @foreach ($page->elements as $element)
