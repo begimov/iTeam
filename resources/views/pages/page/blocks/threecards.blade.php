@@ -6,6 +6,11 @@
                     <div class="card-header bg-info">
                         <h5 class="mb-0 text-white">{!! $element->data['title1'] !!}</h5>
                     </div>
+                    @isset($element->data['files']['img1'])
+                        <div class="text-center p-2">
+                            <img src="{{ getElementsFilePath($element, 'img1') }}" width="50%" class="img-fluid rounded">
+                        </div>
+                    @endisset
                     <div class="card-body">
                         {!! $element->data['text1'] !!}
                     </div>
@@ -16,6 +21,11 @@
                     <div class="card-header bg-info">
                         <h5 class="mb-0 text-white">{!! $element->data['title2'] !!}</h5>
                     </div>
+                    @isset($element->data['files']['img2'])
+                        <div class="text-center p-2">
+                            <img src="{{ getElementsFilePath($element, 'img2') }}" width="50%" class="img-fluid rounded">
+                        </div>
+                    @endisset
                     <div class="card-body">
                         {!! $element->data['text2'] !!}
                     </div>
@@ -26,6 +36,11 @@
                     <div class="card-header bg-info">
                         <h5 class="mb-0 text-white">{!! $element->data['title3'] !!}</h5>
                     </div>
+                    @isset($element->data['files']['img3'])
+                        <div class="text-center p-2">
+                            <img src="{{ getElementsFilePath($element, 'img3') }}" width="50%" class="img-fluid rounded">
+                        </div>
+                    @endisset
                     <div class="card-body">
                         {!! $element->data['text3'] !!}
                     </div>
