@@ -7,7 +7,7 @@
   @foreach ($element->data['reviews'] as $key => $review)
     <div class="row mt-4">
       <div class="col-lg-1 col-md-2 col-sm-2 col-3">
-        <img src="{{ getElementsFilePath($review, 'avatar') }}" class="img-fluid rounded-circle">
+        <img src="{{ getElementsFilePath($review, 'avatar', $element) }}" class="img-fluid rounded-circle">
       </div>
       <div class="col-lg-11 col-md-10 col-sm-10 col-9">
         <blockquote class="blockquote">

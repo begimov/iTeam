@@ -1,6 +1,6 @@
 <?php
 if (!function_exists('getElementsFilePath')) {
-	function getElementsFilePath($element, $fileTag)
+	function getElementsFilePath($element, $fileTag, $e = null)
 	{
 		if (is_object($element) && isset($element->data['files'][$fileTag])) {
 			$file = $element->files
@@ -9,8 +9,8 @@ if (!function_exists('getElementsFilePath')) {
 		}
 
 		if (is_array($element) && isset($element['files'][$fileTag])) {
-			$file = \App\Models\Content\File::
-				where('id', $element['files'][$fileTag])
+			$file = $e->files
+				->where('id', $element['files'][$fileTag])
 				->first();
 		}
 
