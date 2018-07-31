@@ -5,11 +5,14 @@
 @endsection
 
 @section('content')
-<div class="container-fluid mb-5 p-0 page-container">
+<div class="container-fluid p-0 page-container">
   @foreach ($page->elements as $element)
     @include('pages.page.blocks.' . $element->block->view)
   @endforeach
 </div>
+
+@include('pages.page.partials.videoreviews')
+
 <div class="container mb-5 page-container">
   <div class="row text-center">
     <div class="col">
