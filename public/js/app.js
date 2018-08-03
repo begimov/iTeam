@@ -49317,7 +49317,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     name: 'Ytplayer',
-    props: ['videoId'],
+    props: {
+        'videoId': {
+            type: String,
+            required: true
+        },
+        'bgImg': {
+            type: String,
+            default: '/img/home/btn_play.png'
+        }
+    },
     data: function data() {
         return {
             videoUrl: ''
@@ -49363,7 +49372,7 @@ var render = function() {
           }
         }
       },
-      [_c("img", { attrs: { src: "/img/home/btn_play.png" } })]
+      [_c("img", { staticClass: "img-fluid", attrs: { src: _vm.bgImg } })]
     ),
     _vm._v(" "),
     _c(

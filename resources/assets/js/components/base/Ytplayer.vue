@@ -1,7 +1,7 @@
 <template>
   <div>  
     <button type="button" class="button-ytplayer" data-toggle="modal" data-backdrop="static" :data-target="'#' + this.videoId" @click.prevent="onOpen">
-      <img src="/img/home/btn_play.png">
+      <img :src="bgImg" class="img-fluid">
     </button>        
     <!-- Modal -->
     <div class="modal fade" :id="this.videoId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -9,6 +9,7 @@
       <h5 class="mb-3">Александр Красный, «ГаРус»</h5>
       <youtube-player 
         video-id="Rp4Jh-DP7is"
+        bg-img="/img/pages/videoreviews/videoreview_01.jpg"
       ></youtube-player>
     </div>
     <div class="col-lg-4 col-md-6 mt-4">

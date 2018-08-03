@@ -1,8 +1,15 @@
 export default {
     name: 'Ytplayer',
-    props: [
-        'videoId',
-    ],
+    props: {
+        'videoId': {
+            type: String,
+            required: true
+        },
+        'bgImg': {
+            type: String,
+            default: '/img/home/btn_play.png'
+        }
+    },  
     data() {
         return {
             videoUrl: ''
