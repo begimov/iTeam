@@ -1,7 +1,7 @@
 <div class="container-fluid bg-dark">
     <div class="container py-2">
         <div class="row my-4">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="card h-100">
                     <div class="card-header bg-info text-center">
                         <h5 class="mb-0 text-white">{!! $element->data['title1'] !!}</h5>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mt-3 mt-sm-3 mt-md-0">
+            <div class="col-lg-4 col-md-6 mt-3 mt-sm-3 mt-md-0">
                 <div class="card h-100">
                     <div class="card-header bg-info text-center">
                         <h5 class="mb-0 text-white">{!! $element->data['title2'] !!}</h5>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mt-3 mt-sm-3 mt-md-0">
+            <div class="col-lg-4 col-md-12 mt-3 mt-sm-3 mt-md-3 mt-lg-0">
                 <div class="card h-100">
                     <div class="card-header bg-info text-center">
                         <h5 class="mb-0 text-white">{!! $element->data['title3'] !!}</h5>
