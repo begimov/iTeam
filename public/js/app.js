@@ -50831,110 +50831,114 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3" }, [
-    _c(
-      "div",
-      {
-        staticClass: "card",
-        class: { "border-success": _vm.isPaid, "border-danger": !_vm.isPaid }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "card-header text-white",
-            class: [_vm.isPaid ? "bg-success" : "bg-danger"]
-          },
-          [
-            _vm._v(
-              "\n            " +
-                _vm._s(_vm.isPaid ? "Оплачен" : "Не оплачен") +
-                "\n        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "card-body" },
-          [
-            _c("p", { staticClass: "card-text lead font-weight-normal" }, [
-              _vm._v(_vm._s(_vm.order.product.data.name))
-            ]),
-            _vm._v(" "),
-            !_vm.isPaid
-              ? _c("div", [
-                  _vm.order.quantity > 1
-                    ? _c("p", [
-                        _vm._v(
-                          _vm._s(_vm.order.price) +
-                            " руб. * " +
-                            _vm._s(_vm.order.quantity) +
-                            " шт."
-                        )
+  return _c(
+    "div",
+    { staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "card h-100",
+          class: { "border-success": _vm.isPaid, "border-danger": !_vm.isPaid }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "card-header text-white",
+              class: [_vm.isPaid ? "bg-success" : "bg-danger"]
+            },
+            [
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.isPaid ? "Оплачен" : "Не оплачен") +
+                  "\n        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("p", { staticClass: "card-text lead font-weight-normal" }, [
+                _vm._v(_vm._s(_vm.order.product.data.name))
+              ]),
+              _vm._v(" "),
+              !_vm.isPaid
+                ? _c("div", [
+                    _vm.order.quantity > 1
+                      ? _c("p", [
+                          _vm._v(
+                            _vm._s(_vm.order.price) +
+                              " руб. * " +
+                              _vm._s(_vm.order.quantity) +
+                              " шт."
+                          )
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("h3", [
+                      _c("span", { staticClass: "badge badge-primary" }, [
+                        _vm._v(_vm._s(_vm.order.total_price) + " руб.")
                       ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("h3", [
-                    _c("span", { staticClass: "badge badge-primary" }, [
-                      _vm._v(_vm._s(_vm.order.total_price) + " руб.")
                     ])
                   ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.isPaid
-              ? _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.openProduct($event)
-                      }
-                    }
-                  },
-                  [_vm._v("Материалы")]
-                )
-              : [
-                  _c(
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.isPaid
+                ? _c(
                     "a",
                     {
-                      staticClass: "btn btn-dark",
+                      staticClass: "btn btn-primary",
                       attrs: { href: "#" },
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.orderPayment($event)
+                          return _vm.openProduct($event)
                         }
                       }
                     },
-                    [_vm._v("Оплатить")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-link",
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.deleteOrder($event)
-                        }
-                      }
-                    },
-                    [_vm._v("Удалить")]
+                    [_vm._v("Материалы")]
                   )
-                ]
-          ],
-          2
-        )
-      ]
-    )
-  ])
+                : [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-dark",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.orderPayment($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Оплатить")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-link",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.deleteOrder($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Удалить")]
+                    )
+                  ]
+            ],
+            2
+          )
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52462,7 +52466,7 @@ var render = function() {
   return _vm.order
     ? _c(
         "div",
-        { staticClass: "col-md-12" },
+        { staticClass: "col" },
         [
           _c(
             "a",
@@ -52479,83 +52483,87 @@ var render = function() {
             [_vm._v("Вернуться к заказам")]
           ),
           _vm._v(" "),
-          _c("h1", { staticClass: "my-4" }, [
-            _vm._v("«" + _vm._s(_vm.product.name) + "»")
-          ]),
-          _vm._v(" "),
           _vm._l(_vm.materials, function(material) {
-            return _c("div", { key: material.id, staticClass: "card mb-3" }, [
-              _c("div", { staticClass: "card-header pb-1" }, [
-                _c("h2", [_vm._v(_vm._s(material.name))])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "card-body" },
-                [
-                  material.resources.data.length
-                    ? [
-                        _c("h3", [_vm._v("Видео:")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "row mb-4" },
-                          _vm._l(material.resources.data, function(resource) {
-                            return _c(
-                              "div",
-                              {
-                                key: resource.id,
-                                staticClass: "col-md-4 mt-3"
-                              },
-                              [
-                                _c("youtube-player", {
-                                  attrs: { videoId: resource.identifier }
-                                })
-                              ],
-                              1
-                            )
-                          })
-                        )
-                      ]
-                    : _vm._e(),
-                  _vm._v(" "),
-                  material.files.data.length
-                    ? [
-                        _c("h3", { staticClass: "mb-3" }, [
-                          _vm._v("Материалы:")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          _vm._l(material.files.data, function(file) {
-                            return _c("li", { key: file.id }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "webapi/files/" + file.id } },
+            return _c(
+              "div",
+              { key: material.id, staticClass: "card mt-4 mb-3" },
+              [
+                _c(
+                  "div",
+                  { staticClass: "card-header bg-dark text-light pb-1" },
+                  [_c("h2", [_vm._v(_vm._s(material.name))])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    material.resources.data.length
+                      ? [
+                          _c("h3", [_vm._v("Видео:")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row mb-4" },
+                            _vm._l(material.resources.data, function(resource) {
+                              return _c(
+                                "div",
+                                {
+                                  key: resource.id,
+                                  staticClass: "col-md-4 mt-3"
+                                },
                                 [
-                                  _vm._v(
-                                    _vm._s(
-                                      file.original_name
-                                        ? file.original_name
-                                        : file.name
-                                    )
-                                  )
-                                ]
-                              ),
-                              _vm._v(
-                                " - " +
-                                  _vm._s(Math.round(file.size / 1024)) +
-                                  " Kb\n                    "
+                                  _c("youtube-player", {
+                                    attrs: { videoId: resource.identifier }
+                                  })
+                                ],
+                                1
                               )
-                            ])
-                          })
-                        )
-                      ]
-                    : _vm._e()
-                ],
-                2
-              )
-            ])
+                            })
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    material.files.data.length
+                      ? [
+                          _c("h3", { staticClass: "mb-3" }, [
+                            _vm._v("Материалы:")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            _vm._l(material.files.data, function(file) {
+                              return _c("li", { key: file.id }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { href: "webapi/files/" + file.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        file.original_name
+                                          ? file.original_name
+                                          : file.name
+                                      )
+                                    )
+                                  ]
+                                ),
+                                _vm._v(
+                                  " - " +
+                                    _vm._s(Math.round(file.size / 1024)) +
+                                    " Kb\n                    "
+                                )
+                              ])
+                            })
+                          )
+                        ]
+                      : _vm._e()
+                  ],
+                  2
+                )
+              ]
+            )
           })
         ],
         2
