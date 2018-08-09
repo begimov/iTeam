@@ -33,6 +33,12 @@ abstract class EloquentRepositoryAbstract implements RepositoryInterface, Criter
     {
         return $this->entity->find($id);
     }
+
+    public function latest()
+    {
+        $this->entity = $this->entity->latest();
+        return $this;
+    }
     
     public function withCriteria(array $criteria)
     {

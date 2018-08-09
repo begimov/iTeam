@@ -32,9 +32,13 @@ class OrderController extends Controller
     {
         $relations = ['product'];
 
-        $orders = $this->orders->withCriteria([
-            new With($relations)
-        ])->getAuthUserOrders()->get();
+        $orders = $this->orders
+            ->withCriteria([
+                new With($relations)
+            ])
+            ->getAuthUserOrders()
+            ->latest()
+            ->get();
 
         return fractal()
             ->collection($orders)
