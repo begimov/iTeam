@@ -52466,7 +52466,7 @@ var render = function() {
   return _vm.order
     ? _c(
         "div",
-        { staticClass: "col-md-12" },
+        { staticClass: "col" },
         [
           _c(
             "a",
@@ -52483,83 +52483,87 @@ var render = function() {
             [_vm._v("Вернуться к заказам")]
           ),
           _vm._v(" "),
-          _c("h1", { staticClass: "my-4" }, [
-            _vm._v("«" + _vm._s(_vm.product.name) + "»")
-          ]),
-          _vm._v(" "),
           _vm._l(_vm.materials, function(material) {
-            return _c("div", { key: material.id, staticClass: "card mb-3" }, [
-              _c("div", { staticClass: "card-header pb-1" }, [
-                _c("h2", [_vm._v(_vm._s(material.name))])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "card-body" },
-                [
-                  material.resources.data.length
-                    ? [
-                        _c("h3", [_vm._v("Видео:")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "row mb-4" },
-                          _vm._l(material.resources.data, function(resource) {
-                            return _c(
-                              "div",
-                              {
-                                key: resource.id,
-                                staticClass: "col-md-4 mt-3"
-                              },
-                              [
-                                _c("youtube-player", {
-                                  attrs: { videoId: resource.identifier }
-                                })
-                              ],
-                              1
-                            )
-                          })
-                        )
-                      ]
-                    : _vm._e(),
-                  _vm._v(" "),
-                  material.files.data.length
-                    ? [
-                        _c("h3", { staticClass: "mb-3" }, [
-                          _vm._v("Материалы:")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          _vm._l(material.files.data, function(file) {
-                            return _c("li", { key: file.id }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "webapi/files/" + file.id } },
+            return _c(
+              "div",
+              { key: material.id, staticClass: "card mt-4 mb-3" },
+              [
+                _c(
+                  "div",
+                  { staticClass: "card-header bg-dark text-light pb-1" },
+                  [_c("h2", [_vm._v(_vm._s(material.name))])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    material.resources.data.length
+                      ? [
+                          _c("h3", [_vm._v("Видео:")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row mb-4" },
+                            _vm._l(material.resources.data, function(resource) {
+                              return _c(
+                                "div",
+                                {
+                                  key: resource.id,
+                                  staticClass: "col-md-4 mt-3"
+                                },
                                 [
-                                  _vm._v(
-                                    _vm._s(
-                                      file.original_name
-                                        ? file.original_name
-                                        : file.name
-                                    )
-                                  )
-                                ]
-                              ),
-                              _vm._v(
-                                " - " +
-                                  _vm._s(Math.round(file.size / 1024)) +
-                                  " Kb\n                    "
+                                  _c("youtube-player", {
+                                    attrs: { videoId: resource.identifier }
+                                  })
+                                ],
+                                1
                               )
-                            ])
-                          })
-                        )
-                      ]
-                    : _vm._e()
-                ],
-                2
-              )
-            ])
+                            })
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    material.files.data.length
+                      ? [
+                          _c("h3", { staticClass: "mb-3" }, [
+                            _vm._v("Материалы:")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            _vm._l(material.files.data, function(file) {
+                              return _c("li", { key: file.id }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { href: "webapi/files/" + file.id }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        file.original_name
+                                          ? file.original_name
+                                          : file.name
+                                      )
+                                    )
+                                  ]
+                                ),
+                                _vm._v(
+                                  " - " +
+                                    _vm._s(Math.round(file.size / 1024)) +
+                                    " Kb\n                    "
+                                )
+                              ])
+                            })
+                          )
+                        ]
+                      : _vm._e()
+                  ],
+                  2
+                )
+              ]
+            )
           })
         ],
         2

@@ -1,9 +1,9 @@
 <template>
-    <div class="col-md-12" v-if="order">
+    <div class="col" v-if="order">
         <a href="#" class="btn btn-primary" @click.prevent="closeProduct">Вернуться к заказам</a>
-        <h1 class="my-4">&laquo;{{ product.name }}&raquo;</h1>
-        <div class="card mb-3" v-for="material in materials" :key="material.id">
-            <div class="card-header pb-1"><h2>{{ material.name }}</h2></div>
+        <!-- <h1 class="my-4">&laquo;{{ product.name }}&raquo;</h1> -->
+        <div class="card mt-4 mb-3" v-for="material in materials" :key="material.id">
+            <div class="card-header bg-dark text-light pb-1"><h2>{{ material.name }}</h2></div>
             <div class="card-body">
                 <template v-if="material.resources.data.length">
                     <h3>Видео:</h3>
