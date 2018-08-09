@@ -50831,110 +50831,114 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3" }, [
-    _c(
-      "div",
-      {
-        staticClass: "card",
-        class: { "border-success": _vm.isPaid, "border-danger": !_vm.isPaid }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "card-header text-white",
-            class: [_vm.isPaid ? "bg-success" : "bg-danger"]
-          },
-          [
-            _vm._v(
-              "\n            " +
-                _vm._s(_vm.isPaid ? "Оплачен" : "Не оплачен") +
-                "\n        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "card-body" },
-          [
-            _c("p", { staticClass: "card-text lead font-weight-normal" }, [
-              _vm._v(_vm._s(_vm.order.product.data.name))
-            ]),
-            _vm._v(" "),
-            !_vm.isPaid
-              ? _c("div", [
-                  _vm.order.quantity > 1
-                    ? _c("p", [
-                        _vm._v(
-                          _vm._s(_vm.order.price) +
-                            " руб. * " +
-                            _vm._s(_vm.order.quantity) +
-                            " шт."
-                        )
+  return _c(
+    "div",
+    { staticClass: "col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "card h-100",
+          class: { "border-success": _vm.isPaid, "border-danger": !_vm.isPaid }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "card-header text-white",
+              class: [_vm.isPaid ? "bg-success" : "bg-danger"]
+            },
+            [
+              _vm._v(
+                "\n            " +
+                  _vm._s(_vm.isPaid ? "Оплачен" : "Не оплачен") +
+                  "\n        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("p", { staticClass: "card-text lead font-weight-normal" }, [
+                _vm._v(_vm._s(_vm.order.product.data.name))
+              ]),
+              _vm._v(" "),
+              !_vm.isPaid
+                ? _c("div", [
+                    _vm.order.quantity > 1
+                      ? _c("p", [
+                          _vm._v(
+                            _vm._s(_vm.order.price) +
+                              " руб. * " +
+                              _vm._s(_vm.order.quantity) +
+                              " шт."
+                          )
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("h3", [
+                      _c("span", { staticClass: "badge badge-primary" }, [
+                        _vm._v(_vm._s(_vm.order.total_price) + " руб.")
                       ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("h3", [
-                    _c("span", { staticClass: "badge badge-primary" }, [
-                      _vm._v(_vm._s(_vm.order.total_price) + " руб.")
                     ])
                   ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.isPaid
-              ? _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.openProduct($event)
-                      }
-                    }
-                  },
-                  [_vm._v("Материалы")]
-                )
-              : [
-                  _c(
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.isPaid
+                ? _c(
                     "a",
                     {
-                      staticClass: "btn btn-dark",
+                      staticClass: "btn btn-primary",
                       attrs: { href: "#" },
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.orderPayment($event)
+                          return _vm.openProduct($event)
                         }
                       }
                     },
-                    [_vm._v("Оплатить")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-link",
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.deleteOrder($event)
-                        }
-                      }
-                    },
-                    [_vm._v("Удалить")]
+                    [_vm._v("Материалы")]
                   )
-                ]
-          ],
-          2
-        )
-      ]
-    )
-  ])
+                : [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-dark",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.orderPayment($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Оплатить")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-link",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.deleteOrder($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Удалить")]
+                    )
+                  ]
+            ],
+            2
+          )
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

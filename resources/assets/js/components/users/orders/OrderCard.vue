@@ -1,6 +1,6 @@
 <template>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-        <div class="card" :class="{'border-success': isPaid, 'border-danger': !isPaid}">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2">
+        <div class="card h-100" :class="{'border-success': isPaid, 'border-danger': !isPaid}">
             <div class="card-header text-white" :class="[isPaid ? 'bg-success' : 'bg-danger']">
                 {{ isPaid ? 'Оплачен' : 'Не оплачен' }}
             </div>
