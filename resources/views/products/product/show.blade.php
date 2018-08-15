@@ -6,16 +6,16 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col mt-5 mb-4">
                 <h1>{{ $product->name }}</h1>
             </div>
-        </div>
-        <div class="row mb-3">
+        </div> -->
+        <div class="row mt-5 mb-3">
             <div class="col">
                 @foreach ($product->materials as $material)
                     <div class="card mb-3">
-                        <div class="card-header pb-1"><h2>{{ $material->name }}</h2></div>
+                        <div class="card-header bg-dark text-light pb-1"><h2>{{ $material->name }}</h2></div>
                         <div class="card-body">
                             @if(count($material->resources) > 0)
                                 <h3>Видео:</h3>
