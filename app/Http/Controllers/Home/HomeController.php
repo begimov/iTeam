@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Contracts\Pages\PageRepository;
 
 class HomeController extends Controller
@@ -29,7 +30,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pages = $this->pages->latest()->limit(6)->get();
+        $relations = ['elements', 'elements.files'];
+
+        $pages = $this->pages
+            ->latest()
+            ->limit(6)
+            ->withCriteria([
+                new With($relations)
+            ])
+            ->get();
 
         return view('home.index', compact('pages'));
     }
