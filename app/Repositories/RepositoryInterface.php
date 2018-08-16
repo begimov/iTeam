@@ -9,4 +9,5 @@ interface RepositoryInterface
     public function paginate($by);
     public function findById($id);
     public function latest();
+    public function limit($by);
 }
