@@ -4,7 +4,7 @@
         <a href="{{ route('pages.show', $page->slug) }}" class="text-white">
         <div class="card">
             <div class="card-body text-center py-2">
-            <img src="https://iteam.ru/landing/template/img/mp_ychet.png" class="w-75">
+            <img src="{{ getElementsFilePath($page->elements[0], 'img1') }}" class="w-75">
             </div>
             <div class="card-footer bg-primary text-white">
             {{ $page->name }}
@@ -17,7 +17,7 @@
         <a href="{{ route('pages.show', $page->slug) }}" class="text-white">
         <div class="card">
             <div class="card-body text-center py-2">
-            <img src="https://iteam.ru/landing/template/img/mk30.png" class="w-75">
+            <img src="" class="w-75">
             </div>
             <div class="card-footer bg-primary text-white">
             {{ $page->name }}
