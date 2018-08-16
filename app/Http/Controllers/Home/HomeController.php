@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\Eloquent\Criteria\With;
+use App\Repositories\Eloquent\Criteria\Where;
 use App\Repositories\Contracts\Pages\PageRepository;
 
 class HomeController extends Controller
@@ -36,7 +37,8 @@ class HomeController extends Controller
             ->latest()
             ->limit(6)
             ->withCriteria([
-                new With($relations)
+                new With($relations),
+                new Where('category_id', 1)
             ])
             ->get();
 

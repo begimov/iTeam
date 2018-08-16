@@ -4,7 +4,7 @@
         <a href="{{ route('pages.show', $page->slug) }}" class="text-white">
         <div class="card">
             <div class="card-body text-center py-2">
-            <img src="{{ getElementsFilePath($page->elements[0], 'img1') }}" class="w-75">
+            <img src="{{ getElementsFilePath($page->elements[1], 'img1') }}" class="w-75">
             </div>
             <div class="card-footer bg-primary text-white">
             {{ $page->name }}
