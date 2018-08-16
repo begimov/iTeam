@@ -5,19 +5,21 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Repositories\Contracts\Pages\PageRepository;
+
 class HomeController extends Controller
 {
 
-    protected $modelnames;
+    protected $pages;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(PageRepository $pages)
     {
-        //
+        $this->pages = $pages;
     }
 
     /**
