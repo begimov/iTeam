@@ -29,6 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $pages = $this->pages->latest()->limit(6)->get();
+
+        return view('home.index', compact('pages'));
     }
 }
