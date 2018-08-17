@@ -11,6 +11,19 @@
                 <h1>{{ $category->name }}</h1>
             </div>
         </div>
+
+        <div class="row mb-4 a-white">
+            <div class="col">
+                @foreach ($themes as $theme)
+                    <span class="badge badge-secondary my-1 p-2">
+                        <span class="lead">
+                            <a href="">{{ $theme->name }}</a>
+                        </span>
+                    </span>
+                @endforeach
+            </div>
+        </div>
+
         @foreach ($category->pages as $page)
             <div class="row mb-3">
                 <div class="col">
