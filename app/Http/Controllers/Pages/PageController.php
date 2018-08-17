@@ -13,15 +13,22 @@ use App\Models\Pages\Category;
 use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Eloquent\Criteria\Where;
 
-use App\Repositories\Contracts\Pages\CategoryRepository;
+use App\Repositories\Contracts\Pages\{
+    CategoryRepository,
+    ThemeRepository
+};
 
 class PageController extends Controller
 {
     protected $categories;
 
-    public function __construct(CategoryRepository $categories)
+    protected $themes;
+
+    public function __construct(CategoryRepository $categories, ThemeRepository $themes)
     {
         $this->categories = $categories;
+
+        $this->themes = $themes;
     }
 
     public function index($slug)
