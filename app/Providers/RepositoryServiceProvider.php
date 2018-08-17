@@ -16,11 +16,13 @@ use App\Repositories\Eloquent\Products\{
 
 use App\Repositories\Contracts\Pages\{
     CategoryRepository,
+    ThemeRepository,
     PageRepository
 };
 
 use App\Repositories\Eloquent\Pages\{
     EloquentCategoryRepository,
+    EloquentThemeRepository,
     EloquentPageRepository
 };
 
@@ -38,6 +40,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(OrderRepository::class, EloquentOrderRepository::class);
         $this->app->bind(CategoryRepository::class, EloquentCategoryRepository::class);
+        $this->app->bind(ThemeRepository::class, EloquentThemeRepository::class);
         $this->app->bind(PageRepository::class, EloquentPageRepository::class);
         $this->app->bind(ProductRepository::class, EloquentProductRepository::class);
         $this->app->bind(BusinessEntityRepository::class, EloquentBusinessEntityRepository::class);
