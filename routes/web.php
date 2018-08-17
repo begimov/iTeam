@@ -17,6 +17,9 @@ Route::get('/', 'Home\HomeController@index')->name('home');
 Route::group(['prefix' => 'pages', 'namespace' => 'Pages'], function () {
     Route::get('category/{category}', 'PageController@index')->name('pages.category.index');
     Route::get('{page}', 'PageController@show')->name('pages.show');
+
+    //Themes
+    Route::get('category/{category}/themes/{theme}', 'ThemeController@index')->name('theme.index');
 }); 
 
 // Free products
