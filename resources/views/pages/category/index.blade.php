@@ -17,7 +17,7 @@
                 @foreach ($themes as $theme)
                     <span class="badge badge-secondary my-1 p-2">
                         <span class="lead">
-                            <a href="">{{ $theme->name }}</a>
+                            <a href="{{ route('theme.index', ['category' => $category->slug, 'theme' => $theme->slug]) }}">{{ $theme->name }}</a>
                         </span>
                     </span>
                 @endforeach
