@@ -40,11 +40,13 @@ class PageController extends Controller
             new Where('slug', $slug),
         ])->first();
 
+        $themes = $this->themes->get();
+
         if (!isset($category)) {
             return abort(404);
         }
 
-        return view('pages.category.index', compact('category'));
+        return view('pages.category.index', compact('category', 'themes'));
     }
 
     public function show(Page $page)
