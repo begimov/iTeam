@@ -39,6 +39,6 @@ class ThemeController extends Controller
 
         $themes = $this->themes->get();
 
-        dd($pages, $themes);
+        return view('pages.category.theme.index', compact('pages', 'themes', 'category', 'theme'));
     }
 }
