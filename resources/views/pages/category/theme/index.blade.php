@@ -1,22 +1,20 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>{{ $category->name }}</title>
+    <title>{{ $theme->name }}</title>
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col mt-5 mb-4">
-                <h1>{{ $category->name }}</h1>
+                <h1>{{ $theme->name }}</h1>
             </div>
         </div>
 
-        @if($category->slug != config('urls.slugs.categories.mp'))
-            @include('pages.category.partials._themes')
-        @endif
+        @include('pages.category.partials._themes')
 
-        @foreach ($category->pages->take(5) as $key => $page)
+        @foreach ($pages as $page)
             <div class="row mb-3">
                 <div class="col">
                     <div class="card">
