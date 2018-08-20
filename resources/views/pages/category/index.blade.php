@@ -16,7 +16,7 @@
             @include('pages.category.partials._themes')
         @endif
 
-        @foreach ($category->pages as $page)
+        @foreach ($category->pages->take(5) as $key => $page)
             <div class="row mb-3">
                 <div class="col">
                     <div class="card">
