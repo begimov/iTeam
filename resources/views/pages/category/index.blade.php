@@ -12,7 +12,9 @@
             </div>
         </div>
 
-        @include('pages.category.partials._themes')
+        @if($category->slug != config('urls.slugs.categories.mp'))
+            @include('pages.category.partials._themes')
+        @endif
 
         @foreach ($category->pages as $page)
             <div class="row mb-3">
