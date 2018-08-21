@@ -1,15 +1,15 @@
 <div class="card purchase-card h-100">
-    <div class="card-header bg-dark text-light text-center lead">
-        @isset($element['data']['title'])
-        {{ $element['data']['title'] }}
-        @endisset
-    </div>
-    <div class="card-body">
-        @isset($element['data']['description'])
-        {!! $element['data']['description'] !!}
-        <hr>
-        @endisset
-        <div class="text-center">
+    @isset($element['data']['title'])
+        <div class="card-header bg-dark text-light text-center lead">
+            {{ $element['data']['title'] }}
+        </div>
+    @endisset
+    @isset($element['data']['description'])
+        <div class="card-body">
+            {!! $element['data']['description'] !!}
+        </div>
+    @endisset
+    <div class="text-center card-footer bg-white">
         @if(($productPrice = getProductPrice($element)) > 0)
             <h2><span class="badge badge-info price-badge">{{ $productPrice }}~</span></h2>
         @else
@@ -36,6 +36,5 @@
             @endif
             <button type="submit" class="btn btn-primary btn-lg">ПОЛУЧИТЬ</button>          
         </form>
-        </div>
     </div>
 </div>
