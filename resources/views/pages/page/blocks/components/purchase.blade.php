@@ -12,7 +12,7 @@
     @endisset
     <div class="text-center card-footer bg-white">
         @if(($productPrice = getProductPrice($element)) > 0)
-            <h2><span class="badge badge-info price-badge">{{ $productPrice }}~</span></h2>
+            <h2><span class="badge badge-info price-badge">{{ round($productPrice) }}~</span></h2>
         @else
             <h3><span class="badge badge-info price-badge">БЕСПЛАТНО</span></h3>
         @endif
