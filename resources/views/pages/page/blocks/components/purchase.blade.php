@@ -1,9 +1,10 @@
 <div class="card purchase-card h-100">
-    @isset($element['data']['title'])
-        <div class="card-header bg-dark text-light text-center lead">
+    
+    <div class="card-header bg-dark text-light text-center lead">
+        @isset($element['data']['title'])
             {{ $element['data']['title'] }}
-        </div>
-    @endisset
+        @endisset
+    </div>
     @isset($element['data']['description'])
         <div class="card-body">
             {!! $element['data']['description'] !!}
