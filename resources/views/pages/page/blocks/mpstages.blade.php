@@ -16,7 +16,7 @@
           @foreach ($element->data['stages'] as $key => $stage)
             <div class="tab-pane fade{{ $key === 0 ? ' show active' : '' }}" id="{{ $key }}" role="tabpanel" aria-labelledby="{{ $key }}-tab">
                 <div class="card">
-                  <!-- <h5 class="card-header bg-white">{{$stage['name']}}</h5> -->
+                  <h5 class="card-header bg-white">{{$stage['name']}}</h5>
                   <div class="card-body">
                     <p class="card-text">
                       {!! $stage['description'] !!}
