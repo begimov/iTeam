@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row my-4">
-    <div class="col">
+<div class="container-fluid bg-dark my-5">
+  <div class="container py-4">
+    <div class="row">
       <div class="col">
 
         <ul class="nav nav-tabs nav-tabs-links" id="myTab" role="tablist">
