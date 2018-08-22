@@ -140,80 +140,11 @@
   </div>
 </div>
 <!-- MASTER-PROJECTS -->
-<div class="container-fluid mt-5">
-  <div class="row">
-    <div class="col">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 pt-4 pb-4">
-            <h5 class="text-uppercase mb-4 font-weight-bold">мастер-проекты</h5>
-            <p>
-              <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">Создание стратегии</a>
-            </p>
-            <p>
-              <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">Разработка планов и бюджетов</a>
-            </p>
-            <p>
-              <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">Создание системы управления процессами</a>
-            </p>
-            <p>
-              <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">Управление с помощью BSC</a>
-            </p>
-            <p>
-              <a href="{{ route('pages.category.index', config('urls.slugs.categories.mp')) }}">Целевое управление</a>
-            </p>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <img src="{{ asset('img/home/mp_boxes.jpg') }}" class="img-fluid"> </div>
-          <div class="col-lg-5 col-sm-12 pt-4 pb-4">
-            <h5 class="text-uppercase mb-4 font-weight-bold">что такое мастер-проект?</h5>
-            <p>
-              <ul>
-                <li>Новая форма обучения и&nbsp;консультирования, в&nbsp;котором участвует вся управленческая команда.</li>
-                <li>Шаг за&nbsp;шагом под руководством консультанта-наставника вы&nbsp;проходите все этапы.</li>
-                <li>Результат мастер-проекта&nbsp;&mdash; &nbsp;обученные сотрудники.</li>
-              </ul>
-            </p>
-            <!-- <p>
-              <a href="" class="btn btn-light text-uppercase">ОТЗЫВЫ</a>
-            </p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+@include('home.partials._popularmps')
 <!-- MASTER-CLASSES -->
-<div class="container-fluid mt-4">
-  <div class="row">
-    <div class="col">
-      <h5 class="text-uppercase font-weight-bold my-5">популярные мастер-классы</h5>
-    </div>
-  </div>
-  <div class="row">
-    @include('home.partials._popularmks')
-  </div>
-</div>
+@include('home.partials._popularmks')
 <!-- ARTICLES -->
-<div class="container mt-4">
-  <div class="row">
-    <div class="col">
-      <h5 class="text-uppercase font-weight-bold my-5">Статьи</h5>
-    </div>
-  </div>
-  <div class="row">
-  @foreach($posts as $post)
-    <div class="col-xl-4 col-lg-6 mt-2">
-      <p class="font-weight-bold">
-        <a target="_blank" href="{{ $post->link }}">
-          {{ $post->title->rendered }}
-        </a>
-      </p>
-      {!! str_limit($post->excerpt->rendered, 200) . '</p>' !!}
-    </div>
-  @endforeach
-  </div>
-</div>
+@include('home.partials._blogposts')
 <!-- CLIENTS -->
 <div class="container mt-5">
   <div class="row">

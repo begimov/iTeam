@@ -36,14 +36,28 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = json_decode($this->guzzle->request(
+        $posts = $this->getBlogPosts();
+
+        $mks = $this->getMasterClasses();
+
+        $mps = $this->getMasterProjects();
+
+        return view('home.index', compact('mks', 'posts', 'mps'));
+    }
+
+    protected function getBlogPosts()
+    {
+        return json_decode($this->guzzle->request(
             'GET', config('urls.blog') 
             . 'wp-json/wp/v2/posts?per_page=6'
         )->getBody());
+    }
 
+    protected function getMasterClasses()
+    {
         $relations = ['elements', 'elements.files'];
 
-        $pages = $this->pages
+        return $this->pages
             ->latest()
             ->limit(6)
             ->withCriteria([
@@ -51,7 +65,16 @@ class HomeController extends Controller
                 new Where('category_id', 1)
             ])
             ->get();
+    }
 
-        return view('home.index', compact('pages', 'posts'));
+    protected function getMasterProjects()
+    {
+        return app()->make(PageRepository::class)
+            ->latest()
+            ->limit(5)
+            ->withCriteria([
+                new Where('category_id', 2)
+            ])
+            ->get();
     }
 }
