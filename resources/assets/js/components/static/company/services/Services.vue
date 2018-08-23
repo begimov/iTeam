@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="row mt-3" v-if="this.active === 2">
-                <div class="col-lg-4 services-01">&nbsp;</div>
+                <div class="col-lg-4 services-02">&nbsp;</div>
                 <div class="col-lg-8 p-3">
                     <h4 class="font-weight-normal mb-3">Разработка стратегии компании</h4>
                     <p>В&nbsp;проекте по&nbsp;разработке стратегии мы&nbsp;организуем и&nbsp;направляем работу управленческой команды предприятия по&nbsp;следующему пути:</p>
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="row mt-3" v-if="this.active === 3">
-                <div class="col-lg-4 services-01">&nbsp;</div>
+                <div class="col-lg-4 services-03">&nbsp;</div>
                 <div class="col-lg-8 p-3">
                     <h4 class="font-weight-normal mb-3">Разработка или преобразование организационной структуры</h4>
                     <p>Проект разработки организационной структуры начинается с&nbsp;анализа проблем в&nbsp;области управления и&nbsp;выявления слабых звеньев.</p>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="row mt-3" v-if="this.active === 4">
-                <div class="col-lg-4 services-01">&nbsp;</div>
+                <div class="col-lg-4 services-04">&nbsp;</div>
                 <div class="col-lg-8 p-3">
                     <h4 class="font-weight-normal mb-3">Построение системы управления процессами</h4>
                     <p>Создавая систему управления процессами, мы&nbsp;даем управленческой команде предприятия детально проработанную &laquo;дорожную карту&raquo; и&nbsp;ведем ее&nbsp;по&nbsp;всем этапам этого пути:</p>
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="row mt-3" v-if="this.active === 5">
-                <div class="col-lg-4 services-01">&nbsp;</div>
+                <div class="col-lg-4 services-05">&nbsp;</div>
                 <div class="col-lg-8 p-3">
                     <h4 class="font-weight-normal mb-3">Трансформация корпоративной культуры</h4>
                     <p>Мы&nbsp;видим корпоративную культуру как фундамент организации. В&nbsp;каждом проекте она рассматривается как компонент, определяющий ход преобразований. В&nbsp;большинстве случаев для успешного проведения изменений в&nbsp;компании необходима трансформация корпоративной культуры. Это программа, охватывающая весь коллектив предприятия:</p>

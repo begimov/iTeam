@@ -6,12 +6,12 @@
 
 @section('content')
      <!-- TOP -->
-     <div class="container-fluid">
+     <div class="container-fluid services-header-bg">
         <div class="row">
             <div class="col py-5">
                 <div class="row">
-                    <div class="col align-self-center text-center py-4">
-                        <h2 class="mb-3 font-weight-bold text-primary">О&nbsp;Консалтинговой компании iTeam</h2>
+                    <div class="col align-self-center text-center py-4 text-light">
+                        <h2 class="mb-3 font-weight-bold">О&nbsp;Консалтинговой компании iTeam</h2>
                         <h4 class="mb-3 font-weight-bold">Мы&nbsp;помогаем руководителям и&nbsp;собственникам создать эффективную систему управления в&nbsp;их&nbsp;компаниях.</h4>
                         <h4 class="mb-3 font-weight-normal">Наши технологии и&nbsp;методики составляют систему управления Русский Менеджмент.</h4>
                     </div>

@@ -50314,7 +50314,7 @@ var render = function() {
       _vm._v(" "),
       this.active === 2
         ? _c("div", { staticClass: "row mt-3" }, [
-            _c("div", { staticClass: "col-lg-4 services-01" }, [_vm._v(" ")]),
+            _c("div", { staticClass: "col-lg-4 services-02" }, [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(2)
           ])
@@ -50322,7 +50322,7 @@ var render = function() {
       _vm._v(" "),
       this.active === 3
         ? _c("div", { staticClass: "row mt-3" }, [
-            _c("div", { staticClass: "col-lg-4 services-01" }, [_vm._v(" ")]),
+            _c("div", { staticClass: "col-lg-4 services-03" }, [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(3)
           ])
@@ -50330,7 +50330,7 @@ var render = function() {
       _vm._v(" "),
       this.active === 4
         ? _c("div", { staticClass: "row mt-3" }, [
-            _c("div", { staticClass: "col-lg-4 services-01" }, [_vm._v(" ")]),
+            _c("div", { staticClass: "col-lg-4 services-04" }, [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(4)
           ])
@@ -50338,7 +50338,7 @@ var render = function() {
       _vm._v(" "),
       this.active === 5
         ? _c("div", { staticClass: "row mt-3" }, [
-            _c("div", { staticClass: "col-lg-4 services-01" }, [_vm._v(" ")]),
+            _c("div", { staticClass: "col-lg-4 services-05" }, [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(5)
           ])
