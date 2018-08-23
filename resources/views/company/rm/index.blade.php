@@ -115,14 +115,14 @@
                         <p>О&nbsp;том, что такое стратегия и&nbsp;как она создается, вы&nbsp;можете узнать из&nbsp;статей:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Из&nbsp;чего состоит стратегия?&raquo;</a></li>
-                                <li><a href="">&laquo;С&nbsp;чего начать разработку сбалансированной системы показателей&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 'iz-chego-sostoit-strategiya' }}" target="_blank">&laquo;Из&nbsp;чего состоит стратегия?&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 's-chego-nachat-razrabotku-sbalansirovannoj-sistemy-pokazatelej' }}" target="_blank">&laquo;С&nbsp;чего начать разработку сбалансированной системы показателей&raquo;</a></li>
                             </ul>
                         </p>
                         <p>... и&nbsp;мастер-классов:</p>
                         <ul>
-                            <li><a href="">&laquo;Как создается стратегия&raquo;</a></li>
-                            <li><a href="">&laquo;Управление стратегией с&nbsp;помощью сбалансированной системы показателей&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'kak-sozdaetsya-strategiya-kratkoe-rukovodstvo-po-proektirovaniyu-budushchego') }}">&laquo;Как создается стратегия&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'upravlenie-strategiey-s-pomoshchyu-sbalansirovannoy-sistemy-pokazateley-bsc') }}">&laquo;Управление стратегией с&nbsp;помощью сбалансированной системы показателей&raquo;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,13 +143,13 @@
                         <p>О&nbsp;том, как строится система управления процессами, вы&nbsp;можете узнать из&nbsp;цикла статей:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Как создать систему управления процессами в&nbsp;вашей компании&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 'biznes-urok-3-dorozhnaya-karta-sozdaniya-sistemy-upravleniya-protsessami' }}" target="_blank">&laquo;Как создать систему управления процессами в&nbsp;вашей компании&raquo;</a></li>
                             </ul>
                         </p>
                         <p>... и&nbsp;мастер-классов:</p>
                         <ul>
-                            <li><a href="">&laquo;Приведите в&nbsp;порядок бизнес-процессы&raquo;</a></li>
-                            <li><a href="">&laquo;Практикум по&nbsp;внедрению процессного подхода&raquo;</a></li>
+                            <!-- <li><a href="">&laquo;Приведите в&nbsp;порядок бизнес-процессы&raquo;</a></li> -->
+                            <li><a href="{{ route('pages.show', 'praktikum-po-vnedreniyu-processnogo-podhoda') }}">&laquo;Практикум по&nbsp;внедрению процессного подхода&raquo;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -168,14 +168,14 @@
                         <p>Принципы построения организационной структуры мы&nbsp;даем в&nbsp;статьях на&nbsp;нашем портале:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Идеальный холдинг: эскизный проект&raquo;</a></li>
-                                <li><a href="">&laquo;Роль корпоративного центра&raquo;</a></li>
-                                <li><a href="">&laquo;Разделение корпорации&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 'idealnyj-holding-eskiznyj-proekt' }}" target="_blank">&laquo;Идеальный холдинг: эскизный проект&raquo;</a></li>
+                                <!-- <li><a href="" target="_blank">&laquo;Роль корпоративного центра&raquo;</a></li> -->
+                                <!-- <li><a href="" target="_blank">&laquo;Разделение корпорации&raquo;</a></li> -->
                             </ul>
                         </p>
                         <p>... и&nbsp;на&nbsp;мастер-классах:</p>
                         <ul>
-                            <li><a href="">&laquo;Что такое правильная организационная структура и&nbsp;как ее&nbsp;построить&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'chto-takoe-pravilnaya-organizacionnaya-struktura-i-kak-ee-postroit') }}">&laquo;Что такое правильная организационная структура и&nbsp;как ее&nbsp;построить&raquo;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -199,14 +199,14 @@
                         <p>Примеры создания выдающихся коллективов на&nbsp;основе ценностей приведены в&nbsp;статьях на&nbsp;нашем портале:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Ни&nbsp;кнут и&nbsp;ни&nbsp;пряник&raquo;</a></li>
-                                <li><a href="">&laquo;Вечно молодой: Антон Макаренко как управленец XXI&nbsp;века&raquo;</a></li>
+                                <!-- <li><a href="">&laquo;Ни&nbsp;кнут и&nbsp;ни&nbsp;пряник&raquo;</a></li> -->
+                                <!-- <li><a href="">&laquo;Вечно молодой: Антон Макаренко как управленец XXI&nbsp;века&raquo;</a></li> -->
                             </ul>
                         </p>
                         <p>... и&nbsp;на&nbsp;мастер-классах:</p>
                         <ul>
-                            <li><a href="">&laquo;Как создается сильная корпоративная культура&raquo;</a></li>
-                            <li><a href="">&laquo;Как создать сервис, покоряющий клиентов&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'kak-sozdaetsya-silnaya-korporativnaya-kultura') }}">&laquo;Как создается сильная корпоративная культура&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'kak-sozdat-servis-pokoryayushchiy-klientov') }}">&laquo;Как создать сервис, покоряющий клиентов&raquo;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -245,11 +245,11 @@
                             Деньги&nbsp;&mdash; это кровь бизнеса&nbsp;и, одновременно, результат успешного ведения дел. В&nbsp;конечном счете, результативность коммерческой организации выражается в&nbsp;денежном потоке, который она генерирует, а&nbsp;эффективность ее&nbsp;деятельности характеризуется показателем прибыли.<br>
                             Руководитель компании должен четко понимать, какой должна быть система финансового управления, чтобы ставить конкретные задачи финансовой службе и&nbsp;контролировать их&nbsp;выполнение.
                         </p>
-                        <p>Наш портал дает комплекс знаний для собственников и&nbsp;руководителей компаний, необходимых для организации эффективной системы финансового управления. Это <a href="">цикл статей, в&nbsp;которых подробно описана методика построения финансового управленческого учета,</a> а&nbsp;также мастер-классы:</p>
+                        <p>Наш портал дает комплекс знаний для собственников и&nbsp;руководителей компаний, необходимых для организации эффективной системы финансового управления. Это <a href="{{ config('urls.blog') . 'category/upravlenie-finansami' }}" target="_blank">цикл статей, в&nbsp;которых подробно описана методика построения финансового управленческого учета,</a> а&nbsp;также мастер-классы:</p>
                         <ul>
-                            <li><a href="">&laquo;Что должен знать каждый руководитель о&nbsp;финансах&raquo;</a></li>
-                            <li><a href="">&laquo;Как правильно рассчитать себестоимость продуктов и&nbsp;услуг&raquo;</a></li>
-                            <li><a href="">&laquo;Методы распределения косвенных расходов&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'chto-dolzhen-znat-kazhdyy-rukovoditel-o-finansah') }}">&laquo;Что должен знать каждый руководитель о&nbsp;финансах&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'kak-pravilno-rasschitat-sebestoimost-produktov-i-uslug') }}">&laquo;Как правильно рассчитать себестоимость продуктов и&nbsp;услуг&raquo;</a></li>
+                            <!-- <li><a href="">&laquo;Методы распределения косвенных расходов&raquo;</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -272,8 +272,8 @@
                         <p>О&nbsp;том, как вовлечь сотрудников в&nbsp;трудовую деятельность и&nbsp;задействовать их&nbsp;внутреннюю мотивацию мы&nbsp;говорим на&nbsp;наших мастер-классах:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Что должен знать каждый руководитель о&nbsp;мотивации сотрудников&raquo;</a></li>
-                                <li><a href="">&laquo;Секреты мотивации&raquo;</a></li>
+                                <li><a href="{{ route('pages.show', 'chto-dolzhen-znat-kazhdyy-rukovoditel-o-motivacii-sotrudnikov') }}">&laquo;Что должен знать каждый руководитель о&nbsp;мотивации сотрудников&raquo;</a></li>
+                                <!-- <li><a href="">&laquo;Секреты мотивации&raquo;</a></li> -->
                             </ul>
                         </p>
                     </div>
@@ -295,10 +295,10 @@
                             Для того, чтобы отличаться от&nbsp;конкурентов, компания должна иметь собственное лицо, быть узнаваемой для потребителей, иметь свойства, определяющие ее&nbsp;уникальность.<br>
                             Создание дифференцирующей позиции на&nbsp;конкурентном рынке&nbsp;&mdash; главная задача маркетинга.
                         </p>
-                        <p>О&nbsp;том, как создать уникальное позиционирование и&nbsp;стать локальным монополистом на&nbsp;целевом рынке, <a href="">можно узнать из&nbsp;цикла статей</a> и&nbsp;мастер-классов:</p>
+                        <p>О&nbsp;том, как создать уникальное позиционирование и&nbsp;стать локальным монополистом на&nbsp;целевом рынке, <a href="{{ config('urls.blog') . 'category/marketing-i-prodazhi' }}" target="_blank">можно узнать из&nbsp;цикла статей</a> и&nbsp;мастер-классов:</p>
                         <ul>
-                            <li><a href="">&laquo;Что должен знать каждый руководитель о&nbsp;маркетинге&raquo;</a></li>
-                            <li><a href="">&laquo;Как стать лидером в&nbsp;конкурентной гонке&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'chto-dolzhen-znat-kazhdyy-rukovoditel-o-marketinge') }}">&laquo;Что должен знать каждый руководитель о&nbsp;маркетинге&raquo;</a></li>
+                            <!-- <li><a href="">&laquo;Как стать лидером в&nbsp;конкурентной гонке&raquo;</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -324,12 +324,12 @@
                 <div class="col-lg-6">
                     <p class="lead">На&nbsp;наших мастер-классах мы&nbsp;проверенные многолетней практикой методы проведения организационных изменений.</p>
                     <ul class="lead">
-                        <li class="mb-2"><a href="">&laquo;Поставьте диагноз своему бизнесу&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Как предвидеть и&nbsp;преодолевать кризисы управления&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Управление изменениями. Инженерный подход&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Архитектура организационных изменений&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Быстрая компания. Как сделать изменения постоянными&raquo;</a></li>
-                        <li><a href="">&laquo;Управление проектами. Суть дела&raquo;</a></li>
+                        <li class="mb-2"><a href="{{ route('pages.show', 'postavte-diagnoz-vashemu-biznesu') }}">&laquo;Поставьте диагноз своему бизнесу&raquo;</a></li>
+                        <!-- <li class="mb-2"><a href="">&laquo;Как предвидеть и&nbsp;преодолевать кризисы управления&raquo;</a></li> -->
+                        <li class="mb-2"><a href="{{ route('pages.show', 'upravlenie-izmeneniyami-inzhenernyy-podhod') }}">&laquo;Управление изменениями. Инженерный подход&raquo;</a></li>
+                        <!-- <li class="mb-2"><a href="">&laquo;Архитектура организационных изменений&raquo;</a></li> -->
+                        <!-- <li class="mb-2"><a href="">&laquo;Быстрая компания. Как сделать изменения постоянными&raquo;</a></li>
+                        <li><a href="">&laquo;Управление проектами. Суть дела&raquo;</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -347,16 +347,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <p class="lead">
-                        Существует множество форм обучения управленцев, каждая из&nbsp;которых имеет свои преимущества и&nbsp;недостатки. Нам удалось в&nbsp;результате многолетних поисков выработать оптимальную форму обучения руководителей. Это проектный метод обучения, совмещающий овладение новыми знаниями с&nbsp;решением наиболее актуальных задач управления компанией и&nbsp;достижением практических результатов. Этот метод обучения мы&nbsp;назвали &laquo;мастер-проект&raquo;. С&nbsp;ним можно ознакомиться на&nbsp;мастер-классе <a href="">&laquo;Чему и&nbsp;как нужно обучать руководителей&raquo;</a>
+                        Существует множество форм обучения управленцев, каждая из&nbsp;которых имеет свои преимущества и&nbsp;недостатки. Нам удалось в&nbsp;результате многолетних поисков выработать оптимальную форму обучения руководителей. Это проектный метод обучения, совмещающий овладение новыми знаниями с&nbsp;решением наиболее актуальных задач управления компанией и&nbsp;достижением практических результатов. Этот метод обучения мы&nbsp;назвали &laquo;мастер-проект&raquo;. С&nbsp;ним можно ознакомиться на&nbsp;мастер-классе <a href="{{ route('pages.show', 'chemu-i-kak-nuzhno-obuchat-rukovoditeley-chtoby-oni-stali-liderami-peremen') }}">&laquo;Чему и&nbsp;как нужно обучать руководителей&raquo;</a>
                     </p>
                 </div>
                 <div class="col-lg-6">
                     <p class="lead">В&nbsp;настоящее время на&nbsp;нашем портале размещены следующие мастер-проекты, с&nbsp;помощью которых наши клиенты проводят успешные преобразования в&nbsp;своих компаниях и&nbsp;одновременно обучают свои управленческие команды.</p>
                     <ul class="lead">
-                        <li class="mb-2"><a href="">&laquo;Разработка стратегии компании&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Управление стратегией с&nbsp;помощью сбалансированной системы показателей&raquo;</a></li>
-                        <li class="mb-2"><a href="">&laquo;Как построить систему управления процессами в&nbsp;вашей компании&raquo;</a></li>
-                        <li><a href="">&laquo;Целевое управление. Как сделать компанию управляемой и&nbsp;эффективной&raquo;</a></li>
+                        <li class="mb-2"><a href="{{ route('pages.show', 'razrabotka-strategii-shag-za-shagom') }}">&laquo;Разработка стратегии компании&raquo;</a></li>
+                        <li class="mb-2"><a href="{{ route('pages.show', 'upravlenie-strategiey-s-pomoshchyu-sbalansirovannoy-sistemy-pokazateley-bsc') }}">&laquo;Управление стратегией с&nbsp;помощью сбалансированной системы показателей&raquo;</a></li>
+                        <li class="mb-2"><a href="{{ route('pages.show', 'kak-sozdat-sistemu-upravleniya-processami-za-4-mesyaca') }}">&laquo;Как построить систему управления процессами в&nbsp;вашей компании&raquo;</a></li>
+                        <!-- <li><a href="">&laquo;Целевое управление. Как сделать компанию управляемой и&nbsp;эффективной&raquo;</a></li> -->
                     </ul>
                 </div>
             </div>
