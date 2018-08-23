@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>К сожалению, запрашиваемая страница не найдена</title>
+@endsection
+
 @section('content')
 <div class="container">
   <div class="row">

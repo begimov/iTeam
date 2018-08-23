@@ -89,14 +89,14 @@
                         <p>О&nbsp;том как строится система целеполагания от&nbsp;стратегического до&nbsp;оперативного уровня вы&nbsp;можете узнать из&nbsp;статей:</p>
                         <p>
                             <ul>
-                                <li><a href="">&laquo;Целеполагание, как ключевая проблема менеджмента&raquo;</a></li>
-                                <li><a href="">&laquo;BSC, KPI и&nbsp;другие показатели&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 'tselepolaganie-kak-klyuchevaya-problema-menedzhmenta' }}" target="_blank">&laquo;Целеполагание, как ключевая проблема менеджмента&raquo;</a></li>
+                                <li><a href="{{ config('urls.blog') . 'bsc-kpi-i-drugie-pokazateli' }}" target="_blank">&laquo;BSC, KPI и&nbsp;другие показатели&raquo;</a></li>
                             </ul>
                         </p>
                         <p>... и&nbsp;мастер-классов:</p>
                         <ul>
-                            <li><a href="">&laquo;Управлять по-настоящему!&raquo;</a></li>
-                            <li><a href="">&laquo;Целевое управление: BSC, KPI, контроллинг&raquo;</a></li>
+                            <li><a href="{{ route('pages.show', 'upravlyat-po-nastoyashchemu') }}">&laquo;Управлять по-настоящему!&raquo;</a></li>
+                            <!-- <li><a href="">&laquo;Целевое управление: BSC, KPI, контроллинг&raquo;</a></li> -->
                         </ul>
                     </div>
                 </div>
