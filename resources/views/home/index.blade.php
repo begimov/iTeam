@@ -11,41 +11,7 @@
 
 @section('content')
 <!-- TEASERS -->
-<div class="container-fluid p-0">
-  <div class="row">
-    <div class="col-lg-6 p-5 promo">
-      <div class="row h-100">
-        <div class="col-12 align-self-center text-white">
-          <h3 class="font-italic m-0">РУССКИЙ МЕНЕДЖМЕНТ</h3>
-          <h2 class="display-4 font-weight-bold font-italic m-0">БИЗНЕС КАК СИСТЕМА</h2>
-          <h4 class="mb-3 display-5 font-weight-light">Создайте систему управления компанией</h4>
-          <div class="text-right mr-5">
-            <a href="#" class="btn btn-primary btn-lg">УЧАСТВОВАТЬ</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 p-0">
-      <div class="row pt-4 pb-3">
-        <div class="col-sm-4 align-self-center text-center">
-          <img src="{{ asset('img/home/gift_box.jpg') }}" class="img-fluid">
-        </div>
-        <div class="col-xl-7 col-sm-8 align-self-center py-5 pr-5">
-          <free-magnet 
-            description="Мастер-класс &laquo;Как улучшить бизнес процессы компании&raquo;"
-            campaign-token="nlopl" />
-        </div>
-      </div>
-      <div class="row bg-primary text-center text-white">
-        <div class="col">
-          <h6 class="lead m-0">Эту книгу скачали</span>
-            <span class="badge badge-light text-primary badge-pill my-2">34076 раз</span>
-          </h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+@include('home.partials._teasers')
 <!-- RU MANAGEMENT -->
 <div class="container-fluid p-0">
   <div class="row">

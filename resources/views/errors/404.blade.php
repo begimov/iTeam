@@ -14,9 +14,10 @@
       <div class="card">
         <div class="card-body">
           <free-magnet 
-            description="Мастер-класс &laquo;Как улучшить бизнес процессы компании&raquo;"
-            campaign-token="nlopl"
-            layout-type="horizontal" />
+            description="Книга &laquo;Как внедрить бизнес-процессы&raquo;!"
+            campaign-token="VjVkP"
+            layout-type="horizontal"
+            redirect-url="{{ asset('files/magnets/process_approach_book.pdf') }}" />
         </div>
       </div>
     </div>
