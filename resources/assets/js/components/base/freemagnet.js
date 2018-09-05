@@ -36,6 +36,7 @@ export default {
                 campaignToken: this.campaignToken
             },
             errors: {},
+            message: '',
             isLoading: false
         }
     },
@@ -47,6 +48,8 @@ export default {
 
                 if (this.redirectUrl) {
                     window.location.href = this.redirectUrl;
+                } else {
+                    this.message = 'Спасибо, регистрация прошла успешно'
                 }
 
                 this.isLoading = false
@@ -62,6 +65,7 @@ export default {
                 }
             })
             this.errors = {}
+            this.message = ''
         }
     },
     computed: {

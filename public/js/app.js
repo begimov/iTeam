@@ -49566,6 +49566,7 @@ exports.default = {
                 campaignToken: this.campaignToken
             },
             errors: {},
+            message: '',
             isLoading: false
         };
     },
@@ -49580,6 +49581,8 @@ exports.default = {
 
                 if (_this.redirectUrl) {
                     window.location.href = _this.redirectUrl;
+                } else {
+                    _this.message = 'Спасибо, регистрация прошла успешно';
                 }
 
                 _this.isLoading = false;
@@ -49597,6 +49600,7 @@ exports.default = {
                 }
             });
             this.errors = {};
+            this.message = '';
         }
     },
     computed: {
@@ -49808,6 +49812,17 @@ var render = function() {
                       "\n        "
                   )
                 ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.message
+            ? _c(
+                "div",
+                {
+                  staticClass: "alert alert-success",
+                  attrs: { role: "alert" }
+                },
+                [_vm._v("\n            " + _vm._s(_vm.message) + "\n        ")]
               )
             : _vm._e(),
           _vm._v(" "),
