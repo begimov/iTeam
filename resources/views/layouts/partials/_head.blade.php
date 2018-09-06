@@ -11,3 +11,5 @@
 @yield('meta_tags')
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
