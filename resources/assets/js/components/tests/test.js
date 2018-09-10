@@ -26,6 +26,7 @@ export default {
         ...mapActions('tests/test', [
             'getTest',
             'updateSelectedAnswers',
+            'sendAnswers',
         ])
     },
     mounted() {

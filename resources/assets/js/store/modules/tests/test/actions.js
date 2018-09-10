@@ -12,5 +12,8 @@ export default {
   },
   updateSelectedAnswers({ commit }, answers) {
     commit('updateSelectedAnswers', answers)
-  }
+  },
+  sendAnswers({ commit }, answers) {
+    console.log(answers)
+  },
 }

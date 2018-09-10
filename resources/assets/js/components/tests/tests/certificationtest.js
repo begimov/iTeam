@@ -15,10 +15,15 @@ export default {
     watch: {
         answers: {
             handler: function (answers) {
-                this.$emit('input', answers);
+                this.$emit('input', answers)
             },
             deep: true
         },
+    },
+    methods: {
+        sendAnswers() {
+            this.$emit('sendAnswers', this.answers)
+        }
     },
     mounted() {
         _.forEach(this.test.testQuestions.data, (q) => {

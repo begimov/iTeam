@@ -52688,7 +52688,7 @@ exports.default = {
             }
         }
     }),
-    methods: _extends({}, (0, _vuex.mapActions)('tests/test', ['getTest', 'updateSelectedAnswers'])),
+    methods: _extends({}, (0, _vuex.mapActions)('tests/test', ['getTest', 'updateSelectedAnswers', 'sendAnswers'])),
     mounted: function mounted() {
         this.getTest(this.testId);
     }
@@ -52714,6 +52714,7 @@ var render = function() {
           [
             _c("certification-test", {
               attrs: { test: _vm.test },
+              on: { sendAnswers: _vm.sendAnswers },
               model: {
                 value: _vm.answers,
                 callback: function($$v) {
@@ -52965,6 +52966,11 @@ exports.default = {
     var commit = _ref2.commit;
 
     commit('updateSelectedAnswers', answers);
+  },
+  sendAnswers: function sendAnswers(_ref3, answers) {
+    var commit = _ref3.commit;
+
+    console.log(answers);
   }
 };
 
@@ -53091,6 +53097,11 @@ exports.default = {
                 this.$emit('input', answers);
             },
             deep: true
+        }
+    },
+    methods: {
+        sendAnswers: function sendAnswers() {
+            this.$emit('sendAnswers', this.answers);
         }
     },
     mounted: function mounted() {
@@ -53254,7 +53265,26 @@ var render = function() {
             ])
           ])
         ])
-      })
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-4" }, [
+        _c("div", { staticClass: "col" }, [
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.sendAnswers($event)
+                }
+              }
+            },
+            [_vm._v("Узнать результаты")]
+          )
+        ])
+      ])
     ],
     2
   )

@@ -30,6 +30,12 @@
                 </div>
             </div>
         </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <a href="#" @click.prevent="sendAnswers" class="btn btn-primary">Узнать результаты</a>
+            </div>
+        </div>
     </div>
 </template>
 
