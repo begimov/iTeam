@@ -8,9 +8,19 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mb-3">{{ question.question }}</h4>
-                        <template v-if="multipleСhoice(question)">
+
+                        <template v-if="question.multiple_choice">
                             <div class="form-check" v-for="answer in question.testAnswers.data" :key="answer.id">
-                                <input class="form-check-input" type="checkbox">
+                                <input class="form-check-input" type="checkbox" :value="answer.id" v-model="answers[question.id]">
+                                <label class="form-check-label mt-1">
+                                    {{ answer.answer }}
+                                </label>
+                            </div>
+                        </template>
+
+                        <template v-else>
+                            <div class="form-check" v-for="answer in question.testAnswers.data" :key="answer.id">
+                                <input class="form-check-input" type="radio" :value="answer.id" v-model="answers[question.id]">
                                 <label class="form-check-label mt-1">
                                     {{ answer.answer }}
                                 </label>

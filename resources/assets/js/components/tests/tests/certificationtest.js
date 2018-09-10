@@ -7,9 +7,14 @@ export default {
             required: true
         }
     },
-    methods: {
-        multipleСhoice(question) {
-            return true
+    data() {
+        return {
+            answers: {
+                15: []
+            }
         }
+    },
+    mounted() {
+        //
     }
 };

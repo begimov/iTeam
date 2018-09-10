@@ -53047,10 +53047,15 @@ exports.default = {
             required: true
         }
     },
-    methods: {
-        multipleСhoice: function multipleHoice(question) {
-            return true;
-        }
+    data: function data() {
+        return {
+            answers: {
+                15: []
+            }
+        };
+    },
+    mounted: function mounted() {
+        //
     }
 };
 
@@ -53082,15 +53087,62 @@ var render = function() {
                     _vm._v(_vm._s(question.question))
                   ]),
                   _vm._v(" "),
-                  _vm.multipleСhoice(question)
+                  question.multiple_choice
                     ? _vm._l(question.testAnswers.data, function(answer) {
                         return _c(
                           "div",
                           { key: answer.id, staticClass: "form-check" },
                           [
                             _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.answers[question.id],
+                                  expression: "answers[question.id]"
+                                }
+                              ],
                               staticClass: "form-check-input",
-                              attrs: { type: "checkbox" }
+                              attrs: { type: "checkbox" },
+                              domProps: {
+                                value: answer.id,
+                                checked: Array.isArray(_vm.answers[question.id])
+                                  ? _vm._i(
+                                      _vm.answers[question.id],
+                                      answer.id
+                                    ) > -1
+                                  : _vm.answers[question.id]
+                              },
+                              on: {
+                                change: function($event) {
+                                  var $$a = _vm.answers[question.id],
+                                    $$el = $event.target,
+                                    $$c = $$el.checked ? true : false
+                                  if (Array.isArray($$a)) {
+                                    var $$v = answer.id,
+                                      $$i = _vm._i($$a, $$v)
+                                    if ($$el.checked) {
+                                      $$i < 0 &&
+                                        _vm.$set(
+                                          _vm.answers,
+                                          question.id,
+                                          $$a.concat([$$v])
+                                        )
+                                    } else {
+                                      $$i > -1 &&
+                                        _vm.$set(
+                                          _vm.answers,
+                                          question.id,
+                                          $$a
+                                            .slice(0, $$i)
+                                            .concat($$a.slice($$i + 1))
+                                        )
+                                    }
+                                  } else {
+                                    _vm.$set(_vm.answers, question.id, $$c)
+                                  }
+                                }
+                              }
                             }),
                             _vm._v(" "),
                             _c(
@@ -53107,7 +53159,50 @@ var render = function() {
                           ]
                         )
                       })
-                    : _vm._e()
+                    : _vm._l(question.testAnswers.data, function(answer) {
+                        return _c(
+                          "div",
+                          { key: answer.id, staticClass: "form-check" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.answers[question.id],
+                                  expression: "answers[question.id]"
+                                }
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: { type: "radio" },
+                              domProps: {
+                                value: answer.id,
+                                checked: _vm._q(
+                                  _vm.answers[question.id],
+                                  answer.id
+                                )
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.$set(_vm.answers, question.id, answer.id)
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              { staticClass: "form-check-label mt-1" },
+                              [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(answer.answer) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      })
                 ],
                 2
               )
