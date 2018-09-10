@@ -11,7 +11,6 @@ class TestAnswerTransformer extends \League\Fractal\TransformerAbstract
         return [
             'id' => $testAnswer->id,
             'answer' => $testAnswer->answer,
-            'points' => $testAnswer->points,
             'sort_order' => $testAnswer->sort_order,
         ];
     }

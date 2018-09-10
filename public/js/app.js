@@ -53078,7 +53078,7 @@ var render = function() {
                 "div",
                 { staticClass: "card-body" },
                 [
-                  _c("h4", { staticClass: "mb-4" }, [
+                  _c("h4", { staticClass: "mb-3" }, [
                     _vm._v(_vm._s(question.question))
                   ]),
                   _vm._v(" "),

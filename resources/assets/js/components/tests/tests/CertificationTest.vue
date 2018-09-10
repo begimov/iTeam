@@ -7,7 +7,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="mb-4">{{ question.question }}</h4>
+                        <h4 class="mb-3">{{ question.question }}</h4>
                         <template v-if="multipleСhoice(question)">
                             <div class="form-check" v-for="answer in question.testAnswers.data" :key="answer.id">
                                 <input class="form-check-input" type="checkbox">
