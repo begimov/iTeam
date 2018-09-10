@@ -52923,7 +52923,7 @@ exports.default = {
   getTest: function getTest(_ref, id) {
     var commit = _ref.commit;
 
-    console.log(id);
+    commit('setIsLoading', true);
   }
 };
 
@@ -52938,7 +52938,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  //
+  setIsLoading: function setIsLoading(state, value) {
+    state.isLoading = value;
+  }
 };
 
 /***/ })
