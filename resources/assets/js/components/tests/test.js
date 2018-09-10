@@ -1,6 +1,12 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
+    props: {
+        testId: {
+            type: Number,
+            required: true
+        }
+    },
     computed: {
         // ...mapGetters('users/dashboard', [
         //     'isLoading',
@@ -12,6 +18,6 @@ export default {
         // ])
     },
     mounted() {
-        // this.getOrders();
+        // this.getTest(testId)
     }
 };

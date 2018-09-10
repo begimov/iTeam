@@ -9,6 +9,6 @@ class TestController extends Controller
 {
     public function show($id)
     {
-        return view('tests.test');
+        return view('tests.test', compact('id'));
     }
 }

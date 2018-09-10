@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-  <iteam-test class="my-5"></iteam-test>
+  <iteam-test :test-id="{{ $id }}" class="my-5" />
 @endsection

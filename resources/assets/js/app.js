@@ -35,6 +35,9 @@ Vue.component('invoice-payment', require('./components/users/orders/payments/Inv
 // Paid product materials
 Vue.component('product', require('./components/users/products/Product.vue'));
 
+// Tests
+Vue.component('iteam-test', require('./components/tests/Test.vue'));
+
 const app = new Vue({
     el: '#app',
     store
