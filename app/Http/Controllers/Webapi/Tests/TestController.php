@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webapi\Tests;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Contracts\Tests\TestRepository;
 
 class TestController extends Controller
@@ -17,6 +18,12 @@ class TestController extends Controller
 
     public function show($id)
     {
-        dd($this->tests->findById($id));
+        $test = $this->tests
+            ->withCriteria([
+                new With(['testType'])
+            ])
+            ->findById($id);
+        
+        dd($test);
     }
 }
