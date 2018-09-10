@@ -4,5 +4,8 @@ export default {
   },
   setTest(state, data) {
     state.test = data
+  },
+  updateSelectedAnswers(state, data) {
+    state.selectedAnswers = data
   }
 }

@@ -1,4 +1,5 @@
 export default {
   isLoading: false,
-  test: null
+  test: null,
+  selectedAnswers: null
 }

@@ -4,5 +4,8 @@ export default {
   },
   test(state) {
     return state.test
+  },
+  selectedAnswers(state) {
+    return state.selectedAnswers
   }
 }

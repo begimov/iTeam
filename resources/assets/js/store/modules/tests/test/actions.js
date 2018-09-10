@@ -9,5 +9,8 @@ export default {
     }).catch((err) => {
       console.log(err)
     })
+  },
+  updateSelectedAnswers({ commit }, answers) {
+    commit('updateSelectedAnswers', answers)
   }
 }

@@ -9,12 +9,22 @@ export default {
     },
     data() {
         return {
-            answers: {
-                15: []
-            }
+            answers: {}
         }
     },
+    watch: {
+        answers: {
+            handler: function (answers) {
+                this.$emit('input', answers);
+            },
+            deep: true
+        },
+    },
     mounted() {
-        //
+        _.forEach(this.test.testQuestions.data, (q) => {
+            if (q.multiple_choice) {
+                this.$set(this.answers, q.id, [])
+            }
+        })
     }
 };

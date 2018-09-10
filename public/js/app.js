@@ -52678,8 +52678,17 @@ exports.default = {
             required: true
         }
     },
-    computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading', 'test'])),
-    methods: _extends({}, (0, _vuex.mapActions)('tests/test', ['getTest'])),
+    computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading', 'test', 'selectedAnswers']), {
+        'answers': {
+            get: function get() {
+                return this.selectedAnswers;
+            },
+            set: function set(answers) {
+                this.updateSelectedAnswers(answers);
+            }
+        }
+    }),
+    methods: _extends({}, (0, _vuex.mapActions)('tests/test', ['getTest', 'updateSelectedAnswers'])),
     mounted: function mounted() {
         this.getTest(this.testId);
     }
@@ -52702,7 +52711,18 @@ var render = function() {
       ? _c(
           "div",
           { staticClass: "row" },
-          [_c("certification-test", { attrs: { test: _vm.test } })],
+          [
+            _c("certification-test", {
+              attrs: { test: _vm.test },
+              model: {
+                value: _vm.answers,
+                callback: function($$v) {
+                  _vm.answers = $$v
+                },
+                expression: "answers"
+              }
+            })
+          ],
           1
         )
       : _vm._e()
@@ -52886,7 +52906,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   isLoading: false,
-  test: null
+  test: null,
+  selectedAnswers: null
 };
 
 /***/ }),
@@ -52905,6 +52926,9 @@ exports.default = {
   },
   test: function test(state) {
     return state.test;
+  },
+  selectedAnswers: function selectedAnswers(state) {
+    return state.selectedAnswers;
   }
 };
 
@@ -52936,6 +52960,11 @@ exports.default = {
     }).catch(function (err) {
       console.log(err);
     });
+  },
+  updateSelectedAnswers: function updateSelectedAnswers(_ref2, answers) {
+    var commit = _ref2.commit;
+
+    commit('updateSelectedAnswers', answers);
   }
 };
 
@@ -52955,6 +52984,9 @@ exports.default = {
   },
   setTest: function setTest(state, data) {
     state.test = data;
+  },
+  updateSelectedAnswers: function updateSelectedAnswers(state, data) {
+    state.selectedAnswers = data;
   }
 };
 
@@ -53049,13 +53081,26 @@ exports.default = {
     },
     data: function data() {
         return {
-            answers: {
-                15: []
-            }
+            answers: {}
         };
     },
+
+    watch: {
+        answers: {
+            handler: function handler(answers) {
+                this.$emit('input', answers);
+            },
+            deep: true
+        }
+    },
     mounted: function mounted() {
-        //
+        var _this = this;
+
+        _.forEach(this.test.testQuestions.data, function (q) {
+            if (q.multiple_choice) {
+                _this.$set(_this.answers, q.id, []);
+            }
+        });
     }
 };
 

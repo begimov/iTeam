@@ -11,11 +11,21 @@ export default {
         ...mapGetters('tests/test', [
             'isLoading',
             'test',
-        ])
+            'selectedAnswers',
+        ]),
+        'answers': {
+            get () {
+                return this.selectedAnswers
+            },
+            set (answers) {
+                this.updateSelectedAnswers(answers)
+            }
+        },
     },
     methods: {
         ...mapActions('tests/test', [
             'getTest',
+            'updateSelectedAnswers',
         ])
     },
     mounted() {
