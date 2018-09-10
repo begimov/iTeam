@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webapi\Tests;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Transformers\Tests\TestTransformer;
 use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Contracts\Tests\TestRepository;
 
@@ -26,6 +27,10 @@ class TestController extends Controller
             ])
             ->findById($id);
         
-        dd($test);
+        return fractal()
+            ->item($test)
+            // ->parseIncludes($relations)
+            ->transformWith(new TestTransformer)
+            ->toArray();
     }
 }
