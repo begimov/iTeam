@@ -6,6 +6,8 @@ use App\Models\Tests\TestQuestion;
 
 class TestQuestionTransformer extends \League\Fractal\TransformerAbstract
 {
+    protected $availableIncludes = ['testAnswers'];
+
     public function transform(TestQuestion $testQuestion)
     {
         return [
@@ -13,5 +15,10 @@ class TestQuestionTransformer extends \League\Fractal\TransformerAbstract
             'question' => $testQuestion->question,
             'sort_order' => $testQuestion->sort_order,
         ];
+    }
+
+    public function includeTestAnswers(TestQuestion $testQuestion)
+    {
+        return $this->collection($testQuestion->testAnswers, new TestAnswerTransformer);
     }
 }
