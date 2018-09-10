@@ -17,6 +17,6 @@ class TestController extends Controller
 
     public function show($id)
     {
-        return $id;
+        dd($this->tests->findById($id));
     }
 }
