@@ -53057,9 +53057,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.test.name))])
-  ])
+  return _c(
+    "div",
+    { staticClass: "col" },
+    [
+      _c("h1", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.test.name))]),
+      _vm._v(" "),
+      _c("h3", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.test.description))]),
+      _vm._v(" "),
+      _vm._l(_vm.test.testQuestions.data, function(question) {
+        return _c("div", { key: question.id, staticClass: "row mt-3" }, [
+          _c("div", { staticClass: "col" }, [
+            _c("div", { staticClass: "card" }, [
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [
+                  _c("h4", { staticClass: "mb-4" }, [
+                    _vm._v(_vm._s(question.question))
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(question.testAnswers.data, function(answer) {
+                    return _c("p", { key: answer.id }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(answer.answer) +
+                          "\n                    "
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
