@@ -37,6 +37,7 @@ Vue.component('product', require('./components/users/products/Product.vue'));
 
 // Tests
 Vue.component('iteam-test', require('./components/tests/Test.vue'));
+Vue.component('certification-test', require('./components/tests/tests/CertificationTest.vue'));
 
 const app = new Vue({
     el: '#app',

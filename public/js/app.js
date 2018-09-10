@@ -25983,6 +25983,7 @@ Vue.component('product', __webpack_require__(111));
 
 // Tests
 Vue.component('iteam-test', __webpack_require__(114));
+Vue.component('certification-test', __webpack_require__(132));
 
 var app = new Vue({
   el: '#app',
@@ -52697,12 +52698,13 @@ var render = function() {
       class: { isActive: _vm.isLoading, loader: true, "loader-def": true }
     }),
     _vm._v(" "),
-    _vm.test.testType.data.id == 1
-      ? _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.test))])
-          ])
-        ])
+    _vm.test && _vm.test.testType.data.id == 1
+      ? _c(
+          "div",
+          { staticClass: "row" },
+          [_c("certification-test", { attrs: { test: _vm.test } })],
+          1
+        )
       : _vm._e()
   ])
 }
@@ -52977,6 +52979,97 @@ exports.default = {
     });
   }
 };
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(133)
+/* template */
+var __vue_template__ = __webpack_require__(134)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/tests/tests/CertificationTest.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60865f69", Component.options)
+  } else {
+    hotAPI.reload("data-v-60865f69", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vuex = __webpack_require__(2);
+
+exports.default = {
+    props: {
+        test: {
+            type: Object,
+            required: true
+        }
+    }
+};
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col" }, [
+    _c("h1", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.test.name))])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-60865f69", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
