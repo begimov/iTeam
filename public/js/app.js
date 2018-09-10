@@ -52888,7 +52888,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  isLoading: false
+  isLoading: false,
+  test: null
 };
 
 /***/ }),
@@ -52929,9 +52930,8 @@ exports.default = {
     var commit = _ref.commit;
 
     commit('setIsLoading', true);
-
     _api2.default.test.getTest(id).then(function (res) {
-      console.log(res);
+      commit('setTest', res.data.data);
       commit('setIsLoading', false);
     }).catch(function (err) {
       console.log(err);
@@ -52952,6 +52952,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   setIsLoading: function setIsLoading(state, value) {
     state.isLoading = value;
+  },
+  setTest: function setTest(state, data) {
+    state.test = data;
   }
 };
 
