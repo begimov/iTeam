@@ -25999,6 +25999,10 @@ var _users = __webpack_require__(19);
 
 var _users2 = _interopRequireDefault(_users);
 
+var _tests = __webpack_require__(121);
+
+var _tests2 = _interopRequireDefault(_tests);
+
 var _vue = __webpack_require__(6);
 
 var _vue2 = _interopRequireDefault(_vue);
@@ -26013,7 +26017,8 @@ _vue2.default.use(_vuex2.default);
 
 exports.default = new _vuex2.default.Store({
   modules: {
-    users: _users2.default
+    users: _users2.default,
+    tests: _tests2.default
   }
 });
 
@@ -52718,6 +52723,112 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(122);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(123);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(124);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(125);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default,
+  modules: {
+    //
+  }
+};
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(3);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
 
 /***/ })
 /******/ ]);
