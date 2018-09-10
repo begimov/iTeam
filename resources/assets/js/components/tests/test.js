@@ -10,6 +10,7 @@ export default {
     computed: {
         ...mapGetters('tests/test', [
             'isLoading',
+            'test',
         ])
     },
     methods: {
