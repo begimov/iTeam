@@ -1455,13 +1455,18 @@ var _invoice = __webpack_require__(27);
 
 var _invoice2 = _interopRequireDefault(_invoice);
 
+var _test = __webpack_require__(131);
+
+var _test2 = _interopRequireDefault(_test);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   dashboard: _dashboard2.default,
   product: _product2.default,
   walletone: _walletone2.default,
-  invoice: _invoice2.default
+  invoice: _invoice2.default,
+  test: _test2.default
 };
 
 /***/ }),
@@ -52924,6 +52929,13 @@ exports.default = {
     var commit = _ref.commit;
 
     commit('setIsLoading', true);
+
+    _api2.default.test.getTest(id).then(function (res) {
+      console.log(res);
+      commit('setIsLoading', false);
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 };
 
@@ -52940,6 +52952,28 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   setIsLoading: function setIsLoading(state, value) {
     state.isLoading = value;
+  }
+};
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getTest: function getTest(id) {
+    return new Promise(function (resolve, reject) {
+      axios.get("/webapi/tests/" + id).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
   }
 };
 
