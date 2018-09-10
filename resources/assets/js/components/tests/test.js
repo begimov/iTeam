@@ -8,9 +8,9 @@ export default {
         }
     },
     computed: {
-        // ...mapGetters('users/dashboard', [
-        //     'isLoading',
-        // ])
+        ...mapGetters('tests/test', [
+            'isLoading',
+        ])
     },
     methods: {
         // ...mapActions('users/dashboard', [

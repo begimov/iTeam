@@ -52661,6 +52661,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _vuex = __webpack_require__(2);
 
 exports.default = {
@@ -52670,11 +52672,7 @@ exports.default = {
             required: true
         }
     },
-    computed: {
-        // ...mapGetters('users/dashboard', [
-        //     'isLoading',
-        // ])
-    },
+    computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading'])),
     methods: {
         // ...mapActions('users/dashboard', [
         //     'getOrders',
@@ -52754,6 +52752,10 @@ var _mutations = __webpack_require__(125);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
+var _test = __webpack_require__(126);
+
+var _test2 = _interopRequireDefault(_test);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -52763,7 +52765,7 @@ exports.default = {
   actions: _actions2.default,
   mutations: _mutations2.default,
   modules: {
-    //
+    test: _test2.default
   }
 };
 
@@ -52818,6 +52820,109 @@ exports.default = {
 
 /***/ }),
 /* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(127);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(128);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(129);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(130);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default,
+  modules: {
+    //
+  }
+};
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(3);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  //
+};
+
+/***/ }),
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
