@@ -10,4 +10,9 @@ class Test extends Model
     {
         return $this->belongsTo(TestType::class);
     }
+
+    public function testQuestions()
+    {
+        return $this->hasMany(TestQuestion::class);
+    }
 }

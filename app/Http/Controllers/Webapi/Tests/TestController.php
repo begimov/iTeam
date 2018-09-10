@@ -18,9 +18,11 @@ class TestController extends Controller
 
     public function show($id)
     {
+        $relations = ['testType', 'testQuestions'];
+
         $test = $this->tests
             ->withCriteria([
-                new With(['testType'])
+                new With($relations)
             ])
             ->findById($id);
         
