@@ -13,11 +13,11 @@ export default {
         ])
     },
     methods: {
-        // ...mapActions('users/dashboard', [
-        //     'getOrders',
-        // ])
+        ...mapActions('tests/test', [
+            'getTest',
+        ])
     },
     mounted() {
-        // this.getTest(testId)
+        this.getTest(this.testId)
     }
 };

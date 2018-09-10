@@ -52673,13 +52673,9 @@ exports.default = {
         }
     },
     computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading'])),
-    methods: {
-        // ...mapActions('users/dashboard', [
-        //     'getOrders',
-        // ])
-    },
+    methods: _extends({}, (0, _vuex.mapActions)('tests/test', ['getTest'])),
     mounted: function mounted() {
-        // this.getTest(testId)
+        this.getTest(this.testId);
     }
 };
 
@@ -52924,7 +52920,11 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  //
+  getTest: function getTest(_ref, id) {
+    var commit = _ref.commit;
+
+    console.log(id);
+  }
 };
 
 /***/ }),
