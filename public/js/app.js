@@ -52691,18 +52691,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", {
+      class: { isActive: _vm.isLoading, loader: true, "loader-def": true }
+    }),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("h1", { staticClass: "mb-4" }, [_vm._v("Тест")])
-        ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col" }, [
+        _c("h1", { staticClass: "mb-4" }, [_vm._v("Тест")])
       ])
     ])
   }
@@ -52883,7 +52887,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  //
+  isLoading: false
 };
 
 /***/ }),
@@ -52897,7 +52901,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  //
+  isLoading: function isLoading(state) {
+    return state.isLoading;
+  }
 };
 
 /***/ }),
