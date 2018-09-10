@@ -18,7 +18,7 @@ class TestController extends Controller
 
     public function show($id)
     {
-        $relations = ['testType', 'testQuestions'];
+        $relations = ['testType', 'testQuestions', 'testQuestions.testAnswers'];
 
         $test = $this->tests
             ->withCriteria([
