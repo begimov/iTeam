@@ -50,6 +50,7 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
 
     // Tests
     Route::get('tests/{test}', 'Tests\TestController@show');
+    Route::post('tests/{test}/answers', 'Tests\TestController@storeAnswers');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {

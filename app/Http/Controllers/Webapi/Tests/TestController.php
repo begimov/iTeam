@@ -33,4 +33,9 @@ class TestController extends Controller
             ->transformWith(new TestTransformer)
             ->toArray();
     }
+
+    public function storeAnswers(Request $request, $testId)
+    {
+        dd($testId, $request->all());
+    }
 }

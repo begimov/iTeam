@@ -16,6 +16,7 @@ export default {
   sendAnswers({ commit, state }, answers) {
     commit('setIsLoading', true)
     api.test.sendAnswers(state.test.id, answers).then((res) => {
+      console.log(res)
       commit('setIsLoading', false)
     }).catch((err) => {
       console.log(err)

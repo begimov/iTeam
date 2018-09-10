@@ -52973,6 +52973,7 @@ exports.default = {
 
     commit('setIsLoading', true);
     _api2.default.test.sendAnswers(state.test.id, answers).then(function (res) {
+      console.log(res);
       commit('setIsLoading', false);
     }).catch(function (err) {
       console.log(err);
