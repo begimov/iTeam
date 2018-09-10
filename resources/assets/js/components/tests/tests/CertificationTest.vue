@@ -8,9 +8,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mb-4">{{ question.question }}</h4>
-                        <p v-for="answer in question.testAnswers.data" :key="answer.id">
-                            {{ answer.answer }}
-                        </p>
+                        <template v-if="multipleСhoice(question)">
+                            <div class="form-check" v-for="answer in question.testAnswers.data" :key="answer.id">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label mt-1">
+                                    {{ answer.answer }}
+                                </label>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>

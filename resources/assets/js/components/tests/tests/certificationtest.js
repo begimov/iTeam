@@ -6,5 +6,10 @@ export default {
             type: Object,
             required: true
         }
+    },
+    methods: {
+        multipleСhoice(question) {
+            return true
+        }
     }
 };

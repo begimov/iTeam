@@ -53046,6 +53046,11 @@ exports.default = {
             type: Object,
             required: true
         }
+    },
+    methods: {
+        multipleСhoice: function multipleHoice(question) {
+            return true;
+        }
     }
 };
 
@@ -53077,15 +53082,32 @@ var render = function() {
                     _vm._v(_vm._s(question.question))
                   ]),
                   _vm._v(" "),
-                  _vm._l(question.testAnswers.data, function(answer) {
-                    return _c("p", { key: answer.id }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(answer.answer) +
-                          "\n                    "
-                      )
-                    ])
-                  })
+                  _vm.multipleСhoice(question)
+                    ? _vm._l(question.testAnswers.data, function(answer) {
+                        return _c(
+                          "div",
+                          { key: answer.id, staticClass: "form-check" },
+                          [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: { type: "checkbox" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              { staticClass: "form-check-label mt-1" },
+                              [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(answer.answer) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      })
+                    : _vm._e()
                 ],
                 2
               )
