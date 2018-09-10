@@ -29,6 +29,8 @@ export default {
         _.forEach(this.test.testQuestions.data, (q) => {
             if (q.multiple_choice) {
                 this.$set(this.answers, q.id, [])
+            } else {
+                this.$set(this.answers, q.id, null)
             }
         })
     }

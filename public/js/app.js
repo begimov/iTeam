@@ -53126,6 +53126,8 @@ exports.default = {
         _.forEach(this.test.testQuestions.data, function (q) {
             if (q.multiple_choice) {
                 _this.$set(_this.answers, q.id, []);
+            } else {
+                _this.$set(_this.answers, q.id, null);
             }
         });
     }
