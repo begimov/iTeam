@@ -19,7 +19,8 @@ class TestController extends Controller
 
     public function show($id)
     {
-        $relations = ['testType', 'testQuestions', 'testQuestions.testAnswers'];
+        // $relations = ['testType', 'testQuestions', 'testQuestions.testAnswers'];
+        $relations = ['testType'];
 
         $test = $this->tests
             ->withCriteria([
@@ -29,7 +30,7 @@ class TestController extends Controller
         
         return fractal()
             ->item($test)
-            // ->parseIncludes($relations)
+            ->parseIncludes($relations)
             ->transformWith(new TestTransformer)
             ->toArray();
     }

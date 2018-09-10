@@ -6,7 +6,7 @@ use App\Models\Tests\Test;
 
 class TestTransformer extends \League\Fractal\TransformerAbstract
 {
-    // protected $availableIncludes = ['product', 'materials'];
+    protected $availableIncludes = ['testType'];
 
     public function transform(Test $test)
     {
@@ -17,8 +17,8 @@ class TestTransformer extends \League\Fractal\TransformerAbstract
         ];
     }
 
-    // public function includeProduct(Order $order)
-    // {
-    //     return $this->item($order->product, new ProductTransformer);
-    // }
+    public function includeTestType(Test $test)
+    {
+        return $this->item($test->testType, new TestTypeTransformer);
+    }
 }
