@@ -13,7 +13,12 @@ export default {
   updateSelectedAnswers({ commit }, answers) {
     commit('updateSelectedAnswers', answers)
   },
-  sendAnswers({ commit }, answers) {
-    console.log(answers)
+  sendAnswers({ commit, state }, answers) {
+    commit('setIsLoading', true)
+    api.test.sendAnswers(state.test.id, answers).then((res) => {
+      commit('setIsLoading', false)
+    }).catch((err) => {
+      console.log(err)
+    })
   },
 }

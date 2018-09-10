@@ -52968,9 +52968,15 @@ exports.default = {
     commit('updateSelectedAnswers', answers);
   },
   sendAnswers: function sendAnswers(_ref3, answers) {
-    var commit = _ref3.commit;
+    var commit = _ref3.commit,
+        state = _ref3.state;
 
-    console.log(answers);
+    commit('setIsLoading', true);
+    _api2.default.test.sendAnswers(state.test.id, answers).then(function (res) {
+      commit('setIsLoading', false);
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 };
 
@@ -53010,6 +53016,15 @@ exports.default = {
   getTest: function getTest(id) {
     return new Promise(function (resolve, reject) {
       axios.get("/webapi/tests/" + id).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  },
+  sendAnswers: function sendAnswers(testId, answers) {
+    return new Promise(function (resolve, reject) {
+      axios.post("/webapi/tests/" + testId + "/answers", answers).then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);
