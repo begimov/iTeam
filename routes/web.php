@@ -28,6 +28,11 @@ Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' =>
     Route::get('{product}/materials/{material}/files/{file}', 'ProductController@download');
 }); 
 
+// Tests
+Route::group(['prefix' => 'tests', 'namespace' => 'Tests'], function () {
+    Route::get('{test}', 'TestController@show')->name('tests.show');
+}); 
+
 // User dashboard & profile
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users', 'as' => 'user.'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
@@ -40,7 +45,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 
 // WebAPI
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
+    // Magnets
     Route::post('magnets/subscribe', 'Pages\MagnetController@subscribe');
+
+    // Tests
+    Route::get('tests/{test}', 'Tests\TestController@show');
+    Route::post('tests/{test}/answers', 'Tests\TestController@storeAnswers');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {

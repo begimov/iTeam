@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 use App\Filters\Pages\PageFilters;
+use App\Models\Products\Product;
 
 class Page extends Model
 {
@@ -40,5 +41,27 @@ class Page extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function productPrice()
+    {
+        $priceElements = array_filter($this->elements->toArray(), function($element) {
+            return array_key_exists('product', $element['data']) 
+                || array_key_exists('products', $element['data']);
+        });
+
+        if (empty($priceElements)) {
+            return 'БЕСПЛАТНО';
+        }
+
+        $productIds = array_map(function($element) {
+            return array_key_exists('product', $element['data']) 
+                ? $element['data']['product']['productId'] 
+                : $element['data']['products'][0]['productId'];
+        }, $priceElements);
+
+        $productId = array_shift($productIds);
+        
+        return round(Product::find($productId)->price) . '~';
     }
 }
