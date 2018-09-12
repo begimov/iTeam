@@ -33,7 +33,7 @@ class PageController extends Controller
 
     public function index($slug)
     {
-        $relations = ['pages'];
+        $relations = ['pages', 'pages.elements'];
 
         $category = $this->categories->withCriteria([
             new With($relations),

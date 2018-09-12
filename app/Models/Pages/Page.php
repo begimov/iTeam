@@ -41,4 +41,9 @@ class Page extends Model
     {
         return 'slug';
     }
+
+    public function productPrice()
+    {
+        return 100000;
+    }
 }
