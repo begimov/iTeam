@@ -18,6 +18,8 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
 
     public function store($testId, $request)
     {
+        $this->deletePreviousResults($testId, $request);
+
         $testResult = new TestResult();
 
         $testResult->data = $request->all();
@@ -29,5 +31,12 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
         $testResult->save();
 
         return $testResult;
+    }
+
+    protected function deletePreviousResults($testId, $request)
+    {
+        TestResult::where('test_id', $testId)
+            ->where('user_id', $request->user()->id)
+            ->delete();
     }
 }
