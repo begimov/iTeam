@@ -17,6 +17,6 @@ class TestResultController extends Controller
 
     public function store(Request $request, $testId)
     {
-        dd($testId, $request->all());
+        return $this->testresults->store($testId, $request);
     }
 }
