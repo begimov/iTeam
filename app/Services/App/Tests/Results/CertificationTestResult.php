@@ -4,8 +4,8 @@ namespace App\Services\App\Tests\Results;
 
 class CertificationTestResult extends TestResultAbstract
 {
-    public function storeAnswers($request)
+    public function processTestResults($testResult)
     {
-        //
+        dd($testResult);
     }
 }

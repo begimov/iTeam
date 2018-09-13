@@ -10,7 +10,7 @@ abstract class TestResultAbstract
 
     ];
 
-    abstract public function storeAnswers($request);
+    abstract public function processTestResults($testResult);
 
     public static function create($testId)
     {

@@ -21,23 +21,21 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
 
     public function store($testId, $request)
     {
-        $this->deletePreviousResults($testId, $request);
+        $this->deletePreviousTestResult($testId, $request->user()->id);
 
-        $this->buildTestResult($test = Test::find($testId), $request)->save();
+        $testResult = $this->storeNewTestResult($test = Test::find($testId), $request);
 
-        dd(TestResultAbstract::create($test->test_type_id));
-
-        return $testResult;
+        return $this->buildTestResults($test, $testResult);
     }
 
-    protected function deletePreviousResults($testId, $request)
+    protected function deletePreviousTestResult($testId, $userId)
     {
         TestResult::where('test_id', $testId)
-            ->where('user_id', $request->user()->id)
+            ->where('user_id', $userId)
             ->delete();
     }
 
-    protected function buildTestResult($test, $request)
+    protected function storeNewTestResult($test, $request)
     {
         $testResult = new TestResult();
 
@@ -46,6 +44,13 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
         $testResult->user()->associate($request->user());
         $testResult->test()->associate($test);
 
+        $testResult->save();
+
         return $testResult;
+    }
+
+    protected function buildTestResults($test, $testResult)
+    {
+        return TestResultAbstract::create($test->test_type_id)->processTestResults($testResult);
     }
 }
