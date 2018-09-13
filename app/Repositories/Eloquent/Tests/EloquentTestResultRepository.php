@@ -6,8 +6,11 @@ use App\Models\Tests\{
     Test,
     TestResult
 };
+
 use App\Repositories\EloquentRepositoryAbstract;
 use App\Repositories\Contracts\Tests\TestResultRepository;
+
+use App\Services\App\Tests\Results\TestResultAbstract;
 
 class EloquentTestResultRepository extends EloquentRepositoryAbstract implements TestResultRepository
 {
@@ -20,15 +23,9 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
     {
         $this->deletePreviousResults($testId, $request);
 
-        $testResult = new TestResult();
+        $this->buildTestResult($test = Test::find($testId), $request)->save();
 
-        $testResult->data = $request->all();
-
-        $testResult->user()->associate($request->user());
-
-        $testResult->test()->associate(Test::find($testId));
-
-        $testResult->save();
+        dd(TestResultAbstract::create($test->test_type_id));
 
         return $testResult;
     }
@@ -38,5 +35,17 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
         TestResult::where('test_id', $testId)
             ->where('user_id', $request->user()->id)
             ->delete();
+    }
+
+    protected function buildTestResult($test, $request)
+    {
+        $testResult = new TestResult();
+
+        $testResult->data = $request->all();
+
+        $testResult->user()->associate($request->user());
+        $testResult->test()->associate($test);
+
+        return $testResult;
     }
 }
