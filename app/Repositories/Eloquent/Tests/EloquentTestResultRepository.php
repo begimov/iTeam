@@ -2,7 +2,10 @@
 
 namespace App\Repositories\Eloquent\Tests;
 
-use App\Models\Tests\TestResult;
+use App\Models\Tests\{
+    Test,
+    TestResult
+};
 use App\Repositories\EloquentRepositoryAbstract;
 use App\Repositories\Contracts\Tests\TestResultRepository;
 
@@ -15,6 +18,16 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
 
     public function store($testId, $request)
     {
-        dd($request->user(), $testId, $request->all());
+        $testResult = new TestResult();
+
+        $testResult->data = $request->all();
+
+        $testResult->user()->associate($request->user());
+
+        $testResult->test()->associate(Test::find($testId));
+
+        $testResult->save();
+
+        return $testResult;
     }
 }
