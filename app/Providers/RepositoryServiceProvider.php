@@ -29,8 +29,15 @@ use App\Repositories\Eloquent\Pages\{
 use App\Repositories\Contracts\Users\BusinessEntityRepository;
 use App\Repositories\Eloquent\Users\EloquentBusinessEntityRepository;
 
-use App\Repositories\Contracts\Tests\TestRepository;
-use App\Repositories\Eloquent\Tests\EloquentTestRepository;
+use App\Repositories\Contracts\Tests\{
+    TestRepository,
+    TestResultRepository
+};
+
+use App\Repositories\Eloquent\Tests\{
+    EloquentTestRepository,
+    EloquentTestResultRepository
+};
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -48,6 +55,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ProductRepository::class, EloquentProductRepository::class);
         $this->app->bind(BusinessEntityRepository::class, EloquentBusinessEntityRepository::class);
         $this->app->bind(TestRepository::class, EloquentTestRepository::class);
+        $this->app->bind(TestResultRepository::class, EloquentTestResultRepository::class);
     }
 
     /**
