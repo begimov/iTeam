@@ -10,7 +10,7 @@ abstract class TestResultAbstract
 
     ];
 
-    abstract public function processTestResults($testResult);
+    abstract public function processTestResults($test, $testResult);
 
     public static function create($testId)
     {

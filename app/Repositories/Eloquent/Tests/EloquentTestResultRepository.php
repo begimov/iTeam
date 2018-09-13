@@ -51,6 +51,6 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
 
     protected function buildTestResults($test, $testResult)
     {
-        return TestResultAbstract::create($test->test_type_id)->processTestResults($testResult);
+        return TestResultAbstract::create($test->test_type_id)->processTestResults($test, $testResult);
     }
 }
