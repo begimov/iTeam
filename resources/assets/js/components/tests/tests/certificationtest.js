@@ -30,6 +30,14 @@ export default {
             this.$emit('sendAnswers', this.answers)
         }
     },
+    computed: {
+        conditionName() {
+            return this.results ? this.results.condition.data.name : ''
+        },
+        conditionDescription() {
+            return this.results ? this.results.condition.data.description : ''
+        }
+    },
     mounted() {
         _.forEach(this.test.testQuestions.data, (q) => {
             if (q.multiple_choice) {

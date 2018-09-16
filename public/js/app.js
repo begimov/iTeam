@@ -53123,6 +53123,14 @@ exports.default = {
             this.$emit('sendAnswers', this.answers);
         }
     },
+    computed: {
+        conditionName: function conditionName() {
+            return this.results ? this.results.condition.data.name : '';
+        },
+        conditionDescription: function conditionDescription() {
+            return this.results ? this.results.condition.data.description : '';
+        }
+    },
     mounted: function mounted() {
         var _this = this;
 
@@ -53289,7 +53297,29 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm.results
-        ? _c("div", { staticClass: "row mt-4" }, [_vm._m(0)])
+        ? _c("div", { staticClass: "row mt-4" }, [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "card bg-dark text-light" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h4", { staticClass: "card-title" }, [
+                    _vm._v("Ваши результаты")
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", [
+                    _c("span", { staticClass: "badge badge-warning" }, [
+                      _vm._v("Очков: " + _vm._s(_vm.results.score))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "card-subtitle my-3" }, [
+                    _vm._v(_vm._s(_vm.conditionName))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(_vm.conditionDescription))])
+                ])
+              ])
+            ])
+          ])
         : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "row mt-4" }, [
@@ -53314,20 +53344,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("div", { staticClass: "card bg-dark text-light" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _vm._v("\n                    //\n                ")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
