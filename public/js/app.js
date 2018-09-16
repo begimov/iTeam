@@ -27221,6 +27221,9 @@ exports.default = {
   },
   selectedAnswers: function selectedAnswers(state) {
     return state.selectedAnswers;
+  },
+  results: function results(state) {
+    return state.results;
   }
 };
 
@@ -52968,7 +52971,7 @@ exports.default = {
             required: true
         }
     },
-    computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading', 'test', 'selectedAnswers']), {
+    computed: _extends({}, (0, _vuex.mapGetters)('tests/test', ['isLoading', 'test', 'selectedAnswers', 'results']), {
         'answers': {
             get: function get() {
                 return this.selectedAnswers;
@@ -53003,7 +53006,7 @@ var render = function() {
           { staticClass: "row" },
           [
             _c("certification-test", {
-              attrs: { test: _vm.test },
+              attrs: { test: _vm.test, results: _vm.results },
               on: { sendAnswers: _vm.sendAnswers },
               model: {
                 value: _vm.answers,
@@ -53094,6 +53097,11 @@ exports.default = {
         test: {
             type: Object,
             required: true
+        },
+        results: {
+            type: Object,
+            required: false,
+            default: null
         }
     },
     data: function data() {
@@ -53280,6 +53288,10 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
+      _vm.results
+        ? _c("div", { staticClass: "row mt-4" }, [_vm._m(0)])
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", { staticClass: "row mt-4" }, [
         _c("div", { staticClass: "col" }, [
           _c(
@@ -53302,7 +53314,20 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "card bg-dark text-light" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v("\n                    //\n                ")
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -31,6 +31,16 @@
             </div>
         </div>
 
+        <div class="row mt-4" v-if="results">
+            <div class="col">
+                <div class="card bg-dark text-light">
+                    <div class="card-body">
+                        //
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row mt-4">
             <div class="col">
                 <a href="#" @click.prevent="sendAnswers" class="btn btn-primary">Узнать результаты</a>

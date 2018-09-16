@@ -5,6 +5,11 @@ export default {
         test: {
             type: Object,
             required: true
+        },
+        results: {
+            type: Object,
+            required: false,
+            default: null
         }
     },
     data() {

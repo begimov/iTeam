@@ -7,5 +7,8 @@ export default {
   },
   selectedAnswers(state) {
     return state.selectedAnswers
+  },
+  results(state) {
+    return state.results
   }
 }
