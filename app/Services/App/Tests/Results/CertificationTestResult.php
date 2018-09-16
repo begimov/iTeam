@@ -13,7 +13,7 @@ class CertificationTestResult extends TestResultAbstract
             $this->prepareTestData($test)
         );
 
-        dd($testScore);
+        return $this->buildResults($test, $testScore);
     }
 
     protected function prepareTestResultData($testResultData)
@@ -31,12 +31,19 @@ class CertificationTestResult extends TestResultAbstract
             ->with('testAnswers')
             ->get()
             ->reduce(function($result, $question) {
+
                 $result[$question->id] = $question->testAnswers
+
                     ->reduce(function($result, $answer) {
+
                         $result[$answer->id] = $answer->points;
+
                         return $result;
+
                     }, []);
+
                 return $result;
+
             }, []);
     }
 
@@ -53,5 +60,30 @@ class CertificationTestResult extends TestResultAbstract
                         return $acc + $testData[$questionId][$answer];
                     }, 0);
             }, 0);
-    } 
+    }
+    
+    protected function buildResults($test, $testScore)
+    {
+        return [
+            'score' => $testScore,
+            'condition' => $this->getCondition($test, $testScore)
+        ];
+    }
+
+    protected function getCondition($test, $testScore)
+    {
+        $conditions = $test->testConditions->sortBy('score');
+
+        foreach ($conditions as $condition) {
+
+            if ($condition->score >= $testScore) {
+
+                return [
+                    'name' => $condition->name,
+                    'description' => $condition->description,
+                    'score' => $condition->score
+                ];
+            }
+        }
+    }
 }
