@@ -2,6 +2,8 @@
 
 namespace App\Services\App\Tests\Results;
 
+use App\Transformers\Tests\TestConditionTransformer;
+
 class CertificationTestResult extends TestResultAbstract
 {
     public function processTestResults($test, $testResult)
@@ -78,11 +80,7 @@ class CertificationTestResult extends TestResultAbstract
 
             if ($condition->score >= $testScore) {
 
-                return [
-                    'name' => $condition->name,
-                    'description' => $condition->description,
-                    'score' => $condition->score
-                ];
+                return fractal($condition, new TestConditionTransformer)->toArray();
             }
         }
     }
