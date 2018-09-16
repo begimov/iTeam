@@ -6,7 +6,14 @@ class CertificationTestResult extends TestResultAbstract
 {
     public function processTestResults($test, $testResult)
     {
-        $rightAnswers = $test->testQuestions()
+        $rightAnswers = $this->processTestData($test);
+
+        dd($rightAnswers, $testResult->data, $this->calculateTestScore($testResult->data, $rightAnswers));
+    }
+
+    protected function processTestData($test)
+    {
+        return $test->testQuestions()
             ->with('testAnswers')
             ->get()
             ->reduce(function($result, $question) {
@@ -17,8 +24,18 @@ class CertificationTestResult extends TestResultAbstract
                     }, []);
                 return $result;
             }, []);
+    }
 
+    protected function calculateTestScore($testResult, $rightAnswers)
+    {
+        return array_reduce(array_keys($testResult), function($score, $questionId) use ($testResult, $rightAnswers) {
 
-        dd($rightAnswers, $testResult->data);
+            if (is_array($testResult[$questionId])) {
+                return $score;
+            } else {
+                return $score + $rightAnswers[$questionId][$testResult[$questionId]];
+            }
+
+        }, 0);
     }
 }
