@@ -23,6 +23,8 @@ class Test extends Model
 
     public function getMaxScore()
     {
-        return 10;
+        return $this->testQuestions->reduce(function($score, $question) {
+            return $score + $question->testAnswers->sum('points');
+        }, 0);
     }
 }
