@@ -6,12 +6,26 @@ class CertificationTestResult extends TestResultAbstract
 {
     public function processTestResults($test, $testResult)
     {
-        $rightAnswers = $this->processTestData($test);
+        $testScore = $this->calculateTestScore(
 
-        dd($rightAnswers, $testResult->data, $this->calculateTestScore($testResult->data, $rightAnswers));
+            $this->prepareTestResultData($testResult->data), 
+
+            $this->prepareTestData($test)
+        );
+
+        dd($testScore);
     }
 
-    protected function processTestData($test)
+    protected function prepareTestResultData($testResultData)
+    {
+        return array_map(function($answers) {
+
+            return is_array($answers) ? $answers : [$answers];
+
+        }, $testResultData);
+    }
+
+    protected function prepareTestData($test)
     {
         return $test->testQuestions()
             ->with('testAnswers')
@@ -26,16 +40,18 @@ class CertificationTestResult extends TestResultAbstract
             }, []);
     }
 
-    protected function calculateTestScore($testResult, $rightAnswers)
+    protected function calculateTestScore($testResultData, $testData)
     {
-        return array_reduce(array_keys($testResult), function($score, $questionId) use ($testResult, $rightAnswers) {
+        return array_reduce(array_keys($testResultData), 
 
-            if (is_array($testResult[$questionId])) {
-                return $score;
-            } else {
-                return $score + $rightAnswers[$questionId][$testResult[$questionId]];
-            }
+            function($score, $questionId) use ($testResultData, $testData) {
+            
+                return $score + array_reduce($testResultData[$questionId], 
+                    
+                    function($acc, $answer) use ($questionId, $testData) {
 
-        }, 0);
-    }
+                        return $acc + $testData[$questionId][$answer];
+                    }, 0);
+            }, 0);
+    } 
 }
