@@ -7,5 +7,8 @@ export default {
   },
   updateSelectedAnswers(state, data) {
     state.selectedAnswers = data
+  },
+  setResults(state, data) {
+    state.results = data
   }
 }

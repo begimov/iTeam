@@ -27198,7 +27198,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   isLoading: false,
   test: null,
-  selectedAnswers: null
+  selectedAnswers: null,
+  results: null
 };
 
 /***/ }),
@@ -27263,7 +27264,7 @@ exports.default = {
 
     commit('setIsLoading', true);
     _api2.default.test.sendAnswers(state.test.id, answers).then(function (res) {
-      console.log(res);
+      commit('setResults', res.data);
       commit('setIsLoading', false);
     }).catch(function (err) {
       console.log(err);
@@ -27290,6 +27291,9 @@ exports.default = {
   },
   updateSelectedAnswers: function updateSelectedAnswers(state, data) {
     state.selectedAnswers = data;
+  },
+  setResults: function setResults(state, data) {
+    state.results = data;
   }
 };
 
