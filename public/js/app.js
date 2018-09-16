@@ -53307,7 +53307,12 @@ var render = function() {
                   _vm._v(" "),
                   _c("h3", [
                     _c("span", { staticClass: "badge badge-warning" }, [
-                      _vm._v("Очков: " + _vm._s(_vm.results.score))
+                      _vm._v(
+                        "Очков: " +
+                          _vm._s(_vm.results.score) +
+                          " из " +
+                          _vm._s(_vm.results.maxScore)
+                      )
                     ])
                   ]),
                   _vm._v(" "),

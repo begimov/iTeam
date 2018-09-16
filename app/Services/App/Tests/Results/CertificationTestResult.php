@@ -68,6 +68,7 @@ class CertificationTestResult extends TestResultAbstract
     {
         return [
             'score' => $testScore,
+            'maxScore' => $test->getMaxScore(),
             'condition' => $this->getCondition($test, $testScore)
         ];
     }

@@ -20,4 +20,9 @@ class Test extends Model
     {
         return $this->hasMany(TestCondition::class);
     }
+
+    public function getMaxScore()
+    {
+        return 10;
+    }
 }

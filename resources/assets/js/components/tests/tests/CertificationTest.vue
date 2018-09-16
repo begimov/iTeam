@@ -36,7 +36,7 @@
                 <div class="card bg-dark text-light">
                     <div class="card-body">
                         <h4 class="card-title">Ваши результаты</h4>
-                        <h3><span class="badge badge-warning">Очков: {{ results.score }}</span></h3>
+                        <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
                         <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
                         <p>{{ conditionDescription }}</p>
                     </div>
