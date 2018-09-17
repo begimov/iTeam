@@ -39,6 +39,7 @@
                         <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
                         <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
                         <p>{{ conditionDescription }}</p>
+                        <p v-if="results.isCertified"><a href="#" class="btn btn-success">Скачать сертификат</a></p>
                     </div>
                 </div>
             </div>

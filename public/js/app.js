@@ -53089,9 +53089,6 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _vuex = __webpack_require__(3);
-
 exports.default = {
     props: {
         test: {
@@ -53320,7 +53317,20 @@ var render = function() {
                     _vm._v(_vm._s(_vm.conditionName))
                   ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(_vm.conditionDescription))])
+                  _c("p", [_vm._v(_vm._s(_vm.conditionDescription))]),
+                  _vm._v(" "),
+                  _vm.results.isCertified
+                    ? _c("p", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-success",
+                            attrs: { href: "#" }
+                          },
+                          [_vm._v("Скачать сертификат")]
+                        )
+                      ])
+                    : _vm._e()
                 ])
               ])
             ])
