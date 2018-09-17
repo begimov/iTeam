@@ -29,9 +29,9 @@ class CertificationTestResult extends TestResultAbstract
                     function($score, $userAnswerId) use ($test, $questionId) {
 
                         return $score + $test->testQuestions
-                            ->where('id', $questionId)->first()
+                            ->find($questionId)
                             ->testAnswers
-                            ->where('id', $userAnswerId)->first()
+                            ->find($userAnswerId)
                             ->points;
                     }, 0);
         }, 0);
