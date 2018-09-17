@@ -22,9 +22,9 @@ class Test extends Model
         return $this->hasMany(TestCondition::class);
     }
 
-    public function testCertificates()
+    public function testCertificate()
     {
-        return $this->hasMany(TestCertificate::class);
+        return $this->hasOne(TestCertificate::class);
     }
 
     public function getMaxScore()

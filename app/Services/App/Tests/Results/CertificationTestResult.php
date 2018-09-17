@@ -43,7 +43,8 @@ class CertificationTestResult extends TestResultAbstract
             'score' => $testScore,
             'maxScore' => $test->getMaxScore(),
             'condition' => fractal($test->getCondition($testScore), 
-                new TestConditionTransformer)->toArray()
+                new TestConditionTransformer)->toArray(),
+            'isCertified' => $test->testCertificate->isCertified($testScore)
         ];
     } 
 }
