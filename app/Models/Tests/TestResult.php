@@ -27,7 +27,7 @@ class TestResult extends Model
         return $this->belongsTo(Test::class);
     }
 
-    public function mapToArray()
+    public function mapDataToArray()
     {
         return array_map(function($answers) {
 

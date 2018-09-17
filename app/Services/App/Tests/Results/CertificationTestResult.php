@@ -10,23 +10,31 @@ class CertificationTestResult extends TestResultAbstract
     {
         return $this->buildResults(
             $test, 
-            $this->calculateTestScore($testResult->mapToArray(), $test->mapToArray())
+            $this->calculateTestScore($test, $testResult)
         );
     }
 
-    protected function calculateTestScore($testResult, $test)
+    protected function calculateTestScore($test, $testResult)
     {
-        return array_reduce(array_keys($testResult), 
+        $userAnswers = $testResult->mapDataToArray();
 
-            function($score, $questionId) use ($testResult, $test) {
-            
-                return $score + array_reduce($testResult[$questionId], 
-                    
-                    function($score, $answer) use ($questionId, $test) {
+        return array_reduce(
 
-                        return $score + $test[$questionId][$answer];
+            array_keys($userAnswers), function($score, $questionId) use ($userAnswers, $test) {
+
+                return $score + array_reduce(
+
+                    $userAnswers[$questionId],  
+
+                    function($score, $userAnswerId) use ($test, $questionId) {
+
+                        return $score + $test->testQuestions
+                            ->where('id', $questionId)->first()
+                            ->testAnswers
+                            ->where('id', $userAnswerId)->first()
+                            ->points;
                     }, 0);
-            }, 0);
+        }, 0);
     }
     
     protected function buildResults($test, $testScore)

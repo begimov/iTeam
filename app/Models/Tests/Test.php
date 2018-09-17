@@ -31,27 +31,6 @@ class Test extends Model
         }, 0);
     }
 
-    public function mapToArray()
-    {
-        return $this->testQuestions->reduce(
-            
-            function($result, $question) {
-
-                $result[$question->id] = $question->testAnswers->reduce(
-                    
-                    function($result, $answer) {
-
-                        $result[$answer->id] = $answer->points;
-
-                        return $result;
-
-                    }, []);
-
-                return $result;
-
-            }, []);
-    }
-
     public function getCondition($testScore)
     {
         $conditions = $this->testConditions->sortBy('score');
