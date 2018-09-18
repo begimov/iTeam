@@ -78,6 +78,10 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
         Route::get('origins', 'RmController@origins')->name('company.rm.origins');
         Route::get('project', 'RmController@project')->name('company.rm.project');
     });
+
+    Route::group(['prefix' => 'projects'], function () {
+        Route::get('/', 'ProjectController@index')->name('company.projects.index');
+    });
 });
 
 Auth::routes();
