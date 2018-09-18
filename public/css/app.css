@@ -11801,6 +11801,10 @@ row:after {
   background-size: cover;
 }
 
+.rounded-10 {
+  border-radius: 10px;
+}
+
 /* RM_BASE */
 
 .rm-subnav-01 {

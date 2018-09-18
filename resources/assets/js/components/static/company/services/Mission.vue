@@ -4,8 +4,7 @@
             <div class="row">
                 <div class="col text-center">
                     <h2 class="font-weight-light mb-3"><a href="#" @click.prevent="switchActive">&lt;</a> Миссия <a href="#" @click.prevent="switchActive">&gt;</a></h2>
-                    <p class="lead">Мы&nbsp;видим свое предназначение в&nbsp;преодолении дефицита управления, который препятствует развитию многих тысяч российских предприятий.</p>
-                    <p><img src="/img/home/btn_play.png" width="100"></p>  
+                    <p class="lead">Мы&nbsp;делаем компании управляемыми, эффективными, конкурентоспособными.<br>Мы&nbsp;строим Русский Менеджмент.</p>
                 </div>
             </div>
             <div class="row mt-4">
@@ -26,7 +25,6 @@
                 <div class="col text-center">
                     <h2 class="font-weight-light mb-3"><a href="#" @click.prevent="switchActive">&lt;</a> Философия <a href="#" @click.prevent="switchActive">&gt;</a></h2>
                     <p class="lead">Когда мы&nbsp;в&nbsp;2002 году создавали нашу консалтинговую компанию, мы&nbsp;с&nbsp;самого начала отказались от&nbsp;пути, проторенного другими консультантами. Распространенная практика давала клиенту консалтинговый продукт, который предлагался как &laquo;таблетка от&nbsp;всех болезней&raquo;. Мы&nbsp;решили строить другой консалтинг, поставив в&nbsp;центр организацию и&nbsp;ее&nbsp;проблемы.</p>
-                    <p><img src="/img/home/btn_play.png" width="100"></p>  
                 </div>
             </div>
             <div class="row mt-4">
