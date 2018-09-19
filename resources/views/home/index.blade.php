@@ -112,7 +112,7 @@
 <!-- ARTICLES -->
 @include('home.partials._blogposts')
 <!-- CLIENTS -->
-<div class="container mt-5">
+<div class="container my-5">
   <div class="row">
     <div class="col">
       <h5 class="text-uppercase font-weight-bold my-5">КЛИЕНТЫ</h5>
