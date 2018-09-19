@@ -1,7 +1,7 @@
 <template>
     <div class="col-xl-3 col-lg-4 col-sm-6 mt-3">
         <transition name="fade" mode="out-in">
-            <div class="card text-center h-100" v-if="!areShown" key="description">
+            <div class="card text-center h-100 bg-light" v-if="!areShown" key="description">
                 <div class="card-body">
                     <a :href="project.url" target="_blank"><h6 class="card-title mb-0" v-html="project.title"></h6></a>
                     <a :href="project.url" target="_blank">
