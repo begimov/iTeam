@@ -53589,7 +53589,7 @@ var render = function() {
                     { attrs: { href: _vm.project.url, target: "_blank" } },
                     [
                       _c("h6", {
-                        staticClass: "card-title",
+                        staticClass: "card-title mb-0",
                         domProps: { innerHTML: _vm._s(_vm.project.title) }
                       })
                     ]
@@ -53600,7 +53600,7 @@ var render = function() {
                     { attrs: { href: _vm.project.url, target: "_blank" } },
                     [
                       _c("img", {
-                        staticClass: "img-fluid mt-2 mb-3",
+                        staticClass: "img-fluid my-3",
                         attrs: {
                           src: "/img/company/projects/" + _vm.project.img,
                           width: _vm.project.width
@@ -53728,6 +53728,22 @@ exports.default = {
         url: 'http://www.glaza63.ru',
         img: 'glaza63.png',
         width: '60%'
+    }, {
+        id: 7,
+        title: 'Компания &laquo;Миг-Плюс&raquo;',
+        description: 'Проектирование, монтаж и&nbsp;обслуживание газового оборудования',
+        details: "<ul class='m-0'><li>Разработка стратегии компании (мастер-проект)</li><li>Консультационное сопровождение процесса стратегического управления</li><li>Создание системы управления бизнес-процессами (мастер-проект)</li><li>Разработка планов и бюджетов компании на год (мастер-проект)</li><li>Разработка и внедрение системы управленческого учета (производство и финансы)</li></ul>",
+        url: 'http://migplus.ru',
+        img: 'migplus.png',
+        width: '35%'
+    }, {
+        id: 8,
+        title: 'Компания &laquo;Элитный Паркет&raquo;',
+        description: 'Дистрибуция паркетной доски премиум класса',
+        details: "<ul class='m-0'><li>Разработка стратегии компании (мастер-проект)</li><li>Консультационное сопровождение процесса стратегического управления</li><li>Создание системы управления бизнес-процессами компании (мастер-проект)</li></ul>",
+        url: 'https://www.eliteparquet.ru',
+        img: 'eliteparquet.gif',
+        width: '45%'
     }]
 };
 

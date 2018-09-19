@@ -3,9 +3,9 @@
         <transition name="fade" mode="out-in">
             <div class="card text-center h-100" v-if="!areShown" key="description">
                 <div class="card-body">
-                    <a :href="project.url" target="_blank"><h6 class="card-title" v-html="project.title"></h6></a>
+                    <a :href="project.url" target="_blank"><h6 class="card-title mb-0" v-html="project.title"></h6></a>
                     <a :href="project.url" target="_blank">
-                        <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" :width="project.width">
+                        <img :src="'/img/company/projects/' + project.img" class="img-fluid my-3" :width="project.width">
                     </a>
                     <p class="card-text" v-html="project.description"></p>
                 </div>
