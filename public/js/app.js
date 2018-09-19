@@ -53603,7 +53603,7 @@ var render = function() {
                         staticClass: "img-fluid mt-2 mb-3",
                         attrs: {
                           src: "/img/company/projects/" + _vm.project.img,
-                          width: "30%"
+                          width: "50%"
                         }
                       })
                     ]
@@ -53714,7 +53714,14 @@ exports.default = {
         description: 'Сеть магазинов обуви',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li><li>Разработка планов и бюджетов компании на год (мастер-проект)</li><li>Разработка организационной структуры</li><li>Консультационное сопровождение процесса реформирования организационной структуры</li><li>Развитие компетенций управленческой команды</li></ul>",
         url: 'http://lapotoknn.ru',
-        img: 'lapotoknn.png'
+        img: 'lapotoknn.jpg'
+    }, {
+        id: 6,
+        title: 'Глазная клиника Бранчевского',
+        description: 'Диагностика, лечение, коррекция зрения',
+        details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
+        url: 'http://www.glaza63.ru',
+        img: 'glaza63.png'
     }]
 };
 

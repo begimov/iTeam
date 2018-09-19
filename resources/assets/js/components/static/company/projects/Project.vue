@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <a :href="project.url" target="_blank"><h6 class="card-title" v-html="project.title"></h6></a>
                     <a :href="project.url" target="_blank">
-                        <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" width="30%">
+                        <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" width="50%">
                     </a>
                     <p class="card-text" v-html="project.description"></p>
                 </div>
