@@ -9,8 +9,12 @@
             <div class="card-footer bg-white">
                 <a :href="project.url" target="_blank">{{ project.url }}</a>
             </div>
+        </div>
 
-            <div class='project-details-popover w-100 h-100' v-html="project.details" v-if="areShown" @click.prevent="more"></div>
+        <div class='project-details-popover w-100 h-100 p-5' v-if="areShown" @click.prevent="more">
+            <div class="row justify-content-center">
+                <div v-html="project.details" class="col-md-6 p-4 bg-white rounded"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -20,7 +24,7 @@
 <style>
     .project-details-popover {
         position:fixed;
-        z-index:99;
+        z-index:99999;
         left:0;
         top:0;
         background-color:#00000099;

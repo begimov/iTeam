@@ -53606,21 +53606,31 @@ var render = function() {
         _c("a", { attrs: { href: _vm.project.url, target: "_blank" } }, [
           _vm._v(_vm._s(_vm.project.url))
         ])
-      ]),
-      _vm._v(" "),
-      _vm.areShown
-        ? _c("div", {
-            staticClass: "project-details-popover w-100 h-100",
-            domProps: { innerHTML: _vm._s(_vm.project.details) },
+      ])
+    ]),
+    _vm._v(" "),
+    _vm.areShown
+      ? _c(
+          "div",
+          {
+            staticClass: "project-details-popover w-100 h-100 p-5",
             on: {
               click: function($event) {
                 $event.preventDefault()
                 return _vm.more($event)
               }
             }
-          })
-        : _vm._e()
-    ])
+          },
+          [
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", {
+                staticClass: "col-md-6 p-4 bg-white rounded",
+                domProps: { innerHTML: _vm._s(_vm.project.details) }
+              })
+            ])
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -53648,13 +53658,13 @@ exports.default = {
         id: 1,
         title: 'Компания &laquo;АСТ&raquo; г. Краснодар',
         description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
-        details: "<ul class='mb-1'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
+        details: "<ul class='m-0'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
         url: 'https://act.su'
     }, {
         id: 2,
         title: 'Компания &laquo;Синергия&raquo; г. Минск, Беларусь',
         description: 'Дистрибуция упаковочных материалов',
-        details: "<ul class='mb-1'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
+        details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'https://sinergia.deal.by'
     }]
 };
@@ -53694,7 +53704,7 @@ exports = module.exports = __webpack_require__(112)(false);
 
 
 // module
-exports.push([module.i, "\n.project-details-popover {\n    position:fixed;\n    z-index:99;\n    left:0;\n    top:0;\n    background-color:#00000099;\n}\n", ""]);
+exports.push([module.i, "\n.project-details-popover {\n    position:fixed;\n    z-index:99999;\n    left:0;\n    top:0;\n    background-color:#00000099;\n}\n", ""]);
 
 // exports
 
