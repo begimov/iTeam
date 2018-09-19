@@ -6,7 +6,8 @@ export default {
             description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
             details: "<ul class='m-0'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
             url: 'https://act.su',
-            img: 'act.png'
+            img: 'act.png',
+            width: '40%'
         },
         {
             id: 2, 
@@ -14,7 +15,8 @@ export default {
             description: 'Дистрибуция упаковочных материалов',
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
             url: 'https://sinergia.deal.by',
-            img: 'sinergia.png'
+            img: 'sinergia.png',
+            width: '30%'
         },
         {
             id: 3, 
@@ -22,7 +24,8 @@ export default {
             description: 'Производство упаковочных материалов',
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
             url: 'http://packland.by',
-            img: 'packland.png'
+            img: 'packland.png',
+            width: '40%'
         },
         {
             id: 4, 
@@ -30,7 +33,8 @@ export default {
             description: 'Дистрибуция косметической продукции',
             details: "<ul class='m-0'><li>Разработка организационной структуры</li><li>Разработка регламента процесса продаж</li><li>Разработка должностных обязанностей специалистов</li></ul>",
             url: 'http://www.profcosmetics.by',
-            img: 'profcosmetics.png'
+            img: 'profcosmetics.png',
+            width: '50%'
         },
         {
             id: 5, 
@@ -38,7 +42,8 @@ export default {
             description: 'Сеть магазинов обуви',
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li><li>Разработка планов и бюджетов компании на год (мастер-проект)</li><li>Разработка организационной структуры</li><li>Консультационное сопровождение процесса реформирования организационной структуры</li><li>Развитие компетенций управленческой команды</li></ul>",
             url: 'http://lapotoknn.ru',
-            img: 'lapotoknn.jpg'
+            img: 'lapotoknn.jpg',
+            width: '60%'
         },
         {
             id: 6, 
@@ -46,7 +51,8 @@ export default {
             description: 'Диагностика, лечение, коррекция зрения',
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
             url: 'http://www.glaza63.ru',
-            img: 'glaza63.png'
+            img: 'glaza63.png',
+            width: '60%'
         },
     ]
 }

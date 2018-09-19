@@ -51010,7 +51010,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "col text-center" }, [
         _c("h1", [_vm._v("Консалтинговые проекты")])
       ])
     ])
@@ -53575,7 +53575,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col-xl-3 col-lg-4 col-md-6 mt-3" },
+    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mt-3" },
     [
       _c("transition", { attrs: { name: "fade", mode: "out-in" } }, [
         !_vm.areShown
@@ -53603,7 +53603,7 @@ var render = function() {
                         staticClass: "img-fluid mt-2 mb-3",
                         attrs: {
                           src: "/img/company/projects/" + _vm.project.img,
-                          width: "50%"
+                          width: _vm.project.width
                         }
                       })
                     ]
@@ -53686,42 +53686,48 @@ exports.default = {
         description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
         details: "<ul class='m-0'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
         url: 'https://act.su',
-        img: 'act.png'
+        img: 'act.png',
+        width: '40%'
     }, {
         id: 2,
         title: 'Компания &laquo;Синергия&raquo; г. Минск, Беларусь',
         description: 'Дистрибуция упаковочных материалов',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'https://sinergia.deal.by',
-        img: 'sinergia.png'
+        img: 'sinergia.png',
+        width: '30%'
     }, {
         id: 3,
         title: 'Компания &laquo;Пакленд&raquo; г. Минск, Беларусь',
         description: 'Производство упаковочных материалов',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'http://packland.by',
-        img: 'packland.png'
+        img: 'packland.png',
+        width: '40%'
     }, {
         id: 4,
         title: 'Компания &laquo;Профессиональная косметика&raquo; г. Минск, Беларусь',
         description: 'Дистрибуция косметической продукции',
         details: "<ul class='m-0'><li>Разработка организационной структуры</li><li>Разработка регламента процесса продаж</li><li>Разработка должностных обязанностей специалистов</li></ul>",
         url: 'http://www.profcosmetics.by',
-        img: 'profcosmetics.png'
+        img: 'profcosmetics.png',
+        width: '50%'
     }, {
         id: 5,
         title: 'Компания &laquo;Лапоток&raquo;',
         description: 'Сеть магазинов обуви',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li><li>Разработка планов и бюджетов компании на год (мастер-проект)</li><li>Разработка организационной структуры</li><li>Консультационное сопровождение процесса реформирования организационной структуры</li><li>Развитие компетенций управленческой команды</li></ul>",
         url: 'http://lapotoknn.ru',
-        img: 'lapotoknn.jpg'
+        img: 'lapotoknn.jpg',
+        width: '60%'
     }, {
         id: 6,
         title: 'Глазная клиника Бранчевского',
         description: 'Диагностика, лечение, коррекция зрения',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'http://www.glaza63.ru',
-        img: 'glaza63.png'
+        img: 'glaza63.png',
+        width: '60%'
     }]
 };
 

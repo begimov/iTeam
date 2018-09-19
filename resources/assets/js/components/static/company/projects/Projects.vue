@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col text-center">
                 <h1>Консалтинговые проекты</h1>
             </div>
         </div>
