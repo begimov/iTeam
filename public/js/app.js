@@ -51009,7 +51009,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-5" }, [
+    return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col" }, [
         _c("h1", [_vm._v("Консалтинговые проекты")])
       ])
@@ -53708,6 +53708,13 @@ exports.default = {
         details: "<ul class='m-0'><li>Разработка организационной структуры</li><li>Разработка регламента процесса продаж</li><li>Разработка должностных обязанностей специалистов</li></ul>",
         url: 'http://www.profcosmetics.by',
         img: 'profcosmetics.png'
+    }, {
+        id: 5,
+        title: 'Компания &laquo;Лапоток&raquo;',
+        description: 'Сеть магазинов обуви',
+        details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li><li>Разработка планов и бюджетов компании на год (мастер-проект)</li><li>Разработка организационной структуры</li><li>Консультационное сопровождение процесса реформирования организационной структуры</li><li>Развитие компетенций управленческой команды</li></ul>",
+        url: 'http://lapotoknn.ru',
+        img: 'lapotoknn.png'
     }]
 };
 

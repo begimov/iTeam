@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <company-projects />
+    <div><company-projects class="my-5" /></div>
 @endsection
