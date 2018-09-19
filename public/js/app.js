@@ -25971,6 +25971,7 @@ Vue.component('free-magnet', __webpack_require__(91));
 Vue.component('mission-philosophy', __webpack_require__(94));
 Vue.component('company-services', __webpack_require__(97));
 Vue.component('company-projects', __webpack_require__(100));
+Vue.component('company-project', __webpack_require__(138));
 
 // User dashboard
 Vue.component('user-dashboard', __webpack_require__(103));
@@ -50987,58 +50988,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container-fluid" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row", attrs: { id: "projects-container" } },
+      [_c("company-project")],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row mt-5" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("h1", [_vm._v("Консалтинговые проекты")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row", attrs: { id: "projects-container" } }, [
-        _c("div", { staticClass: "col-xl-4 col-lg-6 mt-3" }, [
-          _c("div", { staticClass: "card text-center" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v("Компания «АСТ» г. Краснодар")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\n                        Дистрибуция сельскохозяйственной и дорожно-строительной техники\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "popover",
-                    "data-placement": "top",
-                    "data-trigger": "click",
-                    "data-content":
-                      "<ul class='mb-1'>\n                                <li>Разработка Положения об организационной структуре</li>\n                                <li>Разработка показателей KPI</li>\n                            </ul>"
-                  }
-                },
-                [_vm._v("Подробнее")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-footer bg-white" }, [
-              _c("a", { attrs: { href: "https://act.su", target: "_blank" } }, [
-                _vm._v("https://act.su")
-              ])
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "row mt-5" }, [
+      _c("div", { staticClass: "col" }, [
+        _c("h1", [_vm._v("Консалтинговые проекты")])
       ])
     ])
   }
@@ -53507,6 +53475,131 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(139)
+/* template */
+var __vue_template__ = __webpack_require__(140)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/static/company/projects/Project.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b5197020", Component.options)
+  } else {
+    hotAPI.reload("data-v-b5197020", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {};
+
+/***/ }),
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-4 col-lg-6 mt-3" }, [
+      _c("div", { staticClass: "card text-center" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [
+            _vm._v("Компания «АСТ» г. Краснодар")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _vm._v(
+              "\n                Дистрибуция сельскохозяйственной и дорожно-строительной техники\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: {
+                type: "button",
+                "data-toggle": "popover",
+                "data-placement": "top",
+                "data-trigger": "click",
+                "data-content":
+                  "<ul class='mb-1'>\n                        <li>Разработка Положения об организационной структуре</li>\n                        <li>Разработка показателей KPI</li>\n                    </ul>"
+              }
+            },
+            [_vm._v("Подробнее")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-footer bg-white" }, [
+          _c("a", { attrs: { href: "https://act.su", target: "_blank" } }, [
+            _vm._v("https://act.su")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b5197020", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

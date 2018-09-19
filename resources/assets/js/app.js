@@ -25,6 +25,7 @@ Vue.component('free-magnet', require('./components/base/FreeMagnet.vue'));
 Vue.component('mission-philosophy', require('./components/static/company/services/Mission.vue'));
 Vue.component('company-services', require('./components/static/company/services/Services.vue'));
 Vue.component('company-projects', require('./components/static/company/projects/Projects.vue'));
+Vue.component('company-project', require('./components/static/company/projects/Project.vue'));
 
 // User dashboard
 Vue.component('user-dashboard', require('./components/users/Dashboard.vue'));
