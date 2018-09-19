@@ -53575,7 +53575,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col-xl-4 col-lg-6 mt-3" },
+    { staticClass: "col-xl-3 col-lg-4 col-md-6 mt-3" },
     [
       _c("transition", { attrs: { name: "fade", mode: "out-in" } }, [
         !_vm.areShown
@@ -53584,24 +53584,38 @@ var render = function() {
               { key: "description", staticClass: "card text-center h-100" },
               [
                 _c("div", { staticClass: "card-body" }, [
-                  _c("h5", {
+                  _c("h6", {
                     staticClass: "card-title",
                     domProps: { innerHTML: _vm._s(_vm.project.title) }
                   }),
                   _vm._v(" "),
-                  _c("img", {
-                    staticClass: "img-fluid mt-2 mb-3",
-                    attrs: {
-                      src: "/img/company/projects/" + _vm.project.img,
-                      width: "30%"
-                    }
-                  }),
+                  _c(
+                    "a",
+                    { attrs: { href: _vm.project.url, target: "_blank" } },
+                    [
+                      _c("img", {
+                        staticClass: "img-fluid mt-2 mb-3",
+                        attrs: {
+                          src: "/img/company/projects/" + _vm.project.img,
+                          width: "30%"
+                        }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("p", {
                     staticClass: "card-text",
                     domProps: { innerHTML: _vm._s(_vm.project.description) }
                   }),
                   _vm._v(" "),
+                  _c(
+                    "a",
+                    { attrs: { href: _vm.project.url, target: "_blank" } },
+                    [_vm._v(_vm._s(_vm.project.url))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer bg-white" }, [
                   _c(
                     "button",
                     {
@@ -53615,14 +53629,6 @@ var render = function() {
                       }
                     },
                     [_vm._v("Проекты")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-footer bg-white" }, [
-                  _c(
-                    "a",
-                    { attrs: { href: _vm.project.url, target: "_blank" } },
-                    [_vm._v(_vm._s(_vm.project.url))]
                   )
                 ])
               ]
@@ -53687,7 +53693,7 @@ exports.default = {
         description: 'Дистрибуция упаковочных материалов',
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'https://sinergia.deal.by',
-        img: 'sinergia'
+        img: 'sinergia.png'
     }]
 };
 

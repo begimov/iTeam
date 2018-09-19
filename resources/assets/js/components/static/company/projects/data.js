@@ -14,7 +14,7 @@ export default {
             description: 'Дистрибуция упаковочных материалов',
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
             url: 'https://sinergia.deal.by',
-            img: 'sinergia'
+            img: 'sinergia.png'
         }
     ]
 }

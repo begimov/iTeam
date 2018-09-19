@@ -1,15 +1,17 @@
 <template>
-    <div class="col-xl-4 col-lg-6 mt-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 mt-3">
         <transition name="fade" mode="out-in">
             <div class="card text-center h-100" v-if="!areShown" key="description">
                 <div class="card-body">
-                    <h5 class="card-title" v-html="project.title"></h5>
-                    <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" width="30%">
+                    <h6 class="card-title" v-html="project.title"></h6>
+                    <a :href="project.url" target="_blank">
+                        <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" width="30%">
+                    </a>
                     <p class="card-text" v-html="project.description"></p>
-                    <button type="button" class="btn btn-primary" @click.prevent="more">Проекты</button>
+                    <a :href="project.url" target="_blank">{{ project.url }}</a>
                 </div>
                 <div class="card-footer bg-white">
-                    <a :href="project.url" target="_blank">{{ project.url }}</a>
+                    <button type="button" class="btn btn-primary" @click.prevent="more">Проекты</button>
                 </div>
             </div>
 
