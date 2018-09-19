@@ -5,7 +5,14 @@ export default {
             required: true
         }
     },
-    mounted () {
-        console.log(this.project)
+    data () {
+        return {
+            areShown: false
+        }
+    },
+    methods: {
+        more () {
+            this.areShown = !this.areShown
+        }
     }
 }

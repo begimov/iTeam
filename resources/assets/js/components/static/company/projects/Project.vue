@@ -1,22 +1,29 @@
 <template>
     <div class="col-xl-4 col-lg-6 mt-3">
-        <div class="card text-center">
+        <div class="card text-center h-100">
             <div class="card-body">
-                <h5 class="card-title">Компания &laquo;АСТ&raquo; г. Краснодар</h5>
-                <p class="card-text">
-                    Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники
-                </p>
-                <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" data-trigger="click" 
-                    data-content="<ul class='mb-1'>
-                            <li>Разработка Положения об организационной структуре</li>
-                            <li>Разработка показателей KPI</li>
-                        </ul>">Подробнее</button>
+                <h5 class="card-title" v-html="project.title"></h5>
+                <p class="card-text" v-html="project.description"></p>
+                <button type="button" class="btn btn-primary" @click.prevent="more">Подробнее</button>
             </div>
             <div class="card-footer bg-white">
-                <a href="https://act.su" target="_blank">https://act.su</a>
+                <a :href="project.url" target="_blank">{{ project.url }}</a>
             </div>
+
+            <div class='project-details-popover w-100 h-100' v-html="project.details" v-if="areShown" @click.prevent="more"></div>
         </div>
     </div>
 </template>
 
 <script src="./project"></script>
+
+<style>
+    .project-details-popover {
+        position:fixed;
+        z-index:99;
+        left:0;
+        top:0;
+        background-color:#00000099;
+    }
+</style>
+

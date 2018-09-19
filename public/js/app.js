@@ -50966,28 +50966,18 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _data2 = __webpack_require__(141);
+
+var _data3 = _interopRequireDefault(_data2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
     data: function data() {
-        return {
-            projects: [{
-                id: 1,
-                title: 'Компания &laquo;АСТ&raquo; г. Краснодар',
-                description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
-                details: "<ul class='mb-1'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
-                url: 'https://act.su'
-            }]
-        };
-    },
-    mounted: function mounted() {
-        $('[data-toggle="popover"]').popover({
-            html: true
-        });
-        $('[data-toggle="popover"]').on('shown.bs.popover', function () {
-            $(this).append("<div id='projects-popover-bg' class='w-100 h-100' style='position:fixed;left:0;top:0;background-color:#00000099;'>&nbsp;</div>");
-        });
-        $('[data-toggle="popover"]').on('hidden.bs.popover', function () {
-            $('#projects-popover-bg').remove();
-        });
+        return _extends({}, _data3.default);
     }
 };
 
@@ -53499,6 +53489,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(142)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(139)
@@ -53507,7 +53501,7 @@ var __vue_template__ = __webpack_require__(140)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -53558,8 +53552,16 @@ exports.default = {
             required: true
         }
     },
-    mounted: function mounted() {
-        console.log(this.project);
+    data: function data() {
+        return {
+            areShown: false
+        };
+    },
+
+    methods: {
+        more: function more() {
+            this.areShown = !this.areShown;
+        }
     }
 };
 
@@ -53571,52 +53573,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-4 col-lg-6 mt-3" }, [
-      _c("div", { staticClass: "card text-center" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [
-            _vm._v("Компания «АСТ» г. Краснодар")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                Дистрибуция сельскохозяйственной и дорожно-строительной техники\n            "
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: {
-                type: "button",
-                "data-toggle": "popover",
-                "data-placement": "top",
-                "data-trigger": "click",
-                "data-content":
-                  "<ul class='mb-1'>\n                        <li>Разработка Положения об организационной структуре</li>\n                        <li>Разработка показателей KPI</li>\n                    </ul>"
-              }
-            },
-            [_vm._v("Подробнее")]
-          )
-        ]),
+  return _c("div", { staticClass: "col-xl-4 col-lg-6 mt-3" }, [
+    _c("div", { staticClass: "card text-center h-100" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", {
+          staticClass: "card-title",
+          domProps: { innerHTML: _vm._s(_vm.project.title) }
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "card-footer bg-white" }, [
-          _c("a", { attrs: { href: "https://act.su", target: "_blank" } }, [
-            _vm._v("https://act.su")
-          ])
+        _c("p", {
+          staticClass: "card-text",
+          domProps: { innerHTML: _vm._s(_vm.project.description) }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.more($event)
+              }
+            }
+          },
+          [_vm._v("Подробнее")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-footer bg-white" }, [
+        _c("a", { attrs: { href: _vm.project.url, target: "_blank" } }, [
+          _vm._v(_vm._s(_vm.project.url))
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.areShown
+        ? _c("div", {
+            staticClass: "project-details-popover w-100 h-100",
+            domProps: { innerHTML: _vm._s(_vm.project.details) },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.more($event)
+              }
+            }
+          })
+        : _vm._e()
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53625,6 +53632,72 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-b5197020", module.exports)
   }
 }
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    projects: [{
+        id: 1,
+        title: 'Компания &laquo;АСТ&raquo; г. Краснодар',
+        description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
+        details: "<ul class='mb-1'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
+        url: 'https://act.su'
+    }, {
+        id: 2,
+        title: 'Компания &laquo;Синергия&raquo; г. Минск, Беларусь',
+        description: 'Дистрибуция упаковочных материалов',
+        details: "<ul class='mb-1'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
+        url: 'https://sinergia.deal.by'
+    }]
+};
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(143);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(113)("6aa196dc", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5197020\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Project.vue", function() {
+     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b5197020\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Project.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(112)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.project-details-popover {\n    position:fixed;\n    z-index:99;\n    left:0;\n    top:0;\n    background-color:#00000099;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
