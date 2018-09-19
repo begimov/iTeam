@@ -5,7 +5,8 @@
                 <div class="card-body">
                     <a :href="project.url" target="_blank"><h6 class="card-title mb-0" v-html="project.title"></h6></a>
                     <a :href="project.url" target="_blank">
-                        <img :src="'/img/company/projects/' + project.img" class="img-fluid my-3" :width="project.width">
+                        <img :src="'/img/company/projects/' + project.img" class="img-fluid my-3" :width="project.width" v-if="project.img">
+                        <p class="my-3 lead font-weight-bold text-uppercase" v-else>{{ project.logoText }}</p>
                     </a>
                     <p class="card-text" v-html="project.description"></p>
                 </div>
@@ -15,7 +16,7 @@
             </div>
 
             <div class="card h-100 bg-secondary text-light" v-else @click.prevent="more" key="details">
-                <div class="card-body">
+                <div class="card-body p-3">
                     <p class="card-text" v-html="project.details"></p>
                 </div>
             </div>

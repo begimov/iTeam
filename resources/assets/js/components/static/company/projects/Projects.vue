@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid bg-dark">
-        <div class="row text-light">
+        <div class="row text-light mb-4">
             <div class="col text-center">
                 <h1>Консалтинговые проекты</h1>
             </div>
