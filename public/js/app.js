@@ -50967,6 +50967,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
+    data: function data() {
+        return {
+            projects: [{
+                id: 1,
+                title: 'Компания &laquo;АСТ&raquo; г. Краснодар',
+                description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
+                details: "<ul class='mb-1'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
+                url: 'https://act.su'
+            }]
+        };
+    },
     mounted: function mounted() {
         $('[data-toggle="popover"]').popover({
             html: true
@@ -50994,8 +51005,12 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row", attrs: { id: "projects-container" } },
-      [_c("company-project")],
-      1
+      _vm._l(_vm.projects, function(project) {
+        return _c("company-project", {
+          key: project.id,
+          attrs: { project: project }
+        })
+      })
     )
   ])
 }
@@ -53534,9 +53549,19 @@ module.exports = Component.exports
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-exports.default = {};
+exports.default = {
+    props: {
+        project: {
+            type: Object,
+            required: true
+        }
+    },
+    mounted: function mounted() {
+        console.log(this.project);
+    }
+};
 
 /***/ }),
 /* 140 */

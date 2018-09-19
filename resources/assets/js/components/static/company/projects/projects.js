@@ -1,4 +1,17 @@
 export default {
+    data () {
+        return {
+            projects: [
+                {
+                    id: 1, 
+                    title: 'Компания &laquo;АСТ&raquo; г. Краснодар', 
+                    description: 'Дистрибуция сельскохозяйственной и&nbsp;дорожно-строительной техники',
+                    details: "<ul class='mb-1'><li>Разработка Положения об организационной структуре</li><li>Разработка показателей KPI</li></ul>",
+                    url: 'https://act.su'
+                }
+            ]
+        }
+    },
     mounted () {
         $('[data-toggle="popover"]').popover({
             html: true
