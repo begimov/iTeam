@@ -3,15 +3,14 @@
         <transition name="fade" mode="out-in">
             <div class="card text-center h-100" v-if="!areShown" key="description">
                 <div class="card-body">
-                    <h6 class="card-title" v-html="project.title"></h6>
+                    <a :href="project.url" target="_blank"><h6 class="card-title" v-html="project.title"></h6></a>
                     <a :href="project.url" target="_blank">
                         <img :src="'/img/company/projects/' + project.img" class="img-fluid mt-2 mb-3" width="30%">
                     </a>
                     <p class="card-text" v-html="project.description"></p>
-                    <a :href="project.url" target="_blank">{{ project.url }}</a>
                 </div>
                 <div class="card-footer bg-white">
-                    <button type="button" class="btn btn-primary" @click.prevent="more">Проекты</button>
+                    <button type="button" class="btn btn-primary btn-sm" @click.prevent="more">Проекты</button>
                 </div>
             </div>
 

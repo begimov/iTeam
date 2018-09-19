@@ -53584,10 +53584,16 @@ var render = function() {
               { key: "description", staticClass: "card text-center h-100" },
               [
                 _c("div", { staticClass: "card-body" }, [
-                  _c("h6", {
-                    staticClass: "card-title",
-                    domProps: { innerHTML: _vm._s(_vm.project.title) }
-                  }),
+                  _c(
+                    "a",
+                    { attrs: { href: _vm.project.url, target: "_blank" } },
+                    [
+                      _c("h6", {
+                        staticClass: "card-title",
+                        domProps: { innerHTML: _vm._s(_vm.project.title) }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "a",
@@ -53606,20 +53612,14 @@ var render = function() {
                   _c("p", {
                     staticClass: "card-text",
                     domProps: { innerHTML: _vm._s(_vm.project.description) }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { attrs: { href: _vm.project.url, target: "_blank" } },
-                    [_vm._v(_vm._s(_vm.project.url))]
-                  )
+                  })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-footer bg-white" }, [
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary btn-sm",
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
@@ -53694,6 +53694,20 @@ exports.default = {
         details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
         url: 'https://sinergia.deal.by',
         img: 'sinergia.png'
+    }, {
+        id: 3,
+        title: 'Компания &laquo;Пакленд&raquo; г. Минск, Беларусь',
+        description: 'Производство упаковочных материалов',
+        details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
+        url: 'http://packland.by',
+        img: 'packland.png'
+    }, {
+        id: 4,
+        title: 'Компания &laquo;Профессиональная косметика&raquo; г. Минск, Беларусь',
+        description: 'Дистрибуция косметической продукции',
+        details: "<ul class='m-0'><li>Разработка организационной структуры</li><li>Разработка регламента процесса продаж</li><li>Разработка должностных обязанностей специалистов</li></ul>",
+        url: 'http://www.profcosmetics.by',
+        img: 'profcosmetics.png'
     }]
 };
 

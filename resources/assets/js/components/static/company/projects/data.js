@@ -15,6 +15,22 @@ export default {
             details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
             url: 'https://sinergia.deal.by',
             img: 'sinergia.png'
-        }
+        },
+        {
+            id: 3, 
+            title: 'Компания &laquo;Пакленд&raquo; г. Минск, Беларусь', 
+            description: 'Производство упаковочных материалов',
+            details: "<ul class='m-0'><li>Создание системы управления бизнес-процессами (мастер-проект)</li></ul>",
+            url: 'http://packland.by',
+            img: 'packland.png'
+        },
+        {
+            id: 4, 
+            title: 'Компания &laquo;Профессиональная косметика&raquo; г. Минск, Беларусь', 
+            description: 'Дистрибуция косметической продукции',
+            details: "<ul class='m-0'><li>Разработка организационной структуры</li><li>Разработка регламента процесса продаж</li><li>Разработка должностных обязанностей специалистов</li></ul>",
+            url: 'http://www.profcosmetics.by',
+            img: 'profcosmetics.png'
+        },
     ]
 }
