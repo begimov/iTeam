@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="card h-100 bg-dark text-light" v-else @click.prevent="more" key="details">
+            <div class="card h-100 bg-secondary text-light" v-else @click.prevent="more" key="details">
                 <div class="card-body">
                     <p class="card-text" v-html="project.details"></p>
                 </div>

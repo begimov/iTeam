@@ -72,5 +72,14 @@ export default {
             img: 'eliteparquet.gif',
             width: '45%'
         },
+        {
+            id: 9, 
+            title: 'Компания &laquo;Стагдок&raquo;', 
+            description: 'Добыча известняка для Новолипецкого металлургического комбината',
+            details: "<ul class='m-0'><li>Разработка стратегии компании (мастер-проект)</li><li>Консультационное сопровождение процесса стратегического управления</li></ul>",
+            url: 'http://www.rudnik.ru',
+            img: 'rudnik.png',
+            width: '45%'
+        },
     ]
 }

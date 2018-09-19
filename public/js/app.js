@@ -50989,7 +50989,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid bg-dark" }, [
     _vm._m(0),
     _vm._v(" "),
     _c(
@@ -51009,7 +51009,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row text-light" }, [
       _c("div", { staticClass: "col text-center" }, [
         _c("h1", [_vm._v("Консалтинговые проекты")])
       ])
@@ -53637,7 +53637,7 @@ var render = function() {
               "div",
               {
                 key: "details",
-                staticClass: "card h-100 bg-dark text-light",
+                staticClass: "card h-100 bg-secondary text-light",
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -53743,6 +53743,14 @@ exports.default = {
         details: "<ul class='m-0'><li>Разработка стратегии компании (мастер-проект)</li><li>Консультационное сопровождение процесса стратегического управления</li><li>Создание системы управления бизнес-процессами компании (мастер-проект)</li></ul>",
         url: 'https://www.eliteparquet.ru',
         img: 'eliteparquet.gif',
+        width: '45%'
+    }, {
+        id: 9,
+        title: 'Компания &laquo;Стагдок&raquo;',
+        description: 'Добыча известняка для Новолипецкого металлургического комбината',
+        details: "<ul class='m-0'><li>Разработка стратегии компании (мастер-проект)</li><li>Консультационное сопровождение процесса стратегического управления</li></ul>",
+        url: 'http://www.rudnik.ru',
+        img: 'rudnik.png',
         width: '45%'
     }]
 };
