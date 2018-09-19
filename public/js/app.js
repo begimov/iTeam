@@ -53574,46 +53574,48 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-xl-4 col-lg-6 mt-3" }, [
-    _c("div", { staticClass: "card text-center h-100" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", {
-          staticClass: "card-title",
-          domProps: { innerHTML: _vm._s(_vm.project.title) }
-        }),
-        _vm._v(" "),
-        _c("p", {
-          staticClass: "card-text",
-          domProps: { innerHTML: _vm._s(_vm.project.description) }
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.more($event)
-              }
-            }
-          },
-          [_vm._v("Подробнее")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-footer bg-white" }, [
-        _c("a", { attrs: { href: _vm.project.url, target: "_blank" } }, [
-          _vm._v(_vm._s(_vm.project.url))
+    !_vm.areShown
+      ? _c("div", { staticClass: "card text-center h-100" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", {
+              staticClass: "card-title",
+              domProps: { innerHTML: _vm._s(_vm.project.title) }
+            }),
+            _vm._v(" "),
+            _c("p", {
+              staticClass: "card-text",
+              domProps: { innerHTML: _vm._s(_vm.project.description) }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.more($event)
+                  }
+                }
+              },
+              [_vm._v("Проекты")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-footer bg-white" }, [
+            _c("a", { attrs: { href: _vm.project.url, target: "_blank" } }, [
+              _vm._v(_vm._s(_vm.project.url))
+            ])
+          ])
         ])
-      ])
-    ]),
+      : _vm._e(),
     _vm._v(" "),
     _vm.areShown
       ? _c(
           "div",
           {
-            staticClass: "project-details-popover w-100 h-100 p-5",
+            staticClass: "card h-100",
             on: {
               click: function($event) {
                 $event.preventDefault()
@@ -53622,9 +53624,9 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "row justify-content-center" }, [
-              _c("div", {
-                staticClass: "col-md-6 p-4 bg-white rounded",
+            _c("div", { staticClass: "card-body" }, [
+              _c("p", {
+                staticClass: "card-text",
                 domProps: { innerHTML: _vm._s(_vm.project.details) }
               })
             ])

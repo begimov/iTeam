@@ -1,19 +1,19 @@
 <template>
     <div class="col-xl-4 col-lg-6 mt-3">
-        <div class="card text-center h-100">
+        <div class="card text-center h-100" v-if="!areShown">
             <div class="card-body">
                 <h5 class="card-title" v-html="project.title"></h5>
                 <p class="card-text" v-html="project.description"></p>
-                <button type="button" class="btn btn-primary" @click.prevent="more">Подробнее</button>
+                <button type="button" class="btn btn-primary" @click.prevent="more">Проекты</button>
             </div>
             <div class="card-footer bg-white">
                 <a :href="project.url" target="_blank">{{ project.url }}</a>
             </div>
         </div>
 
-        <div class='project-details-popover w-100 h-100 p-5' v-if="areShown" @click.prevent="more">
-            <div class="row justify-content-center">
-                <div v-html="project.details" class="col-md-6 p-4 bg-white rounded"></div>
+        <div class="card h-100" v-if="areShown" @click.prevent="more">
+            <div class="card-body">
+                <p class="card-text" v-html="project.details"></p>
             </div>
         </div>
     </div>
