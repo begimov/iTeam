@@ -29,7 +29,7 @@ Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' =>
 }); 
 
 // Tests
-Route::group(['prefix' => 'tests', 'namespace' => 'Tests'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'tests', 'namespace' => 'Tests'], function () {
     Route::get('{test}', 'TestController@show')->name('tests.show');
 }); 
 
@@ -47,10 +47,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'Users'
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Magnets
     Route::post('magnets/subscribe', 'Pages\MagnetController@subscribe');
-
-    // Tests
-    Route::get('tests/{test}', 'Tests\TestController@show');
-    Route::post('tests/{test}/answers', 'Tests\TestController@storeAnswers');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
@@ -63,6 +59,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     // Dashboard routes
     Route::resource('orders', 'Products\OrderController');
     Route::resource('files', 'Content\FileController');
+
+    // Tests
+    Route::get('tests/{test}', 'Tests\TestController@show');
+    Route::post('tests/{test}/results', 'Tests\TestResultController@store');
 });
 
 // Company related routes
@@ -77,6 +77,10 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
         Route::get('model', 'RmController@model')->name('company.rm.model');
         Route::get('origins', 'RmController@origins')->name('company.rm.origins');
         Route::get('project', 'RmController@project')->name('company.rm.project');
+    });
+
+    Route::group(['prefix' => 'projects'], function () {
+        Route::get('/', 'ProjectController@index')->name('company.projects.index');
     });
 });
 

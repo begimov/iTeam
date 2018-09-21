@@ -31,6 +31,20 @@
             </div>
         </div>
 
+        <div class="row mt-4" v-if="results">
+            <div class="col">
+                <div class="card bg-dark text-light">
+                    <div class="card-body">
+                        <h4 class="card-title">Ваши результаты</h4>
+                        <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
+                        <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
+                        <p>{{ conditionDescription }}</p>
+                        <p v-if="results.isCertified"><a href="#" class="btn btn-success">Скачать сертификат</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row mt-4">
             <div class="col">
                 <a href="#" @click.prevent="sendAnswers" class="btn btn-primary">Узнать результаты</a>

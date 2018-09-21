@@ -26,23 +26,23 @@
                 <h2 class="font-weight-light mb-4">Русский Менеджмент это:</h2>
                 <div class="row">
                     <div class="col-sm-5 text-right">
-                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3">Стратегия</span></h4>
-                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3">Ценности</span></h4>
+                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3 w-100 rounded-10">Стратегия</span></h4>
+                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3 w-100 rounded-10">Ценности</span></h4>
                     </div>
                     <div class="col-sm-2 p-0 align-self-center">
-                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3">ЦЕЛИ</span></h4>
+                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3 w-100 rounded-10">Цели</span></h4>
                     </div>
                     <div class="col-sm-5 text-left">
-                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3">ОРГСТРУКТУРА</span></h4>
-                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3">процессы</span></h4>
+                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3 w-100 rounded-10">Оргструктура</span></h4>
+                        <h4><span class="badge badge-primary text-uppercase font-weight-normal p-3 w-100 rounded-10">Процессы</span></h4>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 bg-primary py-5">
                 <h3 class="font-weight-light mb-4">С 2002 года мы <small class="font-weight-light">обучили</small></h3>
-                <h3 class="font-weight-bold">50 тысяч <small class="font-weight-light">управленцев,</small></h3>
+                <h3 class="font-weight-bold">100 тысяч <small class="font-weight-light">управленцев,</small></h3>
                 <h3 class="font-weight-bold"><small class="font-weight-light">осуществили</small> 200 <small class="font-weight-light">консалтинговых проектов,</small></h3>
-                <h3 class="font-weight-bold"><small class="font-weight-light">создали</small> 50 <small class="font-weight-light">мастер-классов и&nbsp;мастер-проектов</small></h3>
+                <h3 class="font-weight-bold"><small class="font-weight-light">создали</small> 100 <small class="font-weight-light">мастер-классов и&nbsp;мастер-проектов</small></h3>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col text-center">
                 <h2 class="font-weight-light mb-3">Клиенты</h2>
-                <p class="lead">Мы&nbsp;гордимся успехами наших клиентов, ведь почти каждая компания, с&nbsp;которой мы&nbsp;работали или работаем, является лидером на&nbsp;своем рынке. Мы&nbsp;не&nbsp;приписываем себе эти достижения, но&nbsp;в&nbsp;них есть и&nbsp;наш вклад.</p>
+                <p class="lead">Мы&nbsp;гордимся успехами наших клиентов, ведь почти каждая компания, с&nbsp;которой мы&nbsp;работали или работаем, является лидером на&nbsp;своем рынке. Мы&nbsp;не&nbsp;приписываем себе эти достижения, но&nbsp;в&nbsp;них есть и&nbsp;наш вклад. <a href="{{ route('company.projects.index') }}">Наши консалтинговые проекты.</a></p>
             </div>
         </div>
     </div>

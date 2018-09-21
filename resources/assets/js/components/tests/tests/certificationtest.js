@@ -1,10 +1,13 @@
-import { mapActions, mapGetters } from 'vuex'
-
 export default {
     props: {
         test: {
             type: Object,
             required: true
+        },
+        results: {
+            type: Object,
+            required: false,
+            default: null
         }
     },
     data() {
@@ -23,6 +26,14 @@ export default {
     methods: {
         sendAnswers() {
             this.$emit('sendAnswers', this.answers)
+        }
+    },
+    computed: {
+        conditionName() {
+            return this.results ? this.results.condition.data.name : ''
+        },
+        conditionDescription() {
+            return this.results ? this.results.condition.data.description : ''
         }
     },
     mounted() {

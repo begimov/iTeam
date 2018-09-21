@@ -10,7 +10,7 @@ export default {
   },
   sendAnswers(testId, answers) {
     return new Promise((resolve, reject) => {
-      axios.post(`/webapi/tests/${testId}/answers`, answers).then(res => {
+      axios.post(`/webapi/tests/${testId}/results`, answers).then(res => {
         resolve(res)
       }).catch(err => {
         console.log(err)
