@@ -35,9 +35,10 @@
         background-color:#00000099;
     }
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .3s;
+        transition: all 0.5s ease 0.2s;
     }
     .fade-enter, .fade-leave-to {
+        transform: translateY(10px);
         opacity: 0;
     }
 </style>

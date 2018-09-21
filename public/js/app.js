@@ -53867,7 +53867,7 @@ exports = module.exports = __webpack_require__(112)(false);
 
 
 // module
-exports.push([module.i, "\n.project-details-popover {\n    position:fixed;\n    z-index:99999;\n    left:0;\n    top:0;\n    background-color:#00000099;\n}\n.fade-enter-active, .fade-leave-active {\n    -webkit-transition: opacity .3s;\n    transition: opacity .3s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n.project-details-popover {\n    position:fixed;\n    z-index:99999;\n    left:0;\n    top:0;\n    background-color:#00000099;\n}\n.fade-enter-active, .fade-leave-active {\n    -webkit-transition: all 0.5s ease 0.2s;\n    transition: all 0.5s ease 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    -webkit-transform: translateY(10px);\n            transform: translateY(10px);\n    opacity: 0;\n}\n", ""]);
 
 // exports
 
