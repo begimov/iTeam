@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Eloquent\Tests;
+namespace App\Repositories\Eloquent\Reviews;
 
 use App\Repositories\EloquentRepositoryAbstract;
 use App\Repositories\Contracts\Reviews\ReviewRepository;
