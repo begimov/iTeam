@@ -29,7 +29,8 @@ return [
         'sn_subscribe'   => 'Подписывайтесь и&nbsp;читайте в&nbsp;социальных сетях',
         'payment_order'   => 'порядок оплаты',
         'we_answer_all_questions' => 'Мы с удовольствием ответим на все ваши вопросы:',
-        'consulting_projects' => 'Консалтинговые проекты'
+        'consulting_projects' => 'Консалтинговые проекты',
+        'reviews' => 'Отзывы'
     ],
     'contact' => [
         'support_email' => 'support@iteam.ru'
