@@ -140,13 +140,13 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container">
+    <div class="container">
         <div class="row mt-3 mb-2">
             <div class="col text-center">
-                <p><a href="#" class="btn btn-light btn-sm">Смотреть больше</a></p>
+                <p><a href="{{ route('company.projects.index') }}" class="btn btn-light btn-sm">Наши проекты</a></p>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- REVIEWS -->
     <div class="container mb-5">
