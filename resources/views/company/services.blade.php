@@ -197,7 +197,12 @@
                     video-id="MS8oCP5dIjc"
                     bg-img="/img/pages/videoreviews/videoreview_06.jpg"
                 ></youtube-player>
-                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <div class="col">
+                <a href="{{ route('company.reviews.index') }}" class="btn btn-light btn-sm">Отзывы клиентов</a>
+            </div>
         </div>
     </div>
 @endsection
