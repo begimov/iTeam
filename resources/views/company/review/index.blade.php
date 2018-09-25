@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid">
         <div class="row">
             <div class="container my-5">
                 <div class="row">
@@ -19,7 +19,7 @@
                             <div class="speech-bubble-{{ random_int(1,4) }} p-4 shadow-lg">
                                 <div class="row">
                                     <div class="col-2 {{ ($key % 2 == 0) ? '' : 'order-2' }}">
-                                        //
+                                        <img src="{{ getElementsFilePath($review, '') }}" class="img-fluid rounded">
                                     </div>
                                     <div class="col-10">
                                         <blockquote class="blockquote">

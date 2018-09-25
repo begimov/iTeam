@@ -11977,7 +11977,7 @@ row:after {
 
 .speech-bubble-1 {
   position: relative;
-  background-color: #f8f9fa;
+  background-color: #fff;
   border-radius: .4em;
 }
 
@@ -11989,7 +11989,7 @@ row:after {
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-top-color: #f8f9fa;
+  border-top-color: #fff;
   border-bottom: 0;
   border-left: 0;
   margin-left: -11px;
@@ -11998,7 +11998,7 @@ row:after {
 
 .speech-bubble-2 {
   position: relative;
-  background: #f8f9fa;
+  background: #fff;
   border-radius: .4em;
 }
 
@@ -12010,7 +12010,7 @@ row:after {
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-bottom-color: #f8f9fa;
+  border-bottom-color: #fff;
   border-top: 0;
   border-right: 0;
   margin-left: -11px;
@@ -12019,7 +12019,7 @@ row:after {
 
 .speech-bubble-3 {
   position: relative;
-  background: #f8f9fa;
+  background: #fff;
   border-radius: .4em;
 }
 
@@ -12031,7 +12031,7 @@ row:after {
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-left-color: #f8f9fa;
+  border-left-color: #fff;
   border-right: 0;
   border-top: 0;
   margin-top: -11px;
@@ -12040,7 +12040,7 @@ row:after {
 
 .speech-bubble-4 {
   position: relative;
-  background: #f8f9fa;
+  background: #fff;
   border-radius: .4em;
 }
 
@@ -12052,7 +12052,7 @@ row:after {
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-right-color: #f8f9fa;
+  border-right-color: #fff;
   border-left: 0;
   border-top: 0;
   margin-top: -11px;
