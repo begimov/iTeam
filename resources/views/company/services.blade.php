@@ -199,6 +199,13 @@
                 ></youtube-player>
             </div>
         </div>
+        <div class="row mt-4">
+            <div class="col">
+                @foreach ($reviews as $review)
+                    //
+                @endforeach
+            </div>
+        </div>
         <div class="row text-center mt-4">
             <div class="col">
                 <a href="{{ route('company.reviews.index') }}" class="btn btn-light btn-sm">Отзывы клиентов</a>

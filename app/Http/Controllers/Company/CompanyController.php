@@ -18,7 +18,17 @@ class CompanyController extends Controller
 
     public function services()
     {
-        return view('company.services');
+        $relations = ['files'];
+
+        $reviews = $this->reviews
+            ->withCriteria([
+                new With($relations)
+            ])
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        return view('company.services', compact('reviews'));
     }
 
     public function contact()

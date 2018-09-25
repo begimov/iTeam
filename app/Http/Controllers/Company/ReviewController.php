@@ -26,8 +26,6 @@ class ReviewController extends Controller
             ])
             ->latest()
             ->paginate(20);
-        
-            // dd($reviews->first()->files()->first()->created_at);
 
         return view('company.review.index', compact('reviews'));
     }
