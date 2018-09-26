@@ -2,16 +2,34 @@
 
 namespace App\Services\App\Tests\Results;
 
-use App\Transformers\Tests\TestConditionTransformer;
+use App\Transformers\Tests\{
+    TestConditionTransformer,
+    TestResultTransformer
+};
 
 class CertificationTestResult extends TestResultAbstract
 {
     public function processTestResults($test, $testResult)
     {
-        return $this->buildResults(
-            $test, 
-            $this->calculateTestScore($test, $testResult)
-        );
+        $testScore = $this->calculateTestScore($test, $testResult);
+
+        return [
+            'score' => $testScore,
+
+            'maxScore' => $test->getMaxScore(),
+            
+            'condition' => fractal(
+                    $test->getCondition($testScore), 
+                    new TestConditionTransformer
+                )->toArray(),
+
+            'testResult' => fractal(
+                    $testResult, 
+                    new TestResultTransformer
+                )->toArray(),
+
+            'isCertified' => $test->testCertificate->isCertified($testScore)
+        ];
     }
 
     protected function calculateTestScore($test, $testResult)
@@ -36,15 +54,4 @@ class CertificationTestResult extends TestResultAbstract
                     }, 0);
         }, 0);
     }
-    
-    protected function buildResults($test, $testScore)
-    {
-        return [
-            'score' => $testScore,
-            'maxScore' => $test->getMaxScore(),
-            'condition' => fractal($test->getCondition($testScore), 
-                new TestConditionTransformer)->toArray(),
-            'isCertified' => $test->testCertificate->isCertified($testScore)
-        ];
-    } 
 }
