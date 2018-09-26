@@ -13,7 +13,7 @@ class TestCertificateController extends Controller
     {
         Storage::makeDirectory($directory = config('tests.certificates_storage_dir_prefix') . Auth::id());
 
-        $data = ['a' => 'test'];
+        $data = ['date' => 'date', 'name' => 'name'];
 
         \PDF::loadView('tests.certificates.pdf', compact('data'))
             ->save(storage_path('app/' . $directory . '/' . $fileName = 'test.pdf'));
