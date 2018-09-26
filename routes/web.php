@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     // Tests
     Route::get('tests/{test}', 'Tests\TestController@show');
     Route::post('tests/{test}/results', 'Tests\TestResultController@store');
-    Route::get('tests/{test}/certificates/{testresult}', 'Tests\TestCertificateController@show');
+    Route::get('tests/{test}/results/{result}/certificates/{certificate}', 'Tests\TestCertificateController@show');
 });
 
 // Company related routes

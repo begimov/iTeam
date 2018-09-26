@@ -4,31 +4,27 @@ namespace App\Services\App\Tests\Results;
 
 use App\Transformers\Tests\{
     TestConditionTransformer,
-    TestResultTransformer
+    TestResultTransformer,
+    TestCertificateTransformer
 };
 
 class CertificationTestResult extends TestResultAbstract
 {
     public function processTestResults($test, $testResult)
     {
-        $testScore = $this->calculateTestScore($test, $testResult);
-
         return [
-            'score' => $testScore,
+
+            'score' => $testScore = $this->calculateTestScore($test, $testResult),
 
             'maxScore' => $test->getMaxScore(),
-            
-            'condition' => fractal(
-                    $test->getCondition($testScore), 
-                    new TestConditionTransformer
-                )->toArray(),
 
-            'testResult' => fractal(
-                    $testResult, 
-                    new TestResultTransformer
-                )->toArray(),
+            'condition' => $this->getTransformedCondition($test, $testScore),
 
-            'isCertified' => $test->testCertificate->isCertified($testScore)
+            'testResult' => $this->transfromTestResult($testResult),
+
+            'testCertificate' => $this->transformTestCertificate($testCertificate = $test->testCertificate),
+
+            'isCertified' => $testCertificate->isCertified($testScore)
         ];
     }
 
@@ -53,5 +49,29 @@ class CertificationTestResult extends TestResultAbstract
                             ->points;
                     }, 0);
         }, 0);
+    }
+
+    protected function getTransformedCondition($test, $testScore)
+    {
+        return fractal(
+            $test->getCondition($testScore), 
+            new TestConditionTransformer
+        )->toArray();
+    }
+
+    protected function transfromTestResult($testResult)
+    {
+        return fractal(
+            $testResult, 
+            new TestResultTransformer
+        )->toArray();
+    }
+
+    protected function transformTestCertificate($testCertificate)
+    {
+        return fractal(
+            $testCertificate,
+            new TestCertificateTransformer
+        )->toArray();
     }
 }

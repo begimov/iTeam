@@ -24,7 +24,8 @@ class EloquentTestResultRepository extends EloquentRepositoryAbstract implements
         $relations = [
             'testQuestions', 
             'testQuestions.testAnswers', 
-            'testConditions'
+            'testConditions',
+            'testCertificate'
         ];
 
         $this->deletePreviousTestResult($testId, $request->user()->id);

@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 class TestCertificateController extends Controller
 {
-    public function show($testId, $testResutltId)
+    public function show($testId, $testResutltId, $certificateId)
     {
-        dd($testId, $testResutltId);
+        dd($testId, $testResutltId, $certificateId);
     }
 }

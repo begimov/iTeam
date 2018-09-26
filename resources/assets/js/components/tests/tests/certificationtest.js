@@ -28,8 +28,8 @@ export default {
             this.$emit('sendAnswers', this.answers)
         },
         downloadCertificate() {
-            axios.get(`/webapi/tests/${this.test.id}/certificates/${11}`).then(res => {
-                resolve(res)
+            axios.get(`/webapi/tests/${this.testId}/results/${this.testResultId}/certificates/${this.testCertificateId}`).then(res => {
+                console.log(res)
             }).catch(err => {
                 console.log(err)
             })
@@ -37,10 +37,19 @@ export default {
     },
     computed: {
         conditionName() {
-            return this.results ? this.results.condition.data.name : ''
+            return this.results.condition.data.name
         },
         conditionDescription() {
-            return this.results ? this.results.condition.data.description : ''
+            return this.results.condition.data.description
+        },
+        testId() {
+            return this.results.testResult.data.test_id
+        },
+        testResultId() {
+            return this.results.testResult.data.id
+        },
+        testCertificateId() {
+            return this.results.testCertificate.data.id
         }
     },
     mounted() {

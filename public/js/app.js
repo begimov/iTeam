@@ -53614,8 +53614,8 @@ exports.default = {
             this.$emit('sendAnswers', this.answers);
         },
         downloadCertificate: function downloadCertificate() {
-            axios.get('/webapi/tests/' + this.test.id + '/certificates/' + 11).then(function (res) {
-                resolve(res);
+            axios.get('/webapi/tests/' + this.testId + '/results/' + this.testResultId + '/certificates/' + this.testCertificateId).then(function (res) {
+                console.log(res);
             }).catch(function (err) {
                 console.log(err);
             });
@@ -53623,10 +53623,19 @@ exports.default = {
     },
     computed: {
         conditionName: function conditionName() {
-            return this.results ? this.results.condition.data.name : '';
+            return this.results.condition.data.name;
         },
         conditionDescription: function conditionDescription() {
-            return this.results ? this.results.condition.data.description : '';
+            return this.results.condition.data.description;
+        },
+        testId: function testId() {
+            return this.results.testResult.data.test_id;
+        },
+        testResultId: function testResultId() {
+            return this.results.testResult.data.id;
+        },
+        testCertificateId: function testCertificateId() {
+            return this.results.testCertificate.data.id;
         }
     },
     mounted: function mounted() {
