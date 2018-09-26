@@ -26,6 +26,13 @@ export default {
     methods: {
         sendAnswers() {
             this.$emit('sendAnswers', this.answers)
+        },
+        downloadCertificate() {
+            axios.get(`/webapi/tests/${this.test.id}/certificates/${11}`).then(res => {
+                resolve(res)
+            }).catch(err => {
+                console.log(err)
+            })
         }
     },
     computed: {
