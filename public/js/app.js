@@ -53612,13 +53612,6 @@ exports.default = {
     methods: {
         sendAnswers: function sendAnswers() {
             this.$emit('sendAnswers', this.answers);
-        },
-        downloadCertificate: function downloadCertificate() {
-            axios.get('/webapi/tests/' + this.testId + '/results/' + this.testResultId + '/certificates/' + this.testCertificateId).then(function (res) {
-                console.log(res);
-            }).catch(function (err) {
-                console.log(err);
-            });
         }
     },
     computed: {
@@ -53835,15 +53828,21 @@ var render = function() {
                           "a",
                           {
                             staticClass: "btn btn-success",
-                            attrs: { href: "#" },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.downloadCertificate($event)
-                              }
+                            attrs: {
+                              href:
+                                "/webapi/tests/" +
+                                _vm.testId +
+                                "/results/" +
+                                _vm.testResultId +
+                                "/certificates/" +
+                                _vm.testCertificateId
                             }
                           },
-                          [_vm._v("Скачать сертификат")]
+                          [
+                            _vm._v(
+                              "\n                            Скачать сертификат\n                        "
+                            )
+                          ]
                         )
                       ])
                     : _vm._e()
