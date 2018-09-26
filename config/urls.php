@@ -9,7 +9,7 @@ return [
         ],
     ],
     
-    'blog' => 'http://blog.iteamdev.ru/',
+    'blog' => 'http://blog.iteam.ru/',
     
     'social' => [
         'facebook' => 'https://www.facebook.com/ITeam-Management-1538687959484919/',

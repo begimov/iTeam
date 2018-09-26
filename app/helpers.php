@@ -2,6 +2,10 @@
 if (!function_exists('getElementsFilePath')) {
 	function getElementsFilePath($element, $fileTag, $e = null)
 	{
+		if ($element instanceof \App\Models\Reviews\Review) {
+			$file = $element->files->first();
+		}
+
 		if (is_object($element) && isset($element->data['files'][$fileTag])) {
 			$file = $element->files
 				->where('id', $element->data['files'][$fileTag])

@@ -82,6 +82,10 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
     Route::group(['prefix' => 'projects'], function () {
         Route::get('/', 'ProjectController@index')->name('company.projects.index');
     });
+
+    Route::group(['prefix' => 'reviews'], function () {
+        Route::get('/', 'ReviewController@index')->name('company.reviews.index');
+    });
 });
 
 Auth::routes();

@@ -39,6 +39,9 @@ use App\Repositories\Eloquent\Tests\{
     EloquentTestResultRepository
 };
 
+use App\Repositories\Contracts\Reviews\ReviewRepository;
+use App\Repositories\Eloquent\Reviews\EloquentReviewRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -56,6 +59,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(BusinessEntityRepository::class, EloquentBusinessEntityRepository::class);
         $this->app->bind(TestRepository::class, EloquentTestRepository::class);
         $this->app->bind(TestResultRepository::class, EloquentTestResultRepository::class);
+        $this->app->bind(ReviewRepository::class, EloquentReviewRepository::class);
     }
 
     /**

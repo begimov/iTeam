@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Contracts\Reviews\ReviewRepository;
 
-class CompanyController extends Controller
+class ReviewController extends Controller
 {
     protected $reviews;
 
@@ -16,7 +16,7 @@ class CompanyController extends Controller
         $this->reviews = $reviews;
     }
 
-    public function services()
+    public function index()
     {
         $relations = ['files'];
 
@@ -25,24 +25,8 @@ class CompanyController extends Controller
                 new With($relations)
             ])
             ->latest()
-            ->limit(5)
-            ->get();
+            ->paginate(20);
 
-        return view('company.services', compact('reviews'));
-    }
-
-    public function contact()
-    {
-        return view('company.contact');
-    }
-
-    public function terms()
-    {
-        return view('company.terms');
-    }
-
-    public function offer()
-    {
-        return view('company.offer');
+        return view('company.review.index', compact('reviews'));
     }
 }

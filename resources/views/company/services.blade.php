@@ -140,13 +140,13 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container">
+    <div class="container">
         <div class="row mt-3 mb-2">
             <div class="col text-center">
-                <p><a href="#" class="btn btn-light btn-sm">Смотреть больше</a></p>
+                <p><a href="{{ route('company.projects.index') }}" class="btn btn-light btn-sm">Наши проекты</a></p>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- REVIEWS -->
     <div class="container mb-5">
@@ -197,7 +197,31 @@
                     video-id="MS8oCP5dIjc"
                     bg-img="/img/pages/videoreviews/videoreview_06.jpg"
                 ></youtube-player>
+            </div>
+        </div>
+        @foreach ($reviews as $key => $review)
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="speech-bubble-{{ random_int(1,4) }} p-4 shadow-lg">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3 d-none d-sm-none d-md-block {{ ($key % 2 == 0) ? '' : 'order-2' }}">
+                                <img src="{{ getElementsFilePath($review, '') }}" class="img-fluid rounded">
+                            </div>
+                            <div class="col-lg-10 col-md-9">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">&laquo;{{ $review->quote }}&raquo;</p>
+                                    <footer class="blockquote-footer mt-3 {{ ($key % 2 == 0) ? 'text-right' : '' }}">{{ $review->author }} / <cite>{{ $review->position }}</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        @endforeach
+        <div class="row text-center mt-4">
+            <div class="col">
+                <a href="{{ route('company.reviews.index') }}" class="btn btn-light btn-sm">Отзывы клиентов</a>
+            </div>
         </div>
     </div>
 @endsection
