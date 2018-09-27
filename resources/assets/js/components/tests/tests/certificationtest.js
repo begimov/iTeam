@@ -44,6 +44,9 @@ export default {
         },
         testCertificateId() {
             return this.results.testCertificate.data.id
+        },
+        resultPercents() {
+            return _.round(this.results.score / this.results.maxScore * 100, 2)
         }
     },
     mounted() {

@@ -53630,6 +53630,9 @@ exports.default = {
         },
         testCertificateId: function testCertificateId() {
             return this.results.testCertificate.data.id;
+        },
+        resultPercents: function resultPercents() {
+            return _.round(this.results.score / this.results.maxScore * 100, 2);
         }
     },
     mounted: function mounted() {
@@ -53809,10 +53812,19 @@ var render = function() {
                   _c("h3", [
                     _c("span", { staticClass: "badge badge-warning" }, [
                       _vm._v(
-                        "Очков: " +
+                        "\n                            Очков: " +
                           _vm._s(_vm.results.score) +
                           " из " +
-                          _vm._s(_vm.results.maxScore)
+                          _vm._s(_vm.results.maxScore) +
+                          "\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "badge badge-light" }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.resultPercents) +
+                          " %\n                        "
                       )
                     ])
                   ]),
