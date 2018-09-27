@@ -15,7 +15,7 @@ class TestCertificateController extends Controller
 
         $data = ['date' => now()->format('d/m/Y'), 'name' => 'Имя пользователя'];
 
-        \PDF::loadView('tests.certificates.pdf', compact('data'))
+        \PDF::loadView('tests.certificates.pdf', compact('data'))->setPaper('a4', 'landscape')
             ->save(storage_path('app/' . $directory . '/' . $fileName = 'certificate_' . $certificateId . '.pdf'));
 
         $path = config('tests.certificates_storage_dir_prefix') . Auth::id() . '/' . $fileName;
