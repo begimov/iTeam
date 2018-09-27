@@ -13,10 +13,12 @@
         <div align="center">
             <img src="{{ asset('img/tests/certificates/head.png') }}" width="100%" style="margin-top:-50px; margin-bottom:-130px;">
             <h1 style="color:#870100;">СЕРТИФИКАТ</h1>
-            <h2><span style="color: #870100;">Обладатель сертификата</span><br><small>{{ $data['name'] }}</small></h2>
+            @if($data['name'])
+                <h2><span style="color: #870100;">Обладатель сертификата</span><br><small>{{ $data['name'] }}</small></h2>
+            @endif
             <h2><span style="color: #870100;">Настоящий сертификат подтверждает успешное завершение обучения и тестирования по теме</span><br>«Название продукта»</h2>
             
-            <h3 align="left">Итоговая оценка: N%</h3>
+            <h3 align="left">Итоговая оценка: {{ $data['score'] }}%</h3>
             <p align="right">
                 Управляющий партнер Консалтинговой компании iTeam<br>Александр Кочнев<br>
                 <img src="{{ asset('img/tests/certificates/signature.png') }}" style="width: 150px;margin-top:20px;">
