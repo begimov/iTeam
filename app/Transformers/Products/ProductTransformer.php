@@ -3,10 +3,11 @@
 namespace App\Transformers\Products;
 
 use App\Models\Products\Product;
+use App\Transformers\Tests\TestTransformer;
 
 class ProductTransformer extends \League\Fractal\TransformerAbstract
 {
-    protected $availableIncludes = ['materials', 'files'];
+    protected $availableIncludes = ['materials', 'tests', 'files'];
 
     public function transform(Product $product)
     {
@@ -20,5 +21,10 @@ class ProductTransformer extends \League\Fractal\TransformerAbstract
     public function includeMaterials(Product $product)
     {
         return $this->collection($product->materials, new MaterialTransformer);
+    }
+
+    public function includeTests(Product $product)
+    {
+        return $this->collection($product->tests, new TestTransformer);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models\Products;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Tests\Test;
 
 class Product extends Model
 {
@@ -24,6 +25,11 @@ class Product extends Model
     public function priceTags()
     {
         return $this->hasMany(PriceTag::class);
+    }
+
+    public function tests()
+    {
+        return $this->belongsToMany(Test::class, 'products_tests');
     }
 
     public function isFree()
