@@ -42,11 +42,10 @@ class CertificationTestResult extends TestResultAbstract
 
                     function($score, $userAnswerId) use ($test, $questionId) {
 
-                        return $score + $test->testQuestions
+                        return $score + (($a = $test->testQuestions
                             ->find($questionId)
                             ->testAnswers
-                            ->find($userAnswerId)
-                            ->points;
+                            ->find($userAnswerId)) ? $a->points : 0);
                     }, 0);
         }, 0);
     }
