@@ -24,7 +24,7 @@ class CertificationTestResult extends TestResultAbstract
 
             'testCertificate' => $this->transformTestCertificate($testCertificate = $test->testCertificate),
 
-            'isCertified' => $testCertificate->isCertified($testScore)
+            'isCertified' => $testCertificate ? $testCertificate->isCertified($testScore) : false
         ];
     }
 
