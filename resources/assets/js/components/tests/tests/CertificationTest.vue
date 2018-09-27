@@ -39,11 +39,14 @@
                         <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
                         <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
                         <p>{{ conditionDescription }}</p>
-                        <p v-if="results.isCertified">
-                            <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}`" class="btn btn-success">
+                        <template v-if="results.isCertified">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Введите имя на сертификате..." v-model="name">
+                            </div>
+                            <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}/${name}`" class="btn btn-success">
                                 Скачать сертификат
                             </a>
-                        </p>
+                        </template>
                     </div>
                 </div>
             </div>

@@ -53597,7 +53597,8 @@ exports.default = {
     },
     data: function data() {
         return {
-            answers: {}
+            answers: {},
+            name: ''
         };
     },
 
@@ -53800,53 +53801,87 @@ var render = function() {
         ? _c("div", { staticClass: "row mt-4" }, [
             _c("div", { staticClass: "col" }, [
               _c("div", { staticClass: "card bg-dark text-light" }, [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("h4", { staticClass: "card-title" }, [
-                    _vm._v("Ваши результаты")
-                  ]),
-                  _vm._v(" "),
-                  _c("h3", [
-                    _c("span", { staticClass: "badge badge-warning" }, [
-                      _vm._v(
-                        "Очков: " +
-                          _vm._s(_vm.results.score) +
-                          " из " +
-                          _vm._s(_vm.results.maxScore)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "card-subtitle my-3" }, [
-                    _vm._v(_vm._s(_vm.conditionName))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(_vm.conditionDescription))]),
-                  _vm._v(" "),
-                  _vm.results.isCertified
-                    ? _c("p", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-success",
-                            attrs: {
-                              href:
-                                "/webapi/tests/" +
-                                _vm.testId +
-                                "/results/" +
-                                _vm.testResultId +
-                                "/certificates/" +
-                                _vm.testCertificateId
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Скачать сертификат\n                        "
-                            )
-                          ]
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    _c("h4", { staticClass: "card-title" }, [
+                      _vm._v("Ваши результаты")
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [
+                      _c("span", { staticClass: "badge badge-warning" }, [
+                        _vm._v(
+                          "Очков: " +
+                            _vm._s(_vm.results.score) +
+                            " из " +
+                            _vm._s(_vm.results.maxScore)
                         )
                       ])
-                    : _vm._e()
-                ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h5", { staticClass: "card-subtitle my-3" }, [
+                      _vm._v(_vm._s(_vm.conditionName))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(_vm.conditionDescription))]),
+                    _vm._v(" "),
+                    _vm.results.isCertified
+                      ? [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.name,
+                                  expression: "name"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                placeholder: "Введите имя на сертификате..."
+                              },
+                              domProps: { value: _vm.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.name = $event.target.value
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-success",
+                              attrs: {
+                                href:
+                                  "/webapi/tests/" +
+                                  _vm.testId +
+                                  "/results/" +
+                                  _vm.testResultId +
+                                  "/certificates/" +
+                                  _vm.testCertificateId +
+                                  "/" +
+                                  _vm.name
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Скачать сертификат\n                        "
+                              )
+                            ]
+                          )
+                        ]
+                      : _vm._e()
+                  ],
+                  2
+                )
               ])
             ])
           ])
