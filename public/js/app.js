@@ -53263,6 +53263,9 @@ exports.default = {
         },
         materials: function materials() {
             return this.product.materials.data;
+        },
+        tests: function tests() {
+            return this.product.tests.data;
         }
     }),
     methods: _extends({}, (0, _vuex.mapActions)('users/product', ['getOrder', 'closeProduct'])),
@@ -53378,6 +53381,36 @@ var render = function() {
                   ],
                   2
                 )
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _vm._l(_vm.tests, function(test) {
+            return _c(
+              "div",
+              {
+                key: test.id,
+                staticClass: "card mt-4 mb-3 bg-dark text-light"
+              },
+              [
+                _c("div", { staticClass: "card-header pb-1" }, [
+                  _c("h2", [_vm._v(_vm._s(test.name))])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(_vm._s(test.description))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-light",
+                      attrs: { href: "/tests/" + test.id, target: "_blank" }
+                    },
+                    [_vm._v("Пройти тест")]
+                  )
+                ])
               ]
             )
           })

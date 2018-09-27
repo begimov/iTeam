@@ -12,6 +12,9 @@ export default {
         materials() {
             return this.product.materials.data;
         },
+        tests() {
+            return this.product.tests.data;
+        },
     },
     methods: {
         ...mapActions('users/product', [
