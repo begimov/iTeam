@@ -4,6 +4,7 @@ namespace App\Models\Tests;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Transformers\Tests\TestConditionTransformer;
+use App\Models\Products\Product;
 
 class Test extends Model
 {
@@ -27,6 +28,11 @@ class Test extends Model
         return $this->hasOne(TestCertificate::class);
     }
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'products_tests');
+    }
+
     public function getMaxScore()
     {
         return $this->testQuestions->reduce(function($score, $question) {
@@ -44,5 +50,10 @@ class Test extends Model
 
             if ($condition->score >= $testScore) return $condition;
         }
+    }
+
+    public function getTheme()
+    {
+        return ($product = $this->products()->first()) ? $product->name : $this->name;
     }
 }

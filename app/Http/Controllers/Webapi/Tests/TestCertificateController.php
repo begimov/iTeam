@@ -59,7 +59,8 @@ class TestCertificateController extends Controller
         return [
             'date' => now()->format('d/m/Y'), 
             'name' => $name,
-            'score' => round($results['score'] / $results['maxScore'] * 100, 2)
+            'score' => round($results['score'] / $results['maxScore'] * 100, 2),
+            'theme' => $test->getTheme()
         ];
     }
 }
