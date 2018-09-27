@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class TestCertificateController extends Controller
 {
-    public function show($testId, $testResutltId, $certificateId)
+    public function show($testId, $testResutltId, $certificateId, $name)
     {
         Storage::makeDirectory($directory = config('tests.certificates_storage_dir_prefix') . Auth::id());
 
-        $data = ['date' => now()->format('d/m/Y'), 'name' => 'Имя пользователя'];
+        $data = ['date' => now()->format('d/m/Y'), 'name' => $name];
 
         \PDF::loadView('tests.certificates.pdf', compact('data'))->setPaper('a4', 'landscape')
             ->save(storage_path('app/' . $directory . '/' . $fileName = 'certificate_' . $certificateId . '.pdf'));
