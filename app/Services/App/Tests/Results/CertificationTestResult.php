@@ -42,16 +42,12 @@ class CertificationTestResult extends TestResultAbstract
 
                     function($score, $userAnswerId) use ($test, $questionId, $questionAnswers) {
 
-                        $rightAnswers = $test->testQuestions
-                            ->find($questionId)->testAnswers->filter(function($answer) {
-                                return $answer->points > 0;
-                            });
+                        $question = $test->testQuestions
+                            ->find($questionId);
                         
-                        if ($this->answersMatch($questionAnswers, $rightAnswers)) {
+                        if ($this->answersMatch($questionAnswers, $question->getRightAnswers())) {
 
-                            return $score + (($a = $test->testQuestions
-                                ->find($questionId)
-                                ->testAnswers
+                            return $score + (($a = $question->testAnswers
                                 ->find($userAnswerId)) ? $a->points : 0);
                         }
 
