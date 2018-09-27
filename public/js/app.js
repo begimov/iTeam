@@ -53888,7 +53888,8 @@ var render = function() {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                placeholder: "Введите имя на сертификате..."
+                                placeholder:
+                                  "Введите ваше имя для сертификата..."
                               },
                               domProps: { value: _vm.name },
                               on: {
@@ -53920,7 +53921,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                Скачать сертификат\n                            "
+                                "\n                                Получить сертификат\n                            "
                               )
                             ]
                           )

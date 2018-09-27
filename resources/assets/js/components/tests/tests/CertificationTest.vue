@@ -50,10 +50,10 @@
                             <div class="card-body" v-if="results.isCertified">
                                 <h5 class="mb-3">Поздравляем, Вы успешно выполнили задания!</h5>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Введите имя на сертификате..." v-model="name">
+                                    <input type="text" class="form-control" placeholder="Введите ваше имя для сертификата..." v-model="name">
                                 </div>
                                 <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}/${name}`" class="btn btn-success">
-                                    Скачать сертификат
+                                    Получить сертификат
                                 </a>
                             </div>
                             <div class="card-body" v-else>
