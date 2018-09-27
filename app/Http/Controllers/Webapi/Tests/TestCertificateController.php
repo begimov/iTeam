@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TestCertificateController extends Controller
 {
-    public function show($testId, $testResutltId, $certificateId, $name)
+    public function show($testId, $testResutltId, $certificateId, $name = '')
     {
         Storage::makeDirectory($directory = config('tests.certificates_storage_dir_prefix') . Auth::id());
 

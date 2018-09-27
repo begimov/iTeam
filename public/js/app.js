@@ -53801,33 +53801,35 @@ var render = function() {
         ? _c("div", { staticClass: "row mt-4" }, [
             _c("div", { staticClass: "col" }, [
               _c("div", { staticClass: "card bg-dark text-light" }, [
-                _c(
-                  "div",
-                  { staticClass: "card-body" },
-                  [
-                    _c("h4", { staticClass: "card-title" }, [
-                      _vm._v("Ваши результаты")
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", [
-                      _c("span", { staticClass: "badge badge-warning" }, [
-                        _vm._v(
-                          "Очков: " +
-                            _vm._s(_vm.results.score) +
-                            " из " +
-                            _vm._s(_vm.results.maxScore)
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "card-subtitle my-3" }, [
-                      _vm._v(_vm._s(_vm.conditionName))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(_vm.conditionDescription))]),
-                    _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h4", { staticClass: "card-title" }, [
+                    _vm._v("Ваши результаты")
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", [
+                    _c("span", { staticClass: "badge badge-warning" }, [
+                      _vm._v(
+                        "Очков: " +
+                          _vm._s(_vm.results.score) +
+                          " из " +
+                          _vm._s(_vm.results.maxScore)
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "card-subtitle my-3" }, [
+                    _vm._v(_vm._s(_vm.conditionName))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(_vm.conditionDescription))]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card text-dark" }, [
                     _vm.results.isCertified
-                      ? [
+                      ? _c("div", { staticClass: "card-body" }, [
+                          _c("h5", { staticClass: "mb-3" }, [
+                            _vm._v("Поздравляем, Вы успешно выполнили задания!")
+                          ]),
+                          _vm._v(" "),
                           _c("div", { staticClass: "form-group" }, [
                             _c("input", {
                               directives: [
@@ -53873,38 +53875,50 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                            Скачать сертификат\n                        "
+                                "\n                                Скачать сертификат\n                            "
                               )
                             ]
                           )
-                        ]
-                      : _vm._e()
-                  ],
-                  2
-                )
+                        ])
+                      : _c("div", { staticClass: "card-body" }, [
+                          _c("h5", { staticClass: "mb-3" }, [
+                            _vm._v(
+                              "К сожалению этого недостаточно для получения сертификата"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-light",
+                              attrs: { href: "" }
+                            },
+                            [_vm._v("Пройти еще раз")]
+                          )
+                        ])
+                  ])
+                ])
               ])
             ])
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-4" }, [
-        _c("div", { staticClass: "col" }, [
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.sendAnswers($event)
-                }
-              }
-            },
-            [_vm._v("Узнать результаты")]
-          )
-        ])
-      ])
+        : _c("div", { staticClass: "row mt-4" }, [
+            _c("div", { staticClass: "col" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.sendAnswers($event)
+                    }
+                  }
+                },
+                [_vm._v("Узнать результаты")]
+              )
+            ])
+          ])
     ],
     2
   )

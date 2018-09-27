@@ -39,20 +39,27 @@
                         <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
                         <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
                         <p>{{ conditionDescription }}</p>
-                        <template v-if="results.isCertified">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Введите имя на сертификате..." v-model="name">
+                        <div class="card text-dark">
+                            <div class="card-body" v-if="results.isCertified">
+                                <h5 class="mb-3">Поздравляем, Вы успешно выполнили задания!</h5>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Введите имя на сертификате..." v-model="name">
+                                </div>
+                                <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}/${name}`" class="btn btn-success">
+                                    Скачать сертификат
+                                </a>
                             </div>
-                            <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}/${name}`" class="btn btn-success">
-                                Скачать сертификат
-                            </a>
-                        </template>
+                            <div class="card-body" v-else>
+                                <h5 class="mb-3">К сожалению этого недостаточно для получения сертификата</h5>
+                                <a href="" class="btn btn-light">Пройти еще раз</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row mt-4" v-else>
             <div class="col">
                 <a href="#" @click.prevent="sendAnswers" class="btn btn-primary">Узнать результаты</a>
             </div>
