@@ -38,16 +38,39 @@ class CertificationTestResult extends TestResultAbstract
 
                 return $score + array_reduce(
 
-                    $userAnswers[$questionId],  
+                    $questionAnswers = $userAnswers[$questionId],  
 
-                    function($score, $userAnswerId) use ($test, $questionId) {
+                    function($score, $userAnswerId) use ($test, $questionId, $questionAnswers) {
 
-                        return $score + (($a = $test->testQuestions
-                            ->find($questionId)
-                            ->testAnswers
-                            ->find($userAnswerId)) ? $a->points : 0);
+                        $rightAnswers = $test->testQuestions
+                            ->find($questionId)->testAnswers->filter(function($answer) {
+                                return $answer->points > 0;
+                            });
+                        
+                        if ($this->answersMatch($questionAnswers, $rightAnswers)) {
+
+                            return $score + (($a = $test->testQuestions
+                                ->find($questionId)
+                                ->testAnswers
+                                ->find($userAnswerId)) ? $a->points : 0);
+                        }
+
+                        return $score;
+                        
                     }, 0);
         }, 0);
+    }
+
+    protected function answersMatch($questionAnswers, $rightAnswers)
+    {
+        return array_values(array_sort($questionAnswers)) == array_values(
+
+                array_sort($rightAnswers->map(function($a) {
+
+                    return $a->id;
+                    
+                })->toArray())
+            );
     }
 
     protected function getTransformedCondition($test, $testScore)
