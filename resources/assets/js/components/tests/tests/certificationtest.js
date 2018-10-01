@@ -12,7 +12,8 @@ export default {
     },
     data() {
         return {
-            answers: {}
+            answers: {},
+            name: ''
         }
     },
     watch: {
@@ -30,10 +31,22 @@ export default {
     },
     computed: {
         conditionName() {
-            return this.results ? this.results.condition.data.name : ''
+            return this.results.condition.data.name
         },
         conditionDescription() {
-            return this.results ? this.results.condition.data.description : ''
+            return this.results.condition.data.description
+        },
+        testId() {
+            return this.results.testResult.data.test_id
+        },
+        testResultId() {
+            return this.results.testResult.data.id
+        },
+        testCertificateId() {
+            return this.results.testCertificate.data.id
+        },
+        resultPercents() {
+            return _.round(this.results.score / this.results.maxScore * 100, 2)
         }
     },
     mounted() {

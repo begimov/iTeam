@@ -36,16 +36,37 @@
                 <div class="card bg-dark text-light">
                     <div class="card-body">
                         <h4 class="card-title">Ваши результаты</h4>
-                        <h3><span class="badge badge-warning">Очков: {{ results.score }} из {{ results.maxScore }}</span></h3>
+                        <h3>
+                            <span class="badge badge-warning">
+                                Очков: {{ results.score }} из {{ results.maxScore }}
+                            </span>
+                            <span class="badge badge-light">
+                                {{ resultPercents }} %
+                            </span>
+                        </h3>
                         <h5 class="card-subtitle my-3">{{ conditionName }}</h5>
                         <p>{{ conditionDescription }}</p>
-                        <p v-if="results.isCertified"><a href="#" class="btn btn-success">Скачать сертификат</a></p>
+                        <div class="card text-dark">
+                            <div class="card-body" v-if="results.isCertified">
+                                <h5 class="mb-3">Поздравляем, Вы успешно выполнили задания!</h5>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Введите ваше имя для сертификата..." v-model="name">
+                                </div>
+                                <a :href="`/webapi/tests/${testId}/results/${testResultId}/certificates/${testCertificateId}/${name}`" class="btn btn-success">
+                                    Получить сертификат
+                                </a>
+                            </div>
+                            <div class="card-body" v-else>
+                                <h5 class="mb-3">К сожалению этого недостаточно для получения сертификата</h5>
+                                <a href="" class="btn btn-light">Пройти еще раз</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row mt-4" v-else>
             <div class="col">
                 <a href="#" @click.prevent="sendAnswers" class="btn btn-primary">Узнать результаты</a>
             </div>

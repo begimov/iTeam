@@ -10,4 +10,11 @@ class TestQuestion extends Model
     {
         return $this->hasMany(TestAnswer::class);
     }
+
+    public function getRightAnswers()
+    {
+        return $this->testAnswers->filter(function($answer) {
+            return $answer->points > 0;
+        });;
+    }
 }
