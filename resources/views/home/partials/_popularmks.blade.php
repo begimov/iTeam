@@ -11,11 +11,9 @@
                     <a href="{{ route('pages.show', $page->slug) }}" class="text-white">
                     <div class="card h-100">
                         <div class="card-body text-center py-2">
-                            @if(isset($page->elements[1]))
-                                <img src="{{ getElementsFilePath($page->elements[1], 'img1') }}" class="w-75">
-                            @else
-                                <img src="/img/home/template_box.png" class="w-75">
-                            @endif
+                            @isset($page->elements[1])
+                                <img src="{{ ($path = getElementsFilePath($page->elements[1], 'img1')) ? $path : '/img/home/template_box.png' }}" class="w-75">
+                            @endisset
                         </div>
                         <div class="card-footer bg-primary text-white">
                             {{ $page->name }}
@@ -28,11 +26,9 @@
                     <a href="{{ route('pages.show', $page->slug) }}" class="text-white">
                     <div class="card h-100">
                         <div class="card-body text-center py-2">
-                            @if(isset($page->elements[1]))
-                                <img src="{{ getElementsFilePath($page->elements[1], 'img1') }}" class="w-75">
-                            @else
-                                <img src="/img/home/template_box.png" class="w-75">
-                            @endif
+                            @isset($page->elements[1])
+                                <img src="{{ ($path = getElementsFilePath($page->elements[1], 'img1')) ? $path : '/img/home/template_box.png' }}" class="w-75">
+                            @endisset
                         </div>
                         <div class="card-footer bg-primary text-white">
                             {{ $page->name }}
