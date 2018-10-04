@@ -94,8 +94,8 @@
                     data-toggle="popover" 
                     data-trigger="focus"
                     data-placement="bottom" 
-                    data-content="КАМАЗ &mdash; российский лидер по производству грузовых автомобилей">
-                    <img src="{{ asset('img/company/services/clients/kamaz.png') }}" class="img-fluid">
+                    data-content="Миг-Плюс &mdash; более 19 лет осуществляет комплекс услуг, от получения технических условий до эксплуатации объектов газоснабжения и газопотребления">
+                    <img src="{{ asset('img/company/services/clients/mig_plus.png') }}" class="img-fluid">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
@@ -114,18 +114,18 @@
                     data-toggle="popover" 
                     data-trigger="focus"
                     data-placement="bottom" 
-                    data-content="Лапоток &mdash; быстро растущая федеральная сеть магазинов обуви">
-                    <img src="{{ asset('img/company/services/clients/lapotok.png') }}" class="img-fluid">
+                    data-content="Фабрика Окон &mdash; лидер по производству пластиковых и деревянных окон в Москве и МО">
+                    <img src="{{ asset('img/company/services/clients/fabrika_okon.png') }}" class="img-fluid">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
-                <a tabindex="0"
+                <a tabindex="0" 
                     style="cursor:pointer;"
                     data-toggle="popover" 
                     data-trigger="focus"
                     data-placement="bottom" 
-                    data-content="Миррико &mdash; лидирующая сервисная компания на рынке нефтедобычи">
-                    <img src="{{ asset('img/company/services/clients/mirriko.png') }}" class="img-fluid">
+                    data-content="КАМАЗ &mdash; российский лидер по производству грузовых автомобилей">
+                    <img src="{{ asset('img/company/services/clients/kamaz.png') }}" class="img-fluid">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 p-3 align-self-center">
