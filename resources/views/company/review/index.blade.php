@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col">
                         {{ $reviews->links("pagination::bootstrap-4") }}
                     </div>
