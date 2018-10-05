@@ -1,5 +1,10 @@
 <div class="row mb-4 a-white">
     <div class="col">
+        <span class="badge badge-secondary my-1 p-2">
+            <span class="lead">
+                <a href="{{ route('pages.category.index', config('urls.slugs.categories.mk')) }}">Все</a>
+            </span>
+        </span>
         @foreach ($themes as $theme)
             <span class="badge badge-secondary my-1 p-2">
                 <span class="lead">
