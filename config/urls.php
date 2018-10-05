@@ -6,6 +6,7 @@ return [
         'categories' => [
             'mk' => 'master-klassy',
             'mp' => 'master-proekty',
+            'bundles' => 'komplekty',
         ],
     ],
     

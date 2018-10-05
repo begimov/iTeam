@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        @if($category->slug != config('urls.slugs.categories.mp'))
+        @if($category->slug === config('urls.slugs.categories.mk'))
             @include('pages.category.partials._themes')
         @endif
 
