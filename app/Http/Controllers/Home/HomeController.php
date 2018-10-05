@@ -47,10 +47,15 @@ class HomeController extends Controller
 
     protected function getBlogPosts()
     {
-        return json_decode($this->guzzle->request(
-            'GET', config('urls.blog') 
-            . 'wp-json/wp/v2/posts?per_page=6'
-        )->getBody());
+        try {
+            return json_decode($this->guzzle->request(
+                'GET', config('urls.blog') 
+                . 'wp-json/wp/v2/posts?per_page=6'
+            )->getBody());
+        } catch (\Exception $e) {
+            return collect([]);
+        }
+        
     }
 
     protected function getMasterClasses()
