@@ -7,7 +7,9 @@
             title="ПОЛУЧИТЬ БЕСПЛАТНО"
             campaign-token="{{ $element->data['form']['campaignToken'] }}"
             redirect-url="{{ '/products/' . $element->data['form']['productId'] }}"
-            layout-type="horizontal" />
+            layout-type="horizontal"
+            user-email="{{ auth()->user() ? auth()->user()->email : '' }}"
+            user-name="{{ auth()->user() ? auth()->user()->name : '' }}" />
         </div>
       </div>
     </div>
