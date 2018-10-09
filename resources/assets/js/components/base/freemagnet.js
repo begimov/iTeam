@@ -26,13 +26,17 @@ export default {
             type: String,
             default: null
         },
+        noPhone: {
+            type: String,
+            default: null
+        }
     },
     data() {
         return {
             params: {
                 name: '',
                 email: '',
-                phone: '',
+                phone: !this.noPhone ? '' : 'none',
                 campaignToken: this.campaignToken
             },
             errors: {},

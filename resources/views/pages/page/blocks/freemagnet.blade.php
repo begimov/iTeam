@@ -9,7 +9,8 @@
             campaign-token="{{ $element->data['campaignToken'] }}"
             button-text="{{ $element->data['buttonText'] }}"
             redirect-url="{{ getElementsFilePath($element, 'doc1') }}"
-            layout-type="horizontal" />
+            layout-type="horizontal"
+            no-phone="{{ $element->data['noPhone'] ?? '' }}" />
         </div>
       </div>
     </div>

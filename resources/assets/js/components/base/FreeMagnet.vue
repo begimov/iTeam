@@ -6,7 +6,7 @@
 
         <form action="/grform/payment" method="get" id="grForm" @submit.prevent="register">
 
-            <div :class="{ 'row': layoutType === 'horizontal' }">
+            <div :class="{ 'row': layoutType === 'horizontal', 'justify-content-center': true }">
 
                 <div :class="{ 'col-md-4': layoutType === 'horizontal' }">
                     <div class="form-group mb-3">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div :class="{ 'col-md-4': layoutType === 'horizontal' }">
+                <div :class="{ 'col-md-4': layoutType === 'horizontal' }" v-if="!noPhone">
                     <div class="form-group mb-3">
                         <input type="text" :class="{ 'form-control':true, 'is-invalid': errors.phone }" name="phone" placeholder="Телефон" v-model="params.phone">
                         <div class="invalid-feedback" v-if="errors.phone">
