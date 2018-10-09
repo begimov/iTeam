@@ -10,6 +10,7 @@
 
                 <div :class="{ 'col-md-4': layoutType === 'horizontal' }">
                     <div class="form-group mb-3">
+                        <label>Имя</label>
                         <input type="text" :class="{ 'form-control':true, 'is-invalid': errors.name }" name="name" placeholder="Имя" v-model="params.name">
                         <div class="invalid-feedback" v-if="errors.name">
                             {{ errors.name[0] }}
@@ -19,6 +20,7 @@
 
                 <div :class="{ 'col-md-4': layoutType === 'horizontal' }">
                     <div class="form-group mb-3">
+                        <label>Email</label>
                         <input type="email" :class="{ 'form-control':true, 'is-invalid': errors.email }" name="email" placeholder="Эл.адрес" v-model="params.email">
                         <div class="invalid-feedback" v-if="errors.email">
                             {{ errors.email[0] }}
@@ -28,6 +30,7 @@
 
                 <div :class="{ 'col-md-4': layoutType === 'horizontal' }" v-if="!noPhone">
                     <div class="form-group mb-3">
+                        <label>Телефон</label>
                         <input type="text" :class="{ 'form-control':true, 'is-invalid': errors.phone }" name="phone" placeholder="Телефон" v-model="params.phone">
                         <div class="invalid-feedback" v-if="errors.phone">
                             {{ errors.phone[0] }}

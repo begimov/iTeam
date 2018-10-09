@@ -10,7 +10,9 @@
             button-text="{{ $element->data['buttonText'] }}"
             redirect-url="{{ getElementsFilePath($element, 'doc1') }}"
             layout-type="horizontal"
-            no-phone="{{ $element->data['noPhone'] ?? '' }}" />
+            no-phone="{{ $element->data['noPhone'] ?? '' }}" 
+            user-email="{{ auth()->user() ? auth()->user()->email : '' }}"
+            user-name="{{ auth()->user() ? auth()->user()->name : '' }}" />
         </div>
       </div>
     </div>

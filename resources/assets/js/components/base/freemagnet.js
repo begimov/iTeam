@@ -29,13 +29,21 @@ export default {
         noPhone: {
             type: String,
             default: null
+        },
+        userEmail: {
+            type: String,
+            default: null
+        },
+        userName: {
+            type: String,
+            default: null
         }
     },
     data() {
         return {
             params: {
-                name: '',
-                email: '',
+                name: this.userName ? this.userName : '',
+                email: this.userEmail ? this.userEmail : '',
                 phone: !this.noPhone ? '' : 'none',
                 campaignToken: this.campaignToken
             },
