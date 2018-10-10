@@ -12,7 +12,8 @@
             </div>
         </div>
 
-        @if($category->slug === config('urls.slugs.categories.mk'))
+        @if($category->slug === config('urls.slugs.categories.mk') 
+            || $category->slug === config('urls.slugs.categories.bundles'))
             @include('pages.category.partials._themes')
         @endif
 
