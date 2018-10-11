@@ -6,11 +6,6 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col mt-5 mb-4">
-                <h1>{{ $material->name }}</h1>
-            </div>
-        </div>
         <div class="row mt-5 mb-3">
             <div class="col">
                     <div class="card mb-3">
