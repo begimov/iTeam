@@ -36,7 +36,7 @@
                                 <ul>
                                     @foreach ($material->files as $file)
                                         <li>
-                                            <a href="{{ '/materials/' . $material->id 
+                                            <a href="{{ '/materials/' . $material->id . '/' . $accessCode
                                                 . '/files/' . $file->id }}">{{ $file->original_name ?: $file->name }}</a> - {{ round($file->size/1024) }} Kb
                                         </li>
                                     @endforeach
