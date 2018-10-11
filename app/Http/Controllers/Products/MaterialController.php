@@ -10,6 +10,8 @@ class MaterialController extends Controller
 {
     public function show(Request $request, Material $material, $accessCode)
     {
-        dd($material, $accessCode);
+        $material->load('files', 'resources');
+
+        return view('products.material.show', compact('material'));
     }
 }
