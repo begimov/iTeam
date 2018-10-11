@@ -58,5 +58,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
         'products' => \App\Http\Middleware\Products\ProtectNonFreeProductMaterials::class,
+        'materials' => \App\Http\Middleware\Products\VerifyMaterialAccessToken::class,
     ];
 }

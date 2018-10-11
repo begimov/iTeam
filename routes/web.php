@@ -29,7 +29,7 @@ Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' =>
 }); 
 
 // MPs level material pages
-Route::group(['prefix' => 'materials', 'namespace' => 'Products'], function () {
+Route::group(['middleware' => 'materials', 'prefix' => 'materials', 'namespace' => 'Products'], function () {
     Route::get('{material}/{code}', 'MaterialController@show');
 }); 
 
