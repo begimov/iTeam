@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Products\Material;
 use App\Models\Content\File;
+use App\Http\Traits\Downloads;
 
 class MaterialController extends Controller
 {
+    use Downloads;
+
     public function show(Material $material, $accessCode)
     {
         $material->load('files', 'resources');
@@ -18,7 +21,6 @@ class MaterialController extends Controller
 
     public function download(Material $material, $accessCode, File $file)
     {
-        dd($material, $accessCode, $file);
-        // return $this->downloadMaterialFile($file);
+        return $this->downloadMaterialFile($file);
     }
 }
