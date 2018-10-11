@@ -15,10 +15,10 @@ class VerifyMaterialAccessToken
      */
     public function handle($request, Closure $next)
     {
-        $accessCode = $request->route('code');
+        if ($request->route('code') !== $request->route('material')->token) {
 
-        if ($accessCode !== '123abc') {
             return redirect()->route('home');
+            
         }
 
         return $next($request);
