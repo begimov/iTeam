@@ -17,7 +17,7 @@ class VerifyMaterialAccessToken
     {
         if ($request->route('code') !== $request->route('material')->token) {
 
-            // return redirect()->route('home');
+            return redirect()->route('home');
             
         }
 
