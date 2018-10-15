@@ -28,6 +28,12 @@ Route::group(['middleware' => 'products', 'prefix' => 'products', 'namespace' =>
     Route::get('{product}/materials/{material}/files/{file}', 'ProductController@download');
 }); 
 
+// MPs level material pages
+Route::group(['middleware' => 'materials', 'prefix' => 'materials', 'namespace' => 'Products'], function () {
+    Route::get('{material}/{code}', 'MaterialController@show');
+    Route::get('{material}/{code}/files/{file}', 'MaterialController@download');
+}); 
+
 // Tests
 Route::group(['middleware' => 'auth', 'prefix' => 'tests', 'namespace' => 'Tests'], function () {
     Route::get('{test}', 'TestController@show')->name('tests.show');
