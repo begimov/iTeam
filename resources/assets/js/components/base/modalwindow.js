@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie'
+
 export default {
     name: 'ModalWindow',
     props: {
@@ -15,6 +17,11 @@ export default {
         //
     },
     mounted() {
-        $('#modal-window-' + this.modalWindowId).modal('show')
+        if (!Cookies.get('book-modal-viewed')) {
+
+            Cookies.set('book-modal-viewed', '1', { expires: 1 })
+
+            $('#modal-window-' + this.modalWindowId).modal('show')
+        }
     }
 }
