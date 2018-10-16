@@ -50571,11 +50571,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     name: 'ModalWindow',
+    props: {
+        campaignToken: {
+            required: false,
+            default: ''
+        },
+        modalWindowId: {
+            required: true,
+            type: String
+        }
+    },
     computed: {
         //
     },
     mounted: function mounted() {
-        //
+        $('#magnet' + this.modalWindowId).modal('show');
     }
 };
 
@@ -50589,19 +50599,82 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    {
+      staticClass: "modal fade",
+      attrs: {
+        id: "magnet" + _vm.modalWindowId,
+        tabindex: "-1",
+        role: "dialog",
+        "aria-labelledby": "exampleModalLabel",
+        "aria-hidden": "true"
+      }
+    },
     [
-      _c("free-magnet", {
-        attrs: {
-          description: "Книга &laquo;Как внедрить бизнес-процессы&raquo;!",
-          "campaign-token": "VjVkP",
-          "redirect-url": ""
-        }
-      })
-    ],
-    1
+      _c(
+        "div",
+        { staticClass: "modal-dialog modal-lg", attrs: { role: "document" } },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-md-7 align-self-center" },
+                  [
+                    _c("free-magnet", {
+                      attrs: {
+                        description: 'Книга "Как внедрить бизнес-процессы"!',
+                        "campaign-token": _vm.campaignToken,
+                        "redirect-url": ""
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-5 d-none d-md-block" }, [
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: { src: "/img/home/gift_box.png" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

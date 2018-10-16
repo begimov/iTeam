@@ -1,9 +1,29 @@
 <template>
-    <div>
-        <free-magnet 
-                description="Книга &laquo;Как внедрить бизнес-процессы&raquo;!"
-                campaign-token="VjVkP"
-                redirect-url="" />
+<!-- Modal -->
+    <div class="modal fade" :id="'magnet' + modalWindowId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5 d-none d-md-block">
+                <img src="/img/home/gift_box.png" class="img-fluid">
+              </div>
+              <div class="col-md-7 align-self-center">
+                  <free-magnet 
+                    description='Книга "Как внедрить бизнес-процессы"!'
+                    :campaign-token="campaignToken"
+                    redirect-url="" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 

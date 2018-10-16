@@ -31,4 +31,5 @@
             @endif
         </div>
     </div>
+    <modal-window modal-window-id="book-magnet-modal-window" campaign-token="VjVkP"/>
 </div>  
