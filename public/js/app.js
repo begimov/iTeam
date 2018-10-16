@@ -50573,6 +50573,7 @@ exports.default = {
     name: 'ModalWindow',
     props: {
         campaignToken: {
+            type: String,
             required: false,
             default: ''
         },
@@ -50585,7 +50586,7 @@ exports.default = {
         //
     },
     mounted: function mounted() {
-        $('#magnet' + this.modalWindowId).modal('show');
+        $('#modal-window-' + this.modalWindowId).modal('show');
     }
 };
 
@@ -50602,10 +50603,10 @@ var render = function() {
     {
       staticClass: "modal fade",
       attrs: {
-        id: "magnet" + _vm.modalWindowId,
+        id: "modal-window-" + _vm.modalWindowId,
         tabindex: "-1",
         role: "dialog",
-        "aria-labelledby": "exampleModalLabel",
+        "aria-labelledby": "modalWindow",
         "aria-hidden": "true"
       }
     },

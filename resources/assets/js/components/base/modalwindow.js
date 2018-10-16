@@ -2,6 +2,7 @@ export default {
     name: 'ModalWindow',
     props: {
         campaignToken: {
+            type: String,
             required: false,
             default: ''
         },
@@ -14,6 +15,6 @@ export default {
         //
     },
     mounted() {
-        $('#magnet' + this.modalWindowId).modal('show')
+        $('#modal-window-' + this.modalWindowId).modal('show')
     }
 }
