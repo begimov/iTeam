@@ -20,6 +20,7 @@ import store from './store'
 // Base components
 Vue.component('youtube-player', require('./components/base/Ytplayer.vue'));
 Vue.component('free-magnet', require('./components/base/FreeMagnet.vue'));
+Vue.component('modal-window', require('./components/base/ModalWindow.vue'));
 
 // Static company pages related components
 Vue.component('mission-philosophy', require('./components/static/company/services/Mission.vue'));
