@@ -17,7 +17,7 @@
                   <free-magnet 
                     description='Книга "Как внедрить бизнес-процессы"!'
                     :campaign-token="campaignToken"
-                    redirect-url="" />
+                    :redirect-url="redirectUrl" />
               </div>
             </div>
 

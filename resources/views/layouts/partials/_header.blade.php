@@ -31,5 +31,8 @@
             @endif
         </div>
     </div>
-    <modal-window modal-window-id="book-magnet" campaign-token="VjVkP"/>
+    <modal-window 
+        modal-window-id="book-magnet" 
+        campaign-token="VjVkP" 
+        redirect-url="{{ asset('files/magnets/process_approach_book.pdf') }}"/>
 </div>  

@@ -50587,6 +50587,11 @@ exports.default = {
         modalWindowId: {
             required: true,
             type: String
+        },
+        redirectUrl: {
+            type: String,
+            required: false,
+            default: ''
         }
     },
     computed: {
@@ -50817,7 +50822,7 @@ var render = function() {
                       attrs: {
                         description: 'Книга "Как внедрить бизнес-процессы"!',
                         "campaign-token": _vm.campaignToken,
-                        "redirect-url": ""
+                        "redirect-url": _vm.redirectUrl
                       }
                     })
                   ],

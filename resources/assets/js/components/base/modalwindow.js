@@ -11,6 +11,11 @@ export default {
         modalWindowId: {
             required: true,
             type: String
+        },
+        redirectUrl: {
+            type: String,
+            required: false,
+            default: ''
         }
     },
     computed: {
