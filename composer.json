@@ -11,7 +11,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "spatie/laravel-fractal": "^5.3"
+        "spatie/laravel-fractal": "^5.3",
+        "yandex-money/yandex-checkout-sdk-php": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
