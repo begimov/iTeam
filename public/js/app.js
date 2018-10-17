@@ -505,6 +505,10 @@ var _walletone = __webpack_require__(28);
 
 var _walletone2 = _interopRequireDefault(_walletone);
 
+var _yakassa = __webpack_require__(156);
+
+var _yakassa2 = _interopRequireDefault(_yakassa);
+
 var _invoice = __webpack_require__(29);
 
 var _invoice2 = _interopRequireDefault(_invoice);
@@ -519,6 +523,7 @@ exports.default = {
   dashboard: _dashboard2.default,
   product: _product2.default,
   walletone: _walletone2.default,
+  yakassa: _yakassa2.default,
   invoice: _invoice2.default,
   test: _test2.default
 };
@@ -55205,6 +55210,28 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     //
+};
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  getPaymentUrl: function getPaymentUrl(payload) {
+    return new Promise(function (resolve, reject) {
+      axios.post("/webapi/orders/payments/yakassa/url", payload).then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
 };
 
 /***/ })
