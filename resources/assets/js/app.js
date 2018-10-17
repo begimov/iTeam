@@ -34,6 +34,7 @@ Vue.component('order-card', require('./components/users/orders/OrderCard.vue'));
 // Payments
 Vue.component('order-payment', require('./components/users/orders/Payment.vue'));
 Vue.component('walletone-payment', require('./components/users/orders/payments/WalletOne.vue'));
+Vue.component('yakassa-payment', require('./components/users/orders/payments/YaKassa.vue'));
 Vue.component('invoice-payment', require('./components/users/orders/payments/Invoice.vue'));
 // Paid product materials
 Vue.component('product', require('./components/users/products/Product.vue'));
