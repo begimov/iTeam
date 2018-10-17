@@ -62,6 +62,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     Route::post('orders/{id}/payments/invoices', 'Payments\InvoiceController@store');
     Route::get('orders/payments/invoices/{fileName}', 'Payments\InvoiceController@show')->name('orders.invoices.show');
     
+    Route::post('orders/payments/yakassa/url', 'Payments\YaKassaPaymentController@getPaymentUrl');
+
     // Dashboard routes
     Route::resource('orders', 'Products\OrderController');
     Route::resource('files', 'Content\FileController');
