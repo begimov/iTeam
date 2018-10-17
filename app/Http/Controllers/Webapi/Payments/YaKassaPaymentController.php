@@ -18,17 +18,25 @@ class YaKassaPaymentController extends Controller
 
     public function getPaymentUrl(Request $request, Client $client)
     {
-        dd($this->createPayment($request, $client));
+        $redirectUrl = $this->createPayment($request, $client);
+
+        return [
+            'url' => $redirectUrl
+        ];
     }
 
     protected function createPayment(Request $request, Client $client)
     {
         $order = $this->orders->findById($request->id);
         
-        return  $client->createPayment(
+        $response = $client->createPayment(
             $this->createPayload($order),
             uniqid('', true)
         );
+
+        // update order with ya payment id ($response->getId())
+
+        return $response->getConfirmation()->confirmationUrl;
     }
 
     public function createPayload($order)
