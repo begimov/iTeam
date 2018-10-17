@@ -5,26 +5,37 @@ namespace App\Http\Controllers\Webapi\Payments;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use YandexCheckout\Client;
+use App\Repositories\Contracts\Products\OrderRepository;
 
 class YaKassaPaymentController extends Controller
 {
-    public function getPaymentUrl(Client $client)
+    protected $orders;
+
+    public function __construct(OrderRepository $orders)
     {
-        $res = $client->createPayment(
-            array(
-                'amount' => array(
+        $this->orders = $orders;
+    }
+
+    public function getPaymentUrl(Request $request)
+    {
+        dd($this->createPayment());
+    }
+
+    protected function createPayment(Client $client)
+    {
+        $client->createPayment(
+            [
+                'amount' => [
                     'value' => 2.0,
                     'currency' => 'RUB',
-                ),
-                'confirmation' => array(
+                ],
+                'confirmation' => [
                     'type' => 'redirect',
                     'return_url' => config('urls.user_dashboard'),
-                ),
-                'description' => 'Заказ №72',
-            ),
+                ],
+                'description' => 'iTeam - Заказ №',
+            ],
             uniqid('', true)
         );
-
-        dd($res);
     }
 }
