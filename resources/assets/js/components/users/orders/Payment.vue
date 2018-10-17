@@ -24,6 +24,7 @@
                         <div class="row mt-4">
                             <walletone-payment v-if="selectedPaymentTypeId === 1" :order="order"/>
                             <invoice-payment v-if="selectedPaymentTypeId === 2" :order="order"/>
+                            <yakassa-payment v-if="selectedPaymentTypeId === 3" :order="order"/>
                         </div>
                     </div>
                 </div>

@@ -26241,7 +26241,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(19);
-module.exports = __webpack_require__(144);
+module.exports = __webpack_require__(147);
 
 
 /***/ }),
@@ -26290,13 +26290,14 @@ Vue.component('order-card', __webpack_require__(119));
 // Payments
 Vue.component('order-payment', __webpack_require__(122));
 Vue.component('walletone-payment', __webpack_require__(127));
-Vue.component('invoice-payment', __webpack_require__(132));
+Vue.component('yakassa-payment', __webpack_require__(132));
+Vue.component('invoice-payment', __webpack_require__(135));
 // Paid product materials
-Vue.component('product', __webpack_require__(135));
+Vue.component('product', __webpack_require__(138));
 
 // Tests
-Vue.component('iteam-test', __webpack_require__(138));
-Vue.component('certification-test', __webpack_require__(141));
+Vue.component('iteam-test', __webpack_require__(141));
+Vue.component('certification-test', __webpack_require__(144));
 
 var app = new Vue({
   el: '#app',
@@ -26880,7 +26881,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     selectedPaymentTypeId: 1,
-    paymentTypes: [{ id: 1, name: 'Оплата онлайн', decs: '' }, { id: 2, name: 'Счет на Юр. лицо', decs: '' }]
+    paymentTypes: [{ id: 3, name: 'Яндекс Касса', decs: '' }, { id: 1, name: 'Оплата онлайн', decs: '' }, { id: 2, name: 'Счет на Юр. лицо', decs: '' }]
 };
 
 /***/ }),
@@ -53258,6 +53259,10 @@ var render = function() {
                 _vm._v(" "),
                 _vm.selectedPaymentTypeId === 2
                   ? _c("invoice-payment", { attrs: { order: _vm.order } })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.selectedPaymentTypeId === 3
+                  ? _c("yakassa-payment", { attrs: { order: _vm.order } })
                   : _vm._e()
               ],
               1
@@ -53788,6 +53793,140 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/assets/js/components/users/orders/payments/YaKassa.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4811701d", Component.options)
+  } else {
+    hotAPI.reload("data-v-4811701d", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: ['order'],
+    methods: {
+        purchase: function purchase() {
+            console.log('purchased');
+        }
+    },
+    mounted: function mounted() {
+        //
+    }
+};
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col" }, [
+    _c("div", { staticClass: "card mb-2" }, [
+      _c("div", { staticClass: "card-body bg-dark text-white lead" }, [
+        _vm._v(
+          "\n            Вы выбрали продукт «" +
+            _vm._s(this.order.product.data.name) +
+            "», к оплате — " +
+            _vm._s(this.order.total_price) +
+            " руб., сейчас вы будете перенаправлены на страницу платежного агрегатора Яндекс.Касса.\n        "
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "text-center" }, [
+      _c("h3", [
+        _c("span", { staticClass: "badge badge-dark" }, [
+          _vm._v(_vm._s(_vm.order.total_price) + " руб.")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn-lg",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.purchase($event)
+            }
+          }
+        },
+        [_vm._v("ОПЛАТИТЬ")]
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card mt-2" }, [
+      _c("div", { staticClass: "card-body" }, [_c("p", [_vm._v("//")])])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4811701d", module.exports)
+  }
+}
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(136)
+/* template */
+var __vue_template__ = __webpack_require__(137)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/assets/js/components/users/orders/payments/Invoice.vue"
 
 /* hot reload */
@@ -53810,7 +53949,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 133 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53871,7 +54010,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 134 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54149,15 +54288,15 @@ if (false) {
 }
 
 /***/ }),
-/* 135 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(136)
+var __vue_script__ = __webpack_require__(139)
 /* template */
-var __vue_template__ = __webpack_require__(137)
+var __vue_template__ = __webpack_require__(140)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54196,7 +54335,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 136 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54230,7 +54369,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 137 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54385,15 +54524,15 @@ if (false) {
 }
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(139)
+var __vue_script__ = __webpack_require__(142)
 /* template */
-var __vue_template__ = __webpack_require__(140)
+var __vue_template__ = __webpack_require__(143)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54432,7 +54571,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 139 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54470,7 +54609,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 140 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54515,15 +54654,15 @@ if (false) {
 }
 
 /***/ }),
-/* 141 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(142)
+var __vue_script__ = __webpack_require__(145)
 /* template */
-var __vue_template__ = __webpack_require__(143)
+var __vue_template__ = __webpack_require__(146)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54562,7 +54701,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 142 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54637,7 +54776,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 143 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54935,7 +55074,7 @@ if (false) {
 }
 
 /***/ }),
-/* 144 */
+/* 147 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

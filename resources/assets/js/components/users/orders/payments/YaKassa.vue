@@ -2,7 +2,7 @@
     <div class="col">
         <div class="card mb-2">
             <div class="card-body bg-dark text-white lead">
-                Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.total_price }}&nbsp;руб., сейчас вы&nbsp;будете перенаправлены на&nbsp;страницу платежного агрегатора WalletOne.
+                Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.total_price }}&nbsp;руб., сейчас вы&nbsp;будете перенаправлены на&nbsp;страницу платежного агрегатора Яндекс.Касса.
             </div>
         </div>
 
