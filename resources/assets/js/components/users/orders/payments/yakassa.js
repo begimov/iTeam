@@ -8,7 +8,7 @@ export default {
         ]),
         purchase() {
             this.buy({ id: this.order.id }).then(res => {
-                console.log(res.data)
+                window.location.href = res.data.url
             }).catch(err => {
                 console.log(err)
             })

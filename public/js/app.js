@@ -53844,7 +53844,7 @@ exports.default = {
     methods: _extends({}, (0, _vuex.mapActions)('users/payment/yakassa', ['buy']), {
         purchase: function purchase() {
             this.buy({ id: this.order.id }).then(function (res) {
-                console.log(res.data);
+                window.location.href = res.data.url;
             }).catch(function (err) {
                 console.log(err);
             });
