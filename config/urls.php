@@ -11,6 +11,8 @@ return [
     ],
     
     'blog' => 'http://blog.iteam.ru/',
+
+    'user_dashboard' => env('APP_URL') . '/user',
     
     'social' => [
         'facebook' => 'https://www.facebook.com/ITeam-Management-1538687959484919/',
