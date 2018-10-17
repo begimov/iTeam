@@ -26851,6 +26851,10 @@ var _walletone = __webpack_require__(42);
 
 var _walletone2 = _interopRequireDefault(_walletone);
 
+var _yakassa = __webpack_require__(151);
+
+var _yakassa2 = _interopRequireDefault(_yakassa);
+
 var _invoice = __webpack_require__(47);
 
 var _invoice2 = _interopRequireDefault(_invoice);
@@ -26865,6 +26869,7 @@ exports.default = {
   mutations: _mutations2.default,
   modules: {
     walletone: _walletone2.default,
+    yakassa: _yakassa2.default,
     invoice: _invoice2.default
   }
 };
@@ -53824,13 +53829,22 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _vuex = __webpack_require__(3);
+
 exports.default = {
     props: ['order'],
-    methods: {
+    methods: _extends({}, (0, _vuex.mapActions)('users/payment/yakassa', ['buy']), {
         purchase: function purchase() {
-            console.log('purchased');
+            this.buy().then(function (res) {
+                // redirect
+            }).catch(function (err) {
+                console.log(err);
+            });
         }
-    },
+    }),
     mounted: function mounted() {
         //
     }
@@ -55078,6 +55092,120 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _state = __webpack_require__(152);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(153);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _actions = __webpack_require__(154);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+var _mutations = __webpack_require__(155);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespaced: true,
+  state: _state2.default,
+  getters: _getters2.default,
+  actions: _actions2.default,
+  mutations: _mutations2.default
+};
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = __webpack_require__(2);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  buy: function buy(_ref) {
+    var commit = _ref.commit,
+        state = _ref.state;
+
+    return new Promise(function (resolve, reject) {
+      _api2.default.yakassa.getPaymentUrl().then(function (res) {
+        resolve(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    });
+  }
+};
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    //
+};
 
 /***/ })
 /******/ ]);
