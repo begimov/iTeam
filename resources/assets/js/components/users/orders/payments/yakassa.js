@@ -7,8 +7,8 @@ export default {
             'buy'
         ]),
         purchase() {
-            this.buy().then(res => {
-                // redirect
+            this.buy({ id: this.order.id }).then(res => {
+                console.log(res.data)
             }).catch(err => {
                 console.log(err)
             })

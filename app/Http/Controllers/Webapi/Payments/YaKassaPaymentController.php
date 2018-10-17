@@ -16,26 +16,33 @@ class YaKassaPaymentController extends Controller
         $this->orders = $orders;
     }
 
-    public function getPaymentUrl(Request $request)
+    public function getPaymentUrl(Request $request, Client $client)
     {
-        dd($this->createPayment());
+        dd($this->createPayment($request, $client));
     }
 
-    protected function createPayment(Client $client)
+    protected function createPayment(Request $request, Client $client)
     {
-        $client->createPayment(
-            [
-                'amount' => [
-                    'value' => 2.0,
-                    'currency' => 'RUB',
-                ],
-                'confirmation' => [
-                    'type' => 'redirect',
-                    'return_url' => config('urls.user_dashboard'),
-                ],
-                'description' => 'iTeam - Заказ №',
-            ],
+        $order = $this->orders->findById($request->id);
+        
+        return  $client->createPayment(
+            $this->createPayload($order),
             uniqid('', true)
         );
+    }
+
+    public function createPayload($order)
+    {
+        return [
+            'amount' => [
+                'value' => $order->price,
+                'currency' => 'RUB',
+            ],
+            'confirmation' => [
+                'type' => 'redirect',
+                'return_url' => config('urls.user_dashboard'),
+            ],
+            'description' => 'iTeam - Заказ №' . $order->id,
+        ];
     }
 }

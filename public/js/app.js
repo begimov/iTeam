@@ -53843,8 +53843,8 @@ exports.default = {
     props: ['order'],
     methods: _extends({}, (0, _vuex.mapActions)('users/payment/yakassa', ['buy']), {
         purchase: function purchase() {
-            this.buy().then(function (res) {
-                // redirect
+            this.buy({ id: this.order.id }).then(function (res) {
+                console.log(res.data);
             }).catch(function (err) {
                 console.log(err);
             });
@@ -55184,12 +55184,12 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  buy: function buy(_ref) {
+  buy: function buy(_ref, payload) {
     var commit = _ref.commit,
         state = _ref.state;
 
     return new Promise(function (resolve, reject) {
-      _api2.default.yakassa.getPaymentUrl().then(function (res) {
+      _api2.default.yakassa.getPaymentUrl(payload).then(function (res) {
         resolve(res);
       }).catch(function (err) {
         console.log(err);
