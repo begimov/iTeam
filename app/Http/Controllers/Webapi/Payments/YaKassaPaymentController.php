@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Webapi\Payments;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use YandexCheckout\Client;
 
 class YaKassaPaymentController extends Controller
 {
-    public function getPaymentUrl()
+    public function getPaymentUrl(Client $client)
     {
         $res = $client->createPayment(
             array(
