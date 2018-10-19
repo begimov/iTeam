@@ -29,6 +29,10 @@ return [
     'files' => [
         'page_elements_files' => '/storage/public/files/elements',
         'materials_files' => 'files/materials/id_'
+    ],
+
+    'magnets' => [
+        'processes_book' => asset('pages/lending-posle-formy-s-knigoy-magnitom')
     ]
 
 ];

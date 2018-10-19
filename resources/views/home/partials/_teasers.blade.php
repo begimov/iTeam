@@ -21,7 +21,8 @@
           <free-magnet 
             description="Книга &laquo;Как внедрить бизнес-процессы&raquo;!"
             campaign-token="VjVkP"
-            redirect-url="{{ asset('pages/lending-posle-formy-s-knigoy-magnitom') }}" />
+            no-phone="true"
+            redirect-url="{{ config('urls.magnets.processes_book') }}" />
         </div>
       </div>
       <div class="row bg-primary text-center text-white">
