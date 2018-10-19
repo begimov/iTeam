@@ -21,7 +21,7 @@
             description="Книга &laquo;Как внедрить бизнес-процессы&raquo;!"
             campaign-token="VjVkP"
             layout-type="horizontal"
-            redirect-url="{{ asset('files/magnets/process_approach_book.pdf') }}" />
+            redirect-url="{{ asset('pages/lending-posle-formy-s-knigoy-magnitom') }}" />
         </div>
       </div>
     </div>
