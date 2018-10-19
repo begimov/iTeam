@@ -34,5 +34,5 @@
     <modal-window 
         modal-window-id="book-magnet" 
         campaign-token="VjVkP" 
-        redirect-url="{{ asset('files/magnets/process_approach_book.pdf') }}"/>
+        redirect-url="{{ asset('pages/lending-posle-formy-s-knigoy-magnitom') }}"/>
 </div>  
