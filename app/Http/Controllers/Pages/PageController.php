@@ -12,10 +12,12 @@ use App\Models\Pages\Category;
 
 use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Eloquent\Criteria\Where;
+use App\Repositories\Eloquent\Criteria\WithoutGlobalScopes;
 
 use App\Repositories\Contracts\Pages\{
     CategoryRepository,
-    ThemeRepository
+    ThemeRepository,
+    PageRepository
 };
 
 class PageController extends Controller
@@ -24,11 +26,16 @@ class PageController extends Controller
 
     protected $themes;
 
-    public function __construct(CategoryRepository $categories, ThemeRepository $themes)
+    protected $pages;
+
+    public function __construct(
+        CategoryRepository $categories, ThemeRepository $themes, PageRepository $pages)
     {
         $this->categories = $categories;
 
         $this->themes = $themes;
+
+        $this->pages = $pages;
     }
 
     public function index($slug)
@@ -49,9 +56,17 @@ class PageController extends Controller
         return view('pages.category.index', compact('category', 'themes'));
     }
 
-    public function show(Page $page)
+    public function show($slug)
     {
-        $page->load('elements', 'elements.block', 'elements.files');
+        $relations = ['elements', 'elements.block', 'elements.files'];
+
+        $page = $this->pages->withCriteria([
+            new Where('slug', $slug),
+            new With($relations),
+            new WithoutGlobalScopes()
+        ])->first();
+
+        if (!$page) return abort(404);
 
         if (!Auth::check()) {
             session([
