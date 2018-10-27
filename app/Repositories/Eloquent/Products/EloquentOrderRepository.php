@@ -26,7 +26,7 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
         $product = Product::with(['priceTags'])->find($data['product_id']);
 
         $order = Order::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => auth()->user() ? auth()->user()->id : NULL,
             'product_id' => $data['product_id'],
             'price' => isset($data['price_tag_id']) 
                 ? $orderPrice = $product->priceTags->find($data['price_tag_id'])->price
