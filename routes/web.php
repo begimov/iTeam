@@ -55,6 +55,11 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     Route::post('magnets/subscribe', 'Pages\MagnetController@subscribe');
 });
 
+// Fast orders
+Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
+    Route::post('fastorders', 'Products\FastOrderController@store')->name('fastorders.store');
+});
+
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Payment routes
     Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');

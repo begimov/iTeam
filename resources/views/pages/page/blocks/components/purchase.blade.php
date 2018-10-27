@@ -1,5 +1,4 @@
 <div class="card purchase-card h-100">
-    
     <div class="card-header bg-dark text-light text-center lead">
         @isset($element['data']['title'])
             {{ $element['data']['title'] }}
@@ -16,7 +15,7 @@
         @else
             <h3><span class="badge badge-info price-badge">БЕСПЛАТНО</span></h3>
         @endif
-        <form action="{{ route('orders.store') }}" method="POST">
+        <form action="{{ auth()->user() ? route('orders.store') : route('fastorders.store') }}" method="POST">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $element['productId'] }}">
             <input type="hidden" name="price_tag_id" value="{{ $element['pricetagId'] }}">
