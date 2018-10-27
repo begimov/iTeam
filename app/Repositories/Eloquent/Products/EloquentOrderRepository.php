@@ -36,6 +36,8 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
                 ? config('orders.payed_payment_state_id') 
                 : config('orders.unpaid_payment_state_id')
         ]);
+
+        return $order;
     }
 
     public function destroy(Order $order)

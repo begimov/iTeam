@@ -34,6 +34,11 @@ Route::group(['middleware' => 'materials', 'prefix' => 'materials', 'namespace' 
     Route::get('{material}/{code}/files/{file}', 'MaterialController@download');
 }); 
 
+// Fast orders pages
+Route::group(['prefix' => 'fastorders', 'namespace' => 'Products'], function () {
+    Route::get('{order}/{code}', 'FastOrderController@show')->name('fastorders.show');
+}); 
+
 // Tests
 Route::group(['middleware' => 'auth', 'prefix' => 'tests', 'namespace' => 'Tests'], function () {
     Route::get('{test}', 'TestController@show')->name('tests.show');

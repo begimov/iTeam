@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Webapi\Products;
+namespace App\Http\Controllers\Products;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,14 +15,9 @@ class FastOrderController extends Controller
     {
         $this->orders = $orders;
     }
-    
-    public function store(OrderStoreRequest $request)
+
+    public function show($id, $code)
     {
-        $order = $this->orders->store($request->all());
-        
-        return redirect()->route('fastorders.show', [
-            'order' => $order->id,
-            'code' => $order->id,
-        ]);
+        dd($id, $code);
     }
 }
