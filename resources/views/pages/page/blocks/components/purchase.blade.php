@@ -15,7 +15,7 @@
         @else
             <h3><span class="badge badge-info price-badge">БЕСПЛАТНО</span></h3>
         @endif
-        <form action="{{ auth()->user() ? route('orders.store') : route('fastorders.store') }}" method="POST">
+        <form action="{{ !auth()->user() && !empty($isFastOrder) ? route('fastorders.store') : route('orders.store') }}" method="POST">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $element['productId'] }}">
             <input type="hidden" name="price_tag_id" value="{{ $element['pricetagId'] }}">
