@@ -42,6 +42,9 @@ Vue.component('product', require('./components/users/products/Product.vue'));
 Vue.component('iteam-test', require('./components/tests/Test.vue'));
 Vue.component('certification-test', require('./components/tests/tests/CertificationTest.vue'));
 
+// Fast orders
+Vue.component('fast-order', require('./components/users/orders/fastorders/FastOrder.vue'));
+
 const app = new Vue({
     el: '#app',
     store
