@@ -55007,9 +55007,255 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c(
-          "a",
-          { staticClass: "btn btn-primary btn-lg", attrs: { href: "#" } },
-          [_vm._v("ОПЛАТИТЬ")]
+          "form",
+          {
+            ref: "woform",
+            attrs: {
+              method: "post",
+              action: "https://wl.walletone.com/checkout/checkout/Index"
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_MERCHANT_ID,
+                  expression: "walletOneOptions.WMI_MERCHANT_ID"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_MERCHANT_ID" },
+              domProps: { value: _vm.walletOneOptions.WMI_MERCHANT_ID },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_MERCHANT_ID",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_PAYMENT_AMOUNT,
+                  expression: "walletOneOptions.WMI_PAYMENT_AMOUNT"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_PAYMENT_AMOUNT" },
+              domProps: { value: _vm.walletOneOptions.WMI_PAYMENT_AMOUNT },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_PAYMENT_AMOUNT",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_CURRENCY_ID,
+                  expression: "walletOneOptions.WMI_CURRENCY_ID"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_CURRENCY_ID" },
+              domProps: { value: _vm.walletOneOptions.WMI_CURRENCY_ID },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_CURRENCY_ID",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_PAYMENT_NO,
+                  expression: "walletOneOptions.WMI_PAYMENT_NO"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_PAYMENT_NO" },
+              domProps: { value: _vm.walletOneOptions.WMI_PAYMENT_NO },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_PAYMENT_NO",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_DESCRIPTION,
+                  expression: "walletOneOptions.WMI_DESCRIPTION"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_DESCRIPTION" },
+              domProps: { value: _vm.walletOneOptions.WMI_DESCRIPTION },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_DESCRIPTION",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_AUTO_LOCATION,
+                  expression: "walletOneOptions.WMI_AUTO_LOCATION"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_AUTO_LOCATION" },
+              domProps: { value: _vm.walletOneOptions.WMI_AUTO_LOCATION },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_AUTO_LOCATION",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_SUCCESS_URL,
+                  expression: "walletOneOptions.WMI_SUCCESS_URL"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_SUCCESS_URL" },
+              domProps: { value: _vm.walletOneOptions.WMI_SUCCESS_URL },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_SUCCESS_URL",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_FAIL_URL,
+                  expression: "walletOneOptions.WMI_FAIL_URL"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_FAIL_URL" },
+              domProps: { value: _vm.walletOneOptions.WMI_FAIL_URL },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_FAIL_URL",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.walletOneOptions.WMI_SIGNATURE,
+                  expression: "walletOneOptions.WMI_SIGNATURE"
+                }
+              ],
+              attrs: { type: "hidden", name: "WMI_SIGNATURE" },
+              domProps: { value: _vm.walletOneOptions.WMI_SIGNATURE },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.walletOneOptions,
+                    "WMI_SIGNATURE",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-lg",
+                attrs: { type: "submit" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.purchase($event)
+                  }
+                }
+              },
+              [_vm._v("ОПЛАТИТЬ")]
+            )
+          ]
         )
       ])
     ])
@@ -55053,13 +55299,56 @@ if (false) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _config = __webpack_require__(129);
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
     props: ['order'],
+    data: function data() {
+        return {
+            walletOneOptions: {
+                WMI_MERCHANT_ID: '',
+                WMI_PAYMENT_AMOUNT: '',
+                WMI_CURRENCY_ID: '',
+                WMI_PAYMENT_NO: '',
+                WMI_DESCRIPTION: '',
+                WMI_AUTO_LOCATION: '',
+                WMI_SUCCESS_URL: '',
+                WMI_FAIL_URL: '',
+                WMI_SIGNATURE: ''
+            }
+        };
+    },
+
     methods: {
-        //
+        purchase: function purchase() {
+            var _this = this;
+
+            this.buy().then(function (res) {
+                _this.$nextTick(function () {
+                    _this.$refs.woform.submit();
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
     },
     mounted: function mounted() {
-        console.log(this.order);
+        this.walletOneOptions = {
+            WMI_MERCHANT_ID: _config2.default.payments.WMI_MERCHANT_ID,
+            WMI_PAYMENT_AMOUNT: this.order.price,
+            WMI_CURRENCY_ID: _config2.default.payments.WMI_CURRENCY_ID,
+            WMI_PAYMENT_NO: this.order.id,
+            WMI_DESCRIPTION: 'iTeam: "' + this.order.product.name + '"',
+            WMI_AUTO_LOCATION: _config2.default.payments.WMI_AUTO_LOCATION,
+            WMI_SUCCESS_URL: _config2.default.payments.WMI_SUCCESS_URL,
+            WMI_FAIL_URL: _config2.default.payments.WMI_FAIL_URL,
+            WMI_SIGNATURE: "0"
+        };
     }
 };
 
