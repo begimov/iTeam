@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Products;
 
 use Illuminate\Http\Request;
+use App\Models\Products\Order;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Webapi\Products\OrderStoreRequest;
 use App\Repositories\Contracts\Products\OrderRepository;
@@ -16,8 +17,8 @@ class FastOrderController extends Controller
         $this->orders = $orders;
     }
 
-    public function show($id, $code)
+    public function show(Order $order, $code)
     {
-        dd($id, $code);
+        dd($order);
     }
 }
