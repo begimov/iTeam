@@ -19,6 +19,12 @@ class FastOrderController extends Controller
 
     public function show(Order $order, $code)
     {
-        dd($order);
+        if ($order->isPaid()) {
+            
+            $order->load('product', 'product.materials', 'product.materials.files', 'product.materials.resources');
+            
+        }
+
+        return view('products.fastorder.show', compact('order'));
     }
 }
