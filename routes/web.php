@@ -37,6 +37,7 @@ Route::group(['middleware' => 'materials', 'prefix' => 'materials', 'namespace' 
 // Fast orders pages
 Route::group(['middleware' => 'fastorders', 'prefix' => 'fastorders', 'namespace' => 'Products'], function () {
     Route::get('{order}/{code}', 'FastOrderController@show')->name('fastorders.show');
+    Route::get('{order}/{code}/files/{file}', 'FastOrderController@download');
 }); 
 
 // Tests
