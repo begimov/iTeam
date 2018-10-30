@@ -32,7 +32,7 @@ return [
     ],
 
     'magnets' => [
-        'processes_book' => asset('pages/lending-posle-formy-s-knigoy-magnitom')
+        'processes_book' => '/pages/lending-posle-formy-s-knigoy-magnitom'
     ]
 
 ];

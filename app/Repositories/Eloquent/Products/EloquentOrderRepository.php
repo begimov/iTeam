@@ -26,7 +26,7 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
         $product = Product::with(['priceTags'])->find($data['product_id']);
 
         $order = Order::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => auth()->user() ? auth()->user()->id : NULL,
             'product_id' => $data['product_id'],
             'price' => isset($data['price_tag_id']) 
                 ? $orderPrice = $product->priceTags->find($data['price_tag_id'])->price
@@ -36,6 +36,8 @@ class EloquentOrderRepository extends EloquentRepositoryAbstract implements Orde
                 ? config('orders.payed_payment_state_id') 
                 : config('orders.unpaid_payment_state_id')
         ]);
+
+        return $order;
     }
 
     public function destroy(Order $order)
