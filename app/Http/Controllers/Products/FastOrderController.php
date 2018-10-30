@@ -34,6 +34,22 @@ class FastOrderController extends Controller
 
     public function download(Order $order, $code, File $file)
     {
+        if (!$this->isDownloadable($order, $file)) return abort(404);
+
         return $this->downloadMaterialFile($file);
+    }
+
+    protected function isDownloadable($order, $file)
+    {
+        $result = $order->product->materials
+            ->filter(function($material) use ($file) {
+
+            return !$material->files
+                ->whereIn('id', [$file->id])
+                ->isEmpty();
+
+        });
+
+        return !$result->isEmpty();
     }
 }
