@@ -55005,7 +55005,7 @@ var _config2 = _interopRequireDefault(_config);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    props: ['order'],
+    props: ['order', 'successUrl'],
     data: function data() {
         return {
             walletOneOptions: {
@@ -55044,7 +55044,7 @@ exports.default = {
             WMI_PAYMENT_NO: this.order.id,
             WMI_DESCRIPTION: 'iTeam: "' + this.order.product.name + '"',
             WMI_AUTO_LOCATION: _config2.default.payments.WMI_AUTO_LOCATION,
-            WMI_SUCCESS_URL: _config2.default.payments.WMI_SUCCESS_URL,
+            WMI_SUCCESS_URL: this.successUrl,
             WMI_FAIL_URL: _config2.default.payments.WMI_FAIL_URL,
             WMI_SIGNATURE: "0"
         };

@@ -1,7 +1,7 @@
 import config from '../../../../config'
 
 export default {
-    props: ['order'],
+    props: ['order', 'successUrl'],
     data() {
         return {
             walletOneOptions: {
@@ -37,7 +37,7 @@ export default {
             WMI_PAYMENT_NO: this.order.id,
             WMI_DESCRIPTION: 'iTeam: "' + this.order.product.name + '"',
             WMI_AUTO_LOCATION: config.payments.WMI_AUTO_LOCATION,
-            WMI_SUCCESS_URL: config.payments.WMI_SUCCESS_URL,
+            WMI_SUCCESS_URL: this.successUrl,
             WMI_FAIL_URL: config.payments.WMI_FAIL_URL,
             WMI_SIGNATURE: "0"
         }

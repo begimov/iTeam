@@ -47,7 +47,8 @@
             </div>
         @else
             <div class="row mt-5 mb-3 justify-content-center">
-                <fast-order :order="{{ $order }}" />
+            <fast-order :order="{{ $order }}" 
+                :success-url=`{{ url()->current() }}` />
             </div>
         @endif
     </div>
