@@ -19,7 +19,8 @@ export default {
     },
     methods: {
         purchase() {
-            this.buy().then(res => {
+            axios.post(`/webapi/orders/payments/walletone/signature`, this.walletOneOptions).then(res => {
+                this.walletOneOptions = { ...this.walletOneOptions, ...res.data.data }
                 this.$nextTick(() => {
                     this.$refs.woform.submit()
                 })

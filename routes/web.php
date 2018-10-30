@@ -64,11 +64,12 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
 // Fast orders
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     Route::post('fastorders', 'Products\FastOrderController@store')->name('fastorders.store');
+    // Payment and fastorder route
+    Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     // Payment routes
-    Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');
     Route::get('orders/payments/invoices/create', 'Payments\InvoiceController@create');
     Route::post('orders/{id}/payments/invoices', 'Payments\InvoiceController@store');
     Route::get('orders/payments/invoices/{fileName}', 'Payments\InvoiceController@show')->name('orders.invoices.show');
