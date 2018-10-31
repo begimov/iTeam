@@ -69,4 +69,18 @@ class CompanyTest extends TestCase
 
         $response->assertViewIs('company.offer');
     }
+
+    public function tests_company_projects_page_status()
+    {
+        $response = $this->get(route('company.projects.index'));
+
+        $response->assertStatus(200);
+    }
+
+    public function tests_company_projects_page_view()
+    {
+        $response = $this->get(route('company.projects.index'));
+
+        $response->assertViewIs('company.project.index');
+    }
 }
