@@ -44,4 +44,25 @@ class PageTest extends TestCase
 
         $response->assertViewHas('themes');
     }
+
+    public function tests_page_view()
+    {
+        $response = $this->get('/pages/page');
+
+        $response->assertViewIs('pages.page.container');
+    }
+
+    public function tests_page_view_has_page_data()
+    {
+        $response = $this->get('/pages/page');
+
+        $response->assertViewHas('page');
+    }
+
+    public function tests_undefined_page_returns_not_found_status()
+    {
+        $response = $this->get('/pages/undefined');
+
+        $response->assertStatus(404);
+    }
 }
