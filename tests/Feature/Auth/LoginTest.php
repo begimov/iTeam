@@ -110,4 +110,25 @@ class LoginTest extends TestCase
             return Hash::check($notification->token, $token->token) === true;
         });
     }
+
+    public function test_user_can_log_out()
+    {
+     
+        $user = factory(User::class)->create([
+            'password' => bcrypt($password = 'i-love-laravel'),
+        ]);
+
+        $this->post('/login', [
+            'email' => $user->email,
+            'password' => $password,
+        ]);
+
+        $this->assertAuthenticatedAs($user);
+
+        $response = $this->post('/logout');
+
+        $response->assertRedirect('/');
+
+        $this->assertGuest();
+    }
 }
