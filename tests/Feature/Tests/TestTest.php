@@ -78,4 +78,50 @@ class TestTest extends TestCase
 
         $response->assertStatus(404);
     }
+
+    public function test_unauth_user_cant_get_test_data()
+    {
+        $test = factory(Test::class)->create();
+
+        $response = $this->get('/webapi/tests/' . $test->id);
+
+        $response->assertRedirect('/register');
+    }
+
+    public function test_auth_user_can_get_test_data()
+    {
+        $test = factory(Test::class)->create();
+
+        $user = factory(User::class)->make();
+
+        $response = $this->actingAs($user)
+            ->get('/webapi/tests/' . $test->id);
+
+        $response->assertJsonStructure([
+            'data' => ['id', 'name', 'testType', 'testQuestions']
+        ]);
+    }
+
+    public function test_unauth_user_cant_store_test_results()
+    {
+        $test = factory(Test::class)->create();
+
+        $response = $this->post('/webapi/tests/' . $test->id . '/results');
+
+        $response->assertRedirect('/register');
+    }
+
+    public function test_auth_user_can_store_test_result()
+    {
+        $test = factory(Test::class)->create();
+
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)
+            ->post('/webapi/tests/' . $test->id . '/results');
+
+        $response->assertJsonStructure([
+            'score', 'maxScore', 'condition', 'testResult', 'testCertificate', 'isCertified'
+        ]);
+    }
 }
