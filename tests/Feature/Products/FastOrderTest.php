@@ -60,4 +60,16 @@ class FastOrderTest extends TestCase
 
         $response->assertViewHas('order');
     }
+
+    public function test_can_generate_walletone_payment_signature()
+    {
+        $response = $this->post('/webapi/orders/payments/walletone/signature', [
+            'WMI_MERCHANT_ID' => 1
+        ]);
+
+        $response->assertJsonStructure([
+            'status',
+            'data' => ['WMI_SIGNATURE']
+        ]);
+    }
 }
