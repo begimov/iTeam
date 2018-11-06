@@ -8,6 +8,8 @@ use App\Models\Products\Product;
 
 class Material extends Model
 {
+    public $timestamps = false;
+    
     public function files()
     {
         return $this->hasMany(File::class);

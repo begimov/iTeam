@@ -6,9 +6,14 @@
                 Вы&nbsp;выбрали продукт &laquo;{{ this.order.product.data.name }}&raquo;, к&nbsp;оплате&nbsp;&mdash; {{ this.order.total_price }}&nbsp;руб., пожалуйста заполните данные для выставления счета.
             </div>
         </div>
+        <div class="card bg-warning mb-2">
+            <div class="card-body">
+                <a href="/company/offer" target="_blank"><strong>Важно!</strong> Прочитайте до того, как оплатить счёт</a>
+            </div>
+        </div>  
         <div class="card bg-warning">
             <div class="card-body">
-                <a href="/company/offer" target="_blank">Важно! Прочитайте до того, как оплатить счёт</a>
+                <strong>Внимание!</strong> Для получения материалов вышлите на адрес <a href="mailto:info@iteam.ru">info@iteam.ru</a> подтверждение платежа!
             </div>
         </div>  
 

@@ -43,4 +43,6 @@ return [
 
     'profile_updated' => 'Данные профиля успешно обновлены.',
     'password_changed' => 'Пароль был успешно изменен.',
+
+    'reset_password_cta' => 'Сбросить пароль'
 ];

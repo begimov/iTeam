@@ -61,7 +61,7 @@ export default {
                 if (this.redirectUrl) {
                     window.location.href = this.redirectUrl;
                 } else {
-                    this.message = 'Спасибо, регистрация прошла успешно'
+                    this.message = 'Спасибо, регистрация прошла успешно. Материалы высланы вам на адрес электронной почты'
                 }
 
                 this.isLoading = false

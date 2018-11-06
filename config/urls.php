@@ -11,6 +11,8 @@ return [
     ],
     
     'blog' => 'http://blog.iteam.ru/',
+
+    'panel' => 'http://iteam.ru/user',
     
     'social' => [
         'facebook' => 'https://www.facebook.com/ITeam-Management-1538687959484919/',
