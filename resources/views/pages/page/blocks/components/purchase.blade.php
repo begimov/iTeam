@@ -34,7 +34,7 @@
                 </div>
             </div>
             @endif
-            <button type="submit" class="btn btn-primary btn-lg">ПОЛУЧИТЬ</button>          
+            <button type="submit" class="btn btn-primary btn-lg">КУПИТЬ</button>          
         </form>
     </div>
 </div>
