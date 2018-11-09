@@ -1,5 +1,5 @@
-<div class="card purchase-card h-100">
-    <div class="card-header bg-dark text-light text-center lead">
+<div class="card purchase-card h-100{{isset($index) && $index == 1 ? ' border-primary' : ''}}">
+    <div class="card-header{{isset($index) && $index == 1 ? ' bg-primary' : ' bg-dark'}} text-light text-center lead">
         @isset($element['data']['title'])
             {{ $element['data']['title'] }}
         @endisset
