@@ -69,4 +69,26 @@ class Page extends Model
     {
         return $this->category_id == config('pages.mp_category_id');
     }
+
+    public function isMasterClassPage()
+    {
+        return $this->category_id == config('pages.mk_category_id');
+    }
+
+    public function hasPurchaseBlocks()
+    {
+        return count($this->getDataElementsByName('product')) > 0;
+    }
+
+    public function hasMpPurchaseBlocks()
+    {
+        return count($this->getDataElementsByName('products')) > 0;
+    }
+
+    protected function getDataElementsByName($name)
+    {
+        return array_filter($this->elements->toArray(), function($element) use ($name) {
+            return array_key_exists($name, $element['data']);
+        });
+    }
 }
