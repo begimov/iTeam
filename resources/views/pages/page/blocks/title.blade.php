@@ -11,7 +11,9 @@
             </span>
           </h2>
         @endisset
-        <h3 class="mt-3"><a href="#mppurchase" class="btn btn-primary btn-lg">КУПИТЬ</a></h3>
+        @if($page->isMasterProjectPage())
+          <h3 class="mt-3"><a href="#mppurchase" class="btn btn-primary btn-lg">КУПИТЬ</a></h3>
+        @endif
       </div>
     </div>
   </div>

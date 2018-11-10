@@ -64,4 +64,9 @@ class Page extends Model
         
         return round(Product::find($productId)->price) . '~';
     }
+
+    public function isMasterProjectPage()
+    {
+        return $this->category_id == config('pages.mp_category_id');
+    }
 }
