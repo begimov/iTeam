@@ -10,6 +10,9 @@
         </div>
     @endisset
     <div class="text-center card-footer bg-white">
+        @isset($element['data']['originalPrice'])
+            <h3><s>{{ $element['data']['originalPrice'] }}</s></h3>
+        @endisset
         @if(($productPrice = getProductPrice($element)) > 0)
             <h2><span class="badge badge-info price-badge">{{ round($productPrice) }}~</span></h2>
         @else
