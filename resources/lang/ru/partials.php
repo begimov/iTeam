@@ -34,6 +34,7 @@ return [
         'reviews' => 'Отзывы'
     ],
     'contact' => [
+        'whatsapp' => '+7-909-158-57-57',
         'support_email' => 'support@iteam.ru'
     ]
 ];

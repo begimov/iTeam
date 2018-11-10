@@ -33,6 +33,14 @@
                     </small>
                 </h5>
 
+                <h5>Whatsapp: 
+                    <small class="font-weight-light">
+                        @lang('partials.contact.whatsapp')
+                    </small>
+                </h5>
+
+                <h5><a href="{{ config('urls.social.instagram') }}">Instagram</a> / <a href="{{ config('urls.social.telegram') }}">Telegram</a></h5>
+
                 <h5>Адрес:<br> 
                     <small class="font-weight-light">
                         123112, г. Москва, Пресненская набережная, 12,<br>
