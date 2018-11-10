@@ -11,6 +11,7 @@
             </span>
           </h2>
         @endisset
+        <h3 class="mt-3"><a href="#mppurchase" class="btn btn-primary btn-lg">КУПИТЬ</a></h3>
       </div>
     </div>
   </div>

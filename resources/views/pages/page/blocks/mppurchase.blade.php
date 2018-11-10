@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="mppurchase">
   <div class="row my-4 justify-content-center">
     @foreach($element->data['products'] as $index => $product)
         <div class="col-xl-4 col-lg-6 col-md-6 mt-2">
