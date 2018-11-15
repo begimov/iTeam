@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-6 col-md-8">
+    <div class="col-lg-8 col-md-10">
         <div class="card mb-3 text-center">
             <div class="card-header bg-dark text-light pb-1"><h2>Ваш заказ</h2></div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                     <input type="hidden" name="WMI_SUCCESS_URL" v-model="walletOneOptions.WMI_SUCCESS_URL"/>
                     <input type="hidden" name="WMI_FAIL_URL" v-model="walletOneOptions.WMI_FAIL_URL"/>
                     <input type="hidden" name="WMI_SIGNATURE" v-model="walletOneOptions.WMI_SIGNATURE"/>
-                    <button type="submit" class="btn btn-primary btn-lg" @click.prevent="purchase">ОПЛАТИТЬ</button>
+                    <button type="submit" class="btn btn-primary btn-lg" @click.prevent="purchase">Выбрать способ оплаты</button>
                 </form>
             </div>
         </div>

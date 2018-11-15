@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         @if($order->isPaid())
-            <div class="row mt-5 mb-3">
+            <div class="row my-5">
                 <div class="col">
                     @foreach ($order->product->materials as $material)
                         <div class="card mb-3">
@@ -46,9 +46,36 @@
                 </div>
             </div>
         @else
-            <div class="row mt-5 mb-3 justify-content-center">
+            <div class="row mt-5 justify-content-center">
             <fast-order :order="{{ $order }}" 
                 :success-url=`{{ url()->current() }}` />
+            </div>
+            <div class="row justify-content-center text-center mb-3">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body">
+                            <h3>
+                                <span class="badge badge-danger">
+                                    <strong>Внимание!</strong>
+                                </span>
+                                <strong><small>После оплаты нажмите кнопку</small> 
+                                    <span class="badge badge-success">Вернуться на&nbsp;сайт</span><small>, чтобы получить материалы мастер-класса!</small>
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Платежный сервис Wallet One, используемый для оплаты наших продуктов, <span class="font-weight-bold">лицензирован надзорным органом в&nbsp;каждой стране присутствия, а&nbsp;значит, полностью безопасен.</span></p>
+                            <p>Wallet One использует стандарт безопасности PCI&nbsp;DSS, SSL-протокол, системы безопасности Verified by&nbsp;Visa и&nbsp;MasterCard SecureCode.</p>
+                            <p><a href="https://www.walletone.com/ru/merchant/security/" target="_blank">Подробнее здесь...</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         @endif
     </div>
