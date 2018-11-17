@@ -17,7 +17,7 @@
   @include ('layouts.partials._scripts')
   <script>
     jQuery(document).ready(function() {
-      @yield('postJquery');
+      @yield('postJquery')
     });
   </script>
 </body>
