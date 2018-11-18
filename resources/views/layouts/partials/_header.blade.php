@@ -8,6 +8,8 @@
             <ul class="list-inline m-0 text-lg-left text-center">
                 <li class="list-inline-item font-weight-bold m-0 pr-2">@lang('partials.header.phone')</li>
                 <li class="list-inline-item font-weight-normal m-0"><a href="{{ config('urls.mail.info') }}">@lang('partials.header.email')</a></li>
+                <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.whatsapp') }}">@lang('partials.header.whatsapp')</a></li>
+                <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.telegram') }}">@lang('partials.header.telegram')</a></li>
             </ul>
         </div>
         <div class="col-lg-4 text-lg-right text-center">

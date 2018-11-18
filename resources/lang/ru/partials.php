@@ -4,6 +4,8 @@ return [
     'header' => [
         'phone' => '+7 (499) 110-26-84',
         'email' => 'info@iteam.ru',
+        'whatsapp' => 'Whatsapp',
+        'telegram' => 'Telegram',
         'signin' => 'Войти',
         'registration' => 'Регистрация',
     ],

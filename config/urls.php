@@ -19,6 +19,7 @@ return [
         'vk' => 'https://vk.com/public150574411',
         'instagram' => 'https://www.instagram.com/iteam.ru/',
         'telegram' => 'https://t.me/iteamintensive',
+        'whatsapp' => 'https://wa.me/79091585757',
     ],
     'mail' => [
         'info' => 'mailto:info@iteam.ru',
