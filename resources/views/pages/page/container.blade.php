@@ -26,12 +26,32 @@
   </script>
 @endsection
 
-<div class="container">
+<!--<div class="container">
     <div class="row my-4">
       <div class="col">
 		    <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10"></div>
       </div>
     </div>
+</div>-->
+
+<div class="container">
+  <div class="row my-4">
+    <div class="col">
+      <div id="mc-container"></div>
+      <script type="text/javascript">
+      cackle_widget = window.cackle_widget || [];
+      cackle_widget.push({widget: 'Comment', id: 63021});
+      (function() {
+          var mc = document.createElement('script');
+          mc.type = 'text/javascript';
+          mc.async = true;
+          mc.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cackle.me/widget.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+      })();
+      </script>
+      <!--<a id="mc-link" href="http://cackle.me">Комментарии для сайта <b style="color:#4FA3DA">Cackl</b><b style="color:#F65077">e</b></a>-->
+    </div>
+  </div>
 </div>
 
 <div class="container mb-5 page-container">
