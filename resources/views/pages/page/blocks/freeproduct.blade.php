@@ -8,6 +8,7 @@
             campaign-token="{{ $element->data['form']['campaignToken'] }}"
             redirect-url="{{ '/products/' . $element->data['form']['productId'] }}"
             layout-type="horizontal"
+            no-phone="{{ $element->data['form']['noPhone'] ?? '' }}" 
             user-email="{{ auth()->user() ? auth()->user()->email : '' }}"
             user-name="{{ auth()->user() ? auth()->user()->name : '' }}" />
         </div>
