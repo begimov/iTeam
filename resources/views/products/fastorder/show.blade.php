@@ -59,7 +59,7 @@
                                     <strong>Внимание!</strong>
                                 </span>
                                 <strong><small>После оплаты нажмите кнопку</small> 
-                                    <span class="badge badge-success">Вернуться на&nbsp;сайт</span><small>, чтобы получить материалы мастер-класса!</small>
+                                    <span class="badge badge-success">Вернуться на&nbsp;сайт</span><small> чтобы получить материалы мастер-класса!</small>
                                 </strong>
                             </h3>
                         </div>
