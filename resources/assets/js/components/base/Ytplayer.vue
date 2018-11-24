@@ -10,8 +10,8 @@
           <div class="modal-body">
             <div class="row">
               <div class="col pb-1">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click.prevent="onClose">
-                  <a href="#"><span aria-hidden="true">&times;</span></a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="onClose">
+                  <span aria-hidden="true"><h3>&times;</h3></span>
                 </button>
               </div>
             </div>
