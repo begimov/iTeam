@@ -40,6 +40,12 @@ abstract class EloquentRepositoryAbstract implements RepositoryInterface, Criter
         return $this;
     }
 
+    public function oldest()
+    {
+        $this->entity = $this->entity->oldest();
+        return $this;
+    }
+
     public function limit($by)
     {
         $this->entity = $this->entity->limit($by);

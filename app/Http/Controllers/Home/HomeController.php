@@ -63,7 +63,7 @@ class HomeController extends Controller
         $relations = ['elements', 'elements.files'];
 
         return $this->pages
-            ->latest()
+            ->oldest()
             ->limit(6)
             ->withCriteria([
                 new With($relations),
