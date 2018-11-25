@@ -10,10 +10,11 @@
                 <div class="col-xl-4 col-lg-6 mt-2">
                     <p class="font-weight-bold">
                         <a target="_blank" href="{{ $post->link }}">
-                            {{ $post->title->rendered }}
+                            {{ isset($post->title) ? $post->title->rendered : $post->name }}
                         </a>
                     </p>
-                    {!! str_limit($post->excerpt->rendered, 200) . '</p>' !!}
+                    {{-- {!! isset($post->excerpt) ? str_limit($post->excerpt->rendered, 200) . '</p>' : '' !!} --}}
+                    {!! isset($post->desc) ? str_limit($post->desc, 200) . '</p>' : '' !!}
                 </div>
             @endforeach
         </div>
