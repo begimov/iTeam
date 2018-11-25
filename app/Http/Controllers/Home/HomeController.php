@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Home;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\Criteria\With;
 use App\Repositories\Eloquent\Criteria\Where;
+use App\Repositories\Eloquent\Criteria\WhereIn;
 use App\Repositories\Contracts\Pages\PageRepository;
 
 class HomeController extends Controller
@@ -63,11 +64,12 @@ class HomeController extends Controller
         $relations = ['elements', 'elements.files'];
 
         return $this->pages
-            ->oldest()
-            ->limit(6)
+            // ->oldest()
+            // ->limit(6)
             ->withCriteria([
                 new With($relations),
-                new Where('category_id', 1)
+                new Where('category_id', 1),
+                new WhereIn('id', [28, 27, 26, 25, 24, 23])
             ])
             ->get();
     }
