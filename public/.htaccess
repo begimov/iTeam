@@ -99,17 +99,6 @@
     Redirect 301 /learn/webinar/change_man /pages/upravlenie-izmeneniyami-inzhenernyy-podhod
     Redirect 301 /learn/webinar/org_change_architecture /pages/category/master-klassy/themes/upravlenie-izmeneniyami
     Redirect 301 /learn/webinar/fast_company /pages/category/master-klassy/themes/upravlenie-izmeneniyami
-    Redirect 301 /publications/processes http://blog.iteam.ru/category/biznes-processy/
-    Redirect 301 /publications/corporation http://blog.iteam.ru/category/korporativnaya-kultura/
-    Redirect 301 /publications/finances http://blog.iteam.ru/category/upravlenie-finansami/
-    Redirect 301 /publications/marketing http://blog.iteam.ru/category/marketing-i-prodazhi/
-    Redirect 301 /publications/human http://blog.iteam.ru/category/upravlenie-personalom/
-    Redirect 301 /publications/quality http://blog.iteam.ru/category/upravlenie-kachestvom/
-    Redirect 301 /publications/project http://blog.iteam.ru/category/upravlenie-izmeneniyami/
-    Redirect 301 /publications/logistics http://blog.iteam.ru/category/biznes-processy/
-    Redirect 301 /publications/consulting http://blog.iteam.ru/category/biznes-processy/
-    Redirect 301 /publications/it http://blog.iteam.ru/category/biznes-processy/
-    Redirect 301 /publications/legal http://blog.iteam.ru/category/biznes-processy/
     Redirect 301 /publications/human/section_46/article_4653 http://blog.iteam.ru/kak-ocenit-kandidata-za-15-minut/
     Redirect 301 /publications/strategy/section_16/model-analiza-pjati-konkurentnyh-sil-majkla-portera http://blog.iteam.ru/model-analiza-majkla-portera/
     Redirect 301 /publications/finances/section_29/article_3269 http://blog.iteam.ru/chem-zaniyt-finansovyj-direktor/
@@ -675,4 +664,15 @@
     Redirect 301 /publications/processes/process_control_system/protsessy-i-organizatsionnaja-struktura http://blog.iteam.ru/protsessy-i-organizatsionnaya-struktura/
     Redirect 301 /publications/processes/process_control_system/razrabotka-dolzhnostnyh-objazannostej-sotrudnikov http://blog.iteam.ru/razrabotka-dolzhnostnyh-obyazannostej-sotrudnikov/
     Redirect 301 /publications/processes/process_control_system/struktura-dokumentatsii-reglamentirujuschej-protsessy-kompan http://blog.iteam.ru/struktura-dokumentatsii-reglamentiruyushhej-protsessy-kompanii/
+    Redirect 301 /publications/processes http://blog.iteam.ru/category/biznes-processy/
+    Redirect 301 /publications/corporation http://blog.iteam.ru/category/korporativnaya-kultura/
+    Redirect 301 /publications/finances http://blog.iteam.ru/category/upravlenie-finansami/
+    Redirect 301 /publications/marketing http://blog.iteam.ru/category/marketing-i-prodazhi/
+    Redirect 301 /publications/human http://blog.iteam.ru/category/upravlenie-personalom/
+    Redirect 301 /publications/quality http://blog.iteam.ru/category/upravlenie-kachestvom/
+    Redirect 301 /publications/project http://blog.iteam.ru/category/upravlenie-izmeneniyami/
+    Redirect 301 /publications/logistics http://blog.iteam.ru/category/biznes-processy/
+    Redirect 301 /publications/consulting http://blog.iteam.ru/category/biznes-processy/
+    Redirect 301 /publications/it http://blog.iteam.ru/category/biznes-processy/
+    Redirect 301 /publications/legal http://blog.iteam.ru/category/biznes-processy/
 </IfModule>
