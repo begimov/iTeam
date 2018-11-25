@@ -19,7 +19,7 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     Redirect 301 /learn/strategicheskoe-upravlenie /pages/category/master-klassy/themes/strategiya
-    Redirect 301 /promo/strategy/beginner_mk/#/ /pages/7-strategiy-dlya-vashey-kompanii
+    Redirect 301 /promo/strategy/beginner_mk/ /pages/7-strategiy-dlya-vashey-kompanii
     Redirect 301 /learn/webinar/mysli-globalno-dejstvuj-lokalno /pages/mysli-globalno-deystvuy-lokalno
     Redirect 301 /learn/webinar/thrift /pages/category/master-klassy/themes/strategiya
     Redirect 301 /learn/webinar/diagnostics /pages/postavte-diagnoz-vashemu-biznesu
@@ -35,9 +35,9 @@
     Redirect 301 /learn/webinar/strategicheskij-analiz-trendov /pages/category/master-klassy/themes/strategiya
     Redirect 301 /landing/template/strategicheskii-analiz-problem-kompanii.html /pages/category/master-klassy/themes/strategiya
     Redirect 301 /learn/upravlenie-protsessami /pages/category/master-klassy/themes/biznes-processy
-    Redirect 301 /promo/processes_mk_approaches/#/ /pages/category/master-klassy/themes/biznes-processy
-    Redirect 301 /promo/processes_mk_errors/#/ /pages/category/master-klassy/themes/biznes-processy
-    Redirect 301 /promo/processes_mk/#/ /pages/kak-preodolet-soprotivlenie-izmeneniyam
+    Redirect 301 /promo/processes_mk_approaches/ /pages/category/master-klassy/themes/biznes-processy
+    Redirect 301 /promo/processes_mk_errors/ /pages/category/master-klassy/themes/biznes-processy
+    Redirect 301 /promo/processes_mk/ /pages/kak-preodolet-soprotivlenie-izmeneniyam
     Redirect 301 /learn/webinar/inzhenernyj-podhod-k-sozdaniju-sistemy-upravlenija-protsessa /pages/category/master-klassy/themes/biznes-processy
     Redirect 301 /landing/template/kak-sozdaty-sistemu-upravleniya-processami.html /pages/kak-sozdat-sistemu-upravleniya-processami-za-4-mesyaca
     Redirect 301 /learn/webinar/process_structure /pages/kak-nayti-i-ukrepit-slaboe-zveno-v-cepi-processov
@@ -47,7 +47,7 @@
     Redirect 301 /learn/webinar/improve_business /pages/category/master-klassy/themes/biznes-processy
     Redirect 301 /learn/tselevoe-upravlenie /pages/category/master-klassy/themes/celevoe-upravlenie
     Redirect 301 /learn/webinar/manage_rightly /pages/upravlyat-po-nastoyashchemu
-    Redirect 301 /promo/management_workshop/#/ /pages/onlayn-marafon-sdelayte-kompaniyu-upravlyaemoy-i-effektivnoy
+    Redirect 301 /promo/management_workshop/ /pages/onlayn-marafon-sdelayte-kompaniyu-upravlyaemoy-i-effektivnoy
     Redirect 301 /landing/template/razrabotka-pokazateley-kpi.html /pages/razrabotka-pokazateley-kpi
     Redirect 301 /learn/webinar/kpi /pages/kak-sozdat-sistemu-kpi
     Redirect 301 /learn/webinar/target /pages/celevoe-upravlenie-bsc-kpi-kontrolling
@@ -79,7 +79,7 @@
     Redirect 301 /learn/webinar/motivation /pages/chto-dolzhen-znat-kazhdyy-rukovoditel-o-motivacii-sotrudnikov
     Redirect 301 /learn/webinar/secret_weapon_2 /pages/category/master-klassy/themes/motivaciya-sotrudnikov
     Redirect 301 /learn/korporativnaja-kultura /pages/category/master-klassy/themes/korporativnaya-kultura
-    Redirect 301 /promo/culture/workshop/#/ /pages/praktika-postroeniya-korporativnoy-kultury
+    Redirect 301 /promo/culture/workshop/ /pages/praktika-postroeniya-korporativnoy-kultury
     Redirect 301 /learn/webinar/spiralnaja-dinamika-instrument-strategii /pages/spiralnaya-dinamika-instrument-strategii
     Redirect 301 /learn/breakfast/corporate_culture /pages/kak-sozdaetsya-silnaya-korporativnaya-kultura
     Redirect 301 /learn/breakfast/create-customer-service /pages/kak-sozdat-servis-pokoryayushchiy-klientov
@@ -89,7 +89,7 @@
     Redirect 301 /landing/template/razrabatyvaem-plan-marketinga-na-2018-god.html /pages/category/master-klassy/themes/marketing-i-prodazhi
     Redirect 301 /learn/webinar/marketing /pages/chto-dolzhen-znat-kazhdyy-rukovoditel-o-marketinge
     Redirect 301 /learn/upravlenie-znanijami /pages/category/master-klassy/themes/obuchenie-rukovoditeley
-    Redirect 301 /promo/howtomanage/#/ /pages/category/master-klassy/themes/obuchenie-rukovoditeley
+    Redirect 301 /promo/howtomanage/ /pages/category/master-klassy/themes/obuchenie-rukovoditeley
     Redirect 301 /landing/template/11ef_practic_organizacii_komandnoi_raboti.html /pages/11-effektivnyh-praktik-dlya-organizacii-komandnoy-raboty-v-vashem-biznese
     Redirect 301 /learn/webinar/middle_manager /pages/chemu-i-kak-nuzhno-obuchat-rukovoditeley-chtoby-oni-stali-liderami-peremen
     Redirect 301 /landing/template/tehnologii_obuchenija_new.html /pages/tehnologiya-obucheniya-upravlencev-sem-problem-odno-reshenie
@@ -454,7 +454,7 @@
     Redirect 301 /publications/target/kpi-i-sistema-tselepolaganija http://blog.iteam.ru/kpi-i-sistema-tselepolaganiya/
     Redirect 301 /publications/marketing/section_22/article_394 http://blog.iteam.ru/izmereniya-v-marketingovyh-issledovaniyah/
     Redirect 301 /publications/project/section_35/article_2329 http://blog.iteam.ru/upravlenie-vozmozhnostyami-initsiatsiya-proektov/
-    Redirect 301 /publications/strategy/section_16/gde-nahodjatsja-glavnye-problemy#Неясное позиционирование на рынке http://blog.iteam.ru/sem-vnutrennih-ogranichenij-dlya-razvitiya-kompanii/
+    Redirect 301 /publications/strategy/section_16/gde-nahodjatsja-glavnye-problemy http://blog.iteam.ru/sem-vnutrennih-ogranichenij-dlya-razvitiya-kompanii/
     Redirect 301 /publications/human/section_44/article_2336 http://blog.iteam.ru/demokratichnoe-upravlenie-s-avtoritarnym-uklonom/
     Redirect 301 /publications/human/section_47/article_3519 http://blog.iteam.ru/sposob-otsenki-uspeshnosti-sotrudnikov/
     Redirect 301 /publications/consulting/section_77/article_3510 http://blog.iteam.ru/konsalting-dlya-malogo-biznesa/
@@ -462,7 +462,7 @@
     Redirect 301 /publications/human/section_67/pochemu-treningi-ne-prinosjat-rezultatov-i-chto-s-etim-dela http://blog.iteam.ru/pochemu-treningi-ne-prinosyat-rezultatov-i-chto-s-etim-delat/
     Redirect 301 /publications/corporation/section_96/article_3271 http://blog.iteam.ru/kontseptsii-i-elementy-korporativnogo-upravleniya/
     Redirect 301 /publications/quality/section_84/article_3035 http://blog.iteam.ru/standarty-dlya-it-industrii/
-    Redirect 301 /publications/human/section_70/article_3943 http://blog.iteam.ru/izmenit-otnoshenie-sotrudnikov-k-rabote-utopiya-ili-realnost/#i-2
+    Redirect 301 /publications/human/section_70/article_3943 http://blog.iteam.ru/izmenit-otnoshenie-sotrudnikov-k-rabote-utopiya-ili-realnost
     Redirect 301 /publications/processes/pro_et_contra_kpi http://blog.iteam.ru/za-i-protiv-kpi/
     Redirect 301 /publications/strategy/section_16/article_904 http://blog.iteam.ru/kontseptsiya-strategicheskogo-upravleniya-shell-dpm/
     Redirect 301 /publications/human/section_55/article_3080 http://blog.iteam.ru/10-obshheprinyatyh-zabluzhdenij-ob-upravlenii-znaniyami-knowledge-management/
@@ -588,7 +588,7 @@
     Redirect 301 /publications/marketing/section_28/article_89 http://blog.iteam.ru/faktory-vliyayushhie-na-rezultativnost-marketingovoj-praktiki/
     Redirect 301 /publications/finances/section_29/article_3269 http://blog.iteam.ru/chem-zaniyt-finansovyj-direktor/
     Redirect 301 /publications/finances/section_11/article_362 http://blog.iteam.ru/finansovoe-planirovanie-deyatelnosti-predpriyatiya/
-    Redirect 301 /publications/strategy/section_16/model-analiza-pjati-konkurentnyh-sil-majkla-portera#Пример анализа пяти конкурентных сил http://blog.iteam.ru/model-analiza-majkla-portera/
+    Redirect 301 /publications/strategy/section_16/model-analiza-pjati-konkurentnyh-sil-majkla-portera http://blog.iteam.ru/model-analiza-majkla-portera/
     Redirect 301 /publications/strategy/section_17/article_4092 http://blog.iteam.ru/strategiya-i-strategicheskoe-upravlenie-v-rossijskih-predpriyatiyah/
     Redirect 301 /publications/finances/section_50/article_3359 http://blog.iteam.ru/kontrolling-organizatsiya-novyh-finansov/
     Redirect 301 /publications/it/section_91/article_2609 http://blog.iteam.ru/kak-otsenivat-it-aktivy/
@@ -607,7 +607,7 @@
     Redirect 301 /publications/marketing/section_62/article_4309 http://blog.iteam.ru/okovy-stereotipov-v-marketinge/
     Redirect 301 /publications/project/section_38/article_1074 http://blog.iteam.ru/open-plan-i-drugie-semejstvo-programmnyh-paketov-welcom/
     Redirect 301 /publications/finances/section_12/article_729 http://blog.iteam.ru/finansovaya-struktura-pervyj-shag-k-byudzhetirovaniyu/
-    Redirect 301 /publications/finances/section_29/article_3269#Обеспечение потребности бизнеса в деньгах http://blog.iteam.ru/chem-zaniyt-finansovyj-direktor/
+    Redirect 301 /publications/finances/section_29/article_3269 http://blog.iteam.ru/chem-zaniyt-finansovyj-direktor/
     Redirect 301 /publications/project/section_38/article_439 http://blog.iteam.ru/kak-vybrat-programmnoe-obespechenie-po-upravleniyu-proektami/
     Redirect 301 /publications/it/section_53/article_3309 http://blog.iteam.ru/formula-uspeha-it-kompanij-pr-gr-ir-it/
     Redirect 301 /publications/strategy/section_16/article_4131 http://blog.iteam.ru/17-modelej-postroeniya-strategii/
