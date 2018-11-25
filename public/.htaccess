@@ -668,7 +668,7 @@
     Redirect 301 /publications/corporation http://blog.iteam.ru/category/korporativnaya-kultura/
     Redirect 301 /publications/finances http://blog.iteam.ru/category/upravlenie-finansami/
     Redirect 301 /publications/marketing http://blog.iteam.ru/category/marketing-i-prodazhi/
-    #Redirect 301 /publications/human http://blog.iteam.ru/category/upravlenie-personalom/
+    Redirect 301 /publications/human http://blog.iteam.ru/category/upravlenie-personalom/
     Redirect 301 /publications/quality http://blog.iteam.ru/category/upravlenie-kachestvom/
     Redirect 301 /publications/project http://blog.iteam.ru/category/upravlenie-izmeneniyami/
     Redirect 301 /publications/logistics http://blog.iteam.ru/category/biznes-processy/
