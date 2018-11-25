@@ -19,7 +19,7 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     Redirect 301 /learn/strategicheskoe-upravlenie /pages/category/master-klassy/themes/strategiya
-    Redirect 301 /promo/strategy/beginner_mk/ /pages/7-strategiy-dlya-vashey-kompanii
+    Redirect 301 /promo/strategy/beginner_mk/#/ /pages/7-strategiy-dlya-vashey-kompanii
     Redirect 301 /learn/webinar/mysli-globalno-dejstvuj-lokalno /pages/mysli-globalno-deystvuy-lokalno
     Redirect 301 /learn/webinar/thrift /pages/category/master-klassy/themes/strategiya
     Redirect 301 /learn/webinar/diagnostics /pages/postavte-diagnoz-vashemu-biznesu
