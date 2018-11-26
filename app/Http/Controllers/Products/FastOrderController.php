@@ -25,7 +25,7 @@ class FastOrderController extends Controller
     {
         if ($order->isPaid()) {
             
-            $order->load('product', 'product.materials', 'product.materials.files', 'product.materials.resources');
+            $order->load('product', 'product.materials', 'product.materials.files', 'product.materials.resources', 'product.tests');
             
         }
 
