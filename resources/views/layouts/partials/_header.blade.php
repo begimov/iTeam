@@ -4,7 +4,7 @@
         <div class="col-lg-2 text-lg-left text-center">
           <a href="{{ route('home') }}"><img src="{{ asset('img/header_logo.png') }}" alt="iTeam logo"></a>
         </div>
-        <div class="col-lg-6 align-self-center py-3 py-lg-0 d-none d-sm-none d-md-block">
+        <div class="col-lg-5 align-self-center py-3 py-lg-0 d-none d-sm-none d-md-block">
             <ul class="list-inline m-0 text-lg-left text-center">
                 <li class="list-inline-item font-weight-bold m-0 pr-2">@lang('partials.header.phone')</li>
                 <li class="list-inline-item font-weight-normal m-0"><a href="{{ config('urls.mail.info') }}">@lang('partials.header.email')</a></li>
@@ -12,9 +12,10 @@
                 <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.telegram') }}">@lang('partials.header.telegram')</a></li>
             </ul>
         </div>
-        <div class="col-lg-4 text-lg-right text-center">
+        <div class="col-lg-5 text-lg-right text-center">
             @if (Auth::guest())
                 <ul class="list-inline m-0 d-none d-sm-none d-md-block">
+                    <li class="list-inline-item m-0 pr-1"><a href="http://old.iteam.ru/i/" class="btn btn-success text-uppercase">НА ПРЕЖНИЙ САЙТ</a></li>
                     <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li>
                     <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.registration')</a></li>
                 </ul>
