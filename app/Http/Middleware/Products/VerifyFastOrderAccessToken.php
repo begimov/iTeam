@@ -15,7 +15,8 @@ class VerifyFastOrderAccessToken
      */
     public function handle($request, Closure $next)
     {
-        if ($request->route('code') !== base64_encode($request->route('order')->created_at)) {
+        if ($request->route('code') !== base64_encode($request->route('order')->created_at) 
+            || !is_null($request->route('order')->user_id)) {
 
             return redirect()->route('home');
             
