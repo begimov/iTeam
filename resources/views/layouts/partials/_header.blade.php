@@ -15,7 +15,7 @@
         <div class="col-lg-5 text-lg-right text-center">
             @if (Auth::guest())
                 <ul class="list-inline m-0 d-none d-sm-none d-md-block">
-                    <li class="list-inline-item m-0 pr-1"><a href="http://old.iteam.ru/i/" class="btn btn-success text-uppercase">НА ПРЕЖНИЙ САЙТ</a></li>
+                    <li class="list-inline-item m-0 pr-1"><a href="http://old.iteam.ru/i/" class="btn btn-success text-uppercase">НА СТАРЫЙ САЙТ</a></li>
                     <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li>
                     <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.registration')</a></li>
                 </ul>
