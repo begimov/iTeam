@@ -13,6 +13,8 @@ return [
     'blog' => 'http://blog.iteam.ru/',
 
     'panel' => 'http://iteam.ru/user',
+
+    'old_site' => 'http://old.iteam.ru/i/',
     
     'social' => [
         'facebook' => 'https://www.facebook.com/ITeam-Management-1538687959484919/',

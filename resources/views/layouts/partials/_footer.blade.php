@@ -40,7 +40,7 @@
             </p>
         </div>
         <div class="col-xl-2 col-md-6 col-sm-4">
-            <p><h5>&nbsp;</h5></p>
+            <p><a href="{{ config('urls.old_site') }}" target="_blank" class="btn btn-success text-uppercase mt-2">АРХИВ ЗАКАЗОВ</a></p>
             <p><a href="{{ config('urls.webmoney.megastock') }}" target="_blank"><img src="{{ asset('img/wm.png') }}" alt="Webmoney"></a></p>
             <p><a href="{{ config('urls.webmoney.payments_info') }}" target="_blank">@lang('partials.footer.payment_order')</a></p>
         </div>
