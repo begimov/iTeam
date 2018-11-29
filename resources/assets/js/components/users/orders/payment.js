@@ -18,5 +18,9 @@ export default {
         if (this.order.total_price > 5000) {
             this.selectPaymentType(2)
         }
+        $('#modal-window-payment').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
     }
 };

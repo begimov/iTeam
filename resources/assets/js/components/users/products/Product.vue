@@ -25,7 +25,7 @@
             </div>
         </div>
         
-        <div class="card mt-4 mb-3 bg-dark text-light" v-for="test in tests" :key="test.id">
+        <div class="card mt-4 mb-3 bg-dark text-light" v-for="test in tests" :key="'file_' + test.id">
             <div class="card-header pb-1"><h2>{{ test.name }}</h2></div>
             <div class="card-body">
                 <p class="card-text">{{ test.description }}</p>
