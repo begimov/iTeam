@@ -61,7 +61,7 @@ export default {
                 if (this.redirectUrl) {
                     window.location.href = this.redirectUrl;
                 } else {
-                    this.message = 'Спасибо, регистрация прошла успешно! На ваш адрес отправлено письмо.<br>Напишие на <a href="mailto:info@iteam.ru">info@iteam.ru</a>, если письмо не пришло!'
+                    this.message = 'Спасибо, регистрация прошла успешно! На ваш адрес отправлено письмо.<br>Напишите на <a href="mailto:info@iteam.ru">info@iteam.ru</a>, если письмо не пришло!'
                 }
 
                 this.isLoading = false
