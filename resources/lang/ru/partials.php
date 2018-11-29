@@ -6,6 +6,7 @@ return [
         'email' => 'info@iteam.ru',
         'whatsapp' => 'Whatsapp',
         'telegram' => 'Telegram',
+        'instagram' => 'Instagram',
         'signin' => 'Войти',
         'registration' => 'Регистрация',
     ],

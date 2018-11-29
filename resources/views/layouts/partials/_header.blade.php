@@ -10,6 +10,7 @@
                 <li class="list-inline-item font-weight-normal m-0"><a href="{{ config('urls.mail.info') }}">@lang('partials.header.email')</a></li>
                 <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.whatsapp') }}">@lang('partials.header.whatsapp')</a></li>
                 <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.telegram') }}">@lang('partials.header.telegram')</a></li>
+                <li class="list-inline-item font-weight-normal m-0">| <a href="{{ config('urls.social.instagram') }}">@lang('partials.header.instagram')</a></li>
             </ul>
         </div>
         <div class="col-lg-4 text-lg-right text-center">
