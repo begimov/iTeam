@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Webapi\Products;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use App\Models\Products\Order;
 
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Auth;
+
+use App\Repositories\Eloquent\Criteria\With;
 use App\Transformers\Products\OrderTransformer;
 
-use App\Repositories\Contracts\Products\OrderRepository;
-use App\Repositories\Eloquent\Criteria\With;
-
 use App\Http\Requests\Webapi\Products\OrderStoreRequest;
+use App\Repositories\Contracts\Products\OrderRepository;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,8 @@ class OrderController extends Controller
 
     public function __construct(OrderRepository $orders)
     {
+        $this->middleware('auth')->except(['store']);
+
         $this->orders = $orders;
     }
 
@@ -65,6 +68,13 @@ class OrderController extends Controller
      */
     public function store(OrderStoreRequest $request)
     {
+        if (!Auth::check()) {
+            session([
+                config('session.keys.ordered_product') 
+                    => $request->all()
+            ]);
+            return redirect()->route('register');
+        }
         $this->orders->store($request->all());
         return redirect()->route('user.dashboard.index');
     }

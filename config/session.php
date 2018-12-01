@@ -177,7 +177,8 @@ return [
     'http_only' => true,
 
     'keys' => [
-        'page_path' => 'pagepath'
+        'page_path' => 'pagepath',
+        'ordered_product' => 'orderedproduct'
     ]
 
 ];

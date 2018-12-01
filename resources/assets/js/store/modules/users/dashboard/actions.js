@@ -2,10 +2,13 @@ import api from '../../../api'
 
 export default {
   getOrders({ commit }) {
-    commit('setIsLoading', true)
-    api.dashboard.getOrders().then(res => {
-      commit('setOrders', res.data)
-      commit('setIsLoading', false)
+    return new Promise((resolve, reject) => {
+      commit('setIsLoading', true)
+      api.dashboard.getOrders().then(res => {
+        commit('setOrders', res.data)
+        commit('setIsLoading', false)
+        resolve(res.data)
+      })
     })
   },
   openProduct({ commit, state }, orderId) {

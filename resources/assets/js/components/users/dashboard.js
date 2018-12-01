@@ -15,9 +15,26 @@ export default {
             'openProduct',
             'orderPayment',
             'deleteOrder',
-        ])
+        ]),
+        openPaymentModal() {
+            const urlParams = new URLSearchParams(window.location.search)
+
+            if (urlParams.has('order')) {
+
+                const order = _.find(this.orders, [
+                    'id', parseInt(urlParams.get('order'))
+                ])
+
+                if (order) {
+                    this.orderPayment(order)
+                }
+            }
+        }
     },
     mounted() {
-        this.getOrders();
+        this.getOrders().then(res => {
+            this.openPaymentModal()
+        })
+        
     }
 };
