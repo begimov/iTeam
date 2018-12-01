@@ -30,8 +30,8 @@ trait RedirectsToVisitedPage
 
         $orders = app()->make(\App\Repositories\Contracts\Products\OrderRepository::class);
 
-        $orders->store($data);
+        $order = $orders->store($data);
 
-        return redirect()->route('user.dashboard.index');
+        return redirect()->route('user.dashboard.index', ['order' => $order->id]);
     }
 }
