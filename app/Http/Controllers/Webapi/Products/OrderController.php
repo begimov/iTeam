@@ -71,7 +71,7 @@ class OrderController extends Controller
         if (!Auth::check()) {
             session([
                 config('session.keys.ordered_product') 
-                    => $request->only(['product_id', 'price_tag_id'])
+                    => $request->all()
             ]);
             return redirect()->route('register');
         }
