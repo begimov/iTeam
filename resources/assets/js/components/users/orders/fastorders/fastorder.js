@@ -15,17 +15,28 @@ export default {
                 WMI_FAIL_URL: '',
                 WMI_SIGNATURE: ''
             },
+            form: {
+                email: ''
+            },
+            isLoading: false
         }
     },
     methods: {
         purchase() {
-            axios.post(`/webapi/orders/payments/walletone/signature`, this.walletOneOptions).then(res => {
-                this.walletOneOptions = { ...this.walletOneOptions, ...res.data.data }
-                this.$nextTick(() => {
-                    this.$refs.woform.submit()
+            this.isLoading = true
+            axios.post(`/webapi/fastorders/${this.order.id}`, this.form).then(res => {
+                axios.post(`/webapi/orders/payments/walletone/signature`, this.walletOneOptions).then(res => {
+                    this.walletOneOptions = { ...this.walletOneOptions, ...res.data.data }
+                    this.$nextTick(() => {
+                        this.$refs.woform.submit()
+                    })
+                }).catch(err => {
+                    console.log(err)
+                    this.isLoading = false
                 })
             }).catch(err => {
                 console.log(err)
+                this.isLoading = false
             })
         }
     },
@@ -41,5 +52,6 @@ export default {
             WMI_FAIL_URL: config.payments.WMI_FAIL_URL,
             WMI_SIGNATURE: "0"
         }
+        this.isLoading = false
     }
 };

@@ -25,4 +25,9 @@ class FastOrderController extends Controller
             'code' => base64_encode($order->created_at),
         ]);
     }
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
 }

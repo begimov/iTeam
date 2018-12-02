@@ -64,6 +64,7 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
 // Fast orders
 Route::group(['prefix' => 'webapi', 'namespace' => 'Webapi'], function () {
     Route::post('fastorders', 'Products\FastOrderController@store')->name('fastorders.store');
+    Route::post('fastorders/{id}', 'Products\FastOrderController@update');
     // Payment and fastorder route
     Route::post('orders/payments/walletone/signature', 'Payments\WalletOnePaymentController@getPaymentSignature');
 

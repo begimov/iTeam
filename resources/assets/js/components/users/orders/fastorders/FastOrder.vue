@@ -6,6 +6,15 @@
                 <h3>{{ order.product.name }}</h3>
                 <h2><span class="badge badge-info">{{ order.price }}</span></h2>
                 <form ref="woform" method="post" action="https://wl.walletone.com/checkout/checkout/Index">
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-md-8 col-sm-10">
+                            <div class="form-group">
+                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Ваш email..." v-model="form.email">
+                                <!-- <small class="form-text text-muted">На него будет отправлена ссылка на страницу с материалами</small> -->
+                            </div>
+                        </div>
+                    </div>
+                    
                     <input type="hidden" name="WMI_MERCHANT_ID" v-model="walletOneOptions.WMI_MERCHANT_ID"/>
                     <input type="hidden" name="WMI_PAYMENT_AMOUNT" v-model="walletOneOptions.WMI_PAYMENT_AMOUNT"/>
                     <input type="hidden" name="WMI_CURRENCY_ID" v-model="walletOneOptions.WMI_CURRENCY_ID"/>
@@ -15,7 +24,7 @@
                     <input type="hidden" name="WMI_SUCCESS_URL" v-model="walletOneOptions.WMI_SUCCESS_URL"/>
                     <input type="hidden" name="WMI_FAIL_URL" v-model="walletOneOptions.WMI_FAIL_URL"/>
                     <input type="hidden" name="WMI_SIGNATURE" v-model="walletOneOptions.WMI_SIGNATURE"/>
-                    <button type="submit" class="btn btn-primary btn-lg" @click.prevent="purchase">ОПЛАТИТЬ</button>
+                    <button type="submit" class="btn btn-primary btn-lg" @click.prevent="purchase" :disabled="isLoading">ОПЛАТИТЬ</button>
                 </form>
             </div>
         </div>
