@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Webapi\Products\OrderStoreRequest;
 use App\Repositories\Contracts\Products\OrderRepository;
+use App\Http\Requests\Webapi\Products\OrderUpdateRequest;
 
 class FastOrderController extends Controller
 {
@@ -26,7 +27,7 @@ class FastOrderController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(OrderUpdateRequest $request, $id)
     {
         $this->orders
             ->findById($id)
