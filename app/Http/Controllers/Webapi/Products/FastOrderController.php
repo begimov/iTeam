@@ -28,6 +28,8 @@ class FastOrderController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $this->orders
+            ->findById($id)
+            ->update($request->all());
     }
 }

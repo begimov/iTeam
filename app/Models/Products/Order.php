@@ -10,7 +10,7 @@ class Order extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['user_id', 'product_id', 'price', 'quantity', 'payment_state_id'];
+    protected $fillable = ['user_id', 'product_id', 'price', 'quantity', 'payment_state_id', 'email'];
     /**
      * The attributes that should be mutated to dates.
      *
