@@ -18,6 +18,7 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    Redirect 301 /i  http://old.iteam.ru/i
     Redirect 301 /webinar/systema_upravleniya_processami/21_05_18/video_01/mk.php  http://old.iteam.ru/webinar/systema_upravleniya_processami/21_05_18/video_01/mk.php
     Redirect 301 /promo/2018/02_thank_you.php  http://old.iteam.ru/promo/2018/02_thank_you.php
     Redirect 301 /learn/strategicheskoe-upravlenie /pages/category/master-klassy/themes/strategiya
