@@ -6,6 +6,27 @@
   </div>
   <div class="row text-center">
     <div class="col-lg-4 col-md-6 mt-4">
+      <h5 class="mb-3">«Тимер Банк»</h5>
+      <youtube-player 
+        video-id="2AIVVIIkclo"
+        bg-img="/img/pages/videoreviews/videoreview_07.jpg"
+      ></youtube-player>
+    </div>
+    <div class="col-lg-4 col-md-6 mt-4">
+      <h5 class="mb-3">Этери Березовская</h5>
+      <youtube-player 
+        video-id="6JdwmjIvvGI"
+        bg-img="/img/pages/videoreviews/videoreview_08.jpg"
+      ></youtube-player>
+    </div>
+    <div class="col-lg-4 col-md-6 mt-4">
+      <h5 class="mb-3">Игорь Жихарев</h5>
+      <youtube-player 
+        video-id="cM_izmuCh5E"
+        bg-img="/img/pages/videoreviews/videoreview_09.jpg"
+      ></youtube-player>
+    </div>
+    <div class="col-lg-4 col-md-6 mt-4">
       <h5 class="mb-3">Александр Красный, «ГаРус»</h5>
       <youtube-player 
         video-id="Rp4Jh-DP7is"
