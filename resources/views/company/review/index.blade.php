@@ -9,10 +9,13 @@
         <div class="row">
             <div class="container my-5">
                 <div class="row">
-                    <div class="col">
+                    <div class="col text-center">
                         <h1>Отзывы</h1>
                     </div>
                 </div>
+
+                @include('pages.page.partials.videoreviews')
+
                 @foreach ($reviews as $key => $review)
                     <div class="row mt-5">
                         <div class="col">

@@ -1,9 +1,3 @@
-<div class="container mb-5 page-container">
-  <div class="row text-center mt-5">
-      <div class="col">
-          <h2>Видео отзывы наших участников:</h2>
-      </div>
-  </div>
   <div class="row text-center">
     <div class="col-lg-4 col-md-6 mt-4">
       <h5 class="mb-3">«Тимер Банк»</h5>
@@ -69,4 +63,3 @@
       ></youtube-player>
     </div>
   </div>
-</div>

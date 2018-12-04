@@ -11,7 +11,14 @@
   @endforeach
 </div>
 
-@include('pages.page.partials.videoreviews')
+<div class="container mb-5 page-container">
+  <div class="row text-center mt-5">
+      <div class="col">
+          <h2>Видео отзывы наших участников:</h2>
+      </div>
+  </div>
+  @include('pages.page.partials.videoreviews')
+</div>
 
 @section('scripts')
   <div id="fb-root"></div>
