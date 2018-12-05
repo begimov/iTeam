@@ -1,6 +1,6 @@
 <div class="container-fluid p-0">
   <div class="row">
-    <div class="col-lg-6 p-4 promo">
+    <div class="col-lg-6 p-4 promo order-1 order-lg-0">
       <div class="row h-100">
         <div class="col-12 align-self-center text-white">
           <h3 class="font-italic m-0">Мастер-проект</h3>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-6 p-0">
+    <div class="col-lg-6 p-0 order-0 order-lg-1">
       <div class="row">
         <div class="col-sm-4 align-self-center text-center">
           <img src="{{ asset('img/home/gift_box.png') }}" class="img-fluid">
