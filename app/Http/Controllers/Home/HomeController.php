@@ -46,8 +46,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        \App\Jobs\Products\ProcessPaidOrder::dispatch(\App\Models\Products\Order::find(1));
-
         $posts = $this->getBlogPosts();
 
         $mks = $this->getMasterClasses();

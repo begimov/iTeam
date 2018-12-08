@@ -41,7 +41,7 @@ class FastOrderPaid extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new FastOrderPaidMailable())->to($notifiable->email);
+        return (new FastOrderPaidMailable($notifiable))->to($notifiable->email);
     }
 
     /**

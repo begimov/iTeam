@@ -34,7 +34,7 @@
                                         @foreach ($material->files as $file)
                                             <li>
                                                 <a href="{{ '/fastorders/' . $order->id 
-                                                    . '/' . base64_encode($order->created_at) 
+                                                    . '/' . $order->getFastOrderToken()
                                                     . '/files/' . $file->id }}">{{ $file->original_name ?: $file->name }}</a> - {{ round($file->size/1024) }} Kb
                                             </li>
                                         @endforeach

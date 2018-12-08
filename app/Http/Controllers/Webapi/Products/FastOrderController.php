@@ -23,7 +23,7 @@ class FastOrderController extends Controller
         
         return redirect()->route('fastorders.show', [
             'order' => $order->id,
-            'code' => base64_encode($order->created_at),
+            'code' => $order->getFastOrderToken(),
         ]);
     }
 

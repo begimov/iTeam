@@ -3,7 +3,7 @@
 
 Оплаченные материалы доступны по вашей ссылке.
 
-@component('mail::button', ['url' => config('urls.panel')])
+@component('mail::button', ['url' => $orderUrl])
 Перейти
 @endcomponent
 

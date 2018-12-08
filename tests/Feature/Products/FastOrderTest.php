@@ -20,7 +20,7 @@ class FastOrderTest extends TestCase
         $response = $this->get(
             '/fastorders/' 
             . $order->id
-            . '/' . base64_encode($order->created_at)
+            . '/' . $order->getFastOrderToken()
         );
 
         $response->assertViewIs('products.fastorder.show');
@@ -55,7 +55,7 @@ class FastOrderTest extends TestCase
         $response = $this->get(
             '/fastorders/' 
             . $order->id
-            . '/' . base64_encode($order->created_at)
+            . '/' . $order->getFastOrderToken()
         );
 
         $response->assertViewHas('order');

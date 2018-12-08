@@ -39,4 +39,9 @@ class Order extends Model
     {
         return $this->payment_state_id === config('orders.payed_payment_state_id');
     }
+
+    public function getFastOrderToken()
+    {
+        return base64_encode($this->created_at);
+    }
 }
