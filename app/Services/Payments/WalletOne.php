@@ -2,8 +2,7 @@
 
 namespace App\Services\Payments;
 
-use App\Notifications\Products\OrderPaid;
-
+use App\Jobs\Products\ProcessPaidOrder;
 use App\Services\Payments\Contracts\IWalletOne;
 use App\Repositories\Contracts\Products\OrderRepository;
 
@@ -60,7 +59,7 @@ class WalletOne implements IWalletOne
             $order = $this->markOrderAsPayed($payload['WMI_PAYMENT_NO']);
 
             if ($order) {
-                optional($order->user)->notify(new OrderPaid());
+                ProcessPaidOrder::dispatch($order);
             }
 
             return $this->respond('OK');
