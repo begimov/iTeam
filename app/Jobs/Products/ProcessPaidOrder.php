@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use App\Notifications\Products\OrderPaid;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use App\Notifications\Products\FastOrderPaid;
 
 class ProcessPaidOrder implements ShouldQueue
 {
@@ -34,5 +35,10 @@ class ProcessPaidOrder implements ShouldQueue
     public function handle()
     {
         optional($this->order->user)->notify(new OrderPaid());
+
+        if ($this->order->email) {
+            $this->order->notify(new FastOrderPaid());
+        }
+        
     }
 }

@@ -4,11 +4,12 @@ namespace App\Models\Products;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     protected $fillable = ['user_id', 'product_id', 'price', 'quantity', 'payment_state_id', 'email'];
     /**
