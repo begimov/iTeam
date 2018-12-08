@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'products' => \App\Http\Middleware\Products\ProtectNonFreeProductMaterials::class,
         'materials' => \App\Http\Middleware\Products\VerifyMaterialAccessToken::class,
         'fastorders' => \App\Http\Middleware\Products\VerifyFastOrderAccessToken::class,
+        'loginorregister' => \App\Http\Middleware\Auth\LoginOrRegister::class,
     ];
 }

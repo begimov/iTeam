@@ -7,7 +7,7 @@
 @section('content')
 <div class="container mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-6 mt-5">
+        {{-- <div class="col-md-6 mt-5">
             <h2 class="mb-4">@lang('auth.register')</h2>
             <div class="card">
                 <div class="card-body">
@@ -43,7 +43,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-md-6 mt-5">
             <h2 class="mb-4">@lang('auth.login')</h2>

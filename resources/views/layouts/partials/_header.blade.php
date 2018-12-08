@@ -16,8 +16,8 @@
         <div class="col-lg-4 text-lg-right text-center">
             @if (Auth::guest())
                 <ul class="list-inline m-0 d-none d-sm-none d-md-block">
-                    <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li>
-                    <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.registration')</a></li>
+                    {{-- <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li> --}}
+                    <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.signin')</a></li>
                 </ul>
             @else
             <div class="dropdown" style="z-index:9999;">
