@@ -15,6 +15,7 @@ return [
     'panel' => 'http://iteam.ru/user',
 
     'old_site' => 'http://old.iteam.ru/i/',
+    'old_site_archive' => 'http://old.iteam.ru/publications',
     
     'social' => [
         'facebook' => 'https://www.facebook.com/ITeam-Management-1538687959484919/',
