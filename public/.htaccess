@@ -1054,4 +1054,6 @@
     Redirect 301 /publications/consulting http://blog.iteam.ru/category/biznes-processy/
     Redirect 301 /publications/it http://blog.iteam.ru/category/biznes-processy/
     Redirect 301 /publications/legal http://blog.iteam.ru/category/biznes-processy/
+
+    Redirect 301 /publications http://old.iteam.ru/publications
 </IfModule>
