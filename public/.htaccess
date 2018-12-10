@@ -1043,6 +1043,8 @@
     Redirect 301 /publications/marketing/section_23/article_81 http://blog.iteam.ru/marketingovyj-audit/
     Redirect 301 /publications/marketing/section_28/article_1387 http://blog.iteam.ru/agressivnyj-marketing/
     
+    Redirect 301 /publications http://old.iteam.ru/publications
+
     Redirect 301 /publications/processes http://blog.iteam.ru/category/biznes-processy/
     Redirect 301 /publications/corporation http://blog.iteam.ru/category/korporativnaya-kultura/
     Redirect 301 /publications/finances http://blog.iteam.ru/category/upravlenie-finansami/
@@ -1055,5 +1057,4 @@
     Redirect 301 /publications/it http://blog.iteam.ru/category/biznes-processy/
     Redirect 301 /publications/legal http://blog.iteam.ru/category/biznes-processy/
 
-    Redirect 301 /publications http://old.iteam.ru/publications
 </IfModule>
