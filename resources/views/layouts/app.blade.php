@@ -2,6 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
   @include('layouts.partials._head')
+  @yield('head_scripts')
 </head>
 <body class="bg-light">
   @yield('scripts')
