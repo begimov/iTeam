@@ -1060,7 +1060,5 @@
 
     Redirect 301 /publications http://old.iteam.ru/publications
     Redirect 301 /learn /pages/category/master-klassy
-    Redirect 301 /company/service /company/rm
-    Redirect 301 /company /company/services
 
 </IfModule>
