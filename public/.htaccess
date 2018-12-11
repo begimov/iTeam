@@ -18,6 +18,9 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$
+    RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
     Redirect 301 /promo/kbase2018  http://old.iteam.ru/promo/kbase2018/index.html
     Redirect 301 /promo/2018/01_thank_you.php  http://old.iteam.ru/promo/2018/01_thank_you.php
     Redirect 301 /promo/2018/02_thank_you.php  http://old.iteam.ru/promo/2018/02_thank_you.php
