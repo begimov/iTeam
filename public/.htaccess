@@ -1065,6 +1065,5 @@
     Redirect 301 /news /
     Redirect 301 /literature http://old.iteam.ru/literature
     Redirect 301 /soft /
-    Redirect 301 /company /
 
 </IfModule>
