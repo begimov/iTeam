@@ -1061,4 +1061,10 @@
     Redirect 301 /publications http://old.iteam.ru/publications
     Redirect 301 /learn /pages/category/master-klassy
 
+    Redirect 301 /conferences /
+    Redirect 301 /news /
+    Redirect 301 /literature http://old.iteam.ru/literature
+    Redirect 301 /soft /
+    Redirect 301 /company /
+
 </IfModule>
