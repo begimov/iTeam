@@ -37,6 +37,9 @@ return [
 
     'walletone' => [
         'key' => env('WALLETONE_KEY'),
+        'merchant_id' => '107649891291',
+        'currency_id' => '643',
+        'auto_location' => '1',
     ],
 
     'getresponse' => [

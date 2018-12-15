@@ -32,6 +32,10 @@ trait RedirectsToVisitedPage
 
         $order = $orders->store($data);
 
+        if ($order->price < 1000) {
+            return redirect()->route('orders.wo.redirect', ['order' => $order->id]);
+        }
+        
         return redirect()->route('user.dashboard.index', ['order' => $order->id]);
     }
 }

@@ -77,6 +77,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'webapi', 'namespace' => 'Weba
     Route::get('orders/payments/invoices/create', 'Payments\InvoiceController@create');
     Route::post('orders/{id}/payments/invoices', 'Payments\InvoiceController@store');
     Route::get('orders/payments/invoices/{fileName}', 'Payments\InvoiceController@show')->name('orders.invoices.show');
+    // Instant redirect to WalletOne payment page
+    Route::get('orders/payments/walletone/redirect', 'Payments\WalletOnePaymentController@redirect')->name('orders.wo.redirect');
     
     // Dashboard routes
     Route::resource('files', 'Content\FileController');
