@@ -75,8 +75,13 @@ class OrderController extends Controller
             ]);
             return redirect()->route('register');
         }
-        $this->orders->store($request->all());
-        return redirect()->route('user.dashboard.index');
+        $order = $this->orders->store($request->all());
+
+        if ($order->price < config('orders.max_cheap_order_price')) {
+            return redirect()->route('orders.wo.redirect', ['order' => $order->id]);
+        }
+
+        return redirect()->route('user.dashboard.index', ['order' => $order->id]);
     }
 
     /**

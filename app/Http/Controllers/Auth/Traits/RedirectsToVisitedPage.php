@@ -32,10 +32,10 @@ trait RedirectsToVisitedPage
 
         $order = $orders->store($data);
 
-        if ($order->price < 1000) {
+        if ($order->price < config('orders.max_cheap_order_price')) {
             return redirect()->route('orders.wo.redirect', ['order' => $order->id]);
         }
-        
+
         return redirect()->route('user.dashboard.index', ['order' => $order->id]);
     }
 }

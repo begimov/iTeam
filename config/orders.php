@@ -9,5 +9,7 @@ return [
     'invoices' => [
         'storage_dir_prefix' => 'invoices/users/id_',
         'pdf_filename_postfix' => '_iteam_invoice.pdf',
-    ]
+    ],
+
+    'max_cheap_order_price' => 1000
 ];
