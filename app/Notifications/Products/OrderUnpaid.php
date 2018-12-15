@@ -3,6 +3,7 @@
 namespace App\Notifications\Products;
 
 use Illuminate\Bus\Queueable;
+use App\Mail\Products\OrderUnpaid as OrderUnpaidMailable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -40,7 +41,7 @@ class OrderUnpaid extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        // return (new OrderPaidMailable())->to($notifiable->email);
+        return (new OrderUnpaidMailable())->to($notifiable->email);
     }
 
     /**

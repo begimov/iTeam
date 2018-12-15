@@ -3,7 +3,7 @@
 namespace App\Notifications\Products;
 
 use Illuminate\Bus\Queueable;
-use App\Mail\Products\FastOrderPaid as FastOrderPaidMailable;
+use App\Mail\Products\FastOrderUnpaid as FastOrderUnpaidMailable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -41,7 +41,7 @@ class FastOrderUnpaid extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        // return (new FastOrderPaidMailable($notifiable))->to($notifiable->email);
+        return (new FastOrderUnpaidMailable($notifiable))->to($notifiable->email);
     }
 
     /**
