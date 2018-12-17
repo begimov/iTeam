@@ -21,6 +21,7 @@
     RewriteCond %{HTTP_HOST} ^www\.(.*)$
     RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
+    Redirect 301 /promo/processes_approach/book  http://blog.iteam.ru/vam-podarok
     Redirect 301 /literature/processes/process_approach  http://blog.iteam.ru/vam-podarok
     Redirect 301 /pages/category/master-klassy/webinar/business_processes  /pages/dva-podhoda-k-vnedreniyu-biznes-processov
 
