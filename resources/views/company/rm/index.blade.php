@@ -27,8 +27,8 @@
     <div class="container pt-lg-5 pb-5">
         <div class="row">
             <div class="col text-center">
+            <p class="mt-2">Система &laquo;Русского Менеджмента&raquo; складывается из&nbsp;пяти элементов. Выстроив эти блоки, вы получите управляемую, эффективную и конкурентоспособную компанию. Идите по дорожной карте, чтобы узнать об элементах &laquo;Русского Менеджмента&raquo;.</p>
                 <h2 class="font-weight-light mb-3">Пять элементов &laquo;Русского Менеджмента&raquo;</h2>
-                <p class="lead">Система &laquo;Русского Менеджмента&raquo; складывается из&nbsp;пяти элементов:</p>
                 <ul class="list-inline m-0">
                     <li class="list-inline-item m-0">
                         <h4><span class="badge badge-primary font-weight-light p-2 a-white">
@@ -58,7 +58,6 @@
                         </span></h4>
                     </li>
                 </ul>
-                 <p class="mt-2">Выстроив эти блоки, вы получите управляемую, эффективную и конкурентоспособную компанию. Идите по дорожной карте, чтобы узнать об элементах &laquo;Русского Менеджмента&raquo;.</p>
             </div>
         </div>
     </div>
