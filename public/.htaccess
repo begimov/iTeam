@@ -1073,7 +1073,7 @@
 
     Redirect 301 /literature http://old.iteam.ru/literature
     Redirect 301 /soft /
-    Redirect 301 /company/response/66 http://old.iteam.ru/company/response
+    Redirect 301 /company/response http://old.iteam.ru/company/response
 
     # redirect 301 /users/foo http://www.example.com/profiles/foo
     # redirect 301 /users/bar http://www.example.com/profiles/bar
