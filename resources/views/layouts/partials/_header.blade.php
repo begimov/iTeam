@@ -16,6 +16,14 @@
         <div class="col-lg-4 text-lg-right text-center">
             @if (Auth::guest())
                 <ul class="list-inline m-0 d-none d-sm-none d-md-block">
+                    <li class="list-inline-item m-0 pr-1">
+                        <form class="form-inline" action="{{ route('search.index') }}" method="GET">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="q" placeholder="Поиск...">
+                            </div>
+                            <button type="submit" class="btn btn-dark"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </li>
                     {{-- <li class="list-inline-item m-0 pr-1"><a href="{{ route('login') }}" class="btn btn-light text-uppercase">@lang('partials.header.signin')</a></li> --}}
                     <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.signin')</a></li>
                 </ul>

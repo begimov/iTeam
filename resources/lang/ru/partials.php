@@ -39,5 +39,9 @@ return [
     'contact' => [
         'whatsapp' => '+7-909-158-57-57',
         'support_email' => 'support@iteam.ru'
+    ],
+    'search' => [
+        'results' => 'Результаты поиска',
+        'notfound' => 'К сожалению, по вашему запросу ничего не найдено.'
     ]
 ];

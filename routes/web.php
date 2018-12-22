@@ -112,6 +112,9 @@ Route::group(['prefix' => 'company', 'namespace' => 'Company'], function () {
     });
 });
 
+// Search
+Route::get('/search', 'Search\SearchController@index')->name('search.index');
+
 Auth::routes();
 
 // Webhooks
