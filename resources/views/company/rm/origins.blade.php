@@ -31,7 +31,7 @@
     </div>
 
     <!-- SUVOROV -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-lg-4 bg-rm-origins-01 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
@@ -61,7 +61,7 @@
     </div>
 
     <!-- MAKARENKO -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-lg-8 py-5">
                 <div class="row">
@@ -82,7 +82,7 @@
     </div>
 
     <!-- KOROLEV -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-lg-4 bg-rm-origins-03 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
@@ -107,7 +107,7 @@
     </div>
 
     <!-- LIHACHEV -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-lg-8 py-5">
                 <div class="row">
@@ -130,7 +130,7 @@
     </div>
 
     <!-- TARASOV -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-lg-4 bg-rm-origins-05 d-none d-lg-block">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 py-5">
@@ -147,7 +147,7 @@
     </div>
 
     <!-- KURCHATOV -->
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-lg-8 py-5">
                 <div class="row">
