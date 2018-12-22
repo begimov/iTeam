@@ -17,10 +17,21 @@ class SearchController extends Controller
 
     public function index(Request $request)
     {
-        $pages = \App\Models\Pages\Page::orWhere('name', 'like', "%{$request->q}%")
-            ->orWhere('description', 'like', "%{$request->q}%")
-            ->paginate(10);
+        if ($request->q) {
 
+            $q = preg_replace('/\\\\/', '.', trim(json_encode($request->q), '"'));
+
+            $pages = \App\Models\Pages\Page::whereHas('elements', 
+                function ($query) use ($q) {
+                    $query->where('data', 'regexp', $q);
+                })
+                ->orWhere('name', 'like', "%{$request->q}%")
+                ->orWhere('description', 'like', "%{$request->q}%")
+                ->paginate(10);
+
+        } else {
+            $pages = \App\Models\Pages\Page::paginate(10);
+        }
         return view('search.index', compact('pages'));
     }
 }
