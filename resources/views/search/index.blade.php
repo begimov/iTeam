@@ -19,7 +19,7 @@
 
   @if ($pages->count() > 0)
     @foreach ($pages as $page)
-      <div class="row mb-3">
+      <div class="row mb-4">
         <div class="col">
           <h4><a href="{{ route('pages.show', $page->slug) }}">{{ $page->name }}</a></h4>
           <p class="m-0">{{ $page->description }}</p>
