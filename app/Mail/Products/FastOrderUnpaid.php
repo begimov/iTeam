@@ -36,7 +36,8 @@ class FastOrderUnpaid extends Mailable
                 'orderUrl' => route('fastorders.show', [
                     'order' => $this->order->id,
                     'code' => $this->order->getFastOrderToken(),
-                ])
+                ]),
+                'product' => $this->order->product->name
             ])
             ->subject('Напоминание о заказе');
     }
