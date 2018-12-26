@@ -1,2 +1,8 @@
 User-agent: *
-Disallow: /
+Disallow: /cgi-bin/
+Disallow: /register
+Disallow: /login
+Disallow: /search
+Disallow: /user
+Host: https://iteam.ru
+Sitemap: https://iteam.ru/sitemap.xml
