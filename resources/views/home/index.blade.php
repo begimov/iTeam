@@ -122,5 +122,10 @@
     <div class="col">
       <img src="{{ asset('img/home/clients.jpg') }}" class="img-fluid"> </div>
   </div>
+  <div class="row text-center mt-4">
+    <div class="col">
+      <a href="{{ route('company.projects.index') }}" class="btn btn-primary">Проекты iTeam</a> <a href="{{ route('company.reviews.index') }}" class="btn btn-primary">Отзывы</a>
+    </div>
+  </div>
 </div>
 @endsection
