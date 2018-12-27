@@ -28,7 +28,7 @@
                     <li class="list-inline-item m-0"><a href="{{ route('register') }}" class="btn btn-primary text-uppercase">@lang('partials.header.signin')</a></li>
                 </ul>
             @else
-            <div class="dropdown" style="z-index:9999;">
+            <div class="dropdown" style="z-index:3;">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ Auth::user()->name }}
                 </button>
