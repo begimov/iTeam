@@ -31,6 +31,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-lg-4 d-none d-lg-block bg-rm-project-01">&nbsp;</div>
             <div class="col-xl-7 col-lg-8 align-self-center pt-lg-5 pb-5">
@@ -58,18 +60,22 @@
                 <p class="lead">Вы&nbsp;конечно&nbsp;же знаете, что такое &laquo;американский менеджмент&raquo;. Он&nbsp;ассоциируются с&nbsp;именами Деминга, Друкера, Уэлча и&nbsp;целого ряда других создателей этого бренда, покорившего весь мир. Не&nbsp;менее известен &laquo;японский менеджмент&raquo; построенный трудами руководителей концерна Toyota и&nbsp;тысяч других предприятий &laquo;страны восходящего солнца&raquo;.</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 pt-md-5 pb-5">
-                <div class="row">
-                    <div class="col align-self-center">
-                        <p>А&nbsp;что&nbsp;Вы знаете о&nbsp;&laquo;русском менеджменте&raquo;? Пожалуй, сегодня это словосочетание имеет негативный оттенок и&nbsp;наводит на&nbsp;мысли о&nbsp;бестолковом управлении.</p>
-                        <p>Но&nbsp;известно&nbsp;ли Вам, что русский менеджмент появился задолго до&nbsp;того, как американцы и&nbsp;японцы задумались об&nbsp;управлении как системе. Ведь победы и&nbsp;достижения нашей страны стали возможны благодаря блестящим управленческим талантам выдающихся полководцев и&nbsp;руководителей. Их&nbsp;опыт актуален сегодня как никогда. Он&nbsp;органичен нашей культуре, нашему мироощущению. Пора овладевать этим ценнейшим наследием!</p>
-                        <p>А&nbsp;теперь мы&nbsp;сообщим Вам хорошую новость: Русский Менеджмент жив!</p>
-                        <!-- <p><a href="">Ключевые принципы этой системы управления представлены на&nbsp;нашем портале.</a></p> -->
+    </div>
+    <div class="container-fluid p-0 bg-dark text-white a-white">
+        <div class="container-fluid p-0 container-fluid-limit">
+            <div class="row">
+                <div class="col-lg-7 pt-md-5 pb-5">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <p>А&nbsp;что&nbsp;Вы знаете о&nbsp;&laquo;русском менеджменте&raquo;? Пожалуй, сегодня это словосочетание имеет негативный оттенок и&nbsp;наводит на&nbsp;мысли о&nbsp;бестолковом управлении.</p>
+                            <p>Но&nbsp;известно&nbsp;ли Вам, что русский менеджмент появился задолго до&nbsp;того, как американцы и&nbsp;японцы задумались об&nbsp;управлении как системе. Ведь победы и&nbsp;достижения нашей страны стали возможны благодаря блестящим управленческим талантам выдающихся полководцев и&nbsp;руководителей. Их&nbsp;опыт актуален сегодня как никогда. Он&nbsp;органичен нашей культуре, нашему мироощущению. Пора овладевать этим ценнейшим наследием!</p>
+                            <p>А&nbsp;теперь мы&nbsp;сообщим Вам хорошую новость: Русский Менеджмент жив!</p>
+                            <!-- <p><a href="">Ключевые принципы этой системы управления представлены на&nbsp;нашем портале.</a></p> -->
+                        </div>
                     </div>
                 </div>
+                <div class="col-lg-5 bg-rm-project-02 d-none d-lg-block">&nbsp;</div>
             </div>
-            <div class="col-lg-5 bg-rm-project-02 d-none d-lg-block">&nbsp;</div>
         </div>
     </div>
 
@@ -114,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block" style="min-height: 500px;">&nbsp;</div>
         </div>
     </div>
 

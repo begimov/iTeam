@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -116,7 +116,7 @@
             <div class="col-md-4 bg-rm-model-03 d-none d-md-block">&nbsp;</div>
         </div>
     </div>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-md-4 bg-rm-model-04 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -138,7 +138,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -173,7 +173,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row py-5">
             <div class="col-lg-5"><img src="{{ asset('img/company/rm/model/rm_02.png') }}" class="img-fluid"></div>
             <div class="col-xl-6 col-lg-7">
@@ -214,7 +214,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">
@@ -266,7 +266,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 container-fluid-limit">
         <div class="row">
             <div class="col-md-4 bg-rm-model-08 d-none d-md-block">&nbsp;</div>
             <div class="col-xl-7 col-md-8 py-5">
@@ -306,7 +306,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0 bg-white">
+    <div class="container-fluid p-0 bg-white container-fluid-limit">
         <div class="row">
             <div class="col-md-8 py-5">
                 <div class="row">

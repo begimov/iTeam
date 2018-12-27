@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block">&nbsp;</div>
+            <div class="col-lg-4 bg-rm-origins-02 d-none d-lg-block" style="min-height: 500px;">&nbsp;</div>
         </div>
     </div>
 
