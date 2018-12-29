@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="purchase">
   <div class="row my-4">
     <div class="{{ 'col-lg-4 text-center text-md-left align-self-center'
       .((isset($element->data['reversed']) && $element->data['reversed']) ? ' order-md-last' : '') }}">
