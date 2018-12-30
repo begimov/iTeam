@@ -22,7 +22,7 @@ return [
         'profile'   => 'Профиль',
     ],
     'footer' => [
-        'copyright'   => '&copy;&nbsp;2002&nbsp;&mdash; 2018 iTeam',
+        'copyright'   => '&copy;&nbsp;2002&nbsp;&mdash; 2019 iTeam',
         'address'   => 'Москва, Пресненская наб.&nbsp;12',
         'all_contacts'   => 'Все контакты',
         'terms_of_use'   => 'Пользовательское соглашение',
